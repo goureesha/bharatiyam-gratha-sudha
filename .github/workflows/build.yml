@@ -1,0 +1,57 @@
+name: Build APK & Backup
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+          channel: 'stable'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bharatiyam-gratha-sudha-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 90
+
+      - name: Backup conversation logs
+        run: |
+          mkdir -p conversation_backup
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          echo "Build completed at $TIMESTAMP" >> conversation_backup/build_log.txt
+          echo "Commit: ${{ github.sha }}" >> conversation_backup/build_log.txt
+          echo "---" >> conversation_backup/build_log.txt
+
+      - name: Commit backup
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add conversation_backup/ || true
+          git diff --staged --quiet || git commit -m "📋 Auto-backup: $(date +%Y-%m-%d_%H:%M:%S)"
+          git push || true
