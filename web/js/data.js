@@ -15,14 +15,10 @@ const APP_DATA = {
       title: "ಗ್ರಂಥಾಲಯ",
       titleEn: "Library",
       icon: "📚",
-      description: "ವೇದ, ಉಪನಿಷತ್, ಗೀತೆ ಮತ್ತು ಇತರ ಗ್ರಂಥಗಳು",
+      description: "ವೈದಿಕ ಮತ್ತು ಜ್ಯೋತಿಷ ಗ್ರಂಥಗಳು",
       subcategories: [
-        { id: "vedas", title: "ವೇದಗಳು", titleEn: "Vedas", icon: "🕉️" },
-        { id: "upanishads", title: "ಉಪನಿಷತ್ತುಗಳು", titleEn: "Upanishads", icon: "📜" },
-        { id: "bhagavad_gita", title: "ಭಗವದ್ಗೀತೆ", titleEn: "Bhagavad Gita", icon: "🎯" },
-        { id: "ramayana", title: "ರಾಮಾಯಣ", titleEn: "Ramayana", icon: "🏹" },
-        { id: "mahabharata", title: "ಮಹಾಭಾರತ", titleEn: "Mahabharata", icon: "⚔️" },
-        { id: "puranas", title: "ಪುರಾಣಗಳು", titleEn: "Puranas", icon: "📖" },
+        { id: "vaidika_grantha", title: "ವೈದಿಕ ಗ್ರಂಥ", titleEn: "Vaidika Grantha", icon: "🕉️" },
+        { id: "jyotisha_grantha", title: "ಜ್ಯೋತಿಷ ಗ್ರಂಥ", titleEn: "Jyotisha Grantha", icon: "🔮" },
       ],
     },
     mantras: {
@@ -72,7 +68,7 @@ const APP_DATA = {
       titleSanskrit: "श्रीमद् भगवद्गीता",
       titleEn: "Shrimad Bhagavad Gita",
       category: "library",
-      subcategory: "bhagavad_gita",
+      subcategory: "vaidika_grantha",
       godRelated: ["krishna", "vishnu"],
       description: "ಕುರುಕ್ಷೇತ್ರ ಯುದ್ಧಭೂಮಿಯಲ್ಲಿ ಶ್ರೀ ಕೃಷ್ಣನು ಅರ್ಜುನನಿಗೆ ಬೋಧಿಸಿದ ಪವಿತ್ರ ಉಪದೇಶ",
       chapters: [
@@ -335,7 +331,7 @@ const APP_DATA = {
       titleSanskrit: "ईशावास्य उपनिषद्",
       titleEn: "Ishavasya Upanishad",
       category: "library",
-      subcategory: "upanishads",
+      subcategory: "vaidika_grantha",
       godRelated: [],
       description: "ಯಜುರ್ವೇದದ ಅತ್ಯಂತ ಪ್ರಮುಖ ಮತ್ತು ಸಂಕ್ಷಿಪ್ತ ಉಪನಿಷತ್ತು",
       chapters: [
