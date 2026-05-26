@@ -351,8 +351,8 @@ const App = {
     if (!subcat) return this.showSection(parentSection);
 
     let books;
-    if (parentSection === "mantras") {
-      books = getBooksByGod(subcategoryId);
+    if (parentSection === "mantras" || parentSection === "stotras") {
+      books = getBooksByGod(subcategoryId).filter(b => b.category === parentSection);
     } else {
       books = getBooksBySubcategory(subcategoryId);
     }
