@@ -142,4 +142,14 @@ const BookmarkStorage = {
     settings.fontSize = size;
     this.saveSettings(settings);
   },
+
+  getScriptFilter() {
+    return this.getSettings().scriptFilter || "both";
+  },
+
+  setScriptFilter(filter) {
+    const settings = this.getSettings();
+    settings.scriptFilter = filter;
+    this.saveSettings(settings);
+  },
 };

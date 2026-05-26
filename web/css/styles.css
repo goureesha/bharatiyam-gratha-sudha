@@ -1305,6 +1305,50 @@ body::before {
   }
 }
 
+/* ── Script Filter ───────────────────────────────────────────── */
+.script-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  flex-wrap: wrap;
+}
+
+.script-filter-label {
+  font-family: var(--font-kannada);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.script-filter-btn {
+  padding: var(--space-xs) var(--space-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.script-filter-btn.active {
+  background: var(--gradient-saffron);
+  color: white;
+  border-color: var(--saffron);
+  box-shadow: 0 2px 8px rgba(232, 114, 42, 0.3);
+}
+
+.script-filter-btn:hover:not(.active) {
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+
 /* ── Utility Classes ─────────────────────────────────────────── */
 .hidden { display: none !important; }
 .text-center { text-align: center; }
@@ -1314,3 +1358,4 @@ body::before {
 .mb-sm { margin-bottom: var(--space-sm); }
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
+

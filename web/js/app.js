@@ -8,6 +8,7 @@ const App = {
   currentBook: null,
   currentChapter: null,
   searchQuery: "",
+  scriptFilter: "both", // "devanagari", "kannada", or "both"
   history: [],
 
   // ── Initialization ──────────────────────────────────────────
@@ -20,6 +21,9 @@ const App = {
     // Load font size
     const savedFontSize = BookmarkStorage.getFontSize();
     document.documentElement.setAttribute("data-font-size", savedFontSize);
+
+    // Load script filter
+    this.scriptFilter = BookmarkStorage.getScriptFilter() || "both";
 
     // Update bookmark badge
     this.updateBookmarkBadge();
@@ -176,6 +180,7 @@ const App = {
     const sourceLabel = showSource
       ? `<span class="shloka-source">${shloka.bookTitle || ""} ${shloka.chapterTitle ? "• " + shloka.chapterTitle : ""}</span>`
       : "";
+    const filter = this.scriptFilter;
 
     return `
       <article class="shloka-card" id="shloka-${shloka.id}">
@@ -189,30 +194,20 @@ const App = {
             ${isBookmarked ? "❤️" : "🤍"}
           </button>
         </div>
+        ${filter === "both" || filter === "devanagari" ? `
         <div class="shloka-sanskrit">
           <div class="layer-label">📜 ಸಂಸ್ಕೃತ · Sanskrit</div>
           <div class="sanskrit-text">${shloka.sanskrit}</div>
-        </div>
+        </div>` : ""}
+        ${filter === "both" || filter === "kannada" ? `
         <div class="shloka-kannada">
           <div class="layer-label">📝 ಕನ್ನಡ · Kannada</div>
           <div class="kannada-text">${shloka.kannada}</div>
-        </div>
+        </div>` : ""}
         <div class="shloka-meaning">
           <div class="layer-label">💡 ಅರ್ಥ · Meaning</div>
           <div class="meaning-text">${shloka.meaning}</div>
         </div>
-        ${
-          shloka.explanation
-            ? `
-          <div class="shloka-explanation">
-            <div class="layer-label" onclick="this.parentElement.querySelector('.explanation-text').classList.toggle('hidden')">
-              📖 ವಿವರಣೆ · Explanation ▾
-            </div>
-            <div class="explanation-text">${shloka.explanation}</div>
-          </div>
-        `
-            : ""
-        }
       </article>
     `;
   },
@@ -390,6 +385,12 @@ const App = {
     this.currentSection = parentSection || book.category;
     this.updateBottomNav(this.currentSection);
 
+    // Stotras: skip chapter view, show shlokas directly
+    if (book.category === "stotras" && book.chapters.length > 0) {
+      this.showStotraShlokas(book);
+      return;
+    }
+
     const section = APP_DATA.categories[this.currentSection];
     const subcat = section?.subcategories?.find(
       (s) => s.id === book.subcategory
@@ -434,6 +435,37 @@ const App = {
     `);
   },
 
+  // ── Stotra Direct View (no chapters) ─────────────────────────
+  showStotraShlokas(book) {
+    const section = APP_DATA.categories[this.currentSection];
+    const subcat = section?.subcategories?.find((s) => s.id === book.subcategory);
+    const allShlokas = book.chapters.flatMap((ch) => ch.shlokas);
+
+    this.setContent(`
+      ${this.renderBreadcrumb([
+        { label: "🏠 ಮುಖಪುಟ", action: "App.navigate('home')" },
+        { label: `${section?.icon || "📿"} ${section?.title || ""}`, action: `App.navigate('${this.currentSection}')` },
+        { label: book.title },
+      ])}
+
+      <button class="back-btn" onclick="App.navigate('${this.currentSection}/${book.subcategory}')">
+        ← ಹಿಂದೆ ಹೋಗಿ
+      </button>
+
+      <!-- Book Header -->
+      <div class="hero-section" style="text-align: left; padding: var(--space-xl);">
+        <h1 class="hero-title" style="font-size: var(--font-size-2xl);">${book.title}</h1>
+        <p class="hero-subtitle" style="font-size: var(--font-size-md);">${book.titleSanskrit}</p>
+        <p class="hero-tagline">${book.description}</p>
+      </div>
+
+      ${this.renderScriptFilter()}
+
+      <!-- Shlokas -->
+      ${allShlokas.map((s) => this.renderShlokaCard(s, false)).join('<div class="ornamental-divider"><span class="divider-icon">॰</span></div>')}
+    `);
+  },
+
   showChapter(bookId, chapterId, parentSection) {
     const book = getBookById(bookId);
     if (!book) return this.showHome();
@@ -467,6 +499,8 @@ const App = {
       </button>
 
       ${this.renderSectionHeader("📖", `${chapter.title}`, `${chapter.titleEn} · ಅಧ್ಯಾಯ ${chapter.number}`)}
+
+      ${this.renderScriptFilter()}
 
       <!-- Shlokas -->
       ${chapter.shlokas.map((s) => this.renderShlokaCard(s, false)).join(`<div class="ornamental-divider"><span class="divider-icon">॰</span></div>`)}
@@ -723,7 +757,6 @@ const App = {
   setFontSize(size) {
     document.documentElement.setAttribute("data-font-size", size);
     BookmarkStorage.setFontSize(size);
-    // Update active button
     document.querySelectorAll(".font-size-btn").forEach((btn) => {
       btn.classList.remove("active");
       if (btn.textContent.includes(size === "small" ? "ಸಣ್ಣ" : size === "large" ? "ದೊಡ್ಡ" : "ಮಧ್ಯಮ")) {
@@ -736,6 +769,32 @@ const App = {
         : size === "large"
           ? "🔠 ದೊಡ್ಡ ಅಕ್ಷರ"
           : "🔡 ಮಧ್ಯಮ ಅಕ್ಷರ"
+    );
+  },
+
+  // ── Script Filter ──────────────────────────────────────────
+  renderScriptFilter() {
+    return `
+      <div class="script-filter">
+        <span class="script-filter-label">ಲಿಪಿ · Script:</span>
+        <button class="script-filter-btn ${this.scriptFilter === 'devanagari' ? 'active' : ''}"
+                onclick="App.setScriptFilter('devanagari')">देवनागरी</button>
+        <button class="script-filter-btn ${this.scriptFilter === 'kannada' ? 'active' : ''}"
+                onclick="App.setScriptFilter('kannada')">ಕನ್ನಡ</button>
+        <button class="script-filter-btn ${this.scriptFilter === 'both' ? 'active' : ''}"
+                onclick="App.setScriptFilter('both')">Both</button>
+      </div>
+    `;
+  },
+
+  setScriptFilter(filter) {
+    this.scriptFilter = filter;
+    BookmarkStorage.setScriptFilter(filter);
+    // Re-render current page
+    this.handleRoute();
+    this.showToast(
+      filter === 'devanagari' ? '📜 देवनागरी ಮಾತ್ರ' :
+      filter === 'kannada' ? '📝 ಕನ್ನಡ ಮಾತ್ರ' : '📜📝 ಎರಡೂ ಲಿಪಿ'
     );
   },
 };
