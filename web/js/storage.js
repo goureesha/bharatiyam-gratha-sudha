@@ -152,4 +152,15 @@ const BookmarkStorage = {
     settings.scriptFilter = filter;
     this.saveSettings(settings);
   },
+
+  getShowMeaning() {
+    const val = this.getSettings().showMeaning;
+    return val !== undefined ? val : true;
+  },
+
+  setShowMeaning(show) {
+    const settings = this.getSettings();
+    settings.showMeaning = show;
+    this.saveSettings(settings);
+  },
 };

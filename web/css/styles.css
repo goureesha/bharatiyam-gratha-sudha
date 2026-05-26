@@ -1349,6 +1349,12 @@ body::before {
   color: var(--saffron);
 }
 
+.script-filter-divider {
+  color: var(--border-light);
+  font-size: 1.2rem;
+  margin: 0 var(--space-xs);
+}
+
 /* ── Utility Classes ─────────────────────────────────────────── */
 .hidden { display: none !important; }
 .text-center { text-align: center; }

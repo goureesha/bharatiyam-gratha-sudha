@@ -9,6 +9,7 @@ const App = {
   currentChapter: null,
   searchQuery: "",
   scriptFilter: "both", // "devanagari", "kannada", or "both"
+  showMeaning: true,
   history: [],
 
   // ── Initialization ──────────────────────────────────────────
@@ -22,8 +23,9 @@ const App = {
     const savedFontSize = BookmarkStorage.getFontSize();
     document.documentElement.setAttribute("data-font-size", savedFontSize);
 
-    // Load script filter
+    // Load script filter and meaning toggle
     this.scriptFilter = BookmarkStorage.getScriptFilter() || "both";
+    this.showMeaning = BookmarkStorage.getShowMeaning() !== false;
 
     // Update bookmark badge
     this.updateBookmarkBadge();
@@ -204,10 +206,11 @@ const App = {
           <div class="layer-label">📝 ಕನ್ನಡ · Kannada</div>
           <div class="kannada-text">${shloka.kannada}</div>
         </div>` : ""}
+        ${this.showMeaning ? `
         <div class="shloka-meaning">
           <div class="layer-label">💡 ಅರ್ಥ · Meaning</div>
           <div class="meaning-text">${shloka.meaning}</div>
-        </div>
+        </div>` : ""}
       </article>
     `;
   },
@@ -783,6 +786,10 @@ const App = {
                 onclick="App.setScriptFilter('kannada')">ಕನ್ನಡ</button>
         <button class="script-filter-btn ${this.scriptFilter === 'both' ? 'active' : ''}"
                 onclick="App.setScriptFilter('both')">Both</button>
+        <span class="script-filter-divider">|</span>
+        <span class="script-filter-label">ಅರ್ಥ:</span>
+        <button class="script-filter-btn ${this.showMeaning ? 'active' : ''}"
+                onclick="App.toggleMeaning()">💡 ${this.showMeaning ? 'ಅರ್ಥ ✓' : 'ಅರ್ಥ ✗'}</button>
       </div>
     `;
   },
@@ -790,12 +797,18 @@ const App = {
   setScriptFilter(filter) {
     this.scriptFilter = filter;
     BookmarkStorage.setScriptFilter(filter);
-    // Re-render current page
     this.handleRoute();
     this.showToast(
       filter === 'devanagari' ? '📜 देवनागरी ಮಾತ್ರ' :
       filter === 'kannada' ? '📝 ಕನ್ನಡ ಮಾತ್ರ' : '📜📝 ಎರಡೂ ಲಿಪಿ'
     );
+  },
+
+  toggleMeaning() {
+    this.showMeaning = !this.showMeaning;
+    BookmarkStorage.setShowMeaning(this.showMeaning);
+    this.handleRoute();
+    this.showToast(this.showMeaning ? '💡 ಅರ್ಥ ತೋರಿಸಲಾಗುತ್ತಿದೆ' : '📜 ಅರ್ಥ ಮರೆಮಾಡಲಾಗಿದೆ');
   },
 };
 
