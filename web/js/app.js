@@ -44,7 +44,7 @@ const App = {
         this.showHome();
         break;
       case "library":
-      case "gods":
+      case "mantras":
       case "stotras":
         if (parts[3]) {
           // section/subcategory/bookId/chapterId
@@ -282,9 +282,9 @@ const App = {
       ${this.renderDivider()}
 
       <!-- God Sections -->
-      ${this.renderSectionHeader("🙏", "ದೇವತೆಗಳು", "Gods")}
+      ${this.renderSectionHeader("🙏", "ಮಂತ್ರಗಳು", "Mantras")}
       <div class="category-grid">
-        ${APP_DATA.categories.gods.subcategories.map((s) => this.renderCategoryCard(s, "gods")).join("")}
+        ${APP_DATA.categories.mantras.subcategories.map((s) => this.renderCategoryCard(s, "mantras")).join("")}
       </div>
 
       ${this.renderDivider()}
@@ -344,7 +344,7 @@ const App = {
     if (!subcat) return this.showSection(parentSection);
 
     let books;
-    if (parentSection === "gods") {
+    if (parentSection === "mantras") {
       books = getBooksByGod(subcategoryId);
     } else {
       books = getBooksBySubcategory(subcategoryId);

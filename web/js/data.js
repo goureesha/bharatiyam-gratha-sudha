@@ -25,12 +25,12 @@ const APP_DATA = {
         { id: "puranas", title: "ಪುರಾಣಗಳು", titleEn: "Puranas", icon: "📖" },
       ],
     },
-    gods: {
-      id: "gods",
-      title: "ದೇವತೆಗಳು",
-      titleEn: "Gods",
+    mantras: {
+      id: "mantras",
+      title: "ಮಂತ್ರಗಳು",
+      titleEn: "Mantras",
       icon: "🙏",
-      description: "ದೇವರ ಸ್ತುತಿ ಮತ್ತು ಮಹಿಮೆ",
+      description: "ದೇವರ ಮಂತ್ರಗಳು ಮತ್ತು ಜಪ",
       subcategories: [
         { id: "shiva", title: "ಶಿವ", titleEn: "Lord Shiva", icon: "🔱" },
         { id: "vishnu", title: "ವಿಷ್ಣು", titleEn: "Lord Vishnu", icon: "🪷" },
