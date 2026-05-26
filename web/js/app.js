@@ -785,7 +785,7 @@ const App = {
         <button class="script-filter-btn ${this.scriptFilter === 'kannada' ? 'active' : ''}"
                 onclick="App.setScriptFilter('kannada')">ಕನ್ನಡ</button>
         <button class="script-filter-btn ${this.scriptFilter === 'both' ? 'active' : ''}"
-                onclick="App.setScriptFilter('both')">Both</button>
+                onclick="App.setScriptFilter('both')">ಎರಡೂ</button>
         <span class="script-filter-divider">|</span>
         <span class="script-filter-label">ಅರ್ಥ:</span>
         <button class="script-filter-btn ${this.showMeaning ? 'active' : ''}"
