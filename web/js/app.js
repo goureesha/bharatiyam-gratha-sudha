@@ -216,9 +216,13 @@ const App = {
   },
 
   renderCategoryCard(subcat, parentSection) {
+    const isImage = subcat.icon && subcat.icon.includes('/');
+    const iconHtml = isImage
+      ? `<img src="${subcat.icon}" alt="${subcat.titleEn}" class="card-icon-img">`
+      : `<span class="card-icon">${subcat.icon}</span>`;
     return `
       <div class="category-card" onclick="App.navigate('${parentSection}/${subcat.id}')">
-        <span class="card-icon">${subcat.icon}</span>
+        ${iconHtml}
         <div class="card-title">${subcat.title}</div>
         <div class="card-subtitle">${subcat.titleEn}</div>
       </div>

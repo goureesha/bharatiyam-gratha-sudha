@@ -569,6 +569,22 @@ body::before {
   transform: scale(1.2);
 }
 
+.category-card .card-icon-img {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  border: 2px solid var(--gold);
+  box-shadow: 0 2px 8px rgba(212, 168, 67, 0.3);
+  transition: transform var(--transition-bounce);
+}
+
+.category-card:hover .card-icon-img {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(212, 168, 67, 0.5);
+}
+
 .category-card .card-title {
   font-family: var(--font-kannada);
   font-size: var(--font-size-base);
