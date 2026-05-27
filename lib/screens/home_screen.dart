@@ -74,7 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 // ── Home Tab ────────────────────────────────────────────────────
-class _HomeTab extends StatelessWidget {
+class _HomeTab extends StatefulWidget {
+  @override
+  State<_HomeTab> createState() => _HomeTabState();
+}
+
+class _HomeTabState extends State<_HomeTab> {
+  String _searchQuery = '';
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -82,19 +89,79 @@ class _HomeTab extends StatelessWidget {
       children: [
         // Hero Section
         _buildHero(context),
-        const SizedBox(height: 24),
-        // Library
-        _sectionHeader(context, '📚', 'ಗ್ರಂಥಾಲಯ', 'Library'),
-        _categoryGrid(context, 'library'),
-        const SizedBox(height: 24),
-        // Gods
-        _sectionHeader(context, '🙏', 'ದೇವತೆಗಳು', 'Gods'),
-        _categoryGrid(context, 'gods'),
-        const SizedBox(height: 24),
-        // Stotras
-        _sectionHeader(context, '📿', 'ಸ್ತೋತ್ರಗಳು', 'Stotras'),
-        _categoryGrid(context, 'stotras'),
+        const SizedBox(height: 16),
+        // Search
+        _SearchBar(
+          hint: 'ಶ್ಲೋಕ, ಪುಸ್ತಕ ಹುಡುಕಿ... Search books, shlokas...',
+          onChanged: (q) => setState(() => _searchQuery = q),
+        ),
+        const SizedBox(height: 16),
+        // Search results
+        if (_searchQuery.isNotEmpty) ...[
+          _buildSearchResults(context),
+        ] else ...[
+          // Library
+          _sectionHeader(context, '📚', 'ಗ್ರಂಥಾಲಯ', 'Library'),
+          _categoryGrid(context, 'library'),
+          const SizedBox(height: 24),
+          // Gods
+          _sectionHeader(context, '🙏', 'ದೇವತೆಗಳು', 'Gods'),
+          _categoryGrid(context, 'gods'),
+          const SizedBox(height: 24),
+          // Stotras
+          _sectionHeader(context, '📿', 'ಸ್ತೋತ್ರಗಳು', 'Stotras'),
+          _categoryGrid(context, 'stotras'),
+        ],
         const SizedBox(height: 80),
+      ],
+    );
+  }
+
+  Widget _buildSearchResults(BuildContext context) {
+    final results = ContentData.searchShlokas(_searchQuery);
+    final bookResults = ContentData.books.where((b) {
+      final q = _searchQuery.toLowerCase();
+      return b.title.toLowerCase().contains(q) ||
+             b.titleSanskrit.toLowerCase().contains(q) ||
+             b.titleEn.toLowerCase().contains(q) ||
+             b.description.toLowerCase().contains(q);
+    }).toList();
+
+    if (results.isEmpty && bookResults.isEmpty) {
+      return Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(children: [
+          const Text('🔍', style: TextStyle(fontSize: 48)),
+          const SizedBox(height: 12),
+          Text('ಏನೂ ಸಿಗಲಿಲ್ಲ', style: Theme.of(context).textTheme.titleMedium),
+          Text('No results found', style: Theme.of(context).textTheme.bodySmall),
+        ]),
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (bookResults.isNotEmpty) ...[
+          Text('📚 ಪುಸ್ತಕಗಳು (${bookResults.length})',
+            style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 8),
+          ...bookResults.map((b) => BookCard(book: b, onTap: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (_) => BookDetailPage(book: b),
+            ));
+          })),
+          const SizedBox(height: 16),
+        ],
+        if (results.isNotEmpty) ...[
+          Text('📿 ಶ್ಲೋಕಗಳು (${results.length})',
+            style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 8),
+          ...results.take(20).map((s) => Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: ShlokaCard(shloka: s, showSource: true),
+          )),
+        ],
       ],
     );
   }
@@ -196,50 +263,72 @@ class _HomeTab extends StatelessWidget {
 }
 
 // ── Section Tab ─────────────────────────────────────────────────
-class _SectionTab extends StatelessWidget {
+class _SectionTab extends StatefulWidget {
   final String sectionId;
   const _SectionTab({required this.sectionId});
+  @override
+  State<_SectionTab> createState() => _SectionTabState();
+}
+
+class _SectionTabState extends State<_SectionTab> {
+  String _searchQuery = '';
 
   @override
   Widget build(BuildContext context) {
-    final section = ContentData.categories[sectionId]!;
-    final books = ContentData.getBooksByCategory(sectionId);
+    final section = ContentData.categories[widget.sectionId]!;
+    final allBooks = ContentData.getBooksByCategory(widget.sectionId);
+    final books = _searchQuery.isEmpty ? allBooks : allBooks.where((b) {
+      final q = _searchQuery.toLowerCase();
+      return b.title.toLowerCase().contains(q) ||
+             b.titleSanskrit.toLowerCase().contains(q) ||
+             b.titleEn.toLowerCase().contains(q) ||
+             b.description.toLowerCase().contains(q);
+    }).toList();
+
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        // Subcategories grid
-        GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: 0.9,
-            crossAxisSpacing: 10, mainAxisSpacing: 10,
-          ),
-          itemCount: section.subcategories.length,
-          itemBuilder: (ctx, i) {
-            final sub = section.subcategories[i];
-            return CategoryCard(
-              subcategory: sub,
-              onTap: () {
-                List<Book> subBooks;
-                if (sectionId == 'gods') {
-                  subBooks = ContentData.getBooksByGod(sub.id);
-                } else {
-                  subBooks = ContentData.getBooksBySubcategory(sub.id);
-                }
-                Navigator.push(ctx, MaterialPageRoute(
-                  builder: (_) => BookListPage(
-                    title: sub.title, titleEn: sub.titleEn,
-                    icon: sub.icon, books: subBooks, sectionId: sectionId,
-                  ),
-                ));
-              },
-            );
-          },
+        // Search
+        _SearchBar(
+          hint: '${section.title} ಹುಡುಕಿ... Search ${section.titleEn}...',
+          onChanged: (q) => setState(() => _searchQuery = q),
         ),
+        const SizedBox(height: 16),
+        // Subcategories grid
+        if (_searchQuery.isEmpty)
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3, childAspectRatio: 0.9,
+              crossAxisSpacing: 10, mainAxisSpacing: 10,
+            ),
+            itemCount: section.subcategories.length,
+            itemBuilder: (ctx, i) {
+              final sub = section.subcategories[i];
+              return CategoryCard(
+                subcategory: sub,
+                onTap: () {
+                  List<Book> subBooks;
+                  if (widget.sectionId == 'gods') {
+                    subBooks = ContentData.getBooksByGod(sub.id);
+                  } else {
+                    subBooks = ContentData.getBooksBySubcategory(sub.id);
+                  }
+                  Navigator.push(ctx, MaterialPageRoute(
+                    builder: (_) => BookListPage(
+                      title: sub.title, titleEn: sub.titleEn,
+                      icon: sub.icon, books: subBooks, sectionId: widget.sectionId,
+                    ),
+                  ));
+                },
+              );
+            },
+          ),
         if (books.isNotEmpty) ...[
           const SizedBox(height: 24),
-          Text('ಎಲ್ಲಾ ಪುಸ್ತಕಗಳು', style: Theme.of(context).textTheme.titleLarge),
+          Text(_searchQuery.isEmpty ? 'ಎಲ್ಲಾ ಪುಸ್ತಕಗಳು' : '${books.length} ಫಲಿತಾಂಶ',
+            style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 12),
           ...books.map((b) => BookCard(book: b, onTap: () {
             Navigator.push(context, MaterialPageRoute(
@@ -247,6 +336,15 @@ class _SectionTab extends StatelessWidget {
             ));
           })),
         ],
+        if (_searchQuery.isNotEmpty && books.isEmpty)
+          Padding(
+            padding: const EdgeInsets.all(32),
+            child: Column(children: [
+              const Text('🔍', style: TextStyle(fontSize: 48)),
+              const SizedBox(height: 12),
+              Text('ಏನೂ ಸಿಗಲಿಲ್ಲ', style: Theme.of(context).textTheme.titleMedium),
+            ]),
+          ),
         const SizedBox(height: 80),
       ],
     );
@@ -620,6 +718,48 @@ class SettingsPage extends StatelessWidget {
             ),
           ])),
         ],
+      ),
+    );
+  }
+}
+
+// ── Reusable Search Bar ─────────────────────────────────────────
+class _SearchBar extends StatelessWidget {
+  final String hint;
+  final ValueChanged<String> onChanged;
+  const _SearchBar({required this.hint, required this.onChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1A1028) : Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: AppTheme.saffron.withOpacity(0.3),
+        ),
+        boxShadow: [BoxShadow(
+          color: AppTheme.saffron.withOpacity(0.08),
+          blurRadius: 8, offset: const Offset(0, 2),
+        )],
+      ),
+      child: TextField(
+        onChanged: onChanged,
+        decoration: InputDecoration(
+          hintText: hint,
+          hintStyle: TextStyle(
+            fontSize: 14,
+            color: isDark ? Colors.white38 : Colors.black38,
+          ),
+          prefixIcon: Icon(Icons.search,
+            color: AppTheme.saffron.withOpacity(0.7),
+          ),
+          border: InputBorder.none,
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16, vertical: 14,
+          ),
+        ),
       ),
     );
   }
