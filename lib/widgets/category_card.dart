@@ -20,7 +20,16 @@ class CategoryCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(subcategory.icon, style: const TextStyle(fontSize: 32)),
+              subcategory.icon.contains('.png') || subcategory.icon.contains('/')
+                  ? Image.asset(
+                      subcategory.icon.startsWith('assets/')
+                          ? subcategory.icon
+                          : 'assets/${subcategory.icon}',
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.contain,
+                    )
+                  : Text(subcategory.icon, style: const TextStyle(fontSize: 32)),
               const SizedBox(height: 8),
               Text(subcategory.title,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(

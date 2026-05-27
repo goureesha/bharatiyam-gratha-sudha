@@ -13,7 +13,7 @@ $BackupDir = "$ProjectRoot\conversation_backup"
 $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 
 Write-Host "`n🕉️ Bharatiyam Gratha Sudha — Push with Backup" -ForegroundColor Yellow
-Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor DarkYellow
+Write-Host "=============================================" -ForegroundColor DarkYellow
 
 # Step 1: Create backup directory
 if (-not (Test-Path $BackupDir)) {
@@ -59,4 +59,4 @@ Write-Host "`n🚀 Pushing to GitHub..." -ForegroundColor Cyan
 git push
 
 Write-Host "`n✅ Done! Changes pushed with conversation backup." -ForegroundColor Green
-Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`n" -ForegroundColor DarkYellow
+Write-Host "=============================================" -ForegroundColor DarkYellow

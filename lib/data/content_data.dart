@@ -249,7 +249,7 @@ class ContentData {
           ],
         ),
       ],
-    ),,
+    ),
 
     // ── SHIVA PANCHAKSHARI STOTRAM ───────────────────────────
     Book(
