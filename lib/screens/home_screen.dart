@@ -379,29 +379,155 @@ class BookDetailPage extends StatelessWidget {
 }
 
 // ── Reader Page ─────────────────────────────────────────────────
-class ReaderPage extends StatelessWidget {
+class ReaderPage extends StatefulWidget {
   final Book book;
   final Chapter chapter;
   const ReaderPage({super.key, required this.book, required this.chapter});
 
   @override
+  State<ReaderPage> createState() => _ReaderPageState();
+}
+
+class _ReaderPageState extends State<ReaderPage> {
+  // 0 = Both, 1 = Sanskrit only, 2 = Kannada only
+  int _languageFilter = 0;
+  bool _showMeaning = true;
+
+  @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      appBar: AppBar(title: Text(chapter.title)),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: chapter.shlokas.length,
-        itemBuilder: (ctx, i) {
-          final shloka = chapter.shlokas[i].copyWith(
-            bookId: book.id, bookTitle: book.title,
-            bookTitleEn: book.titleEn, chapterTitle: chapter.title,
-            category: book.category, subcategory: book.subcategory,
-          );
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: ShlokaCard(shloka: shloka),
-          );
-        },
+      appBar: AppBar(
+        title: Text(widget.chapter.title),
+        actions: [
+          // Meaning toggle
+          IconButton(
+            icon: Icon(_showMeaning ? Icons.visibility : Icons.visibility_off),
+            tooltip: _showMeaning ? 'ಅರ್ಥ ಮರೆಮಾಡಿ' : 'ಅರ್ಥ ತೋರಿಸಿ',
+            onPressed: () => setState(() => _showMeaning = !_showMeaning),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          // ── Language Filter Bar ──
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1A1028) : const Color(0xFFFFF8EE),
+              border: Border(bottom: BorderSide(
+                color: isDark ? Colors.white12 : Colors.black12,
+              )),
+            ),
+            child: Row(
+              children: [
+                const Text('📖 ', style: TextStyle(fontSize: 14)),
+                const SizedBox(width: 4),
+                Text('ಭಾಷೆ: ', style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).textTheme.bodyMedium?.color,
+                )),
+                const SizedBox(width: 8),
+                _buildFilterChip('ಎರಡೂ', 0, isDark),
+                const SizedBox(width: 6),
+                _buildFilterChip('ಸಂಸ್ಕೃತ', 1, isDark),
+                const SizedBox(width: 6),
+                _buildFilterChip('ಕನ್ನಡ', 2, isDark),
+                const Spacer(),
+                // Meaning toggle chip
+                GestureDetector(
+                  onTap: () => setState(() => _showMeaning = !_showMeaning),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: _showMeaning
+                          ? AppTheme.textMeaningLight.withOpacity(0.15)
+                          : Colors.grey.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: _showMeaning
+                            ? AppTheme.textMeaningLight.withOpacity(0.5)
+                            : Colors.grey.withOpacity(0.3),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          _showMeaning ? Icons.visibility : Icons.visibility_off,
+                          size: 14,
+                          color: _showMeaning ? AppTheme.textMeaningLight : Colors.grey,
+                        ),
+                        const SizedBox(width: 4),
+                        Text('ಅರ್ಥ', style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: _showMeaning ? AppTheme.textMeaningLight : Colors.grey,
+                        )),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // ── Shloka List ──
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(16),
+              itemCount: widget.chapter.shlokas.length,
+              itemBuilder: (ctx, i) {
+                final shloka = widget.chapter.shlokas[i].copyWith(
+                  bookId: widget.book.id, bookTitle: widget.book.title,
+                  bookTitleEn: widget.book.titleEn, chapterTitle: widget.chapter.title,
+                  category: widget.book.category, subcategory: widget.book.subcategory,
+                );
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: ShlokaCard(
+                    shloka: shloka,
+                    showSanskrit: _languageFilter == 0 || _languageFilter == 1,
+                    showKannada: _languageFilter == 0 || _languageFilter == 2,
+                    showMeaning: _showMeaning,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFilterChip(String label, int value, bool isDark) {
+    final isSelected = _languageFilter == value;
+    return GestureDetector(
+      onTap: () => setState(() => _languageFilter = value),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? AppTheme.saffron.withOpacity(0.2)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: isSelected
+                ? AppTheme.saffron
+                : (isDark ? Colors.white24 : Colors.black26),
+            width: isSelected ? 1.5 : 1,
+          ),
+        ),
+        child: Text(label, style: TextStyle(
+          fontSize: 12,
+          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+          color: isSelected
+              ? AppTheme.saffron
+              : Theme.of(context).textTheme.bodyMedium?.color,
+        )),
       ),
     );
   }

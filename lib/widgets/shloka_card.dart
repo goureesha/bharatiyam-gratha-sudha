@@ -9,8 +9,18 @@ import '../theme/app_theme.dart';
 class ShlokaCard extends StatefulWidget {
   final Shloka shloka;
   final bool showSource;
+  final bool showSanskrit;
+  final bool showKannada;
+  final bool showMeaning;
 
-  const ShlokaCard({super.key, required this.shloka, this.showSource = false});
+  const ShlokaCard({
+    super.key,
+    required this.shloka,
+    this.showSource = false,
+    this.showSanskrit = true,
+    this.showKannada = true,
+    this.showMeaning = true,
+  });
 
   @override
   State<ShlokaCard> createState() => _ShlokaCardState();
@@ -81,141 +91,146 @@ class _ShlokaCardState extends State<ShlokaCard> {
           ),
 
           // ── Sanskrit ────────────────────────────────────────
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(children: [
-                  const Text('📜 ', style: TextStyle(fontSize: 12)),
-                  Text('ಸಂಸ್ಕೃತ · Sanskrit',
-                    style: TextStyle(
-                      fontSize: 11, fontWeight: FontWeight.w600,
-                      color: isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight,
-                      letterSpacing: 1,
+          if (widget.showSanskrit)
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(children: [
+                    const Text('📜 ', style: TextStyle(fontSize: 12)),
+                    Text('ಸಂಸ್ಕೃತ · Sanskrit',
+                      style: TextStyle(
+                        fontSize: 11, fontWeight: FontWeight.w600,
+                        color: isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight,
+                        letterSpacing: 1,
+                      ),
                     ),
-                  ),
-                ]),
-                const SizedBox(height: 8),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: (isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight)
-                        .withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
+                  ]),
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
                       color: (isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight)
-                          .withOpacity(0.1),
+                          .withOpacity(0.05),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: (isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight)
+                            .withOpacity(0.1),
+                      ),
+                    ),
+                    child: Text(
+                      widget.shloka.sanskrit,
+                      style: GoogleFonts.notoSansDevanagari(
+                        fontSize: 20 * scale,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight,
+                        height: 2.0,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  child: Text(
-                    widget.shloka.sanskrit,
-                    style: GoogleFonts.notoSansDevanagari(
-                      fontSize: 20 * scale,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? AppTheme.textSanskritDark : AppTheme.textSanskritLight,
-                      height: 2.0,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
 
-          const Divider(height: 1),
+          if (widget.showSanskrit && widget.showKannada)
+            const Divider(height: 1),
 
           // ── Kannada ─────────────────────────────────────────
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(children: [
-                  const Text('📝 ', style: TextStyle(fontSize: 12)),
-                  Text('ಕನ್ನಡ · Kannada',
-                    style: TextStyle(
-                      fontSize: 11, fontWeight: FontWeight.w600,
-                      color: isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight,
-                      letterSpacing: 1,
+          if (widget.showKannada)
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(children: [
+                    const Text('📝 ', style: TextStyle(fontSize: 12)),
+                    Text('ಕನ್ನಡ · Kannada',
+                      style: TextStyle(
+                        fontSize: 11, fontWeight: FontWeight.w600,
+                        color: isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight,
+                        letterSpacing: 1,
+                      ),
                     ),
-                  ),
-                ]),
-                const SizedBox(height: 8),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: (isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight)
-                        .withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
+                  ]),
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
                       color: (isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight)
-                          .withOpacity(0.1),
+                          .withOpacity(0.05),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: (isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight)
+                            .withOpacity(0.1),
+                      ),
+                    ),
+                    child: Text(
+                      widget.shloka.kannada,
+                      style: GoogleFonts.notoSansKannada(
+                        fontSize: 18 * scale,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight,
+                        height: 2.0,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  child: Text(
-                    widget.shloka.kannada,
-                    style: GoogleFonts.notoSansKannada(
-                      fontSize: 18 * scale,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? AppTheme.textKannadaDark : AppTheme.textKannadaLight,
-                      height: 2.0,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
 
-          const Divider(height: 1),
+          if (widget.showMeaning) ...[
+            const Divider(height: 1),
 
-          // ── Meaning ─────────────────────────────────────────
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(children: [
-                  const Text('💡 ', style: TextStyle(fontSize: 12)),
-                  Text('ಅರ್ಥ · Meaning',
-                    style: TextStyle(
-                      fontSize: 11, fontWeight: FontWeight.w600,
-                      color: isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight,
-                      letterSpacing: 1,
+            // ── Meaning ─────────────────────────────────────────
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(children: [
+                    const Text('💡 ', style: TextStyle(fontSize: 12)),
+                    Text('ಅರ್ಥ · Meaning',
+                      style: TextStyle(
+                        fontSize: 11, fontWeight: FontWeight.w600,
+                        color: isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight,
+                        letterSpacing: 1,
+                      ),
                     ),
-                  ),
-                ]),
-                const SizedBox(height: 8),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: (isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight)
-                        .withOpacity(0.05),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
+                  ]),
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
                       color: (isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight)
-                          .withOpacity(0.1),
+                          .withOpacity(0.05),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: (isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight)
+                            .withOpacity(0.1),
+                      ),
+                    ),
+                    child: Text(
+                      widget.shloka.meaning,
+                      style: GoogleFonts.notoSansKannada(
+                        fontSize: 15 * scale,
+                        color: isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight,
+                        height: 1.8,
+                      ),
                     ),
                   ),
-                  child: Text(
-                    widget.shloka.meaning,
-                    style: GoogleFonts.notoSansKannada(
-                      fontSize: 15 * scale,
-                      color: isDark ? AppTheme.textMeaningDark : AppTheme.textMeaningLight,
-                      height: 1.8,
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
+          ],
 
           // ── Explanation ─────────────────────────────────────
-          if (widget.shloka.explanation != null) ...[
+          if (widget.showMeaning && widget.shloka.explanation != null) ...[
             const Divider(height: 1),
             Padding(
               padding: const EdgeInsets.all(16),
