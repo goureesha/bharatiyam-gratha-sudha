@@ -37,6 +37,11 @@ migrate_working_dir/
 *.keystore
 local.properties
 
+# Firebase secrets — DO NOT COMMIT
+**/google-services.json
+**/GoogleService-Info.plist
+.firebaserc
+
 # iOS
 /ios/Flutter/
 /ios/Pods/
