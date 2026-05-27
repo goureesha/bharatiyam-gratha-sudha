@@ -56,13 +56,13 @@ class FirebaseService extends ChangeNotifier {
 
   /// Fetch categories from Firestore, fallback to bundled data.
   Future<List<AppCategory>> getCategories() async {
-    if (!_useFirestore) return ContentData.categories;
+    if (!_useFirestore) return ContentData.categories.values.toList();
     try {
       final snap = await _db!.collection('categories').get();
       return snap.docs.map((d) => AppCategory.fromFirestore(d.data())).toList();
     } catch (e) {
       debugPrint('⚠️ Firestore categories error: $e');
-      return ContentData.categories;
+      return ContentData.categories.values.toList();
     }
   }
 
