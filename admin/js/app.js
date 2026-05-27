@@ -560,12 +560,13 @@ const App = {
         const bookDoc = await db.collection('books').doc(bookId).get();
         if (bookDoc.exists) document.getElementById('chapters-book-title').textContent = bookDoc.data().title;
       }
-      const snap = await db.collection('chapters').where('bookId','==',bookId).orderBy('number').get();
+      const snap = await db.collection('chapters').where('bookId','==',bookId).get();
       if (snap.empty) {
         listEl.innerHTML = '<p class="muted">No chapters yet. Add one!</p>';
         return;
       }
-      listEl.innerHTML = snap.docs.map(d => {
+      const sortedDocs = snap.docs.sort((a,b) => (a.data().number||0) - (b.data().number||0));
+      listEl.innerHTML = sortedDocs.map(d => {
         const c = d.data();
         return `<div class="chapter-item">
           <div class="chapter-info" onclick="App.openShlokas('${d.id}','${bookId}','${this.esc(c.title)}')" style="cursor:pointer;">
@@ -617,12 +618,13 @@ const App = {
     const listEl = document.getElementById('shlokas-list');
     listEl.innerHTML = '<p class="muted">Loading…</p>';
     try {
-      const snap = await db.collection('shlokas').where('chapterId','==',chapterId).orderBy('order').get();
+      const snap = await db.collection('shlokas').where('chapterId','==',chapterId).get();
       if (snap.empty) {
         listEl.innerHTML = '<p class="muted">No shlokas yet. Add one!</p>';
         return;
       }
-      listEl.innerHTML = snap.docs.map(d => {
+      const sortedShlokas = snap.docs.sort((a,b) => (a.data().order||0) - (b.data().order||0));
+      listEl.innerHTML = sortedShlokas.map(d => {
         const s = d.data();
         return `<div class="shloka-item">
           <div class="shloka-info">
