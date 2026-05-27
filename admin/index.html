@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharatiyam Gratha Sudha — Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════ LOGIN PAGE ══════════ -->
+  <div id="login-page" class="page active">
+    <div class="login-container">
+      <div class="login-brand">
+        <div class="brand-icon">🙏</div>
+        <h1>ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ</h1>
+        <p class="brand-subtitle">Admin Panel</p>
+      </div>
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="admin@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="login-btn">
+          <span class="btn-text">Sign In</span>
+          <span class="btn-loader hidden">⏳</span>
+        </button>
+        <div id="login-error" class="error-msg hidden"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ══════════ APP SHELL ══════════ -->
+  <div id="app-shell" class="hidden">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <span class="sidebar-icon">🙏</span>
+        <div>
+          <h2>BGS Admin</h2>
+          <small>Content Manager</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-item active" data-page="dashboard">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="#books" class="nav-item" data-page="books">
+          <span class="nav-icon">📚</span> Books
+        </a>
+        <a href="#add-book" class="nav-item" data-page="add-book">
+          <span class="nav-icon">➕</span> Add Book
+        </a>
+        <a href="#categories" class="nav-item" data-page="categories">
+          <span class="nav-icon">🏷️</span> Categories
+        </a>
+        <a href="#seed" class="nav-item" data-page="seed">
+          <span class="nav-icon">🌱</span> Seed Data
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-ghost btn-full">🚪 Logout</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="main-content">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <h2 id="page-title">Dashboard</h2>
+        <div class="topbar-right">
+          <span id="user-email" class="user-email"></span>
+        </div>
+      </header>
+
+      <!-- ── DASHBOARD ── -->
+      <section id="page-dashboard" class="page-section active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-books">—</span>
+              <span class="stat-label">Books</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📖</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-chapters">—</span>
+              <span class="stat-label">Chapters</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📿</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-shlokas">—</span>
+              <span class="stat-label">Shlokas</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏷️</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-categories">—</span>
+              <span class="stat-label">Categories</span>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-lg">
+          <h3 class="card-title">Recent Books</h3>
+          <div id="recent-books" class="recent-list"><p class="muted">Loading…</p></div>
+        </div>
+      </section>
+
+      <!-- ── BOOKS LIST ── -->
+      <section id="page-books" class="page-section">
+        <div class="toolbar">
+          <div class="filters">
+            <select id="filter-category" class="input-select">
+              <option value="">All Categories</option>
+            </select>
+            <select id="filter-subcategory" class="input-select">
+              <option value="">All Subcategories</option>
+            </select>
+          </div>
+          <a href="#add-book" class="btn btn-primary">➕ Add Book</a>
+        </div>
+        <div id="books-list" class="books-grid"><p class="muted">Loading…</p></div>
+      </section>
+
+      <!-- ── ADD / EDIT BOOK ── -->
+      <section id="page-add-book" class="page-section">
+        <div class="card">
+          <h3 class="card-title" id="book-form-title">Add New Book</h3>
+          <form id="book-form">
+            <input type="hidden" id="book-id">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Title (Kannada)</label>
+                <input type="text" id="book-title" class="input" placeholder="ಶ್ರೀಮದ್ ಭಗವದ್ಗೀತೆ" required>
+              </div>
+              <div class="form-group">
+                <label>Title (Sanskrit)</label>
+                <input type="text" id="book-titleSanskrit" class="input" placeholder="श्रीमद् भगवद्गीता">
+              </div>
+              <div class="form-group">
+                <label>Title (English)</label>
+                <input type="text" id="book-titleEn" class="input" placeholder="Shrimad Bhagavad Gita" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Category</label>
+                <select id="book-category" class="input-select" required></select>
+              </div>
+              <div class="form-group">
+                <label>Subcategory</label>
+                <select id="book-subcategory" class="input-select" required></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>God Related (comma-separated IDs)</label>
+              <input type="text" id="book-godRelated" class="input" placeholder="krishna, vishnu">
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea id="book-description" class="input textarea" rows="3" placeholder="Book description…"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Order</label>
+                <input type="number" id="book-order" class="input" value="0">
+              </div>
+              <div class="form-group toggle-group">
+                <label>Premium</label>
+                <label class="toggle">
+                  <input type="checkbox" id="book-isPremium">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="book-submit-btn">Save Book</button>
+              <button type="button" class="btn btn-ghost" id="book-cancel-btn">Cancel</button>
+            </div>
+            <div id="book-form-error" class="error-msg hidden"></div>
+            <div id="book-form-success" class="success-msg hidden"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ── CHAPTERS ── -->
+      <section id="page-chapters" class="page-section">
+        <div class="toolbar">
+          <div>
+            <a href="#books" class="btn btn-ghost">← Back to Books</a>
+            <h3 id="chapters-book-title" class="inline-title"></h3>
+          </div>
+          <button class="btn btn-primary" id="add-chapter-btn">➕ Add Chapter</button>
+        </div>
+        <div id="chapters-list" class="chapters-list"><p class="muted">Loading…</p></div>
+
+        <!-- Chapter Modal -->
+        <div id="chapter-modal" class="modal hidden">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <h3 id="chapter-modal-title">Add Chapter</h3>
+            <form id="chapter-form">
+              <input type="hidden" id="chapter-id">
+              <input type="hidden" id="chapter-bookId">
+              <div class="form-group">
+                <label>Chapter Number</label>
+                <input type="number" id="chapter-number" class="input" required>
+              </div>
+              <div class="form-group">
+                <label>Title (Kannada)</label>
+                <input type="text" id="chapter-title" class="input" required>
+              </div>
+              <div class="form-group">
+                <label>Title (Sanskrit)</label>
+                <input type="text" id="chapter-titleSanskrit" class="input">
+              </div>
+              <div class="form-group">
+                <label>Title (English)</label>
+                <input type="text" id="chapter-titleEn" class="input">
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Chapter</button>
+                <button type="button" class="btn btn-ghost" onclick="App.closeModal('chapter-modal')">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SHLOKAS ── -->
+      <section id="page-shlokas" class="page-section">
+        <div class="toolbar">
+          <div>
+            <button class="btn btn-ghost" id="back-to-chapters-btn">← Back to Chapters</button>
+            <h3 id="shlokas-chapter-title" class="inline-title"></h3>
+          </div>
+          <button class="btn btn-primary" id="add-shloka-btn">➕ Add Shloka</button>
+        </div>
+        <div id="shlokas-list" class="shlokas-list"><p class="muted">Loading…</p></div>
+
+        <!-- Shloka Modal -->
+        <div id="shloka-modal" class="modal hidden">
+          <div class="modal-overlay"></div>
+          <div class="modal-content modal-lg">
+            <h3 id="shloka-modal-title">Add Shloka</h3>
+            <form id="shloka-form">
+              <input type="hidden" id="shloka-id">
+              <input type="hidden" id="shloka-chapterId">
+              <input type="hidden" id="shloka-bookId">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Number</label>
+                  <input type="text" id="shloka-number" class="input" required>
+                </div>
+                <div class="form-group">
+                  <label>Order</label>
+                  <input type="number" id="shloka-order" class="input" value="0">
+                </div>
+                <div class="form-group toggle-group">
+                  <label>Premium</label>
+                  <label class="toggle">
+                    <input type="checkbox" id="shloka-isPremium">
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Sanskrit Text</label>
+                <textarea id="shloka-sanskrit" class="input textarea sanskrit-text" rows="4" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Kannada Text</label>
+                <textarea id="shloka-kannada" class="input textarea kannada-text" rows="4" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Meaning (Kannada)</label>
+                <textarea id="shloka-meaning" class="input textarea" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Explanation</label>
+                <textarea id="shloka-explanation" class="input textarea" rows="3"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Shloka</button>
+                <button type="button" class="btn btn-ghost" onclick="App.closeModal('shloka-modal')">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CATEGORIES ── -->
+      <section id="page-categories" class="page-section">
+        <div id="categories-list" class="categories-grid"><p class="muted">Loading…</p></div>
+      </section>
+
+      <!-- ── SEED DATA ── -->
+      <section id="page-seed" class="page-section">
+        <div class="card">
+          <h3 class="card-title">🌱 Seed Firestore Data</h3>
+          <p class="card-desc">Upload all bundled content (categories, books, chapters, shlokas) to Firestore. This will create or overwrite documents with matching IDs.</p>
+          <div class="seed-stats" id="seed-stats">
+            <div class="seed-stat"><strong id="seed-cat-count">3</strong> Categories</div>
+            <div class="seed-stat"><strong id="seed-book-count">9</strong> Books</div>
+            <div class="seed-stat"><strong id="seed-ch-count">12</strong> Chapters</div>
+            <div class="seed-stat"><strong id="seed-sh-count">41</strong> Shlokas</div>
+          </div>
+          <button class="btn btn-primary btn-lg" id="seed-btn">
+            <span class="btn-text">🚀 Seed All Data to Firestore</span>
+            <span class="btn-loader hidden">Seeding…</span>
+          </button>
+          <div id="seed-progress" class="progress-container hidden">
+            <div class="progress-bar"><div class="progress-fill" id="seed-progress-fill"></div></div>
+            <p id="seed-progress-text" class="progress-text">Preparing…</p>
+          </div>
+          <div id="seed-result" class="hidden"></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ══════════ TOAST ══════════ -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ══════════ CONFIRM DIALOG ══════════ -->
+  <div id="confirm-dialog" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content modal-sm">
+      <h3 id="confirm-title">Confirm</h3>
+      <p id="confirm-message"></p>
+      <div class="form-actions">
+        <button class="btn btn-danger" id="confirm-yes">Yes, Delete</button>
+        <button class="btn btn-ghost" id="confirm-no">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ SCRIPTS ══════════ -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore-compat.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

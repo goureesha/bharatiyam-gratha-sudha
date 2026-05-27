@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'services/bookmark_service.dart';
+import 'services/firebase_service.dart';
 import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase
+  try {
+    await Firebase.initializeApp();
+    debugPrint('🔥 Firebase Core initialized');
+  } catch (e) {
+    debugPrint('⚠️ Firebase init error (app will use bundled data): $e');
+  }
+
+  // Initialize FirebaseService (Firestore content)
+  final firebaseService = FirebaseService();
+  await firebaseService.init();
+
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => BookmarkService()..init(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => BookmarkService()..init()),
+        ChangeNotifierProvider.value(value: firebaseService),
+      ],
       child: const BharatiyamApp(),
     ),
   );
