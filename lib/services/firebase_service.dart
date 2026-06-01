@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 import '../models/shloka.dart';
 import '../data/content_data.dart';
 
 /// Service for fetching content from Firestore with offline caching.
 /// Falls back to bundled ContentData if Firestore is unavailable.
+/// Caches all data in memory for synchronous access by UI.
 class FirebaseService extends ChangeNotifier {
   static final FirebaseService _instance = FirebaseService._internal();
   factory FirebaseService() => _instance;
@@ -16,18 +15,22 @@ class FirebaseService extends ChangeNotifier {
   FirebaseFirestore? _db;
   bool _initialized = false;
   bool _useFirestore = false;
-  int _contentVersion = 0;
+  bool _loading = false;
+
+  // Cached data — UI reads from these
+  List<Book> _books = [];
+  Map<String, AppCategory> _categories = {};
 
   bool get isInitialized => _initialized;
   bool get useFirestore => _useFirestore;
-  int get contentVersion => _contentVersion;
+  bool get isLoading => _loading;
+  List<Book> get books => _books;
+  Map<String, AppCategory> get categories => _categories;
 
   // ── Initialization ──────────────────────────────────────────
 
-  /// Initialize Firebase. Call once in main().
   Future<void> init() async {
     try {
-      await Firebase.initializeApp();
       _db = FirebaseFirestore.instance;
 
       // Enable offline persistence
@@ -36,157 +39,174 @@ class FirebaseService extends ChangeNotifier {
         cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
       );
 
-      // Check if Firestore has content
-      final configDoc = await _db!.collection('config').doc('app').get();
-      if (configDoc.exists) {
-        _contentVersion = configDoc.data()?['contentVersion'] ?? 0;
-        _useFirestore = _contentVersion > 0;
-      }
-
       _initialized = true;
-      debugPrint('🔥 Firebase initialized. Firestore content: $_useFirestore (v$_contentVersion)');
+      debugPrint('🔥 Firebase Firestore initialized');
+
+      // Load data from Firestore
+      await refreshData();
     } catch (e) {
       debugPrint('⚠️ Firebase init failed, using bundled content: $e');
       _initialized = false;
       _useFirestore = false;
+      _loadBundledData();
     }
   }
 
-  // ── Categories ──────────────────────────────────────────────
-
-  /// Fetch categories from Firestore, fallback to bundled data.
-  Future<List<AppCategory>> getCategories() async {
-    if (!_useFirestore) return ContentData.categories.values.toList();
-    try {
-      final snap = await _db!.collection('categories').get();
-      return snap.docs.map((d) => AppCategory.fromFirestore(d.data())).toList();
-    } catch (e) {
-      debugPrint('⚠️ Firestore categories error: $e');
-      return ContentData.categories.values.toList();
-    }
+  /// Load bundled static data as fallback
+  void _loadBundledData() {
+    _categories = Map.from(ContentData.categories);
+    _books = List.from(ContentData.books);
+    _useFirestore = false;
+    notifyListeners();
   }
 
-  // ── Books ───────────────────────────────────────────────────
-
-  /// Fetch all books (metadata only, no chapters/shlokas loaded).
-  Future<List<Book>> getAllBooks() async {
-    if (!_useFirestore) return ContentData.books;
-    try {
-      final snap = await _db!.collection('books').orderBy('order').get();
-      return snap.docs.map((d) => Book.fromFirestore(d.data())).toList();
-    } catch (e) {
-      debugPrint('⚠️ Firestore books error: $e');
-      return ContentData.books;
+  /// Refresh all data from Firestore
+  Future<void> refreshData() async {
+    if (_db == null) {
+      _loadBundledData();
+      return;
     }
-  }
 
-  /// Get books by category.
-  Future<List<Book>> getBooksByCategory(String categoryId) async {
-    if (!_useFirestore) return ContentData.getBooksByCategory(categoryId);
+    _loading = true;
+    notifyListeners();
+
     try {
-      final snap = await _db!.collection('books')
-          .where('category', isEqualTo: categoryId)
-          .orderBy('order')
-          .get();
-      return snap.docs.map((d) => Book.fromFirestore(d.data())).toList();
-    } catch (e) {
-      debugPrint('⚠️ Firestore error: $e');
-      return ContentData.getBooksByCategory(categoryId);
-    }
-  }
+      // Check if Firestore has any books
+      final booksSnap = await _db!.collection('books').get();
 
-  /// Get books by subcategory.
-  Future<List<Book>> getBooksBySubcategory(String subcategoryId) async {
-    if (!_useFirestore) return ContentData.getBooksBySubcategory(subcategoryId);
-    try {
-      final snap = await _db!.collection('books')
-          .where('subcategory', isEqualTo: subcategoryId)
-          .orderBy('order')
-          .get();
-      return snap.docs.map((d) => Book.fromFirestore(d.data())).toList();
-    } catch (e) {
-      debugPrint('⚠️ Firestore error: $e');
-      return ContentData.getBooksBySubcategory(subcategoryId);
-    }
-  }
+      if (booksSnap.docs.isEmpty) {
+        debugPrint('📦 Firestore empty, using bundled data');
+        _loadBundledData();
+        _loading = false;
+        notifyListeners();
+        return;
+      }
 
-  /// Get books by god.
-  Future<List<Book>> getBooksByGod(String godId) async {
-    if (!_useFirestore) return ContentData.getBooksByGod(godId);
-    try {
-      final snap = await _db!.collection('books')
-          .where('godRelated', arrayContains: godId)
-          .get();
-      return snap.docs.map((d) => Book.fromFirestore(d.data())).toList();
-    } catch (e) {
-      debugPrint('⚠️ Firestore error: $e');
-      return ContentData.getBooksByGod(godId);
-    }
-  }
+      _useFirestore = true;
+      debugPrint('🔥 Loading ${booksSnap.docs.length} books from Firestore');
 
-  /// Get a single book by ID with its chapters and shlokas.
-  Future<Book?> getBookWithContent(String bookId) async {
-    if (!_useFirestore) return ContentData.getBookById(bookId);
-    try {
-      final bookDoc = await _db!.collection('books').doc(bookId).get();
-      if (!bookDoc.exists) return ContentData.getBookById(bookId);
+      // Load all books with their chapters and shlokas
+      final loadedBooks = <Book>[];
+      for (final bookDoc in booksSnap.docs) {
+        final bookData = bookDoc.data();
+        bookData['id'] = bookDoc.id;
 
-      // Fetch chapters for this book
-      final chaptersSnap = await _db!.collection('chapters')
-          .where('bookId', isEqualTo: bookId)
-          .orderBy('order')
-          .get();
-
-      final chapters = <Chapter>[];
-      for (final chDoc in chaptersSnap.docs) {
-        // Fetch shlokas for each chapter
-        final shlokasSnap = await _db!.collection('shlokas')
-            .where('chapterId', isEqualTo: chDoc.id)
-            .orderBy('order')
+        // Fetch chapters for this book
+        final chapSnap = await _db!.collection('chapters')
+            .where('bookId', isEqualTo: bookDoc.id)
             .get();
-        final shlokas = shlokasSnap.docs
-            .map((s) => Shloka.fromFirestore(s.data()))
-            .toList();
-        chapters.add(Chapter.fromFirestore(chDoc.data(), shlokas: shlokas));
+
+        final chapters = <Chapter>[];
+        final sortedChapDocs = chapSnap.docs.toList()
+          ..sort((a, b) => (a.data()['number'] ?? 0).compareTo(b.data()['number'] ?? 0));
+
+        for (final chapDoc in sortedChapDocs) {
+          final chapData = chapDoc.data();
+          chapData['id'] = chapDoc.id;
+
+          // Fetch shlokas for this chapter
+          final shlokaSnap = await _db!.collection('shlokas')
+              .where('chapterId', isEqualTo: chapDoc.id)
+              .get();
+
+          final sortedShlokaDocs = shlokaSnap.docs.toList()
+            ..sort((a, b) => (a.data()['order'] ?? 0).compareTo(b.data()['order'] ?? 0));
+
+          final shlokas = sortedShlokaDocs.map((s) {
+            final sData = s.data();
+            sData['id'] = s.id;
+            return Shloka.fromFirestore(sData);
+          }).toList();
+
+          chapters.add(Chapter.fromFirestore(chapData, shlokas: shlokas));
+        }
+
+        loadedBooks.add(Book.fromFirestore(bookData, chapters: chapters));
       }
 
-      return Book.fromFirestore(bookDoc.data()!, chapters: chapters);
+      // Sort books by order
+      loadedBooks.sort((a, b) => a.order.compareTo(b.order));
+      _books = loadedBooks;
+
+      // Load categories from Firestore or use bundled
+      final catSnap = await _db!.collection('categories').get();
+      if (catSnap.docs.isNotEmpty) {
+        _categories = {};
+        for (final doc in catSnap.docs) {
+          final cat = AppCategory.fromFirestore(doc.data());
+          _categories[cat.id] = cat;
+        }
+      } else {
+        _categories = Map.from(ContentData.categories);
+      }
+
+      debugPrint('✅ Loaded ${_books.length} books, ${_categories.length} categories from Firestore');
     } catch (e) {
-      debugPrint('⚠️ Firestore book content error: $e');
-      return ContentData.getBookById(bookId);
+      debugPrint('⚠️ Firestore load error, using bundled: $e');
+      _loadBundledData();
+    }
+
+    _loading = false;
+    notifyListeners();
+  }
+
+  // ── Synchronous data access (for UI) ────────────────────────
+
+  List<Book> getBooksByCategory(String categoryId) {
+    return _books.where((b) => b.category == categoryId).toList();
+  }
+
+  List<Book> getBooksBySubcategory(String subcategoryId) {
+    return _books.where((b) => b.subcategory == subcategoryId).toList();
+  }
+
+  List<Book> getBooksByGod(String godId) {
+    return _books.where((b) => b.godRelated.contains(godId)).toList();
+  }
+
+  Book? getBookById(String bookId) {
+    try {
+      return _books.firstWhere((b) => b.id == bookId);
+    } catch (_) {
+      return null;
     }
   }
 
-  // ── Search ──────────────────────────────────────────────────
-
-  /// Search across all content. Firestore doesn't support full-text search natively,
-  /// so we search locally from cached/bundled data.
-  Future<List<Shloka>> searchShlokas(String query) async {
-    // For now, use bundled search (works offline too)
-    // TODO: Implement Algolia/Typesense for server-side search
-    return ContentData.searchShlokas(query);
-  }
-
-  // ── Content Version Check ───────────────────────────────────
-
-  /// Check if new content is available on the server.
-  Future<bool> hasNewContent() async {
-    if (_db == null) return false;
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final localVersion = prefs.getInt('content_version') ?? 0;
-      final configDoc = await _db!.collection('config').doc('app').get();
-      if (configDoc.exists) {
-        final serverVersion = configDoc.data()?['contentVersion'] ?? 0;
-        return serverVersion > localVersion;
+  List<Shloka> searchShlokas(String query) {
+    if (query.isEmpty) return [];
+    final q = query.toLowerCase();
+    final results = <Shloka>[];
+    for (final book in _books) {
+      for (final chapter in book.chapters) {
+        for (final shloka in chapter.shlokas) {
+          if (shloka.sanskrit.toLowerCase().contains(q) ||
+              shloka.kannada.toLowerCase().contains(q) ||
+              shloka.meaning.toLowerCase().contains(q) ||
+              (shloka.explanation?.toLowerCase().contains(q) ?? false)) {
+            results.add(shloka.copyWith(
+              bookId: book.id, bookTitle: book.title,
+              bookTitleEn: book.titleEn, chapterTitle: chapter.title,
+              category: book.category, subcategory: book.subcategory,
+            ));
+          }
+        }
       }
-    } catch (_) {}
-    return false;
+    }
+    return results;
   }
 
-  /// Mark current content version as synced.
-  Future<void> markContentSynced() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('content_version', _contentVersion);
+  List<Shloka> getAllShlokas() {
+    final all = <Shloka>[];
+    for (final book in _books) {
+      for (final chapter in book.chapters) {
+        for (final shloka in chapter.shlokas) {
+          all.add(shloka.copyWith(
+            bookId: book.id, bookTitle: book.title,
+            bookTitleEn: book.titleEn, chapterTitle: chapter.title,
+          ));
+        }
+      }
+    }
+    return all;
   }
 }

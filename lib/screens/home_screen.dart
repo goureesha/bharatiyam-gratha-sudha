@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../data/content_data.dart';
 import '../models/shloka.dart';
 import '../services/bookmark_service.dart';
+import '../services/firebase_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/shloka_card.dart';
 import '../widgets/category_card.dart';
@@ -24,6 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(ContentData.appName),
         actions: [
+          IconButton(
+            icon: context.watch<FirebaseService>().isLoading
+                ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                : const Icon(Icons.refresh),
+            tooltip: 'Refresh from server',
+            onPressed: () => context.read<FirebaseService>().refreshData(),
+          ),
           IconButton(
             icon: Icon(context.watch<BookmarkService>().isDarkMode
                 ? Icons.light_mode : Icons.dark_mode),
@@ -118,8 +126,9 @@ class _HomeTabState extends State<_HomeTab> {
   }
 
   Widget _buildSearchResults(BuildContext context) {
-    final results = ContentData.searchShlokas(_searchQuery);
-    final bookResults = ContentData.books.where((b) {
+    final fs = context.read<FirebaseService>();
+    final results = fs.searchShlokas(_searchQuery);
+    final bookResults = fs.books.where((b) {
       final q = _searchQuery.toLowerCase();
       return b.title.toLowerCase().contains(q) ||
              b.titleSanskrit.toLowerCase().contains(q) ||
@@ -227,7 +236,8 @@ class _HomeTabState extends State<_HomeTab> {
   }
 
   Widget _categoryGrid(BuildContext context, String sectionId) {
-    final section = ContentData.categories[sectionId]!;
+    final fs = context.read<FirebaseService>();
+    final section = fs.categories[sectionId] ?? ContentData.categories[sectionId]!;
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -249,9 +259,9 @@ class _HomeTabState extends State<_HomeTab> {
   void _openSubcategory(BuildContext ctx, String sectionId, SubCategory sub) {
     List<Book> books;
     if (sectionId == 'gods') {
-      books = ContentData.getBooksByGod(sub.id);
+      books = context.read<FirebaseService>().getBooksByGod(sub.id);
     } else {
-      books = ContentData.getBooksBySubcategory(sub.id);
+      books = context.read<FirebaseService>().getBooksBySubcategory(sub.id);
     }
     Navigator.push(ctx, MaterialPageRoute(
       builder: (_) => BookListPage(
@@ -275,8 +285,9 @@ class _SectionTabState extends State<_SectionTab> {
 
   @override
   Widget build(BuildContext context) {
-    final section = ContentData.categories[widget.sectionId]!;
-    final allBooks = ContentData.getBooksByCategory(widget.sectionId);
+    final fs = context.watch<FirebaseService>();
+    final section = fs.categories[widget.sectionId] ?? ContentData.categories[widget.sectionId]!;
+    final allBooks = fs.getBooksByCategory(widget.sectionId);
     final books = _searchQuery.isEmpty ? allBooks : allBooks.where((b) {
       final q = _searchQuery.toLowerCase();
       return b.title.toLowerCase().contains(q) ||
@@ -311,9 +322,9 @@ class _SectionTabState extends State<_SectionTab> {
                 onTap: () {
                   List<Book> subBooks;
                   if (widget.sectionId == 'gods') {
-                    subBooks = ContentData.getBooksByGod(sub.id);
+                    subBooks = context.read<FirebaseService>().getBooksByGod(sub.id);
                   } else {
-                    subBooks = ContentData.getBooksBySubcategory(sub.id);
+                    subBooks = context.read<FirebaseService>().getBooksBySubcategory(sub.id);
                   }
                   Navigator.push(ctx, MaterialPageRoute(
                     builder: (_) => BookListPage(
