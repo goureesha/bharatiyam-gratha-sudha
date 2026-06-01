@@ -71,8 +71,9 @@ class FirebaseService extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Check if Firestore has any books
-      final booksSnap = await _db!.collection('books').get();
+      // Force fetch from server, not cache
+      const serverOpts = GetOptions(source: Source.server);
+      final booksSnap = await _db!.collection('books').get(serverOpts);
 
       if (booksSnap.docs.isEmpty) {
         debugPrint('📦 Firestore empty, using bundled data');
@@ -94,7 +95,7 @@ class FirebaseService extends ChangeNotifier {
         // Fetch chapters for this book
         final chapSnap = await _db!.collection('chapters')
             .where('bookId', isEqualTo: bookDoc.id)
-            .get();
+            .get(serverOpts);
 
         final chapters = <Chapter>[];
         final sortedChapDocs = chapSnap.docs.toList()
@@ -107,7 +108,7 @@ class FirebaseService extends ChangeNotifier {
           // Fetch shlokas for this chapter
           final shlokaSnap = await _db!.collection('shlokas')
               .where('chapterId', isEqualTo: chapDoc.id)
-              .get();
+              .get(serverOpts);
 
           final sortedShlokaDocs = shlokaSnap.docs.toList()
             ..sort((a, b) => (a.data()['order'] ?? 0).compareTo(b.data()['order'] ?? 0));
@@ -129,7 +130,7 @@ class FirebaseService extends ChangeNotifier {
       _books = loadedBooks;
 
       // Load categories from Firestore or use bundled
-      final catSnap = await _db!.collection('categories').get();
+      final catSnap = await _db!.collection('categories').get(serverOpts);
       if (catSnap.docs.isNotEmpty) {
         _categories = {};
         for (final doc in catSnap.docs) {
