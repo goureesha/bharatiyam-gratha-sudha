@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'ಮುಖಪುಟ'),
           const BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'ಗ್ರಂಥಾಲಯ'),
-          const BottomNavigationBarItem(icon: Icon(Icons.temple_hindu), label: 'ದೇವತೆಗಳು'),
+          const BottomNavigationBarItem(icon: Icon(Icons.temple_hindu), label: 'ಮಂತ್ರಗಳು'),
           const BottomNavigationBarItem(icon: Icon(Icons.auto_stories), label: 'ಸ್ತೋತ್ರಗಳು'),
           BottomNavigationBarItem(
             icon: Badge(
@@ -113,7 +113,7 @@ class _HomeTabState extends State<_HomeTab> {
           _categoryGrid(context, 'library'),
           const SizedBox(height: 24),
           // Gods
-          _sectionHeader(context, '🙏', 'ದೇವತೆಗಳು', 'Gods'),
+          _sectionHeader(context, '🙏', 'ಮಂತ್ರಗಳು', 'Mantras'),
           _categoryGrid(context, 'gods'),
           const SizedBox(height: 24),
           // Stotras

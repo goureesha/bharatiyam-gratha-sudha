@@ -20,9 +20,9 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
-    // ── Shlokas: free ones readable by all, premium requires auth ──
+    // ── Shlokas: anyone can read ──
     match /shlokas/{shlokaId} {
-      allow read: if !resource.data.isPremium || isAuthenticated();
+      allow read: if true;
       allow write: if isAdmin();
     }
 
@@ -44,7 +44,7 @@ service cloud.firestore {
 
     function isAdmin() {
       return request.auth != null
-        && request.auth.token.admin == true;
+        && request.auth.token.email in ['goureesha@gmail.com'];
     }
   }
 }
