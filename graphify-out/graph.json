@@ -8,54 +8,360 @@
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L1",
+      "id": "js_app",
       "community": 15,
-      "norm_label": "app.js",
-      "id": "admin_js_app_js_js_app"
+      "norm_label": "app.js"
     },
     {
       "label": "auth",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L17",
+      "id": "js_app_auth",
       "community": 15,
-      "norm_label": "auth",
-      "id": "js_app_auth"
+      "norm_label": "auth"
     },
     {
       "label": "db",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L18",
+      "id": "js_app_db",
       "community": 15,
-      "norm_label": "db",
-      "id": "js_app_db"
+      "norm_label": "db"
     },
     {
       "label": "State",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L21",
+      "id": "js_app_state",
       "community": 0,
-      "norm_label": "state",
-      "id": "js_app_state"
+      "norm_label": "state"
     },
     {
       "label": "SEED",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L29",
+      "id": "js_app_seed",
       "community": 15,
-      "norm_label": "seed",
-      "id": "js_app_seed"
+      "norm_label": "seed"
     },
     {
       "label": "App",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L207",
+      "id": "js_app_app",
       "community": 15,
-      "norm_label": "app",
-      "id": "admin_js_app_js_js_app_app"
+      "norm_label": "app"
+    },
+    {
+      "label": "firebase_service.dart",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service",
+      "community": 5,
+      "norm_label": "firebase_service.dart"
+    },
+    {
+      "label": "FirebaseService",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_firebaseservice",
+      "community": 5,
+      "norm_label": "firebaseservice"
+    },
+    {
+      "label": "ChangeNotifier",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "changenotifier",
+      "community": 5,
+      "norm_label": "changenotifier"
+    },
+    {
+      "label": "_instance",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_instance",
+      "community": 5,
+      "norm_label": "_instance"
+    },
+    {
+      "label": "static final FirebaseService",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "static_final_firebaseservice",
+      "community": 5,
+      "norm_label": "static final firebaseservice"
+    },
+    {
+      "label": "_db",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_db",
+      "community": 5,
+      "norm_label": "_db"
+    },
+    {
+      "label": "FirebaseFirestore?",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "firebasefirestore",
+      "community": 5,
+      "norm_label": "firebasefirestore?"
+    },
+    {
+      "label": "_initialized",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_initialized",
+      "community": 5,
+      "norm_label": "_initialized"
+    },
+    {
+      "label": "_useFirestore",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_usefirestore",
+      "community": 5,
+      "norm_label": "_usefirestore"
+    },
+    {
+      "label": "_loading",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_loading",
+      "community": 5,
+      "norm_label": "_loading"
+    },
+    {
+      "label": "_books",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_books",
+      "community": 5,
+      "norm_label": "_books"
+    },
+    {
+      "label": "List",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "list",
+      "community": 3,
+      "norm_label": "list"
+    },
+    {
+      "label": "_categories",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_categories",
+      "community": 5,
+      "norm_label": "_categories"
+    },
+    {
+      "label": "Map",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "map",
+      "community": 6,
+      "norm_label": "map"
+    },
+    {
+      "label": "isInitialized",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_isinitialized",
+      "community": 5,
+      "norm_label": "isinitialized"
+    },
+    {
+      "label": "bool get",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "bool_get",
+      "community": 6,
+      "norm_label": "bool get"
+    },
+    {
+      "label": "isLoading",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_isloading",
+      "community": 5,
+      "norm_label": "isloading"
+    },
+    {
+      "label": "_deityIcons",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_deityicons",
+      "community": 5,
+      "norm_label": "_deityicons"
+    },
+    {
+      "label": "static const",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "static_const",
+      "community": 7,
+      "norm_label": "static const"
+    },
+    {
+      "label": "init",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_init",
+      "community": 5,
+      "norm_label": "init"
+    },
+    {
+      "label": "_loadBundledData",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_loadbundleddata",
+      "community": 5,
+      "norm_label": "_loadbundleddata"
+    },
+    {
+      "label": "refreshData",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_refreshdata",
+      "community": 5,
+      "norm_label": "refreshdata"
+    },
+    {
+      "label": "getBooksByCategory",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_getbooksbycategory",
+      "community": 5,
+      "norm_label": "getbooksbycategory"
+    },
+    {
+      "label": "getBooksBySubcategory",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_getbooksbysubcategory",
+      "community": 5,
+      "norm_label": "getbooksbysubcategory"
+    },
+    {
+      "label": "getBooksByGod",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_getbooksbygod",
+      "community": 5,
+      "norm_label": "getbooksbygod"
+    },
+    {
+      "label": "getBookById",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_getbookbyid",
+      "community": 5,
+      "norm_label": "getbookbyid"
+    },
+    {
+      "label": "searchShlokas",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_searchshlokas",
+      "community": 5,
+      "norm_label": "searchshlokas"
+    },
+    {
+      "label": "getAllShlokas",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_getallshlokas",
+      "community": 5,
+      "norm_label": "getallshlokas"
+    },
+    {
+      "label": "_overrideDeityIcons",
+      "file_type": "code",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "id": "services_firebase_service_overridedeityicons",
+      "community": 5,
+      "norm_label": "_overridedeityicons"
+    },
+    {
+      "label": "package:cloud_firestore/cloud_firestore.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_cloud_firestore_cloud_firestore_dart",
+      "community": 5,
+      "norm_label": "package:cloud_firestore/cloud_firestore.dart"
+    },
+    {
+      "label": "package:firebase_core/firebase_core.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_firebase_core_firebase_core_dart",
+      "community": 4,
+      "norm_label": "package:firebase_core/firebase_core.dart"
+    },
+    {
+      "label": "package:flutter/foundation.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_flutter_foundation_dart",
+      "community": 6,
+      "norm_label": "package:flutter/foundation.dart"
+    },
+    {
+      "label": "../models/shloka.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "models_shloka_dart",
+      "community": 4,
+      "norm_label": "../models/shloka.dart"
+    },
+    {
+      "label": "../data/content_data.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "data_content_data_dart",
+      "community": 5,
+      "norm_label": "../data/content_data.dart"
     },
     {
       "label": "build.gradle",
@@ -238,15 +544,6 @@
       "id": "data_content_data_appname"
     },
     {
-      "label": "static const",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 7,
-      "norm_label": "static const",
-      "id": "static_const"
-    },
-    {
       "label": "appNameEn",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
@@ -337,15 +634,6 @@
       "id": "data_content_data_searchshlokas"
     },
     {
-      "label": "../models/shloka.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 2,
-      "norm_label": "../models/shloka.dart",
-      "id": "models_shloka_dart"
-    },
-    {
       "label": "main.dart",
       "file_type": "code",
       "source_file": "lib/main.dart",
@@ -359,7 +647,7 @@
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "bharatiyamapp",
       "id": "lib_main_bharatiyamapp"
     },
@@ -368,7 +656,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "statelesswidget",
       "id": "statelesswidget"
     },
@@ -413,7 +701,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "package:flutter/material.dart",
       "id": "package_flutter_material_dart"
     },
@@ -425,15 +713,6 @@
       "community": 4,
       "norm_label": "package:provider/provider.dart",
       "id": "package_provider_provider_dart"
-    },
-    {
-      "label": "package:firebase_core/firebase_core.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "package:firebase_core/firebase_core.dart",
-      "id": "package_firebase_core_firebase_core_dart"
     },
     {
       "label": "../services/bookmark_service.dart",
@@ -458,7 +737,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "../theme/app_theme.dart",
       "id": "theme_app_theme_dart"
     },
@@ -578,15 +857,6 @@
       "community": 3,
       "norm_label": "subcategories",
       "id": "models_shloka_subcategories"
-    },
-    {
-      "label": "List",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 5,
-      "norm_label": "list",
-      "id": "list"
     },
     {
       "label": "number",
@@ -890,7 +1160,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "_savedtab",
       "id": "screens_home_screen_savedtab"
     },
@@ -935,7 +1205,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "settingspage",
       "id": "screens_home_screen_settingspage"
     },
@@ -944,7 +1214,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "_searchbar",
       "id": "screens_home_screen_searchbar"
     },
@@ -1007,7 +1277,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "book",
       "id": "book"
     },
@@ -1169,18 +1439,9 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "package:google_fonts/google_fonts.dart",
       "id": "package_google_fonts_google_fonts_dart"
-    },
-    {
-      "label": "../data/content_data.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 5,
-      "norm_label": "../data/content_data.dart",
-      "id": "data_content_data_dart"
     },
     {
       "label": "../widgets/shloka_card.dart",
@@ -1223,18 +1484,9 @@
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "bookmarkservice",
       "id": "services_bookmark_service_bookmarkservice"
-    },
-    {
-      "label": "ChangeNotifier",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 5,
-      "norm_label": "changenotifier",
-      "id": "changenotifier"
     },
     {
       "label": "_storageKey",
@@ -1273,15 +1525,6 @@
       "id": "services_bookmark_service_bookmarks"
     },
     {
-      "label": "Map",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 6,
-      "norm_label": "map",
-      "id": "map"
-    },
-    {
       "label": "_isDarkMode",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
@@ -1298,15 +1541,6 @@
       "community": 6,
       "norm_label": "_fontscale",
       "id": "services_bookmark_service_fontscale"
-    },
-    {
-      "label": "bool get",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 6,
-      "norm_label": "bool get",
-      "id": "bool_get"
     },
     {
       "label": "double get",
@@ -1417,15 +1651,6 @@
       "id": "dart_convert"
     },
     {
-      "label": "package:flutter/foundation.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 6,
-      "norm_label": "package:flutter/foundation.dart",
-      "id": "package_flutter_foundation_dart"
-    },
-    {
       "label": "package:shared_preferences/shared_preferences.dart",
       "file_type": "code",
       "source_file": null,
@@ -1433,213 +1658,6 @@
       "community": 6,
       "norm_label": "package:shared_preferences/shared_preferences.dart",
       "id": "package_shared_preferences_shared_preferences_dart"
-    },
-    {
-      "label": "firebase_service.dart",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "firebase_service.dart",
-      "id": "services_firebase_service"
-    },
-    {
-      "label": "FirebaseService",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "firebaseservice",
-      "id": "services_firebase_service_firebaseservice"
-    },
-    {
-      "label": "_instance",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_instance",
-      "id": "services_firebase_service_instance"
-    },
-    {
-      "label": "static final FirebaseService",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 5,
-      "norm_label": "static final firebaseservice",
-      "id": "static_final_firebaseservice"
-    },
-    {
-      "label": "_db",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_db",
-      "id": "services_firebase_service_db"
-    },
-    {
-      "label": "FirebaseFirestore?",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 5,
-      "norm_label": "firebasefirestore?",
-      "id": "firebasefirestore"
-    },
-    {
-      "label": "_initialized",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_initialized",
-      "id": "services_firebase_service_initialized"
-    },
-    {
-      "label": "_useFirestore",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_usefirestore",
-      "id": "services_firebase_service_usefirestore"
-    },
-    {
-      "label": "_loading",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_loading",
-      "id": "services_firebase_service_loading"
-    },
-    {
-      "label": "_books",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_books",
-      "id": "services_firebase_service_books"
-    },
-    {
-      "label": "_categories",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_categories",
-      "id": "services_firebase_service_categories"
-    },
-    {
-      "label": "isInitialized",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "isinitialized",
-      "id": "services_firebase_service_isinitialized"
-    },
-    {
-      "label": "isLoading",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "isloading",
-      "id": "services_firebase_service_isloading"
-    },
-    {
-      "label": "init",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "init",
-      "id": "services_firebase_service_init"
-    },
-    {
-      "label": "_loadBundledData",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "_loadbundleddata",
-      "id": "services_firebase_service_loadbundleddata"
-    },
-    {
-      "label": "refreshData",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "refreshdata",
-      "id": "services_firebase_service_refreshdata"
-    },
-    {
-      "label": "getBooksByCategory",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "getbooksbycategory",
-      "id": "services_firebase_service_getbooksbycategory"
-    },
-    {
-      "label": "getBooksBySubcategory",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "getbooksbysubcategory",
-      "id": "services_firebase_service_getbooksbysubcategory"
-    },
-    {
-      "label": "getBooksByGod",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "getbooksbygod",
-      "id": "services_firebase_service_getbooksbygod"
-    },
-    {
-      "label": "getBookById",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "getbookbyid",
-      "id": "services_firebase_service_getbookbyid"
-    },
-    {
-      "label": "searchShlokas",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "searchshlokas",
-      "id": "services_firebase_service_searchshlokas"
-    },
-    {
-      "label": "getAllShlokas",
-      "file_type": "code",
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "community": 5,
-      "norm_label": "getallshlokas",
-      "id": "services_firebase_service_getallshlokas"
-    },
-    {
-      "label": "package:cloud_firestore/cloud_firestore.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 5,
-      "norm_label": "package:cloud_firestore/cloud_firestore.dart",
-      "id": "package_cloud_firestore_cloud_firestore_dart"
     },
     {
       "label": "app_theme.dart",
@@ -1844,7 +1862,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "book_card.dart",
       "id": "widgets_book_card"
     },
@@ -1853,7 +1871,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 6,
       "norm_label": "bookcard",
       "id": "widgets_book_card_bookcard"
     },
@@ -1862,7 +1880,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "book",
       "id": "widgets_book_card_book"
     },
@@ -1871,7 +1889,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "ontap",
       "id": "widgets_book_card_ontap"
     },
@@ -1880,7 +1898,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "voidcallback",
       "id": "voidcallback"
     },
@@ -1889,7 +1907,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "build",
       "id": "widgets_book_card_build"
     },
@@ -1898,7 +1916,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "category_card.dart",
       "id": "widgets_category_card"
     },
@@ -1907,7 +1925,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 6,
       "norm_label": "categorycard",
       "id": "widgets_category_card_categorycard"
     },
@@ -1916,7 +1934,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "subcategory",
       "id": "widgets_category_card_subcategory"
     },
@@ -1925,7 +1943,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "subcategory",
       "id": "subcategory"
     },
@@ -1934,7 +1952,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "ontap",
       "id": "widgets_category_card_ontap"
     },
@@ -1943,7 +1961,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 2,
+      "community": 4,
       "norm_label": "build",
       "id": "widgets_category_card_build"
     },
@@ -2051,7 +2069,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "build",
       "id": "widgets_shloka_card_build"
     },
@@ -2171,32 +2189,6 @@
       "community": 15,
       "norm_label": "bookmarkstorage",
       "id": "js_storage_bookmarkstorage"
-    },
-    {
-      "label": "Admin Panel App (app.js)",
-      "file_type": "code",
-      "source_file": "admin/js/app.js",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 15,
-      "norm_label": "admin panel app (app.js)",
-      "id": "js_app"
-    },
-    {
-      "label": "App object (admin CRUD logic)",
-      "file_type": "code",
-      "source_file": "admin/js/app.js",
-      "source_location": "lines 207-797",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 15,
-      "norm_label": "app object (admin crud logic)",
-      "id": "js_app_appobject"
     },
     {
       "label": "Android app build.gradle",
@@ -2324,7 +2316,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 1,
       "norm_label": "deploy web to github pages (ci)",
       "id": "workflows_deploy_web"
     },
@@ -2415,7 +2407,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 1,
       "norm_label": "web index.html (entry point)",
       "id": "web_index"
     },
@@ -2643,14 +2635,74 @@
   ],
   "links": [
     {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "firebase.json",
+      "source_location": "line 3: public = admin",
+      "weight": 0.8,
+      "source": "firebase_json",
+      "target": "js_app"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L687-L761",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_bookmark_system"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "admin/js/app.js",
+      "source_location": "lines 17-18",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_firestore_backend"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L34,L39-L76",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_hash_routing"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L783-L808",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_script_filter"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L180-L216",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_three_layer_display"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "admin/js/app.js",
       "source_location": "L207",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_js_app_js_js_app",
-      "target": "admin_js_app_js_js_app_app"
+      "source": "js_app",
+      "target": "js_app_app",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2658,9 +2710,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_js_app_js_js_app",
-      "target": "js_app_auth"
+      "source": "js_app",
+      "target": "js_app_auth",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2668,9 +2720,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_js_app_js_js_app",
-      "target": "js_app_db"
+      "source": "js_app",
+      "target": "js_app_db",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2678,9 +2730,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L29",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_js_app_js_js_app",
-      "target": "js_app_seed"
+      "source": "js_app",
+      "target": "js_app_seed",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2688,19 +2740,39 @@
       "source_file": "admin/js/app.js",
       "source_location": "L21",
       "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source": "admin_js_app_js_js_app",
-      "target": "js_app_state"
+      "source_file": "web/js/app.js",
+      "source_location": "L239,L269-L302",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_data"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L18-L28,L90,L107,L521,L709",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_storage"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "admin/js/app.js",
-      "source_location": "line 266",
+      "source_file": "web/index.html",
+      "source_location": "L68",
       "weight": 1.0,
-      "source": "js_app_appobject",
-      "target": "js_app_state"
+      "source": "web_index",
+      "target": "js_app"
     },
     {
       "relation": "inherits",
@@ -2763,14 +2835,637 @@
       "target": "js_app_seed"
     },
     {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": "lines 21-22",
+      "weight": 1.0,
+      "source": "lib_main",
+      "target": "services_firebase_service"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": "lines 29-33",
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "services_firebase_service"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": "lines 129-131,240,262-264",
+      "weight": 1.0,
+      "source": "screens_home_screen_hometab",
+      "target": "services_firebase_service"
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "admin/js/app.js",
-      "source_location": "lines 363-369",
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
       "weight": 1.0,
-      "source": "js_app_appobject",
-      "target": "js_app_seed"
+      "context": "variable_type",
+      "source": "services_firebase_service",
+      "target": "bool_get"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "lines 34-40",
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "concept_firestore_backend"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "lines 7-9",
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "concept_offline_first"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "line 10: extends ChangeNotifier",
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "concept_provider_state"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "lines 57-58",
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "data_content_data"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "data_content_data_dart"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_firebase_service",
+      "target": "firebasefirestore"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_firebase_service",
+      "target": "list"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_firebase_service",
+      "target": "map"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "line 4",
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "models_shloka"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "line 137",
+      "weight": 0.8,
+      "source": "services_firebase_service",
+      "target": "models_shloka_appcategory"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "line 125",
+      "weight": 0.8,
+      "source": "services_firebase_service",
+      "target": "models_shloka_book"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "line 122",
+      "weight": 0.8,
+      "source": "services_firebase_service",
+      "target": "models_shloka_chapter"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": "line 119",
+      "weight": 0.8,
+      "source": "services_firebase_service",
+      "target": "models_shloka_shloka"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "package_cloud_firestore_cloud_firestore_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "package_firebase_core_firebase_core_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "package_flutter_foundation_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_books"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_categories"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_db"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_deityicons"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_firebaseservice"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_getallshlokas"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_getbookbyid"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_getbooksbycategory"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_getbooksbygod"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_getbooksbysubcategory"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_init"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_initialized"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_instance"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_isinitialized"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_isloading"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_loadbundleddata"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_loading"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_overridedeityicons"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_refreshdata"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_searchshlokas"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service",
+      "target": "services_firebase_service_usefirestore"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_firebase_service",
+      "target": "static_const"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_firebase_service",
+      "target": "static_final_firebaseservice"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/firebase_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_firebase_service_firebaseservice",
+      "target": "changenotifier"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/bookmark_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_bookmark_service_bookmarkservice",
+      "target": "changenotifier"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/models/shloka.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "models_shloka",
+      "target": "list"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "screens_home_screen",
+      "target": "list"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/bookmark_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_bookmark_service",
+      "target": "map"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/bookmark_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_bookmark_service",
+      "target": "bool_get"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/data/content_data.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "data_content_data",
+      "target": "static_const"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/bookmark_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_bookmark_service",
+      "target": "static_const"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/theme/app_theme.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "theme_app_theme",
+      "target": "static_const"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_main",
+      "target": "package_firebase_core_firebase_core_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/bookmark_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_bookmark_service",
+      "target": "package_flutter_foundation_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/data/content_data.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "data_content_data",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/bookmark_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_bookmark_service",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/book_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_book_card",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/category_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_category_card",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/shloka_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_shloka_card",
+      "target": "models_shloka_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "data_content_data_dart"
     },
     {
       "relation": "references",
@@ -3043,27 +3738,6 @@
       "target": "models_shloka"
     },
     {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/data/content_data.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "data_content_data",
-      "target": "models_shloka_dart"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/data/content_data.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "data_content_data",
-      "target": "static_const"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3082,98 +3756,6 @@
       "weight": 0.8,
       "source": "screens_home_screen_settingspage",
       "target": "data_content_data"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "lines 57-58",
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "data_content_data"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/bookmark_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_bookmark_service",
-      "target": "static_const"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/theme/app_theme.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "theme_app_theme",
-      "target": "static_const"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "models_shloka_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/bookmark_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_bookmark_service",
-      "target": "models_shloka_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "models_shloka_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/book_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_book_card",
-      "target": "models_shloka_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/category_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_category_card",
-      "target": "models_shloka_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/shloka_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_shloka_card",
-      "target": "models_shloka_dart"
     },
     {
       "relation": "implements",
@@ -3243,16 +3825,6 @@
       "source_location": null,
       "weight": 1.0,
       "source": "lib_main",
-      "target": "package_firebase_core_firebase_core_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_main",
       "target": "package_flutter_material_dart"
     },
     {
@@ -3305,16 +3877,6 @@
       "weight": 1.0,
       "source": "lib_main",
       "target": "services_bookmark_service_dart"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": "lines 21-22",
-      "weight": 1.0,
-      "source": "lib_main",
-      "target": "services_firebase_service"
     },
     {
       "relation": "imports",
@@ -3520,16 +4082,6 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "package_firebase_core_firebase_core_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
       "weight": 1.0,
@@ -3606,17 +4158,6 @@
       "context": "variable_type",
       "source": "models_shloka",
       "target": "int_get"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/models/shloka.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "models_shloka",
-      "target": "list"
     },
     {
       "relation": "defines",
@@ -3963,16 +4504,6 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "line 4",
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "models_shloka"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "lib/models/shloka.dart",
       "source_location": "line 35",
       "weight": 1.0,
@@ -3988,16 +4519,6 @@
       "weight": 1.0,
       "source": "widgets_category_card",
       "target": "models_shloka_subcategory"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "line 137",
-      "weight": 0.8,
-      "source": "services_firebase_service",
-      "target": "models_shloka_appcategory"
     },
     {
       "relation": "references",
@@ -4017,16 +4538,6 @@
       "source_location": "lines 56,72",
       "weight": 1.0,
       "source": "services_bookmark_service",
-      "target": "models_shloka_shloka"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "line 119",
-      "weight": 0.8,
-      "source": "services_firebase_service",
       "target": "models_shloka_shloka"
     },
     {
@@ -4050,26 +4561,6 @@
       "target": "models_shloka_chapter"
     },
     {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "line 122",
-      "weight": 0.8,
-      "source": "services_firebase_service",
-      "target": "models_shloka_chapter"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "line 125",
-      "weight": 0.8,
-      "source": "services_firebase_service",
-      "target": "models_shloka_book"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4078,28 +4569,6 @@
       "weight": 1.0,
       "source": "widgets_book_card",
       "target": "models_shloka_book"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "screens_home_screen",
-      "target": "list"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_firebase_service",
-      "target": "list"
     },
     {
       "relation": "references",
@@ -4133,16 +4602,6 @@
       "context": "variable_type",
       "source": "screens_home_screen",
       "target": "chapter"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "data_content_data_dart"
     },
     {
       "relation": "references",
@@ -4507,16 +4966,6 @@
       "target": "services_bookmark_service_bookmarkservice"
     },
     {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": "lines 29-33",
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "services_firebase_service"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4777,16 +5226,6 @@
       "target": "screens_home_screen_booklistpage"
     },
     {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": "lines 129-131,240,262-264",
-      "weight": 1.0,
-      "source": "screens_home_screen_hometab",
-      "target": "services_firebase_service"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4995,27 +5434,6 @@
       "target": "package_google_fonts_google_fonts_dart"
     },
     {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "data_content_data_dart"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/bookmark_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_bookmark_service",
-      "target": "bool_get"
-    },
-    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -5045,27 +5463,6 @@
       "context": "variable_type",
       "source": "services_bookmark_service",
       "target": "double_get"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/bookmark_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_bookmark_service",
-      "target": "map"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/bookmark_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_bookmark_service",
-      "target": "package_flutter_foundation_dart"
     },
     {
       "relation": "imports",
@@ -5258,16 +5655,6 @@
       "target": "services_bookmark_service"
     },
     {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/bookmark_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_bookmark_service_bookmarkservice",
-      "target": "changenotifier"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -5299,300 +5686,6 @@
       "context": "bloc_lookup",
       "source": "widgets_shloka_card_shlokacardstate",
       "target": "services_bookmark_service_bookmarkservice"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service_firebaseservice",
-      "target": "changenotifier"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_firebase_service",
-      "target": "map"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_firebase_service",
-      "target": "bool_get"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "package_flutter_foundation_dart"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "lines 34-40",
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "concept_firestore_backend"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "lines 7-9",
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "concept_offline_first"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": "line 10: extends ChangeNotifier",
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "concept_provider_state"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_firebase_service",
-      "target": "firebasefirestore"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "package_cloud_firestore_cloud_firestore_dart"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_books"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_categories"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_db"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_firebaseservice"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_getallshlokas"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_getbookbyid"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_getbooksbycategory"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_getbooksbygod"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_getbooksbysubcategory"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_init"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_initialized"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_instance"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_isinitialized"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_isloading"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_loadbundleddata"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_loading"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_refreshdata"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_searchshlokas"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "services_firebase_service",
-      "target": "services_firebase_service_usefirestore"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/firebase_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "services_firebase_service",
-      "target": "static_final_firebaseservice"
     },
     {
       "relation": "defines",
@@ -6139,16 +6232,6 @@
       "target": "js_data"
     },
     {
-      "relation": "shares_data_with",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/js/app.js",
-      "source_location": "L239,L269-L302",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "js_data"
-    },
-    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -6249,16 +6332,6 @@
       "target": "js_data"
     },
     {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/js/app.js",
-      "source_location": "L18-L28,L90,L107,L521,L709",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "js_storage"
-    },
-    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -6287,86 +6360,6 @@
       "weight": 1.0,
       "source": "web_index",
       "target": "js_storage"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "firebase.json",
-      "source_location": "line 3: public = admin",
-      "weight": 0.8,
-      "source": "firebase_json",
-      "target": "js_app"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/js/app.js",
-      "source_location": "L687-L761",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "concept_bookmark_system"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "admin/js/app.js",
-      "source_location": "lines 17-18",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "concept_firestore_backend"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/js/app.js",
-      "source_location": "L34,L39-L76",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "concept_hash_routing"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/js/app.js",
-      "source_location": "L783-L808",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "concept_script_filter"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/js/app.js",
-      "source_location": "L180-L216",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "concept_three_layer_display"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "web/index.html",
-      "source_location": "L68",
-      "weight": 1.0,
-      "source": "web_index",
-      "target": "js_app"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "admin/js/app.js",
-      "source_location": "lines 290-294",
-      "weight": 1.0,
-      "source": "js_app_appobject",
-      "target": "concept_firestore_backend"
     },
     {
       "relation": "references",
@@ -6620,5 +6613,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "dd82e1d718b26e6dbabfe09a5e1344ee6d4b3b11"
+  "built_at_commit": "7079c11d03eba7d79cae598289f4834fd80d85c1"
 }

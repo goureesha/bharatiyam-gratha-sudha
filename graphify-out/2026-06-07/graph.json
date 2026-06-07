@@ -8,2247 +8,2247 @@
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L1",
-      "id": "admin_js_app_js_js_app",
-      "community": 7,
-      "norm_label": "app.js"
+      "community": 15,
+      "norm_label": "app.js",
+      "id": "admin_js_app_js_js_app"
     },
     {
       "label": "auth",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L17",
-      "id": "js_app_auth",
-      "community": 7,
-      "norm_label": "auth"
+      "community": 15,
+      "norm_label": "auth",
+      "id": "js_app_auth"
     },
     {
       "label": "db",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L18",
-      "id": "js_app_db",
-      "community": 7,
-      "norm_label": "db"
+      "community": 15,
+      "norm_label": "db",
+      "id": "js_app_db"
     },
     {
       "label": "State",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L21",
-      "id": "js_app_state",
       "community": 0,
-      "norm_label": "state"
+      "norm_label": "state",
+      "id": "js_app_state"
     },
     {
       "label": "SEED",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L29",
-      "id": "js_app_seed",
-      "community": 7,
-      "norm_label": "seed"
+      "community": 15,
+      "norm_label": "seed",
+      "id": "js_app_seed"
     },
     {
       "label": "App",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L207",
-      "id": "admin_js_app_js_js_app_app",
-      "community": 7,
-      "norm_label": "app"
+      "community": 15,
+      "norm_label": "app",
+      "id": "admin_js_app_js_js_app_app"
     },
     {
       "label": "build.gradle",
       "file_type": "code",
       "source_file": "android/app/build.gradle",
       "source_location": "L1",
-      "id": "app_build",
       "community": 14,
-      "norm_label": "build.gradle"
+      "norm_label": "build.gradle",
+      "id": "app_build"
     },
     {
       "label": "MainActivity.kt",
       "file_type": "code",
       "source_file": "android/app/src/main/kotlin/com/bharatiyam/granthasudha/MainActivity.kt",
       "source_location": "L1",
-      "id": "granthasudha_mainactivity",
       "community": 10,
-      "norm_label": "mainactivity.kt"
+      "norm_label": "mainactivity.kt",
+      "id": "granthasudha_mainactivity"
     },
     {
       "label": "MainActivity",
       "file_type": "code",
       "source_file": "android/app/src/main/kotlin/com/bharatiyam/granthasudha/MainActivity.kt",
       "source_location": "L5",
-      "id": "granthasudha_mainactivity_mainactivity",
       "community": 10,
-      "norm_label": "mainactivity"
+      "norm_label": "mainactivity",
+      "id": "granthasudha_mainactivity_mainactivity"
     },
     {
       "label": "FlutterActivity",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "flutteractivity",
       "community": 10,
-      "norm_label": "flutteractivity"
+      "norm_label": "flutteractivity",
+      "id": "flutteractivity"
     },
     {
       "label": "build.gradle",
       "file_type": "code",
       "source_file": "android/build.gradle",
       "source_location": "L1",
-      "id": "android_build",
       "community": 12,
-      "norm_label": "build.gradle"
+      "norm_label": "build.gradle",
+      "id": "android_build"
     },
     {
       "label": "settings.gradle",
       "file_type": "code",
       "source_file": "android/settings.gradle",
       "source_location": "L1",
-      "id": "android_settings",
       "community": 13,
-      "norm_label": "settings.gradle"
+      "norm_label": "settings.gradle",
+      "id": "android_settings"
     },
     {
       "label": "firebase.json",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L1",
-      "id": "firebase",
       "community": 8,
-      "norm_label": "firebase.json"
+      "norm_label": "firebase.json",
+      "id": "firebase"
     },
     {
       "label": "hosting",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L2",
-      "id": "firebase_hosting",
       "community": 8,
-      "norm_label": "hosting"
+      "norm_label": "hosting",
+      "id": "firebase_hosting"
     },
     {
       "label": "public",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L3",
-      "id": "firebase_hosting_public",
       "community": 8,
-      "norm_label": "public"
+      "norm_label": "public",
+      "id": "firebase_hosting_public"
     },
     {
       "label": "ignore",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L4",
-      "id": "firebase_hosting_ignore",
       "community": 8,
-      "norm_label": "ignore"
+      "norm_label": "ignore",
+      "id": "firebase_hosting_ignore"
     },
     {
       "label": "rewrites",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L9",
-      "id": "firebase_hosting_rewrites",
       "community": 8,
-      "norm_label": "rewrites"
+      "norm_label": "rewrites",
+      "id": "firebase_hosting_rewrites"
     },
     {
       "label": "firestore",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L16",
-      "id": "firebase_firestore",
       "community": 8,
-      "norm_label": "firestore"
+      "norm_label": "firestore",
+      "id": "firebase_firestore"
     },
     {
       "label": "rules",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L17",
-      "id": "firebase_firestore_rules",
       "community": 8,
-      "norm_label": "rules"
+      "norm_label": "rules",
+      "id": "firebase_firestore_rules"
     },
     {
       "label": "indexes",
       "file_type": "code",
       "source_file": "firebase.json",
       "source_location": "L18",
-      "id": "firebase_firestore_indexes",
       "community": 8,
-      "norm_label": "indexes"
+      "norm_label": "indexes",
+      "id": "firebase_firestore_indexes"
     },
     {
       "label": "firestore.indexes.json",
       "file_type": "code",
       "source_file": "firestore.indexes.json",
       "source_location": "L1",
-      "id": "firestore_indexes",
-      "community": 1,
-      "norm_label": "firestore.indexes.json"
+      "community": 15,
+      "norm_label": "firestore.indexes.json",
+      "id": "firestore_indexes"
     },
     {
       "label": "indexes",
       "file_type": "code",
       "source_file": "firestore.indexes.json",
       "source_location": "L2",
-      "id": "firestore_indexes_indexes",
-      "community": 1,
-      "norm_label": "indexes"
+      "community": 15,
+      "norm_label": "indexes",
+      "id": "firestore_indexes_indexes"
     },
     {
       "label": "fieldOverrides",
       "file_type": "code",
       "source_file": "firestore.indexes.json",
       "source_location": "L52",
-      "id": "firestore_indexes_fieldoverrides",
-      "community": 1,
-      "norm_label": "fieldoverrides"
+      "community": 15,
+      "norm_label": "fieldoverrides",
+      "id": "firestore_indexes_fieldoverrides"
     },
     {
       "label": "content_data.dart",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data",
       "community": 7,
-      "norm_label": "content_data.dart"
+      "norm_label": "content_data.dart",
+      "id": "data_content_data"
     },
     {
       "label": "ContentData",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_contentdata",
       "community": 7,
-      "norm_label": "contentdata"
+      "norm_label": "contentdata",
+      "id": "data_content_data_contentdata"
     },
     {
       "label": "appName",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_appname",
       "community": 7,
-      "norm_label": "appname"
+      "norm_label": "appname",
+      "id": "data_content_data_appname"
     },
     {
       "label": "static const",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "static_const",
       "community": 7,
-      "norm_label": "static const"
+      "norm_label": "static const",
+      "id": "static_const"
     },
     {
       "label": "appNameEn",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_appnameen",
       "community": 7,
-      "norm_label": "appnameen"
+      "norm_label": "appnameen",
+      "id": "data_content_data_appnameen"
     },
     {
       "label": "appTagline",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_apptagline",
       "community": 7,
-      "norm_label": "apptagline"
+      "norm_label": "apptagline",
+      "id": "data_content_data_apptagline"
     },
     {
       "label": "categories",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_categories",
       "community": 7,
-      "norm_label": "categories"
+      "norm_label": "categories",
+      "id": "data_content_data_categories"
     },
     {
       "label": "books",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_books",
       "community": 7,
-      "norm_label": "books"
+      "norm_label": "books",
+      "id": "data_content_data_books"
     },
     {
       "label": "getAllShlokas",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_getallshlokas",
       "community": 7,
-      "norm_label": "getallshlokas"
+      "norm_label": "getallshlokas",
+      "id": "data_content_data_getallshlokas"
     },
     {
       "label": "getBooksByCategory",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_getbooksbycategory",
       "community": 7,
-      "norm_label": "getbooksbycategory"
+      "norm_label": "getbooksbycategory",
+      "id": "data_content_data_getbooksbycategory"
     },
     {
       "label": "getBooksBySubcategory",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_getbooksbysubcategory",
       "community": 7,
-      "norm_label": "getbooksbysubcategory"
+      "norm_label": "getbooksbysubcategory",
+      "id": "data_content_data_getbooksbysubcategory"
     },
     {
       "label": "getBooksByGod",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_getbooksbygod",
       "community": 7,
-      "norm_label": "getbooksbygod"
+      "norm_label": "getbooksbygod",
+      "id": "data_content_data_getbooksbygod"
     },
     {
       "label": "getBookById",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_getbookbyid",
       "community": 7,
-      "norm_label": "getbookbyid"
+      "norm_label": "getbookbyid",
+      "id": "data_content_data_getbookbyid"
     },
     {
       "label": "searchShlokas",
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "id": "data_content_data_searchshlokas",
       "community": 7,
-      "norm_label": "searchshlokas"
+      "norm_label": "searchshlokas",
+      "id": "data_content_data_searchshlokas"
     },
     {
       "label": "../models/shloka.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "models_shloka_dart",
       "community": 2,
-      "norm_label": "../models/shloka.dart"
+      "norm_label": "../models/shloka.dart",
+      "id": "models_shloka_dart"
     },
     {
       "label": "main.dart",
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "id": "lib_main",
       "community": 4,
-      "norm_label": "main.dart"
+      "norm_label": "main.dart",
+      "id": "lib_main"
     },
     {
       "label": "BharatiyamApp",
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "id": "lib_main_bharatiyamapp",
-      "community": 4,
-      "norm_label": "bharatiyamapp"
+      "community": 0,
+      "norm_label": "bharatiyamapp",
+      "id": "lib_main_bharatiyamapp"
     },
     {
       "label": "StatelessWidget",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "statelesswidget",
-      "community": 4,
-      "norm_label": "statelesswidget"
+      "community": 0,
+      "norm_label": "statelesswidget",
+      "id": "statelesswidget"
     },
     {
       "label": "firebaseService",
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "id": "lib_main_firebaseservice",
       "community": 4,
-      "norm_label": "firebaseservice"
+      "norm_label": "firebaseservice",
+      "id": "lib_main_firebaseservice"
     },
     {
       "label": "main",
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "id": "lib_main_main",
       "community": 4,
-      "norm_label": "main"
+      "norm_label": "main",
+      "id": "lib_main_main"
     },
     {
       "label": "init",
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "id": "lib_main_init",
       "community": 4,
-      "norm_label": "init"
+      "norm_label": "init",
+      "id": "lib_main_init"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "id": "lib_main_build",
       "community": 4,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "lib_main_build"
     },
     {
       "label": "package:flutter/material.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_flutter_material_dart",
       "community": 2,
-      "norm_label": "package:flutter/material.dart"
+      "norm_label": "package:flutter/material.dart",
+      "id": "package_flutter_material_dart"
     },
     {
       "label": "package:provider/provider.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_provider_provider_dart",
       "community": 4,
-      "norm_label": "package:provider/provider.dart"
+      "norm_label": "package:provider/provider.dart",
+      "id": "package_provider_provider_dart"
     },
     {
       "label": "package:firebase_core/firebase_core.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_firebase_core_firebase_core_dart",
       "community": 4,
-      "norm_label": "package:firebase_core/firebase_core.dart"
+      "norm_label": "package:firebase_core/firebase_core.dart",
+      "id": "package_firebase_core_firebase_core_dart"
     },
     {
       "label": "../services/bookmark_service.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "services_bookmark_service_dart",
       "community": 4,
-      "norm_label": "../services/bookmark_service.dart"
+      "norm_label": "../services/bookmark_service.dart",
+      "id": "services_bookmark_service_dart"
     },
     {
       "label": "../services/firebase_service.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "services_firebase_service_dart",
       "community": 4,
-      "norm_label": "../services/firebase_service.dart"
+      "norm_label": "../services/firebase_service.dart",
+      "id": "services_firebase_service_dart"
     },
     {
       "label": "../theme/app_theme.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "theme_app_theme_dart",
       "community": 2,
-      "norm_label": "../theme/app_theme.dart"
+      "norm_label": "../theme/app_theme.dart",
+      "id": "theme_app_theme_dart"
     },
     {
       "label": "screens/home_screen.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "screens_home_screen_dart",
       "community": 4,
-      "norm_label": "screens/home_screen.dart"
+      "norm_label": "screens/home_screen.dart",
+      "id": "screens_home_screen_dart"
     },
     {
       "label": "shloka.dart",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka",
       "community": 3,
-      "norm_label": "shloka.dart"
+      "norm_label": "shloka.dart",
+      "id": "models_shloka"
     },
     {
       "label": "SubCategory",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_subcategory",
       "community": 3,
-      "norm_label": "subcategory"
+      "norm_label": "subcategory",
+      "id": "models_shloka_subcategory"
     },
     {
       "label": "AppCategory",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_appcategory",
       "community": 3,
-      "norm_label": "appcategory"
+      "norm_label": "appcategory",
+      "id": "models_shloka_appcategory"
     },
     {
       "label": "Shloka",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_shloka",
       "community": 3,
-      "norm_label": "shloka"
+      "norm_label": "shloka",
+      "id": "models_shloka_shloka"
     },
     {
       "label": "Chapter",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_chapter",
       "community": 3,
-      "norm_label": "chapter"
+      "norm_label": "chapter",
+      "id": "models_shloka_chapter"
     },
     {
       "label": "Book",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_book",
       "community": 3,
-      "norm_label": "book"
+      "norm_label": "book",
+      "id": "models_shloka_book"
     },
     {
       "label": "id",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_id",
       "community": 3,
-      "norm_label": "id"
+      "norm_label": "id",
+      "id": "models_shloka_id"
     },
     {
       "label": "title",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_title",
       "community": 3,
-      "norm_label": "title"
+      "norm_label": "title",
+      "id": "models_shloka_title"
     },
     {
       "label": "titleEn",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_titleen",
       "community": 3,
-      "norm_label": "titleen"
+      "norm_label": "titleen",
+      "id": "models_shloka_titleen"
     },
     {
       "label": "icon",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_icon",
       "community": 3,
-      "norm_label": "icon"
+      "norm_label": "icon",
+      "id": "models_shloka_icon"
     },
     {
       "label": "description",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_description",
       "community": 3,
-      "norm_label": "description"
+      "norm_label": "description",
+      "id": "models_shloka_description"
     },
     {
       "label": "subcategories",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_subcategories",
       "community": 3,
-      "norm_label": "subcategories"
+      "norm_label": "subcategories",
+      "id": "models_shloka_subcategories"
     },
     {
       "label": "List",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "list",
       "community": 5,
-      "norm_label": "list"
+      "norm_label": "list",
+      "id": "list"
     },
     {
       "label": "number",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_number",
       "community": 3,
-      "norm_label": "number"
+      "norm_label": "number",
+      "id": "models_shloka_number"
     },
     {
       "label": "sanskrit",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_sanskrit",
       "community": 3,
-      "norm_label": "sanskrit"
+      "norm_label": "sanskrit",
+      "id": "models_shloka_sanskrit"
     },
     {
       "label": "kannada",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_kannada",
       "community": 3,
-      "norm_label": "kannada"
+      "norm_label": "kannada",
+      "id": "models_shloka_kannada"
     },
     {
       "label": "meaning",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_meaning",
       "community": 3,
-      "norm_label": "meaning"
+      "norm_label": "meaning",
+      "id": "models_shloka_meaning"
     },
     {
       "label": "explanation",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_explanation",
       "community": 3,
-      "norm_label": "explanation"
+      "norm_label": "explanation",
+      "id": "models_shloka_explanation"
     },
     {
       "label": "String?",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "string",
       "community": 3,
-      "norm_label": "string?"
+      "norm_label": "string?",
+      "id": "string"
     },
     {
       "label": "isPremium",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_ispremium",
       "community": 3,
-      "norm_label": "ispremium"
+      "norm_label": "ispremium",
+      "id": "models_shloka_ispremium"
     },
     {
       "label": "order",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_order",
       "community": 3,
-      "norm_label": "order"
+      "norm_label": "order",
+      "id": "models_shloka_order"
     },
     {
       "label": "bookId",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_bookid",
       "community": 3,
-      "norm_label": "bookid"
+      "norm_label": "bookid",
+      "id": "models_shloka_bookid"
     },
     {
       "label": "bookTitle",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_booktitle",
       "community": 3,
-      "norm_label": "booktitle"
+      "norm_label": "booktitle",
+      "id": "models_shloka_booktitle"
     },
     {
       "label": "bookTitleEn",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_booktitleen",
       "community": 3,
-      "norm_label": "booktitleen"
+      "norm_label": "booktitleen",
+      "id": "models_shloka_booktitleen"
     },
     {
       "label": "chapterTitle",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_chaptertitle",
       "community": 3,
-      "norm_label": "chaptertitle"
+      "norm_label": "chaptertitle",
+      "id": "models_shloka_chaptertitle"
     },
     {
       "label": "category",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_category",
       "community": 3,
-      "norm_label": "category"
+      "norm_label": "category",
+      "id": "models_shloka_category"
     },
     {
       "label": "titleSanskrit",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_titlesanskrit",
       "community": 3,
-      "norm_label": "titlesanskrit"
+      "norm_label": "titlesanskrit",
+      "id": "models_shloka_titlesanskrit"
     },
     {
       "label": "shlokas",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_shlokas",
       "community": 3,
-      "norm_label": "shlokas"
+      "norm_label": "shlokas",
+      "id": "models_shloka_shlokas"
     },
     {
       "label": "godRelated",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_godrelated",
       "community": 3,
-      "norm_label": "godrelated"
+      "norm_label": "godrelated",
+      "id": "models_shloka_godrelated"
     },
     {
       "label": "chapters",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_chapters",
       "community": 3,
-      "norm_label": "chapters"
+      "norm_label": "chapters",
+      "id": "models_shloka_chapters"
     },
     {
       "label": "totalShlokas",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_totalshlokas",
       "community": 3,
-      "norm_label": "totalshlokas"
+      "norm_label": "totalshlokas",
+      "id": "models_shloka_totalshlokas"
     },
     {
       "label": "int get",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "int_get",
       "community": 6,
-      "norm_label": "int get"
+      "norm_label": "int get",
+      "id": "int_get"
     },
     {
       "label": "fromFirestore",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_fromfirestore",
       "community": 3,
-      "norm_label": "fromfirestore"
+      "norm_label": "fromfirestore",
+      "id": "models_shloka_fromfirestore"
     },
     {
       "label": "toFirestore",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_tofirestore",
       "community": 3,
-      "norm_label": "tofirestore"
+      "norm_label": "tofirestore",
+      "id": "models_shloka_tofirestore"
     },
     {
       "label": "copyWith",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_copywith",
       "community": 3,
-      "norm_label": "copywith"
+      "norm_label": "copywith",
+      "id": "models_shloka_copywith"
     },
     {
       "label": "toJson",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_tojson",
       "community": 3,
-      "norm_label": "tojson"
+      "norm_label": "tojson",
+      "id": "models_shloka_tojson"
     },
     {
       "label": "fromJson",
       "file_type": "code",
       "source_file": "lib/models/shloka.dart",
       "source_location": null,
-      "id": "models_shloka_fromjson",
       "community": 3,
-      "norm_label": "fromjson"
+      "norm_label": "fromjson",
+      "id": "models_shloka_fromjson"
     },
     {
       "label": "home_screen.dart",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen",
       "community": 0,
-      "norm_label": "home_screen.dart"
+      "norm_label": "home_screen.dart",
+      "id": "screens_home_screen"
     },
     {
       "label": "HomeScreen",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_homescreen",
       "community": 0,
-      "norm_label": "homescreen"
+      "norm_label": "homescreen",
+      "id": "screens_home_screen_homescreen"
     },
     {
       "label": "StatefulWidget",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "statefulwidget",
       "community": 0,
-      "norm_label": "statefulwidget"
+      "norm_label": "statefulwidget",
+      "id": "statefulwidget"
     },
     {
       "label": "_HomeScreenState",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_homescreenstate",
       "community": 0,
-      "norm_label": "_homescreenstate"
+      "norm_label": "_homescreenstate",
+      "id": "screens_home_screen_homescreenstate"
     },
     {
       "label": "FirebaseService",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "firebaseservice",
       "community": 0,
-      "norm_label": "firebaseservice"
+      "norm_label": "firebaseservice",
+      "id": "firebaseservice"
     },
     {
       "label": "_HomeTab",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_hometab",
       "community": 0,
-      "norm_label": "_hometab"
+      "norm_label": "_hometab",
+      "id": "screens_home_screen_hometab"
     },
     {
       "label": "_HomeTabState",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_hometabstate",
       "community": 0,
-      "norm_label": "_hometabstate"
+      "norm_label": "_hometabstate",
+      "id": "screens_home_screen_hometabstate"
     },
     {
       "label": "_SectionTab",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_sectiontab",
       "community": 0,
-      "norm_label": "_sectiontab"
+      "norm_label": "_sectiontab",
+      "id": "screens_home_screen_sectiontab"
     },
     {
       "label": "_SectionTabState",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_sectiontabstate",
       "community": 0,
-      "norm_label": "_sectiontabstate"
+      "norm_label": "_sectiontabstate",
+      "id": "screens_home_screen_sectiontabstate"
     },
     {
       "label": "_SavedTab",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_savedtab",
-      "community": 4,
-      "norm_label": "_savedtab"
+      "community": 0,
+      "norm_label": "_savedtab",
+      "id": "screens_home_screen_savedtab"
     },
     {
       "label": "BookListPage",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_booklistpage",
       "community": 0,
-      "norm_label": "booklistpage"
+      "norm_label": "booklistpage",
+      "id": "screens_home_screen_booklistpage"
     },
     {
       "label": "BookDetailPage",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_bookdetailpage",
       "community": 0,
-      "norm_label": "bookdetailpage"
+      "norm_label": "bookdetailpage",
+      "id": "screens_home_screen_bookdetailpage"
     },
     {
       "label": "ReaderPage",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_readerpage",
       "community": 0,
-      "norm_label": "readerpage"
+      "norm_label": "readerpage",
+      "id": "screens_home_screen_readerpage"
     },
     {
       "label": "_ReaderPageState",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_readerpagestate",
       "community": 0,
-      "norm_label": "_readerpagestate"
+      "norm_label": "_readerpagestate",
+      "id": "screens_home_screen_readerpagestate"
     },
     {
       "label": "SettingsPage",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_settingspage",
-      "community": 4,
-      "norm_label": "settingspage"
+      "community": 0,
+      "norm_label": "settingspage",
+      "id": "screens_home_screen_settingspage"
     },
     {
       "label": "_SearchBar",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_searchbar",
-      "community": 4,
-      "norm_label": "_searchbar"
+      "community": 0,
+      "norm_label": "_searchbar",
+      "id": "screens_home_screen_searchbar"
     },
     {
       "label": "_currentIndex",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_currentindex",
       "community": 0,
-      "norm_label": "_currentindex"
+      "norm_label": "_currentindex",
+      "id": "screens_home_screen_currentindex"
     },
     {
       "label": "_searchQuery",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_searchquery",
       "community": 0,
-      "norm_label": "_searchquery"
+      "norm_label": "_searchquery",
+      "id": "screens_home_screen_searchquery"
     },
     {
       "label": "sectionId",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_sectionid",
       "community": 0,
-      "norm_label": "sectionid"
+      "norm_label": "sectionid",
+      "id": "screens_home_screen_sectionid"
     },
     {
       "label": "String title, titleEn, icon,",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "string_title_titleen_icon",
       "community": 0,
-      "norm_label": "string title, titleen, icon,"
+      "norm_label": "string title, titleen, icon,",
+      "id": "string_title_titleen_icon"
     },
     {
       "label": "books",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_books",
       "community": 0,
-      "norm_label": "books"
+      "norm_label": "books",
+      "id": "screens_home_screen_books"
     },
     {
       "label": "book",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_book",
       "community": 0,
-      "norm_label": "book"
+      "norm_label": "book",
+      "id": "screens_home_screen_book"
     },
     {
       "label": "Book",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "book",
       "community": 2,
-      "norm_label": "book"
+      "norm_label": "book",
+      "id": "book"
     },
     {
       "label": "chapter",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_chapter",
       "community": 0,
-      "norm_label": "chapter"
+      "norm_label": "chapter",
+      "id": "screens_home_screen_chapter"
     },
     {
       "label": "Chapter",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "chapter",
       "community": 0,
-      "norm_label": "chapter"
+      "norm_label": "chapter",
+      "id": "chapter"
     },
     {
       "label": "_languageFilter",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_languagefilter",
       "community": 0,
-      "norm_label": "_languagefilter"
+      "norm_label": "_languagefilter",
+      "id": "screens_home_screen_languagefilter"
     },
     {
       "label": "_showMeaning",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_showmeaning",
       "community": 0,
-      "norm_label": "_showmeaning"
+      "norm_label": "_showmeaning",
+      "id": "screens_home_screen_showmeaning"
     },
     {
       "label": "hint",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_hint",
       "community": 0,
-      "norm_label": "hint"
+      "norm_label": "hint",
+      "id": "screens_home_screen_hint"
     },
     {
       "label": "onChanged",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_onchanged",
       "community": 0,
-      "norm_label": "onchanged"
+      "norm_label": "onchanged",
+      "id": "screens_home_screen_onchanged"
     },
     {
       "label": "ValueChanged",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "valuechanged",
       "community": 0,
-      "norm_label": "valuechanged"
+      "norm_label": "valuechanged",
+      "id": "valuechanged"
     },
     {
       "label": "createState",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_createstate",
       "community": 0,
-      "norm_label": "createstate"
+      "norm_label": "createstate",
+      "id": "screens_home_screen_createstate"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_build",
       "community": 0,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "screens_home_screen_build"
     },
     {
       "label": "_navigateToSettings",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_navigatetosettings",
       "community": 0,
-      "norm_label": "_navigatetosettings"
+      "norm_label": "_navigatetosettings",
+      "id": "screens_home_screen_navigatetosettings"
     },
     {
       "label": "MaterialPageRoute",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "materialpageroute",
       "community": 0,
-      "norm_label": "materialpageroute"
+      "norm_label": "materialpageroute",
+      "id": "materialpageroute"
     },
     {
       "label": "_buildSearchResults",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_buildsearchresults",
       "community": 0,
-      "norm_label": "_buildsearchresults"
+      "norm_label": "_buildsearchresults",
+      "id": "screens_home_screen_buildsearchresults"
     },
     {
       "label": "_buildHero",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_buildhero",
       "community": 0,
-      "norm_label": "_buildhero"
+      "norm_label": "_buildhero",
+      "id": "screens_home_screen_buildhero"
     },
     {
       "label": "_sectionHeader",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_sectionheader",
       "community": 0,
-      "norm_label": "_sectionheader"
+      "norm_label": "_sectionheader",
+      "id": "screens_home_screen_sectionheader"
     },
     {
       "label": "_categoryGrid",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_categorygrid",
       "community": 0,
-      "norm_label": "_categorygrid"
+      "norm_label": "_categorygrid",
+      "id": "screens_home_screen_categorygrid"
     },
     {
       "label": "_openSubcategory",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_opensubcategory",
       "community": 0,
-      "norm_label": "_opensubcategory"
+      "norm_label": "_opensubcategory",
+      "id": "screens_home_screen_opensubcategory"
     },
     {
       "label": "_buildFilterChip",
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "id": "screens_home_screen_buildfilterchip",
       "community": 0,
-      "norm_label": "_buildfilterchip"
+      "norm_label": "_buildfilterchip",
+      "id": "screens_home_screen_buildfilterchip"
     },
     {
       "label": "package:google_fonts/google_fonts.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_google_fonts_google_fonts_dart",
       "community": 2,
-      "norm_label": "package:google_fonts/google_fonts.dart"
+      "norm_label": "package:google_fonts/google_fonts.dart",
+      "id": "package_google_fonts_google_fonts_dart"
     },
     {
       "label": "../data/content_data.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "data_content_data_dart",
       "community": 5,
-      "norm_label": "../data/content_data.dart"
+      "norm_label": "../data/content_data.dart",
+      "id": "data_content_data_dart"
     },
     {
       "label": "../widgets/shloka_card.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "widgets_shloka_card_dart",
       "community": 0,
-      "norm_label": "../widgets/shloka_card.dart"
+      "norm_label": "../widgets/shloka_card.dart",
+      "id": "widgets_shloka_card_dart"
     },
     {
       "label": "../widgets/category_card.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "widgets_category_card_dart",
       "community": 0,
-      "norm_label": "../widgets/category_card.dart"
+      "norm_label": "../widgets/category_card.dart",
+      "id": "widgets_category_card_dart"
     },
     {
       "label": "../widgets/book_card.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "widgets_book_card_dart",
       "community": 0,
-      "norm_label": "../widgets/book_card.dart"
+      "norm_label": "../widgets/book_card.dart",
+      "id": "widgets_book_card_dart"
     },
     {
       "label": "bookmark_service.dart",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service",
       "community": 6,
-      "norm_label": "bookmark_service.dart"
+      "norm_label": "bookmark_service.dart",
+      "id": "services_bookmark_service"
     },
     {
       "label": "BookmarkService",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_bookmarkservice",
-      "community": 4,
-      "norm_label": "bookmarkservice"
+      "community": 0,
+      "norm_label": "bookmarkservice",
+      "id": "services_bookmark_service_bookmarkservice"
     },
     {
       "label": "ChangeNotifier",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "changenotifier",
       "community": 5,
-      "norm_label": "changenotifier"
+      "norm_label": "changenotifier",
+      "id": "changenotifier"
     },
     {
       "label": "_storageKey",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_storagekey",
       "community": 6,
-      "norm_label": "_storagekey"
+      "norm_label": "_storagekey",
+      "id": "services_bookmark_service_storagekey"
     },
     {
       "label": "_themeKey",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_themekey",
       "community": 6,
-      "norm_label": "_themekey"
+      "norm_label": "_themekey",
+      "id": "services_bookmark_service_themekey"
     },
     {
       "label": "_fontSizeKey",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_fontsizekey",
       "community": 6,
-      "norm_label": "_fontsizekey"
+      "norm_label": "_fontsizekey",
+      "id": "services_bookmark_service_fontsizekey"
     },
     {
       "label": "_bookmarks",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_bookmarks",
       "community": 6,
-      "norm_label": "_bookmarks"
+      "norm_label": "_bookmarks",
+      "id": "services_bookmark_service_bookmarks"
     },
     {
       "label": "Map",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "map",
       "community": 6,
-      "norm_label": "map"
+      "norm_label": "map",
+      "id": "map"
     },
     {
       "label": "_isDarkMode",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_isdarkmode",
       "community": 6,
-      "norm_label": "_isdarkmode"
+      "norm_label": "_isdarkmode",
+      "id": "services_bookmark_service_isdarkmode"
     },
     {
       "label": "_fontScale",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_fontscale",
       "community": 6,
-      "norm_label": "_fontscale"
+      "norm_label": "_fontscale",
+      "id": "services_bookmark_service_fontscale"
     },
     {
       "label": "bool get",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "bool_get",
       "community": 6,
-      "norm_label": "bool get"
+      "norm_label": "bool get",
+      "id": "bool_get"
     },
     {
       "label": "double get",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "double_get",
       "community": 6,
-      "norm_label": "double get"
+      "norm_label": "double get",
+      "id": "double_get"
     },
     {
       "label": "count",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_count",
       "community": 6,
-      "norm_label": "count"
+      "norm_label": "count",
+      "id": "services_bookmark_service_count"
     },
     {
       "label": "init",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_init",
       "community": 6,
-      "norm_label": "init"
+      "norm_label": "init",
+      "id": "services_bookmark_service_init"
     },
     {
       "label": "isBookmarked",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_isbookmarked",
       "community": 6,
-      "norm_label": "isbookmarked"
+      "norm_label": "isbookmarked",
+      "id": "services_bookmark_service_isbookmarked"
     },
     {
       "label": "toggle",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_toggle",
       "community": 6,
-      "norm_label": "toggle"
+      "norm_label": "toggle",
+      "id": "services_bookmark_service_toggle"
     },
     {
       "label": "getSavedShlokas",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_getsavedshlokas",
       "community": 6,
-      "norm_label": "getsavedshlokas"
+      "norm_label": "getsavedshlokas",
+      "id": "services_bookmark_service_getsavedshlokas"
     },
     {
       "label": "clearAll",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_clearall",
       "community": 6,
-      "norm_label": "clearall"
+      "norm_label": "clearall",
+      "id": "services_bookmark_service_clearall"
     },
     {
       "label": "exportAsJson",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_exportasjson",
       "community": 6,
-      "norm_label": "exportasjson"
+      "norm_label": "exportasjson",
+      "id": "services_bookmark_service_exportasjson"
     },
     {
       "label": "toggleTheme",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_toggletheme",
       "community": 6,
-      "norm_label": "toggletheme"
+      "norm_label": "toggletheme",
+      "id": "services_bookmark_service_toggletheme"
     },
     {
       "label": "setFontScale",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_setfontscale",
       "community": 6,
-      "norm_label": "setfontscale"
+      "norm_label": "setfontscale",
+      "id": "services_bookmark_service_setfontscale"
     },
     {
       "label": "_save",
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "id": "services_bookmark_service_save",
       "community": 6,
-      "norm_label": "_save"
+      "norm_label": "_save",
+      "id": "services_bookmark_service_save"
     },
     {
       "label": "dart:convert",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "dart_convert",
       "community": 6,
-      "norm_label": "dart:convert"
+      "norm_label": "dart:convert",
+      "id": "dart_convert"
     },
     {
       "label": "package:flutter/foundation.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_flutter_foundation_dart",
       "community": 6,
-      "norm_label": "package:flutter/foundation.dart"
+      "norm_label": "package:flutter/foundation.dart",
+      "id": "package_flutter_foundation_dart"
     },
     {
       "label": "package:shared_preferences/shared_preferences.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_shared_preferences_shared_preferences_dart",
       "community": 6,
-      "norm_label": "package:shared_preferences/shared_preferences.dart"
+      "norm_label": "package:shared_preferences/shared_preferences.dart",
+      "id": "package_shared_preferences_shared_preferences_dart"
     },
     {
       "label": "firebase_service.dart",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service",
       "community": 5,
-      "norm_label": "firebase_service.dart"
+      "norm_label": "firebase_service.dart",
+      "id": "services_firebase_service"
     },
     {
       "label": "FirebaseService",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_firebaseservice",
       "community": 5,
-      "norm_label": "firebaseservice"
+      "norm_label": "firebaseservice",
+      "id": "services_firebase_service_firebaseservice"
     },
     {
       "label": "_instance",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_instance",
       "community": 5,
-      "norm_label": "_instance"
+      "norm_label": "_instance",
+      "id": "services_firebase_service_instance"
     },
     {
       "label": "static final FirebaseService",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "static_final_firebaseservice",
       "community": 5,
-      "norm_label": "static final firebaseservice"
+      "norm_label": "static final firebaseservice",
+      "id": "static_final_firebaseservice"
     },
     {
       "label": "_db",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_db",
       "community": 5,
-      "norm_label": "_db"
+      "norm_label": "_db",
+      "id": "services_firebase_service_db"
     },
     {
       "label": "FirebaseFirestore?",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "firebasefirestore",
       "community": 5,
-      "norm_label": "firebasefirestore?"
+      "norm_label": "firebasefirestore?",
+      "id": "firebasefirestore"
     },
     {
       "label": "_initialized",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_initialized",
       "community": 5,
-      "norm_label": "_initialized"
+      "norm_label": "_initialized",
+      "id": "services_firebase_service_initialized"
     },
     {
       "label": "_useFirestore",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_usefirestore",
       "community": 5,
-      "norm_label": "_usefirestore"
+      "norm_label": "_usefirestore",
+      "id": "services_firebase_service_usefirestore"
     },
     {
       "label": "_loading",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_loading",
       "community": 5,
-      "norm_label": "_loading"
+      "norm_label": "_loading",
+      "id": "services_firebase_service_loading"
     },
     {
       "label": "_books",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_books",
       "community": 5,
-      "norm_label": "_books"
+      "norm_label": "_books",
+      "id": "services_firebase_service_books"
     },
     {
       "label": "_categories",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_categories",
       "community": 5,
-      "norm_label": "_categories"
+      "norm_label": "_categories",
+      "id": "services_firebase_service_categories"
     },
     {
       "label": "isInitialized",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_isinitialized",
       "community": 5,
-      "norm_label": "isinitialized"
+      "norm_label": "isinitialized",
+      "id": "services_firebase_service_isinitialized"
     },
     {
       "label": "isLoading",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_isloading",
       "community": 5,
-      "norm_label": "isloading"
+      "norm_label": "isloading",
+      "id": "services_firebase_service_isloading"
     },
     {
       "label": "init",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_init",
       "community": 5,
-      "norm_label": "init"
+      "norm_label": "init",
+      "id": "services_firebase_service_init"
     },
     {
       "label": "_loadBundledData",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_loadbundleddata",
       "community": 5,
-      "norm_label": "_loadbundleddata"
+      "norm_label": "_loadbundleddata",
+      "id": "services_firebase_service_loadbundleddata"
     },
     {
       "label": "refreshData",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_refreshdata",
       "community": 5,
-      "norm_label": "refreshdata"
+      "norm_label": "refreshdata",
+      "id": "services_firebase_service_refreshdata"
     },
     {
       "label": "getBooksByCategory",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_getbooksbycategory",
       "community": 5,
-      "norm_label": "getbooksbycategory"
+      "norm_label": "getbooksbycategory",
+      "id": "services_firebase_service_getbooksbycategory"
     },
     {
       "label": "getBooksBySubcategory",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_getbooksbysubcategory",
       "community": 5,
-      "norm_label": "getbooksbysubcategory"
+      "norm_label": "getbooksbysubcategory",
+      "id": "services_firebase_service_getbooksbysubcategory"
     },
     {
       "label": "getBooksByGod",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_getbooksbygod",
       "community": 5,
-      "norm_label": "getbooksbygod"
+      "norm_label": "getbooksbygod",
+      "id": "services_firebase_service_getbooksbygod"
     },
     {
       "label": "getBookById",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_getbookbyid",
       "community": 5,
-      "norm_label": "getbookbyid"
+      "norm_label": "getbookbyid",
+      "id": "services_firebase_service_getbookbyid"
     },
     {
       "label": "searchShlokas",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_searchshlokas",
       "community": 5,
-      "norm_label": "searchshlokas"
+      "norm_label": "searchshlokas",
+      "id": "services_firebase_service_searchshlokas"
     },
     {
       "label": "getAllShlokas",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "id": "services_firebase_service_getallshlokas",
       "community": 5,
-      "norm_label": "getallshlokas"
+      "norm_label": "getallshlokas",
+      "id": "services_firebase_service_getallshlokas"
     },
     {
       "label": "package:cloud_firestore/cloud_firestore.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "package_cloud_firestore_cloud_firestore_dart",
       "community": 5,
-      "norm_label": "package:cloud_firestore/cloud_firestore.dart"
+      "norm_label": "package:cloud_firestore/cloud_firestore.dart",
+      "id": "package_cloud_firestore_cloud_firestore_dart"
     },
     {
       "label": "app_theme.dart",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme",
       "community": 2,
-      "norm_label": "app_theme.dart"
+      "norm_label": "app_theme.dart",
+      "id": "theme_app_theme"
     },
     {
       "label": "AppTheme",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_apptheme",
       "community": 2,
-      "norm_label": "apptheme"
+      "norm_label": "apptheme",
+      "id": "theme_app_theme_apptheme"
     },
     {
       "label": "saffron",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_saffron",
       "community": 2,
-      "norm_label": "saffron"
+      "norm_label": "saffron",
+      "id": "theme_app_theme_saffron"
     },
     {
       "label": "saffronLight",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_saffronlight",
       "community": 2,
-      "norm_label": "saffronlight"
+      "norm_label": "saffronlight",
+      "id": "theme_app_theme_saffronlight"
     },
     {
       "label": "saffronDeep",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_saffrondeep",
       "community": 2,
-      "norm_label": "saffrondeep"
+      "norm_label": "saffrondeep",
+      "id": "theme_app_theme_saffrondeep"
     },
     {
       "label": "gold",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_gold",
       "community": 2,
-      "norm_label": "gold"
+      "norm_label": "gold",
+      "id": "theme_app_theme_gold"
     },
     {
       "label": "goldLight",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_goldlight",
       "community": 2,
-      "norm_label": "goldlight"
+      "norm_label": "goldlight",
+      "id": "theme_app_theme_goldlight"
     },
     {
       "label": "maroon",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_maroon",
       "community": 2,
-      "norm_label": "maroon"
+      "norm_label": "maroon",
+      "id": "theme_app_theme_maroon"
     },
     {
       "label": "sacredRed",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_sacredred",
       "community": 2,
-      "norm_label": "sacredred"
+      "norm_label": "sacredred",
+      "id": "theme_app_theme_sacredred"
     },
     {
       "label": "lotusPink",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_lotuspink",
       "community": 2,
-      "norm_label": "lotuspink"
+      "norm_label": "lotuspink",
+      "id": "theme_app_theme_lotuspink"
     },
     {
       "label": "templeGreen",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_templegreen",
       "community": 2,
-      "norm_label": "templegreen"
+      "norm_label": "templegreen",
+      "id": "theme_app_theme_templegreen"
     },
     {
       "label": "skyBlue",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_skyblue",
       "community": 2,
-      "norm_label": "skyblue"
+      "norm_label": "skyblue",
+      "id": "theme_app_theme_skyblue"
     },
     {
       "label": "textSanskritLight",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_textsanskritlight",
       "community": 2,
-      "norm_label": "textsanskritlight"
+      "norm_label": "textsanskritlight",
+      "id": "theme_app_theme_textsanskritlight"
     },
     {
       "label": "textKannadaLight",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_textkannadalight",
       "community": 2,
-      "norm_label": "textkannadalight"
+      "norm_label": "textkannadalight",
+      "id": "theme_app_theme_textkannadalight"
     },
     {
       "label": "textMeaningLight",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_textmeaninglight",
       "community": 2,
-      "norm_label": "textmeaninglight"
+      "norm_label": "textmeaninglight",
+      "id": "theme_app_theme_textmeaninglight"
     },
     {
       "label": "textSanskritDark",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_textsanskritdark",
       "community": 2,
-      "norm_label": "textsanskritdark"
+      "norm_label": "textsanskritdark",
+      "id": "theme_app_theme_textsanskritdark"
     },
     {
       "label": "textKannadaDark",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_textkannadadark",
       "community": 2,
-      "norm_label": "textkannadadark"
+      "norm_label": "textkannadadark",
+      "id": "theme_app_theme_textkannadadark"
     },
     {
       "label": "textMeaningDark",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_textmeaningdark",
       "community": 2,
-      "norm_label": "textmeaningdark"
+      "norm_label": "textmeaningdark",
+      "id": "theme_app_theme_textmeaningdark"
     },
     {
       "label": "sanskritStyle",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_sanskritstyle",
       "community": 2,
-      "norm_label": "sanskritstyle"
+      "norm_label": "sanskritstyle",
+      "id": "theme_app_theme_sanskritstyle"
     },
     {
       "label": "kannadaStyle",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_kannadastyle",
       "community": 2,
-      "norm_label": "kannadastyle"
+      "norm_label": "kannadastyle",
+      "id": "theme_app_theme_kannadastyle"
     },
     {
       "label": "meaningStyle",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_meaningstyle",
       "community": 2,
-      "norm_label": "meaningstyle"
+      "norm_label": "meaningstyle",
+      "id": "theme_app_theme_meaningstyle"
     },
     {
       "label": "heroGradient",
       "file_type": "code",
       "source_file": "lib/theme/app_theme.dart",
       "source_location": null,
-      "id": "theme_app_theme_herogradient",
       "community": 2,
-      "norm_label": "herogradient"
+      "norm_label": "herogradient",
+      "id": "theme_app_theme_herogradient"
     },
     {
       "label": "book_card.dart",
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "id": "widgets_book_card",
       "community": 2,
-      "norm_label": "book_card.dart"
+      "norm_label": "book_card.dart",
+      "id": "widgets_book_card"
     },
     {
       "label": "BookCard",
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "id": "widgets_book_card_bookcard",
-      "community": 4,
-      "norm_label": "bookcard"
+      "community": 2,
+      "norm_label": "bookcard",
+      "id": "widgets_book_card_bookcard"
     },
     {
       "label": "book",
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "id": "widgets_book_card_book",
       "community": 2,
-      "norm_label": "book"
+      "norm_label": "book",
+      "id": "widgets_book_card_book"
     },
     {
       "label": "onTap",
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "id": "widgets_book_card_ontap",
       "community": 2,
-      "norm_label": "ontap"
+      "norm_label": "ontap",
+      "id": "widgets_book_card_ontap"
     },
     {
       "label": "VoidCallback",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "voidcallback",
       "community": 2,
-      "norm_label": "voidcallback"
+      "norm_label": "voidcallback",
+      "id": "voidcallback"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "id": "widgets_book_card_build",
       "community": 2,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "widgets_book_card_build"
     },
     {
       "label": "category_card.dart",
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "id": "widgets_category_card",
       "community": 2,
-      "norm_label": "category_card.dart"
+      "norm_label": "category_card.dart",
+      "id": "widgets_category_card"
     },
     {
       "label": "CategoryCard",
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "id": "widgets_category_card_categorycard",
-      "community": 4,
-      "norm_label": "categorycard"
+      "community": 2,
+      "norm_label": "categorycard",
+      "id": "widgets_category_card_categorycard"
     },
     {
       "label": "subcategory",
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "id": "widgets_category_card_subcategory",
       "community": 2,
-      "norm_label": "subcategory"
+      "norm_label": "subcategory",
+      "id": "widgets_category_card_subcategory"
     },
     {
       "label": "SubCategory",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "subcategory",
       "community": 2,
-      "norm_label": "subcategory"
+      "norm_label": "subcategory",
+      "id": "subcategory"
     },
     {
       "label": "onTap",
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "id": "widgets_category_card_ontap",
       "community": 2,
-      "norm_label": "ontap"
+      "norm_label": "ontap",
+      "id": "widgets_category_card_ontap"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "id": "widgets_category_card_build",
       "community": 2,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "widgets_category_card_build"
     },
     {
       "label": "shloka_card.dart",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card",
       "community": 4,
-      "norm_label": "shloka_card.dart"
+      "norm_label": "shloka_card.dart",
+      "id": "widgets_shloka_card"
     },
     {
       "label": "ShlokaCard",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_shlokacard",
       "community": 4,
-      "norm_label": "shlokacard"
+      "norm_label": "shlokacard",
+      "id": "widgets_shloka_card_shlokacard"
     },
     {
       "label": "_ShlokaCardState",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_shlokacardstate",
       "community": 4,
-      "norm_label": "_shlokacardstate"
+      "norm_label": "_shlokacardstate",
+      "id": "widgets_shloka_card_shlokacardstate"
     },
     {
       "label": "shloka",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_shloka",
       "community": 4,
-      "norm_label": "shloka"
+      "norm_label": "shloka",
+      "id": "widgets_shloka_card_shloka"
     },
     {
       "label": "Shloka",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "shloka",
       "community": 4,
-      "norm_label": "shloka"
+      "norm_label": "shloka",
+      "id": "shloka"
     },
     {
       "label": "showSource",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_showsource",
       "community": 4,
-      "norm_label": "showsource"
+      "norm_label": "showsource",
+      "id": "widgets_shloka_card_showsource"
     },
     {
       "label": "showSanskrit",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_showsanskrit",
       "community": 4,
-      "norm_label": "showsanskrit"
+      "norm_label": "showsanskrit",
+      "id": "widgets_shloka_card_showsanskrit"
     },
     {
       "label": "showKannada",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_showkannada",
       "community": 4,
-      "norm_label": "showkannada"
+      "norm_label": "showkannada",
+      "id": "widgets_shloka_card_showkannada"
     },
     {
       "label": "showMeaning",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_showmeaning",
       "community": 4,
-      "norm_label": "showmeaning"
+      "norm_label": "showmeaning",
+      "id": "widgets_shloka_card_showmeaning"
     },
     {
       "label": "_explanationExpanded",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_explanationexpanded",
       "community": 4,
-      "norm_label": "_explanationexpanded"
+      "norm_label": "_explanationexpanded",
+      "id": "widgets_shloka_card_explanationexpanded"
     },
     {
       "label": "createState",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_createstate",
       "community": 4,
-      "norm_label": "createstate"
+      "norm_label": "createstate",
+      "id": "widgets_shloka_card_createstate"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "id": "widgets_shloka_card_build",
-      "community": 4,
-      "norm_label": "build"
+      "community": 0,
+      "norm_label": "build",
+      "id": "widgets_shloka_card_build"
     },
     {
       "label": "push_with_backup.ps1",
       "file_type": "code",
       "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L1",
-      "id": "scripts_push_with_backup",
       "community": 1,
-      "norm_label": "push_with_backup.ps1"
+      "norm_label": "push_with_backup.ps1",
+      "id": "scripts_push_with_backup"
     },
     {
       "label": "app.js",
       "file_type": "code",
       "source_file": "web/js/app.js",
       "source_location": "L1",
-      "id": "web_js_app_js_js_app",
       "community": 11,
-      "norm_label": "app.js"
+      "norm_label": "app.js",
+      "id": "web_js_app_js_js_app"
     },
     {
       "label": "App",
       "file_type": "code",
       "source_file": "web/js/app.js",
       "source_location": "L5",
-      "id": "web_js_app_js_js_app_app",
       "community": 11,
-      "norm_label": "app"
+      "norm_label": "app",
+      "id": "web_js_app_js_js_app_app"
     },
     {
       "label": "data.js",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L1",
-      "id": "js_data",
       "community": 1,
-      "norm_label": "data.js"
+      "norm_label": "data.js",
+      "id": "js_data"
     },
     {
       "label": "APP_DATA",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L5",
-      "id": "js_data_app_data",
       "community": 1,
-      "norm_label": "app_data"
+      "norm_label": "app_data",
+      "id": "js_data_app_data"
     },
     {
       "label": "getAllShlokas()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L610",
-      "id": "js_data_getallshlokas",
       "community": 1,
-      "norm_label": "getallshlokas()"
+      "norm_label": "getallshlokas()",
+      "id": "js_data_getallshlokas"
     },
     {
       "label": "getBooksByCategory()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L632",
-      "id": "js_data_getbooksbycategory",
       "community": 1,
-      "norm_label": "getbooksbycategory()"
+      "norm_label": "getbooksbycategory()",
+      "id": "js_data_getbooksbycategory"
     },
     {
       "label": "getBooksBySubcategory()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L636",
-      "id": "js_data_getbooksbysubcategory",
       "community": 1,
-      "norm_label": "getbooksbysubcategory()"
+      "norm_label": "getbooksbysubcategory()",
+      "id": "js_data_getbooksbysubcategory"
     },
     {
       "label": "getBooksByGod()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L640",
-      "id": "js_data_getbooksbygod",
       "community": 1,
-      "norm_label": "getbooksbygod()"
+      "norm_label": "getbooksbygod()",
+      "id": "js_data_getbooksbygod"
     },
     {
       "label": "getBookById()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L646",
-      "id": "js_data_getbookbyid",
       "community": 1,
-      "norm_label": "getbookbyid()"
+      "norm_label": "getbookbyid()",
+      "id": "js_data_getbookbyid"
     },
     {
       "label": "searchShlokas()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L650",
-      "id": "js_data_searchshlokas",
       "community": 1,
-      "norm_label": "searchshlokas()"
+      "norm_label": "searchshlokas()",
+      "id": "js_data_searchshlokas"
     },
     {
       "label": "storage.js",
       "file_type": "code",
       "source_file": "web/js/storage.js",
       "source_location": "L1",
-      "id": "js_storage",
-      "community": 1,
-      "norm_label": "storage.js"
+      "community": 15,
+      "norm_label": "storage.js",
+      "id": "js_storage"
     },
     {
       "label": "BookmarkStorage",
       "file_type": "code",
       "source_file": "web/js/storage.js",
       "source_location": "L5",
-      "id": "js_storage_bookmarkstorage",
-      "community": 1,
-      "norm_label": "bookmarkstorage"
+      "community": 15,
+      "norm_label": "bookmarkstorage",
+      "id": "js_storage_bookmarkstorage"
     },
     {
       "label": "Admin Panel App (app.js)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/admin/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "js_app",
-      "community": 1,
-      "norm_label": "admin panel app (app.js)"
+      "community": 15,
+      "norm_label": "admin panel app (app.js)",
+      "id": "js_app"
     },
     {
       "label": "App object (admin CRUD logic)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/admin/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": "lines 207-797",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "js_app_appobject",
-      "community": 0,
-      "norm_label": "app object (admin crud logic)"
+      "community": 15,
+      "norm_label": "app object (admin crud logic)",
+      "id": "js_app_appobject"
     },
     {
       "label": "Android app build.gradle",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/android/app/build.gradle",
+      "source_file": "android/app/build.gradle",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "app_build_gradle",
       "community": 10,
-      "norm_label": "android app build.gradle"
+      "norm_label": "android app build.gradle",
+      "id": "app_build_gradle"
     },
     {
       "label": "Android root build.gradle",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/android/build.gradle",
+      "source_file": "android/build.gradle",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "android_build_gradle",
       "community": 10,
-      "norm_label": "android root build.gradle"
+      "norm_label": "android root build.gradle",
+      "id": "android_build_gradle"
     },
     {
       "label": "Android settings.gradle",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/android/settings.gradle",
+      "source_file": "android/settings.gradle",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "android_settings_gradle",
       "community": 10,
-      "norm_label": "android settings.gradle"
+      "norm_label": "android settings.gradle",
+      "id": "android_settings_gradle"
     },
     {
       "label": "Firebase project config (hosting + firestore)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/firebase.json",
+      "source_file": "firebase.json",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "firebase_json",
-      "community": 1,
-      "norm_label": "firebase project config (hosting + firestore)"
+      "community": 15,
+      "norm_label": "firebase project config (hosting + firestore)",
+      "id": "firebase_json"
     },
     {
       "label": "Firestore backend (books/chapters/shlokas/categories collections)",
@@ -2259,9 +2259,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_firestore_backend",
-      "community": 1,
-      "norm_label": "firestore backend (books/chapters/shlokas/categories collections)"
+      "community": 15,
+      "norm_label": "firestore backend (books/chapters/shlokas/categories collections)",
+      "id": "concept_firestore_backend"
     },
     {
       "label": "Offline-first architecture (bundled data + Firestore sync)",
@@ -2272,9 +2272,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_offline_first",
       "community": 5,
-      "norm_label": "offline-first architecture (bundled data + firestore sync)"
+      "norm_label": "offline-first architecture (bundled data + firestore sync)",
+      "id": "concept_offline_first"
     },
     {
       "label": "Provider state management pattern",
@@ -2285,386 +2285,360 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_provider_state",
       "community": 4,
-      "norm_label": "provider state management pattern"
+      "norm_label": "provider state management pattern",
+      "id": "concept_provider_state"
     },
     {
       "label": "Build APK & Backup (CI)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/.github/workflows/build.yml",
+      "source_file": ".github/workflows/build.yml",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "workflows_build",
       "community": 1,
-      "norm_label": "build apk & backup (ci)"
+      "norm_label": "build apk & backup (ci)",
+      "id": "workflows_build"
     },
     {
       "label": "Deploy Admin Panel (CI)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-admin.yml",
+      "source_file": ".github/workflows/deploy-admin.yml",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "workflows_deploy_admin",
       "community": 1,
-      "norm_label": "deploy admin panel (ci)"
+      "norm_label": "deploy admin panel (ci)",
+      "id": "workflows_deploy_admin"
     },
     {
       "label": "Deploy Web to GitHub Pages (CI)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-web.yml",
+      "source_file": ".github/workflows/deploy-web.yml",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "workflows_deploy_web",
-      "community": 1,
-      "norm_label": "deploy web to github pages (ci)"
+      "community": 15,
+      "norm_label": "deploy web to github pages (ci)",
+      "id": "workflows_deploy_web"
     },
     {
       "label": "README.md (Project Overview)",
       "file_type": "document",
-      "source_file": "D:/bharatheeyam books/README.md",
+      "source_file": "README.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme",
       "community": 1,
-      "norm_label": "readme.md (project overview)"
-    },
-    {
-      "label": "Admin Panel (index.html)",
-      "file_type": "code",
-      "source_file": "D:/bharatheeyam books/admin/index.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "admin_index",
-      "community": 1,
-      "norm_label": "admin panel (index.html)"
+      "norm_label": "readme.md (project overview)",
+      "id": "readme"
     },
     {
       "label": "Build Log",
       "file_type": "document",
-      "source_file": "D:/bharatheeyam books/conversation_backup/build_log.txt",
+      "source_file": "conversation_backup/build_log.txt",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "conversation_backup_build_log",
       "community": 1,
-      "norm_label": "build log"
+      "norm_label": "build log",
+      "id": "conversation_backup_build_log"
     },
     {
       "label": "Implementation Plan (Shiva Stotras)",
       "file_type": "document",
-      "source_file": "D:/bharatheeyam books/conversation_backup/implementation_plan.md",
+      "source_file": "conversation_backup/implementation_plan.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "conversation_backup_implementation_plan",
       "community": 1,
-      "norm_label": "implementation plan (shiva stotras)"
+      "norm_label": "implementation plan (shiva stotras)",
+      "id": "conversation_backup_implementation_plan"
     },
     {
       "label": "Task Progress Tracker",
       "file_type": "document",
-      "source_file": "D:/bharatheeyam books/conversation_backup/task.md",
+      "source_file": "conversation_backup/task.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "conversation_backup_task",
       "community": 1,
-      "norm_label": "task progress tracker"
+      "norm_label": "task progress tracker",
+      "id": "conversation_backup_task"
     },
     {
       "label": "Walkthrough (Phase 4)",
       "file_type": "document",
-      "source_file": "D:/bharatheeyam books/conversation_backup/walkthrough.md",
+      "source_file": "conversation_backup/walkthrough.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "conversation_backup_walkthrough",
       "community": 1,
-      "norm_label": "walkthrough (phase 4)"
+      "norm_label": "walkthrough (phase 4)",
+      "id": "conversation_backup_walkthrough"
     },
     {
       "label": "pubspec.yaml (Flutter Config)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/pubspec.yaml",
+      "source_file": "pubspec.yaml",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pubspec",
       "community": 1,
-      "norm_label": "pubspec.yaml (flutter config)"
+      "norm_label": "pubspec.yaml (flutter config)",
+      "id": "pubspec"
     },
     {
       "label": "Web index.html (Entry Point)",
       "file_type": "code",
-      "source_file": "D:/bharatheeyam books/web/index.html",
+      "source_file": "web/index.html",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "web_index",
-      "community": 1,
-      "norm_label": "web index.html (entry point)"
+      "community": 15,
+      "norm_label": "web index.html (entry point)",
+      "id": "web_index"
     },
     {
       "label": "Hash-based SPA Routing",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L39-L76",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_hash_routing",
-      "community": 1,
-      "norm_label": "hash-based spa routing"
+      "community": 15,
+      "norm_label": "hash-based spa routing",
+      "id": "concept_hash_routing"
     },
     {
       "label": "Three-Layer Shloka Display (Sanskrit/Kannada/Meaning)",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L180-L216",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_three_layer_display",
-      "community": 1,
-      "norm_label": "three-layer shloka display (sanskrit/kannada/meaning)"
+      "community": 15,
+      "norm_label": "three-layer shloka display (sanskrit/kannada/meaning)",
+      "id": "concept_three_layer_display"
     },
     {
       "label": "Script Filter (Devanagari/Kannada/Both)",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L783-L808",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_script_filter",
-      "community": 1,
-      "norm_label": "script filter (devanagari/kannada/both)"
+      "community": 15,
+      "norm_label": "script filter (devanagari/kannada/both)",
+      "id": "concept_script_filter"
     },
     {
       "label": "Bookmark/Favorites System",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/web/js/storage.js",
+      "source_file": "web/js/storage.js",
       "source_location": "L5-L93",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_bookmark_system",
-      "community": 1,
-      "norm_label": "bookmark/favorites system"
+      "community": 15,
+      "norm_label": "bookmark/favorites system",
+      "id": "concept_bookmark_system"
     },
     {
       "label": "Category Hierarchy (library/mantras/stotras \u2192 subcategory \u2192 book \u2192 chapter \u2192 shloka)",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/web/js/data.js",
+      "source_file": "web/js/data.js",
       "source_location": "L12-L58",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_category_hierarchy",
       "community": 1,
-      "norm_label": "category hierarchy (library/mantras/stotras \u2192 subcategory \u2192 book \u2192 chapter \u2192 shloka)"
+      "norm_label": "category hierarchy (library/mantras/stotras \u2192 subcategory \u2192 book \u2192 chapter \u2192 shloka)",
+      "id": "concept_category_hierarchy"
     },
     {
       "label": "Deity-Based Content Organization",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/web/js/data.js",
+      "source_file": "web/js/data.js",
       "source_location": "L24-L57",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_deity_based_organization",
       "community": 1,
-      "norm_label": "deity-based content organization"
+      "norm_label": "deity-based content organization",
+      "id": "concept_deity_based_organization"
     },
     {
       "label": "Conversation Backup & Build Artifact Strategy",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/scripts/push_with_backup.ps1",
+      "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L1-L63",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_conversation_backup",
       "community": 1,
-      "norm_label": "conversation backup & build artifact strategy"
+      "norm_label": "conversation backup & build artifact strategy",
+      "id": "concept_conversation_backup"
     },
     {
       "label": "Flutter + Web Dual-Platform Architecture",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/README.md",
+      "source_file": "README.md",
       "source_location": "L18-L27",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_flutter_web_dual_platform",
       "community": 1,
-      "norm_label": "flutter + web dual-platform architecture"
-    },
-    {
-      "label": "Firebase Backend (Auth + Firestore)",
-      "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/admin/index.html",
-      "source_location": "L355-L358",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "concept_firebase_backend",
-      "community": 1,
-      "norm_label": "firebase backend (auth + firestore)"
+      "norm_label": "flutter + web dual-platform architecture",
+      "id": "concept_flutter_web_dual_platform"
     },
     {
       "label": "GitHub Pages Deployment",
       "file_type": "concept",
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-web.yml",
+      "source_file": ".github/workflows/deploy-web.yml",
       "source_location": "L1-L38",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "concept_github_pages_deployment",
       "community": 1,
-      "norm_label": "github pages deployment"
+      "norm_label": "github pages deployment",
+      "id": "concept_github_pages_deployment"
     },
     {
       "label": "Devi (Durga) - Hindu goddess depicted with eight arms riding a lion, holding trishul, lotus, mace, shield, chakra, and bow; red saree, gold crown and jewelry; circular gold-bordered medallion on dark background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/devi.png|D:/bharatheeyam books/web/images/devi.png",
+      "source_file": "assets/images/devi.png|D:/bharatheeyam books/web/images/devi.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_devi",
       "community": 9,
-      "norm_label": "devi (durga) - hindu goddess depicted with eight arms riding a lion, holding trishul, lotus, mace, shield, chakra, and bow; red saree, gold crown and jewelry; circular gold-bordered medallion on dark background; flat vector illustration style"
+      "norm_label": "devi (durga) - hindu goddess depicted with eight arms riding a lion, holding trishul, lotus, mace, shield, chakra, and bow; red saree, gold crown and jewelry; circular gold-bordered medallion on dark background; flat vector illustration style",
+      "id": "images_devi"
     },
     {
       "label": "Ganesha - Elephant-headed Hindu deity seated in padmasana on ornate pedestal, four arms holding axe, noose, modak, and abhaya mudra; Om symbol on trunk; gold-teal-maroon color palette; circular gold-bordered medallion on dark background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/ganesha.png|D:/bharatheeyam books/web/images/ganesha.png",
+      "source_file": "assets/images/ganesha.png|D:/bharatheeyam books/web/images/ganesha.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_ganesha",
       "community": 9,
-      "norm_label": "ganesha - elephant-headed hindu deity seated in padmasana on ornate pedestal, four arms holding axe, noose, modak, and abhaya mudra; om symbol on trunk; gold-teal-maroon color palette; circular gold-bordered medallion on dark background; flat vector illustration style"
+      "norm_label": "ganesha - elephant-headed hindu deity seated in padmasana on ornate pedestal, four arms holding axe, noose, modak, and abhaya mudra; om symbol on trunk; gold-teal-maroon color palette; circular gold-bordered medallion on dark background; flat vector illustration style",
+      "id": "images_ganesha"
     },
     {
       "label": "Hanuman - Monkey-faced Hindu deity in namaste pose with golden mace (gada) over shoulder; ornate crown with Om symbols, radiant halo, flower garlands; gold armor; decorative circular gold border with scrollwork on dark navy background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/hanuman.png|D:/bharatheeyam books/web/images/hanuman.png",
+      "source_file": "assets/images/hanuman.png|D:/bharatheeyam books/web/images/hanuman.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_hanuman",
       "community": 9,
-      "norm_label": "hanuman - monkey-faced hindu deity in namaste pose with golden mace (gada) over shoulder; ornate crown with om symbols, radiant halo, flower garlands; gold armor; decorative circular gold border with scrollwork on dark navy background; flat vector illustration style"
+      "norm_label": "hanuman - monkey-faced hindu deity in namaste pose with golden mace (gada) over shoulder; ornate crown with om symbols, radiant halo, flower garlands; gold armor; decorative circular gold border with scrollwork on dark navy background; flat vector illustration style",
+      "id": "images_hanuman"
     },
     {
       "label": "Krishna - Blue-skinned Hindu deity playing the flute (bansuri) in tribhanga pose; peacock feather in golden crown, yellow dhoti, standing on lotus pedestal; circular gold-bordered medallion on black background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/krishna.png|D:/bharatheeyam books/web/images/krishna.png",
+      "source_file": "assets/images/krishna.png|D:/bharatheeyam books/web/images/krishna.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_krishna",
       "community": 9,
-      "norm_label": "krishna - blue-skinned hindu deity playing the flute (bansuri) in tribhanga pose; peacock feather in golden crown, yellow dhoti, standing on lotus pedestal; circular gold-bordered medallion on black background; flat vector illustration style"
+      "norm_label": "krishna - blue-skinned hindu deity playing the flute (bansuri) in tribhanga pose; peacock feather in golden crown, yellow dhoti, standing on lotus pedestal; circular gold-bordered medallion on black background; flat vector illustration style",
+      "id": "images_krishna"
     },
     {
       "label": "Rama - Blue-skinned Hindu deity in profile holding bow (Kodanda) with quiver of arrows; golden crown with peacock feather, Vaishnava tilak, royal jewelry; circular gold-bordered medallion on dark background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/rama.png|D:/bharatheeyam books/web/images/rama.png",
+      "source_file": "assets/images/rama.png|D:/bharatheeyam books/web/images/rama.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_rama",
       "community": 9,
-      "norm_label": "rama - blue-skinned hindu deity in profile holding bow (kodanda) with quiver of arrows; golden crown with peacock feather, vaishnava tilak, royal jewelry; circular gold-bordered medallion on dark background; flat vector illustration style"
+      "norm_label": "rama - blue-skinned hindu deity in profile holding bow (kodanda) with quiver of arrows; golden crown with peacock feather, vaishnava tilak, royal jewelry; circular gold-bordered medallion on dark background; flat vector illustration style",
+      "id": "images_rama"
     },
     {
       "label": "Shiva - Blue-skinned Hindu deity in deep meditation (dhyana), seated in padmasana; matted hair (jata) with crescent moon, trishul with damaru drum, rudraksha mala, third-eye marks (tripundra); circular gold double-bordered medallion on dark navy background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/shiva.png|D:/bharatheeyam books/web/images/shiva.png",
+      "source_file": "assets/images/shiva.png|D:/bharatheeyam books/web/images/shiva.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_shiva",
       "community": 9,
-      "norm_label": "shiva - blue-skinned hindu deity in deep meditation (dhyana), seated in padmasana; matted hair (jata) with crescent moon, trishul with damaru drum, rudraksha mala, third-eye marks (tripundra); circular gold double-bordered medallion on dark navy background; flat vector illustration style"
+      "norm_label": "shiva - blue-skinned hindu deity in deep meditation (dhyana), seated in padmasana; matted hair (jata) with crescent moon, trishul with damaru drum, rudraksha mala, third-eye marks (tripundra); circular gold double-bordered medallion on dark navy background; flat vector illustration style",
+      "id": "images_shiva"
     },
     {
       "label": "Surya - Hindu sun god with radiant solar halo, holding chakra and lotus; riding golden chariot drawn by seven white horses with charioteer Aruna; ornate circular border with lotus and star motifs on dark navy background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/surya.png|D:/bharatheeyam books/web/images/surya.png",
+      "source_file": "assets/images/surya.png|D:/bharatheeyam books/web/images/surya.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_surya",
       "community": 9,
-      "norm_label": "surya - hindu sun god with radiant solar halo, holding chakra and lotus; riding golden chariot drawn by seven white horses with charioteer aruna; ornate circular border with lotus and star motifs on dark navy background; flat vector illustration style"
+      "norm_label": "surya - hindu sun god with radiant solar halo, holding chakra and lotus; riding golden chariot drawn by seven white horses with charioteer aruna; ornate circular border with lotus and star motifs on dark navy background; flat vector illustration style",
+      "id": "images_surya"
     },
     {
       "label": "Vishnu - Blue-skinned four-armed Hindu deity seated on lotus in padmasana; holding Sudarshana Chakra, Panchajanya conch, Kaumodaki mace, and Padma lotus; peacock feather in crown, Vaishnava tilak; circular gold-bordered medallion on dark navy background; flat vector illustration style",
       "file_type": "image",
-      "source_file": "D:/bharatheeyam books/assets/images/vishnu.png|D:/bharatheeyam books/web/images/vishnu.png",
+      "source_file": "assets/images/vishnu.png|D:/bharatheeyam books/web/images/vishnu.png",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "images_vishnu",
       "community": 9,
-      "norm_label": "vishnu - blue-skinned four-armed hindu deity seated on lotus in padmasana; holding sudarshana chakra, panchajanya conch, kaumodaki mace, and padma lotus; peacock feather in crown, vaishnava tilak; circular gold-bordered medallion on dark navy background; flat vector illustration style"
+      "norm_label": "vishnu - blue-skinned four-armed hindu deity seated on lotus in padmasana; holding sudarshana chakra, panchajanya conch, kaumodaki mace, and padma lotus; peacock feather in crown, vaishnava tilak; circular gold-bordered medallion on dark navy background; flat vector illustration style",
+      "id": "images_vishnu"
     }
   ],
   "links": [
@@ -2674,9 +2648,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L207",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_js_app_js_js_app",
-      "target": "admin_js_app_js_js_app_app",
-      "confidence_score": 1.0
+      "target": "admin_js_app_js_js_app_app"
     },
     {
       "relation": "contains",
@@ -2684,9 +2658,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_js_app_js_js_app",
-      "target": "js_app_auth",
-      "confidence_score": 1.0
+      "target": "js_app_auth"
     },
     {
       "relation": "contains",
@@ -2694,9 +2668,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_js_app_js_js_app",
-      "target": "js_app_db",
-      "confidence_score": 1.0
+      "target": "js_app_db"
     },
     {
       "relation": "contains",
@@ -2704,9 +2678,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_js_app_js_js_app",
-      "target": "js_app_seed",
-      "confidence_score": 1.0
+      "target": "js_app_seed"
     },
     {
       "relation": "contains",
@@ -2714,15 +2688,15 @@
       "source_file": "admin/js/app.js",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_js_app_js_js_app",
-      "target": "js_app_state",
-      "confidence_score": 1.0
+      "target": "js_app_state"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/admin/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": "line 266",
       "weight": 1.0,
       "source": "js_app_appobject",
@@ -2782,7 +2756,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/lib/data/content_data.dart",
+      "source_file": "lib/data/content_data.dart",
       "source_location": "line 3 comment: mirrors web version's data.js",
       "weight": 1.0,
       "source": "data_content_data",
@@ -2792,7 +2766,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/admin/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": "lines 363-369",
       "weight": 1.0,
       "source": "js_app_appobject",
@@ -2802,7 +2776,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/android/app/build.gradle",
+      "source_file": "android/app/build.gradle",
       "source_location": "line 27: namespace = com.bharatiyam.granthasudha",
       "weight": 0.8,
       "source": "app_build_gradle",
@@ -2814,9 +2788,9 @@
       "source_file": "android/app/src/main/kotlin/com/bharatiyam/granthasudha/MainActivity.kt",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "granthasudha_mainactivity",
-      "target": "granthasudha_mainactivity_mainactivity",
-      "confidence_score": 1.0
+      "target": "granthasudha_mainactivity_mainactivity"
     },
     {
       "relation": "inherits",
@@ -2824,9 +2798,9 @@
       "source_file": "android/app/src/main/kotlin/com/bharatiyam/granthasudha/MainActivity.kt",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "granthasudha_mainactivity_mainactivity",
-      "target": "flutteractivity",
-      "confidence_score": 1.0
+      "target": "flutteractivity"
     },
     {
       "relation": "contains",
@@ -2834,9 +2808,9 @@
       "source_file": "firebase.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase",
-      "target": "firebase_firestore",
-      "confidence_score": 1.0
+      "target": "firebase_firestore"
     },
     {
       "relation": "contains",
@@ -2844,9 +2818,9 @@
       "source_file": "firebase.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase",
-      "target": "firebase_hosting",
-      "confidence_score": 1.0
+      "target": "firebase_hosting"
     },
     {
       "relation": "contains",
@@ -2854,9 +2828,9 @@
       "source_file": "firebase.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase_hosting",
-      "target": "firebase_hosting_ignore",
-      "confidence_score": 1.0
+      "target": "firebase_hosting_ignore"
     },
     {
       "relation": "contains",
@@ -2864,9 +2838,9 @@
       "source_file": "firebase.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase_hosting",
-      "target": "firebase_hosting_public",
-      "confidence_score": 1.0
+      "target": "firebase_hosting_public"
     },
     {
       "relation": "contains",
@@ -2874,9 +2848,9 @@
       "source_file": "firebase.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase_hosting",
-      "target": "firebase_hosting_rewrites",
-      "confidence_score": 1.0
+      "target": "firebase_hosting_rewrites"
     },
     {
       "relation": "contains",
@@ -2884,9 +2858,9 @@
       "source_file": "firebase.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase_firestore",
-      "target": "firebase_firestore_indexes",
-      "confidence_score": 1.0
+      "target": "firebase_firestore_indexes"
     },
     {
       "relation": "contains",
@@ -2894,15 +2868,15 @@
       "source_file": "firebase.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firebase_firestore",
-      "target": "firebase_firestore_rules",
-      "confidence_score": 1.0
+      "target": "firebase_firestore_rules"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/firebase.json",
+      "source_file": "firebase.json",
       "source_location": "line 18",
       "weight": 1.0,
       "source": "firebase_json",
@@ -2912,7 +2886,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/firestore.indexes.json",
+      "source_file": "firestore.indexes.json",
       "source_location": "lines 2-50",
       "weight": 1.0,
       "source": "firestore_indexes",
@@ -2924,9 +2898,9 @@
       "source_file": "firestore.indexes.json",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firestore_indexes",
-      "target": "firestore_indexes_fieldoverrides",
-      "confidence_score": 1.0
+      "target": "firestore_indexes_fieldoverrides"
     },
     {
       "relation": "contains",
@@ -2934,9 +2908,9 @@
       "source_file": "firestore.indexes.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "firestore_indexes",
-      "target": "firestore_indexes_indexes",
-      "confidence_score": 1.0
+      "target": "firestore_indexes_indexes"
     },
     {
       "relation": "defines",
@@ -3062,7 +3036,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/data/content_data.dart",
+      "source_file": "lib/data/content_data.dart",
       "source_location": "line 1",
       "weight": 1.0,
       "source": "data_content_data",
@@ -3093,7 +3067,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 26",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -3103,7 +3077,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 718",
       "weight": 0.8,
       "source": "screens_home_screen_settingspage",
@@ -3113,7 +3087,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "lines 57-58",
       "weight": 1.0,
       "source": "services_firebase_service",
@@ -3205,7 +3179,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/main.dart",
+      "source_file": "lib/main.dart",
       "source_location": "lines 25-29",
       "weight": 1.0,
       "source": "lib_main",
@@ -3305,7 +3279,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/main.dart",
+      "source_file": "lib/main.dart",
       "source_location": "line 27",
       "weight": 1.0,
       "source": "lib_main",
@@ -3336,7 +3310,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/main.dart",
+      "source_file": "lib/main.dart",
       "source_location": "lines 21-22",
       "weight": 1.0,
       "source": "lib_main",
@@ -3366,7 +3340,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/main.dart",
+      "source_file": "lib/main.dart",
       "source_location": "line 48",
       "weight": 1.0,
       "source": "lib_main_bharatiyamapp",
@@ -3376,7 +3350,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/main.dart",
+      "source_file": "lib/main.dart",
       "source_location": "line 40",
       "weight": 1.0,
       "source": "lib_main_bharatiyamapp",
@@ -3396,7 +3370,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/main.dart",
+      "source_file": "lib/main.dart",
       "source_location": "lines 45-46",
       "weight": 1.0,
       "source": "lib_main_bharatiyamapp",
@@ -3989,7 +3963,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "line 4",
       "weight": 1.0,
       "source": "services_firebase_service",
@@ -3999,7 +3973,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/models/shloka.dart",
+      "source_file": "lib/models/shloka.dart",
       "source_location": "line 35",
       "weight": 1.0,
       "source": "models_shloka_appcategory",
@@ -4009,7 +3983,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/category_card.dart",
+      "source_file": "lib/widgets/category_card.dart",
       "source_location": "line 7",
       "weight": 1.0,
       "source": "widgets_category_card",
@@ -4019,7 +3993,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "line 137",
       "weight": 0.8,
       "source": "services_firebase_service",
@@ -4029,7 +4003,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/models/shloka.dart",
+      "source_file": "lib/models/shloka.dart",
       "source_location": "line 161",
       "weight": 1.0,
       "source": "models_shloka_chapter",
@@ -4039,7 +4013,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/bookmark_service.dart",
+      "source_file": "lib/services/bookmark_service.dart",
       "source_location": "lines 56,72",
       "weight": 1.0,
       "source": "services_bookmark_service",
@@ -4049,7 +4023,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "line 119",
       "weight": 0.8,
       "source": "services_firebase_service",
@@ -4059,7 +4033,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/shloka_card.dart",
+      "source_file": "lib/widgets/shloka_card.dart",
       "source_location": "line 10",
       "weight": 1.0,
       "source": "widgets_shloka_card",
@@ -4069,7 +4043,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/models/shloka.dart",
+      "source_file": "lib/models/shloka.dart",
       "source_location": "line 200",
       "weight": 1.0,
       "source": "models_shloka_book",
@@ -4079,7 +4053,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "line 122",
       "weight": 0.8,
       "source": "services_firebase_service",
@@ -4089,7 +4063,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "line 125",
       "weight": 0.8,
       "source": "services_firebase_service",
@@ -4099,7 +4073,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/book_card.dart",
+      "source_file": "lib/widgets/book_card.dart",
       "source_location": "line 8",
       "weight": 1.0,
       "source": "widgets_book_card",
@@ -4515,7 +4489,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 36-38",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -4536,7 +4510,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 29-33",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -4557,7 +4531,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 8",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -4578,7 +4552,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 158,344,420",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -4598,7 +4572,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 251,320",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -4618,7 +4592,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 171,389,599",
       "weight": 1.0,
       "source": "screens_home_screen",
@@ -4786,7 +4760,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 160",
       "weight": 1.0,
       "source": "screens_home_screen_hometab",
@@ -4796,7 +4770,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 267-271",
       "weight": 1.0,
       "source": "screens_home_screen_hometab",
@@ -4806,7 +4780,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 129-131,240,262-264",
       "weight": 1.0,
       "source": "screens_home_screen_hometab",
@@ -4836,7 +4810,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 369",
       "weight": 1.0,
       "source": "screens_home_screen_savedtab",
@@ -4857,7 +4831,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 422-424",
       "weight": 1.0,
       "source": "screens_home_screen_booklistpage",
@@ -4867,7 +4841,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 478-480",
       "weight": 1.0,
       "source": "screens_home_screen_bookdetailpage",
@@ -4877,7 +4851,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "lines 555-576",
       "weight": 0.8,
       "source": "screens_home_screen_readerpage",
@@ -4887,7 +4861,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 599",
       "weight": 1.0,
       "source": "screens_home_screen_readerpage",
@@ -4907,7 +4881,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/screens/home_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": "line 651",
       "weight": 1.0,
       "source": "screens_home_screen_settingspage",
@@ -5045,7 +5019,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/bookmark_service.dart",
+      "source_file": "lib/services/bookmark_service.dart",
       "source_location": "line 7: extends ChangeNotifier",
       "weight": 1.0,
       "source": "services_bookmark_service",
@@ -5277,7 +5251,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/shloka_card.dart",
+      "source_file": "lib/widgets/shloka_card.dart",
       "source_location": "lines 34-35,78",
       "weight": 1.0,
       "source": "widgets_shloka_card",
@@ -5372,7 +5346,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "lines 34-40",
       "weight": 1.0,
       "source": "services_firebase_service",
@@ -5382,7 +5356,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "lines 7-9",
       "weight": 1.0,
       "source": "services_firebase_service",
@@ -5392,7 +5366,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/services/firebase_service.dart",
+      "source_file": "lib/services/firebase_service.dart",
       "source_location": "line 10: extends ChangeNotifier",
       "weight": 1.0,
       "source": "services_firebase_service",
@@ -5834,7 +5808,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/book_card.dart",
+      "source_file": "lib/widgets/book_card.dart",
       "source_location": "line 48",
       "weight": 0.8,
       "source": "widgets_book_card",
@@ -5844,7 +5818,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/category_card.dart",
+      "source_file": "lib/widgets/category_card.dart",
       "source_location": "line 3",
       "weight": 0.8,
       "source": "widgets_category_card",
@@ -5854,7 +5828,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/lib/widgets/shloka_card.dart",
+      "source_file": "lib/widgets/shloka_card.dart",
       "source_location": "line 6",
       "weight": 1.0,
       "source": "widgets_shloka_card",
@@ -6098,7 +6072,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/scripts/push_with_backup.ps1",
+      "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L1-L63",
       "weight": 1.0,
       "source": "scripts_push_with_backup",
@@ -6108,7 +6082,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/scripts/push_with_backup.ps1",
+      "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L35-L42",
       "weight": 0.8,
       "source": "scripts_push_with_backup",
@@ -6118,7 +6092,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/scripts/push_with_backup.ps1",
+      "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L35-L42",
       "weight": 0.8,
       "source": "scripts_push_with_backup",
@@ -6128,7 +6102,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/scripts/push_with_backup.ps1",
+      "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L35-L42",
       "weight": 0.8,
       "source": "scripts_push_with_backup",
@@ -6140,25 +6114,15 @@
       "source_file": "web/js/app.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "web_js_app_js_js_app",
-      "target": "web_js_app_js_js_app_app",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "shares_data_with",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "D:/bharatheeyam books/admin/index.html",
-      "source_location": "L312-L333",
-      "weight": 0.7,
-      "source": "admin_index",
-      "target": "js_data"
+      "target": "web_js_app_js_js_app_app"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/conversation_backup/implementation_plan.md",
+      "source_file": "conversation_backup/implementation_plan.md",
       "source_location": "L20",
       "weight": 1.0,
       "source": "conversation_backup_implementation_plan",
@@ -6168,7 +6132,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/conversation_backup/walkthrough.md",
+      "source_file": "conversation_backup/walkthrough.md",
       "source_location": "L34",
       "weight": 1.0,
       "source": "conversation_backup_walkthrough",
@@ -6178,7 +6142,7 @@
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L239,L269-L302",
       "weight": 1.0,
       "source": "js_app",
@@ -6188,7 +6152,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/data.js",
+      "source_file": "web/js/data.js",
       "source_location": "L5-L58",
       "weight": 1.0,
       "source": "js_data",
@@ -6198,7 +6162,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/data.js",
+      "source_file": "web/js/data.js",
       "source_location": "L24-L57",
       "weight": 1.0,
       "source": "js_data",
@@ -6210,9 +6174,9 @@
       "source_file": "web/js/data.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_app_data",
-      "confidence_score": 1.0
+      "target": "js_data_app_data"
     },
     {
       "relation": "contains",
@@ -6220,9 +6184,9 @@
       "source_file": "web/js/data.js",
       "source_location": "L610",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_getallshlokas",
-      "confidence_score": 1.0
+      "target": "js_data_getallshlokas"
     },
     {
       "relation": "contains",
@@ -6230,9 +6194,9 @@
       "source_file": "web/js/data.js",
       "source_location": "L646",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_getbookbyid",
-      "confidence_score": 1.0
+      "target": "js_data_getbookbyid"
     },
     {
       "relation": "contains",
@@ -6240,9 +6204,9 @@
       "source_file": "web/js/data.js",
       "source_location": "L632",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_getbooksbycategory",
-      "confidence_score": 1.0
+      "target": "js_data_getbooksbycategory"
     },
     {
       "relation": "contains",
@@ -6250,9 +6214,9 @@
       "source_file": "web/js/data.js",
       "source_location": "L640",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_getbooksbygod",
-      "confidence_score": 1.0
+      "target": "js_data_getbooksbygod"
     },
     {
       "relation": "contains",
@@ -6260,9 +6224,9 @@
       "source_file": "web/js/data.js",
       "source_location": "L636",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_getbooksbysubcategory",
-      "confidence_score": 1.0
+      "target": "js_data_getbooksbysubcategory"
     },
     {
       "relation": "contains",
@@ -6270,15 +6234,15 @@
       "source_file": "web/js/data.js",
       "source_location": "L650",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_data",
-      "target": "js_data_searchshlokas",
-      "confidence_score": 1.0
+      "target": "js_data_searchshlokas"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/index.html",
+      "source_file": "web/index.html",
       "source_location": "L66",
       "weight": 1.0,
       "source": "web_index",
@@ -6288,7 +6252,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L18-L28,L90,L107,L521,L709",
       "weight": 1.0,
       "source": "js_app",
@@ -6298,7 +6262,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/storage.js",
+      "source_file": "web/js/storage.js",
       "source_location": "L5-L93",
       "weight": 1.0,
       "source": "js_storage",
@@ -6310,15 +6274,15 @@
       "source_file": "web/js/storage.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_storage",
-      "target": "js_storage_bookmarkstorage",
-      "confidence_score": 1.0
+      "target": "js_storage_bookmarkstorage"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/index.html",
+      "source_file": "web/index.html",
       "source_location": "L67",
       "weight": 1.0,
       "source": "web_index",
@@ -6328,7 +6292,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/firebase.json",
+      "source_file": "firebase.json",
       "source_location": "line 3: public = admin",
       "weight": 0.8,
       "source": "firebase_json",
@@ -6338,7 +6302,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L687-L761",
       "weight": 1.0,
       "source": "js_app",
@@ -6348,7 +6312,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/admin/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": "lines 17-18",
       "weight": 1.0,
       "source": "js_app",
@@ -6358,7 +6322,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L34,L39-L76",
       "weight": 1.0,
       "source": "js_app",
@@ -6368,7 +6332,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L783-L808",
       "weight": 1.0,
       "source": "js_app",
@@ -6378,7 +6342,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L180-L216",
       "weight": 1.0,
       "source": "js_app",
@@ -6388,7 +6352,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/web/index.html",
+      "source_file": "web/index.html",
       "source_location": "L68",
       "weight": 1.0,
       "source": "web_index",
@@ -6398,7 +6362,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/admin/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": "lines 290-294",
       "weight": 1.0,
       "source": "js_app_appobject",
@@ -6408,7 +6372,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/android/settings.gradle",
+      "source_file": "android/settings.gradle",
       "source_location": "line 26",
       "weight": 1.0,
       "source": "android_settings_gradle",
@@ -6418,7 +6382,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/android/app/build.gradle",
+      "source_file": "android/app/build.gradle",
       "source_location": "child project references root",
       "weight": 0.8,
       "source": "app_build_gradle",
@@ -6428,7 +6392,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/.github/workflows/build.yml",
+      "source_file": ".github/workflows/build.yml",
       "source_location": "L46-L60",
       "weight": 0.9,
       "source": "workflows_build",
@@ -6438,7 +6402,7 @@
       "relation": "shares_data_with",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/.github/workflows/build.yml",
+      "source_file": ".github/workflows/build.yml",
       "source_location": "L49-L52",
       "weight": 1.0,
       "source": "workflows_build",
@@ -6448,27 +6412,17 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/.github/workflows/build.yml",
+      "source_file": ".github/workflows/build.yml",
       "source_location": "L33-L37",
       "weight": 0.9,
       "source": "workflows_build",
       "target": "pubspec"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-admin.yml",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "workflows_deploy_admin",
-      "target": "admin_index"
-    },
-    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-admin.yml",
+      "source_file": ".github/workflows/deploy-admin.yml",
       "source_location": "L37-L39",
       "weight": 1.0,
       "source": "workflows_deploy_admin",
@@ -6478,7 +6432,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-web.yml",
+      "source_file": ".github/workflows/deploy-web.yml",
       "source_location": "L35-L37",
       "weight": 1.0,
       "source": "workflows_deploy_web",
@@ -6488,7 +6442,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/.github/workflows/deploy-web.yml",
+      "source_file": ".github/workflows/deploy-web.yml",
       "source_location": "L33",
       "weight": 1.0,
       "source": "workflows_deploy_web",
@@ -6498,7 +6452,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/README.md",
+      "source_file": "README.md",
       "source_location": "L18-L27",
       "weight": 1.0,
       "source": "readme",
@@ -6508,27 +6462,17 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/README.md",
+      "source_file": "README.md",
       "source_location": "L42-L43",
       "weight": 0.8,
       "source": "readme",
       "target": "concept_github_pages_deployment"
     },
     {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/admin/index.html",
-      "source_location": "L355-L358",
-      "weight": 1.0,
-      "source": "admin_index",
-      "target": "concept_firebase_backend"
-    },
-    {
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/conversation_backup/task.md",
+      "source_file": "conversation_backup/task.md",
       "source_location": "L3-L9",
       "weight": 0.9,
       "source": "conversation_backup_task",
@@ -6538,7 +6482,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/conversation_backup/walkthrough.md",
+      "source_file": "conversation_backup/walkthrough.md",
       "source_location": "L3",
       "weight": 0.9,
       "source": "conversation_backup_walkthrough",
@@ -6548,27 +6492,17 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/conversation_backup/walkthrough.md",
+      "source_file": "conversation_backup/walkthrough.md",
       "source_location": "L42-L43",
       "weight": 1.0,
       "source": "conversation_backup_walkthrough",
       "target": "concept_github_pages_deployment"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/pubspec.yaml",
-      "source_location": "L15-L18",
-      "weight": 1.0,
-      "source": "pubspec",
-      "target": "concept_firebase_backend"
-    },
-    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "D:/bharatheeyam books/pubspec.yaml",
+      "source_file": "pubspec.yaml",
       "source_location": "L1-L31",
       "weight": 1.0,
       "source": "pubspec",
@@ -6578,7 +6512,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/web/js/app.js",
+      "source_file": "web/js/app.js",
       "source_location": "L199-L213",
       "weight": 0.9,
       "source": "concept_three_layer_display",
@@ -6588,7 +6522,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/web/js/data.js",
+      "source_file": "web/js/data.js",
       "source_location": "L24-L57",
       "weight": 0.9,
       "source": "concept_category_hierarchy",
@@ -6598,7 +6532,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/assets/images/devi.png",
+      "source_file": "assets/images/devi.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_devi",
@@ -6608,7 +6542,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/assets/images/devi.png",
+      "source_file": "assets/images/devi.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_devi",
@@ -6618,7 +6552,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/assets/images/ganesha.png",
+      "source_file": "assets/images/ganesha.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_ganesha",
@@ -6628,7 +6562,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/assets/images/hanuman.png",
+      "source_file": "assets/images/hanuman.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_hanuman",
@@ -6638,7 +6572,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/assets/images/krishna.png",
+      "source_file": "assets/images/krishna.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_krishna",
@@ -6648,7 +6582,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/assets/images/krishna.png",
+      "source_file": "assets/images/krishna.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_krishna",
@@ -6658,7 +6592,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "D:/bharatheeyam books/assets/images/rama.png",
+      "source_file": "assets/images/rama.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_rama",
@@ -6668,7 +6602,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "D:/bharatheeyam books/assets/images/shiva.png",
+      "source_file": "assets/images/shiva.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_shiva",
@@ -6678,7 +6612,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
-      "source_file": "D:/bharatheeyam books/assets/images/surya.png",
+      "source_file": "assets/images/surya.png",
       "source_location": null,
       "weight": 1.0,
       "source": "images_surya",
@@ -6686,5 +6620,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "48a663d4784c0aef5335528a1a79b086f1500a10"
+  "built_at_commit": "dd82e1d718b26e6dbabfe09a5e1344ee6d4b3b11"
 }

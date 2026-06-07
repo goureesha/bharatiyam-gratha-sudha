@@ -1,8 +1,8 @@
 {
   "admin/js/app.js": {
-    "mtime": 1779893446.621592,
-    "ast_hash": "3fde149570e305ff7307c079aff90061",
-    "semantic_hash": "3fde149570e305ff7307c079aff90061"
+    "mtime": 1780831335.9383333,
+    "ast_hash": "48ddd0ae985e5b67f2dda7822d0a1e19",
+    "semantic_hash": ""
   },
   "android/app/build.gradle": {
     "mtime": 1779862003.9820554,
@@ -60,9 +60,9 @@
     "semantic_hash": "395b51dfd0da4ef3321b5778665da6b9"
   },
   "lib/services/firebase_service.dart": {
-    "mtime": 1780315002.7967925,
-    "ast_hash": "faa1edd3e20080558fe792eb35718be9",
-    "semantic_hash": "faa1edd3e20080558fe792eb35718be9"
+    "mtime": 1780831313.6718757,
+    "ast_hash": "be450a3126470ccea11ec884c3ac0bbe",
+    "semantic_hash": ""
   },
   "lib/theme/app_theme.dart": {
     "mtime": 1779606273.7868962,

@@ -1,7 +1,7 @@
 # Graph Report - bharatheeyam books  (2026-06-07)
 
 ## Corpus Check
-- 25 files · ~380,580 words
+- 25 files · ~380,690 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dd82e1d7`
+- Built from commit: `7079c11d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -31,27 +31,27 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `BookmarkService` - 11 edges
-2. `Admin Panel App (app.js)` - 9 edges
-3. `State` - 7 edges
-4. `_HomeTab` - 6 edges
-5. `ReaderPage` - 6 edges
-6. `BharatiyamApp` - 5 edges
-7. `Shloka` - 5 edges
-8. `_HomeScreenState` - 5 edges
-9. `BookDetailPage` - 5 edges
-10. `SettingsPage` - 5 edges
+2. `State` - 6 edges
+3. `_HomeTab` - 6 edges
+4. `ReaderPage` - 6 edges
+5. `BharatiyamApp` - 5 edges
+6. `Shloka` - 5 edges
+7. `_HomeScreenState` - 5 edges
+8. `BookDetailPage` - 5 edges
+9. `SettingsPage` - 5 edges
+10. `hosting` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Firebase project config (hosting + firestore)` --references--> `Admin Panel App (app.js)`  [INFERRED]
-  firebase.json → admin/js/app.js
-- `Web index.html (Entry Point)` --references--> `Admin Panel App (app.js)`  [EXTRACTED]
-  web/index.html → admin/js/app.js
 - `Build APK & Backup (CI)` --implements--> `Conversation Backup & Build Artifact Strategy`  [EXTRACTED]
   .github/workflows/build.yml → scripts/push_with_backup.ps1
 - `_ShlokaCardState` --inherits--> `State`  [EXTRACTED]
   lib/widgets/shloka_card.dart → admin/js/app.js
-- `Admin Panel App (app.js)` --calls--> `Bookmark/Favorites System`  [EXTRACTED]
-  admin/js/app.js → web/js/storage.js
+- `Build APK & Backup (CI)` --references--> `pubspec.yaml (Flutter Config)`  [INFERRED]
+  .github/workflows/build.yml → pubspec.yaml
+- `README.md (Project Overview)` --references--> `GitHub Pages Deployment`  [INFERRED]
+  README.md → .github/workflows/deploy-web.yml
+- `_HomeScreenState` --inherits--> `State`  [EXTRACTED]
+  lib/screens/home_screen.dart → admin/js/app.js
 
 ## Import Cycles
 - None detected.
@@ -59,32 +59,32 @@
 ## Communities (16 total, 1 thin omitted)
 
 ### Community 0 - "Navigation and Routing"
-Cohesion: 0.07
-Nodes (46): Chapter, FirebaseService, State, BharatiyamApp, MaterialPageRoute, book, BookDetailPage, BookListPage (+38 more)
+Cohesion: 0.08
+Nodes (39): Chapter, FirebaseService, State, MaterialPageRoute, book, BookDetailPage, BookListPage, books (+31 more)
 
 ### Community 1 - "Admin Panel and Concepts"
 Cohesion: 0.11
-Nodes (14): Category Hierarchy (library/mantras/stotras → subcategory → book → chapter → shloka), Conversation Backup & Build Artifact Strategy, Deity-Based Content Organization, Flutter + Web Dual-Platform Architecture, GitHub Pages Deployment, Build Log, Implementation Plan (Shiva Stotras), Task Progress Tracker (+6 more)
+Nodes (16): Category Hierarchy (library/mantras/stotras → subcategory → book → chapter → shloka), Conversation Backup & Build Artifact Strategy, Deity-Based Content Organization, Flutter + Web Dual-Platform Architecture, GitHub Pages Deployment, Build Log, Implementation Plan (Shiva Stotras), Task Progress Tracker (+8 more)
 
 ### Community 2 - "Theme and UI Components"
-Cohesion: 0.06
-Nodes (36): Book, ../models/shloka.dart, package:flutter/material.dart, package:google_fonts/google_fonts.dart, SubCategory, AppTheme, ../theme/app_theme.dart, gold (+28 more)
+Cohesion: 0.09
+Nodes (21): AppTheme, gold, goldLight, heroGradient, kannadaStyle, lotusPink, maroon, meaningStyle (+13 more)
 
 ### Community 3 - "Data Models"
 Cohesion: 0.06
-Nodes (34): AppCategory, Book, bookId, bookTitle, bookTitleEn, category, Chapter, chapters (+26 more)
+Nodes (35): List, AppCategory, Book, bookId, bookTitle, bookTitleEn, category, Chapter (+27 more)
 
 ### Community 4 - "App Bootstrap and Providers"
-Cohesion: 0.10
-Nodes (20): Provider state management pattern, build, firebaseService, init, main, package:firebase_core/firebase_core.dart, package:provider/provider.dart, screens/home_screen.dart (+12 more)
+Cohesion: 0.07
+Nodes (33): Book, Provider state management pattern, build, firebaseService, init, main, ../models/shloka.dart, package:firebase_core/firebase_core.dart (+25 more)
 
 ### Community 5 - "Firestore Service Layer"
 Cohesion: 0.07
-Nodes (26): ChangeNotifier, Offline-first architecture (bundled data + Firestore sync), ../data/content_data.dart, FirebaseFirestore?, List, package:cloud_firestore/cloud_firestore.dart, _books, _categories (+18 more)
+Nodes (27): ChangeNotifier, Offline-first architecture (bundled data + Firestore sync), ../data/content_data.dart, FirebaseFirestore?, package:cloud_firestore/cloud_firestore.dart, _books, _categories, _db (+19 more)
 
 ### Community 6 - "Bookmark and Preferences"
-Cohesion: 0.08
-Nodes (23): bool get, dart:convert, double get, int get, Map, package:flutter/foundation.dart, package:shared_preferences/shared_preferences.dart, _bookmarks (+15 more)
+Cohesion: 0.07
+Nodes (32): bool get, dart:convert, double get, int get, BharatiyamApp, Map, package:flutter/foundation.dart, package:shared_preferences/shared_preferences.dart (+24 more)
 
 ### Community 7 - "Content Data and Seed"
 Cohesion: 0.14
@@ -103,28 +103,28 @@ Cohesion: 0.33
 Nodes (5): Android root build.gradle, Android settings.gradle, Android app build.gradle, FlutterActivity, MainActivity
 
 ### Community 15 - "Community 15"
-Cohesion: 0.12
-Nodes (17): App, Bookmark/Favorites System, Firestore backend (books/chapters/shlokas/categories collections), Hash-based SPA Routing, Script Filter (Devanagari/Kannada/Both), Three-Layer Shloka Display (Sanskrit/Kannada/Meaning), Firebase project config (hosting + firestore), fieldOverrides (+9 more)
+Cohesion: 0.15
+Nodes (13): Bookmark/Favorites System, Firestore backend (books/chapters/shlokas/categories collections), Hash-based SPA Routing, Script Filter (Devanagari/Kannada/Both), Three-Layer Shloka Display (Sanskrit/Kannada/Meaning), Firebase project config (hosting + firestore), fieldOverrides, indexes (+5 more)
 
 ## Knowledge Gaps
-- **146 isolated node(s):** `auth`, `db`, `App`, `public`, `ignore` (+141 more)
+- **148 isolated node(s):** `auth`, `db`, `App`, `_instance`, `_db` (+143 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Admin Panel App (app.js)` connect `Community 15` to `Admin Panel and Concepts`?**
-  _High betweenness centrality (0.179) - this node is a cross-community bridge._
-- **Why does `Shloka` connect `Data Models` to `App Bootstrap and Providers`, `Firestore Service Layer`, `Bookmark and Preferences`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `State` connect `Navigation and Routing` to `App Bootstrap and Providers`, `Community 15`?**
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
+- **Why does `SEED` connect `Community 15` to `Content Data and Seed`?**
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
 - **What connects `auth`, `db`, `App` to the rest of the system?**
-  _146 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _148 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Navigation and Routing` be split into smaller, more focused modules?**
-  _Cohesion score 0.0730804810360777 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08076923076923077 - nodes in this community are weakly interconnected._
 - **Should `Admin Panel and Concepts` be split into smaller, more focused modules?**
-  _Cohesion score 0.11255411255411256 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._
 - **Should `Theme and UI Components` be split into smaller, more focused modules?**
-  _Cohesion score 0.059379217273954114 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Data Models` be split into smaller, more focused modules?**
-  _Cohesion score 0.06218487394957983 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06031746031746032 - nodes in this community are weakly interconnected._
