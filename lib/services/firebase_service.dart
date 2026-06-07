@@ -137,6 +137,8 @@ class FirebaseService extends ChangeNotifier {
           final cat = AppCategory.fromFirestore(doc.data());
           _categories[cat.id] = cat;
         }
+        // Override deity subcategory icons with local assets
+        _overrideDeityIcons();
       } else {
         _categories = Map.from(ContentData.categories);
       }
@@ -209,5 +211,45 @@ class FirebaseService extends ChangeNotifier {
       }
     }
     return all;
+  }
+
+  /// Override subcategory icons with local asset paths for known deities
+  static const _deityIcons = <String, String>{
+    'shiva': 'images/shiva.png',
+    'vishnu': 'images/vishnu.png',
+    'devi': 'images/devi.png',
+    'ganesha': 'images/ganesha.png',
+    'hanuman': 'images/hanuman.png',
+    'surya': 'images/surya.png',
+    'krishna': 'images/krishna.png',
+    'rama': 'images/rama.png',
+  };
+
+  void _overrideDeityIcons() {
+    final updated = <String, AppCategory>{};
+    for (final entry in _categories.entries) {
+      final cat = entry.value;
+      final fixedSubs = cat.subcategories.map((sub) {
+        final localIcon = _deityIcons[sub.id];
+        if (localIcon != null) {
+          return SubCategory(
+            id: sub.id,
+            title: sub.title,
+            titleEn: sub.titleEn,
+            icon: localIcon,
+          );
+        }
+        return sub;
+      }).toList();
+      updated[entry.key] = AppCategory(
+        id: cat.id,
+        title: cat.title,
+        titleEn: cat.titleEn,
+        icon: cat.icon,
+        description: cat.description,
+        subcategories: fixedSubs,
+      );
+    }
+    _categories = updated;
   }
 }
