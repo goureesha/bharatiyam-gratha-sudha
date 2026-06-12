@@ -33,7 +33,7 @@ class StotramalaApp extends StatelessWidget {
     return Consumer<BookmarkService>(
       builder: (context, bookmarks, _) {
         return MaterialApp(
-          title: 'ಸ್ತೋತ್ರಮಾಲಾ',
+          title: 'ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,

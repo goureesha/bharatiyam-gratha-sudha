@@ -22,24 +22,33 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final screens = [
       const _HomeBody(),
+      const _LibraryBody(),
+      const _MantrasBody(),
+      const _StotrasBody(),
       const BookmarksScreen(),
-      const SettingsScreen(),
     ];
     return Scaffold(
-      body: screens[_currentIndex],
+      body: IndexedStack(
+        index: _currentIndex,
+        children: screens,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (i) => setState(() => _currentIndex = i),
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'ಮುಖಪುಟ'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_rounded), label: 'ಉಳಿಸಿದ'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings_rounded), label: 'ಸೆಟ್ಟಿಂಗ್ಸ್'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book_rounded), label: 'ಗ್ರಂಥಾಲಯ'),
+          BottomNavigationBarItem(icon: Icon(Icons.self_improvement_rounded), label: 'ಮಂತ್ರಗಳು'),
+          BottomNavigationBarItem(icon: Icon(Icons.music_note_rounded), label: 'ಸ್ತೋತ್ರಗಳು'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_rounded), label: 'ಉಳಿಸಿದವು'),
         ],
       ),
     );
   }
 }
 
+// ===================== TAB 1: HOME =====================
 class _HomeBody extends StatelessWidget {
   const _HomeBody();
 
@@ -74,8 +83,8 @@ class _HomeBody extends StatelessWidget {
           floating: false,
           pinned: true,
           flexibleSpace: FlexibleSpaceBar(
-            title: const Text('ಸ್ತೋತ್ರಮಾಲಾ',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
+            title: const Text('ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
             background: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -99,6 +108,11 @@ class _HomeBody extends StatelessWidget {
               icon: const Icon(Icons.search_rounded),
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (_) => const SearchScreen())),
+            ),
+            IconButton(
+              icon: const Icon(Icons.settings_rounded),
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const SettingsScreen())),
             ),
           ],
         ),
@@ -132,7 +146,7 @@ class _HomeBody extends StatelessWidget {
           ),
         ),
 
-        // Section title
+        // Section: Deities
         const SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
@@ -161,21 +175,31 @@ class _HomeBody extends StatelessWidget {
           ),
         ),
 
-        // Extras button
-        SliverToBoxAdapter(
+        // Section: Extras
+        const SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: ElevatedButton.icon(
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const ExtrasScreen())),
-              icon: const Icon(Icons.apps_rounded),
-              label: const Text('ಇನ್ನಷ್ಟು ವಿಭಾಗಗಳು  →',
-                  style: TextStyle(fontSize: 16)),
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-              ),
+            padding: EdgeInsets.fromLTRB(16, 20, 16, 8),
+            child: Text('ಇತರೆ ವಿಭಾಗಗಳು',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          ),
+        ),
+
+        // Extras grid
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          sliver: SliverGrid(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              childAspectRatio: 1.0,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final cat = stotraService.extrasCategories[index];
+                return _ExtraCard(category: cat);
+              },
+              childCount: stotraService.extrasCategories.length,
             ),
           ),
         ),
@@ -186,6 +210,78 @@ class _HomeBody extends StatelessWidget {
   }
 }
 
+// ===================== TAB 2: LIBRARY (Deity categories) =====================
+class _LibraryBody extends StatelessWidget {
+  const _LibraryBody();
+
+  @override
+  Widget build(BuildContext context) {
+    final stotraService = context.watch<StotraService>();
+    if (!stotraService.isLoaded) return const Center(child: CircularProgressIndicator());
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('ಗ್ರಂಥಾಲಯ — Library')),
+      body: ListView.builder(
+        itemCount: stotraService.mainCategories.length,
+        itemBuilder: (context, index) {
+          final cat = stotraService.mainCategories[index];
+          return ListTile(
+            leading: Text(cat.icon, style: const TextStyle(fontSize: 28)),
+            title: Text(cat.title, style: const TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: Text('${cat.titleEn} · ${cat.stotras.length} ಸ್ತೋತ್ರಗಳು'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => CategoryScreen(category: cat))),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// ===================== TAB 3: MANTRAS (Extra categories) =====================
+class _MantrasBody extends StatelessWidget {
+  const _MantrasBody();
+
+  @override
+  Widget build(BuildContext context) {
+    final stotraService = context.watch<StotraService>();
+    if (!stotraService.isLoaded) return const Center(child: CircularProgressIndicator());
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('ಮಂತ್ರಗಳು — Mantras')),
+      body: ListView.builder(
+        itemCount: stotraService.extrasCategories.length,
+        itemBuilder: (context, index) {
+          final cat = stotraService.extrasCategories[index];
+          return ListTile(
+            leading: Text(cat.icon, style: const TextStyle(fontSize: 28)),
+            title: Text(cat.title, style: const TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: Text('${cat.titleEn} · ${cat.stotras.length} ಸ್ತೋತ್ರಗಳು'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => CategoryScreen(category: cat))),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// ===================== TAB 4: STOTRAS (All stotras flat list) =====================
+class _StotrasBody extends StatelessWidget {
+  const _StotrasBody();
+
+  @override
+  Widget build(BuildContext context) {
+    final stotraService = context.watch<StotraService>();
+    if (!stotraService.isLoaded) return const Center(child: CircularProgressIndicator());
+
+    return const ExtrasScreen();
+  }
+}
+
+// ===================== WIDGETS =====================
 class _DeityCard extends StatelessWidget {
   final StotraCategory category;
   const _DeityCard({required this.category});
@@ -231,6 +327,61 @@ class _DeityCard extends StatelessWidget {
                 '${category.stotras.length} ಸ್ತೋತ್ರ',
                 style: TextStyle(
                   fontSize: 12,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ExtraCard extends StatelessWidget {
+  final StotraCategory category;
+  const _ExtraCard({required this.category});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Material(
+      borderRadius: BorderRadius.circular(12),
+      color: isDark ? const Color(0xFF1A1130) : Colors.white,
+      elevation: 1,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => CategoryScreen(category: category)),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: isDark
+                  ? Colors.white.withOpacity(0.08)
+                  : Colors.grey.withOpacity(0.2),
+            ),
+          ),
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(category.icon, style: const TextStyle(fontSize: 24)),
+              const SizedBox(height: 4),
+              Text(
+                category.title,
+                style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text(
+                '${category.stotras.length}',
+                style: TextStyle(
+                  fontSize: 11,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
