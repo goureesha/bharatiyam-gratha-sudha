@@ -1,107 +1,64 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../models/shloka.dart';
 
-/// Manages bookmark persistence using SharedPreferences
 class BookmarkService extends ChangeNotifier {
-  static const _storageKey = 'bharatiyam_bookmarks';
-  static const _themeKey = 'bharatiyam_theme';
-  static const _fontSizeKey = 'bharatiyam_font_size';
+  static const _kBookmarks = 'bookmarked_ids';
+  static const _kDarkMode = 'dark_mode';
+  static const _kFontSize = 'font_size';
 
-  Map<String, Map<String, dynamic>> _bookmarks = {};
+  SharedPreferences? _prefs;
+  Set<String> _bookmarkedIds = {};
   bool _isDarkMode = false;
-  double _fontScale = 1.0; // 0.85 = small, 1.0 = medium, 1.15 = large
+  double _fontSize = 20.0;
 
-  Map<String, Map<String, dynamic>> get bookmarks => _bookmarks;
+  Set<String> get bookmarkedIds => _bookmarkedIds;
   bool get isDarkMode => _isDarkMode;
-  double get fontScale => _fontScale;
-  int get count => _bookmarks.length;
+  double get fontSize => _fontSize;
+  int get count => _bookmarkedIds.length;
 
-  /// Initialize: load saved data
   Future<void> init() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    // Load bookmarks
-    final data = prefs.getString(_storageKey);
-    if (data != null) {
-      try {
-        final decoded = jsonDecode(data) as Map<String, dynamic>;
-        _bookmarks = decoded.map(
-          (key, value) => MapEntry(key, Map<String, dynamic>.from(value)),
-        );
-      } catch (e) {
-        _bookmarks = {};
-      }
+    _prefs = await SharedPreferences.getInstance();
+    final saved = _prefs?.getString(_kBookmarks);
+    if (saved != null) {
+      _bookmarkedIds = Set<String>.from(json.decode(saved));
     }
-
-    // Load theme
-    _isDarkMode = prefs.getBool(_themeKey) ?? false;
-
-    // Load font size
-    _fontScale = prefs.getDouble(_fontSizeKey) ?? 1.0;
-
+    _isDarkMode = _prefs?.getBool(_kDarkMode) ?? false;
+    _fontSize = _prefs?.getDouble(_kFontSize) ?? 20.0;
     notifyListeners();
   }
 
-  // ── Bookmark Operations ─────────────────────────────────────
-
-  bool isBookmarked(String shlokaId) => _bookmarks.containsKey(shlokaId);
-
-  Future<bool> toggle(String shlokaId, Shloka shloka) async {
-    if (_bookmarks.containsKey(shlokaId)) {
-      _bookmarks.remove(shlokaId);
+  void toggle(String stotraId) {
+    if (_bookmarkedIds.contains(stotraId)) {
+      _bookmarkedIds.remove(stotraId);
     } else {
-      _bookmarks[shlokaId] = {
-        ...shloka.toJson(),
-        'savedAt': DateTime.now().toIso8601String(),
-      };
+      _bookmarkedIds.add(stotraId);
     }
-    await _save();
-    notifyListeners();
-    return _bookmarks.containsKey(shlokaId);
-  }
-
-  List<Shloka> getSavedShlokas() {
-    final entries = _bookmarks.entries.toList()
-      ..sort((a, b) {
-        final aTime = a.value['savedAt'] ?? '';
-        final bTime = b.value['savedAt'] ?? '';
-        return bTime.compareTo(aTime);
-      });
-    return entries.map((e) => Shloka.fromJson(e.value)).toList();
-  }
-
-  Future<void> clearAll() async {
-    _bookmarks.clear();
-    await _save();
+    _save();
     notifyListeners();
   }
 
-  String exportAsJson() => const JsonEncoder.withIndent('  ').convert(_bookmarks);
+  bool isBookmarked(String stotraId) => _bookmarkedIds.contains(stotraId);
 
-  // ── Theme ───────────────────────────────────────────────────
-
-  Future<void> toggleTheme() async {
-    _isDarkMode = !_isDarkMode;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_themeKey, _isDarkMode);
+  set isDarkMode(bool value) {
+    _isDarkMode = value;
+    _prefs?.setBool(_kDarkMode, value);
     notifyListeners();
   }
 
-  // ── Font Size ───────────────────────────────────────────────
-
-  Future<void> setFontScale(double scale) async {
-    _fontScale = scale;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble(_fontSizeKey, _fontScale);
+  set fontSize(double value) {
+    _fontSize = value.clamp(14.0, 36.0);
+    _prefs?.setDouble(_kFontSize, _fontSize);
     notifyListeners();
   }
 
-  // ── Private ─────────────────────────────────────────────────
+  void clearAll() {
+    _bookmarkedIds.clear();
+    _save();
+    notifyListeners();
+  }
 
-  Future<void> _save() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_storageKey, jsonEncode(_bookmarks));
+  void _save() {
+    _prefs?.setString(_kBookmarks, json.encode(_bookmarkedIds.toList()));
   }
 }
