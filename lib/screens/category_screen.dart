@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/stotra.dart';
 import '../services/bookmark_service.dart';
+import '../widgets/nudi_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'reader_screen.dart';
 
@@ -92,15 +93,23 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               ),
                             ),
                           ),
-                          title: Text(
-                            stotra.title,
-                            style: GoogleFonts.notoSansKannada(
-                              fontSize: 16,
-                              height: 1.3,
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                          title: stotra.font == 'brhknde'
+                              ? NudiText(
+                                  text: stotra.title,
+                                  fontSize: 16,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  height: 1.3,
+                                )
+                              : Text(
+                                  stotra.title,
+                                  style: GoogleFonts.notoSansKannada(
+                                    fontSize: 16,
+                                    height: 1.3,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                           trailing: IconButton(
                             icon: Icon(
                               isBookmarked

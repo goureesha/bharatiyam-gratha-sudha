@@ -20,16 +20,25 @@ class ReaderScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // App bar title uses modern Noto Sans Kannada (via theme)
-        title: Text(
-          stotra.title,
-          style: GoogleFonts.notoSansKannada(
-            fontSize: 16,
-            color: Colors.white,
-            fontWeight: FontWeight.w500,
-          ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
+        title: isVedic
+            ? NudiText(
+                text: stotra.title,
+                fontSize: 16,
+                color: Colors.white,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                height: 1.3,
+              )
+            : Text(
+                stotra.title,
+                style: GoogleFonts.notoSansKannada(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
         actions: [
           IconButton(
             icon: Icon(
