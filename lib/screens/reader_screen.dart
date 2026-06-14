@@ -20,13 +20,15 @@ class ReaderScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // App bar title uses modern Noto Sans Kannada (via theme)
-        title: NudiText(
-          text: stotra.title,
-          fontSize: 16,
-          color: Colors.white,
+        title: Text(
+          stotra.title,
+          style: GoogleFonts.notoSansKannada(
+            fontSize: 16,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          height: 1.3,
         ),
         actions: [
           IconButton(
@@ -91,16 +93,28 @@ class ReaderScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: NudiText(
-                  text: stotra.content,
-                  fontFamily: fontFamily,
-                  fontSize: bookmarks.fontSize,
-                  height: isVedic ? 2.4 : 1.9,
-                  letterSpacing: isVedic ? 0.5 : 0.3,
-                  color: isDark
-                      ? const Color(0xFFE8D5B5)
-                      : const Color(0xFF2D1B00),
-                ),
+                child: isVedic
+                    ? NudiText(
+                        text: stotra.content,
+                        fontFamily: fontFamily,
+                        fontSize: bookmarks.fontSize,
+                        height: 2.4,
+                        letterSpacing: 0.5,
+                        color: isDark
+                            ? const Color(0xFFE8D5B5)
+                            : const Color(0xFF2D1B00),
+                      )
+                    : Text(
+                        stotra.content,
+                        style: GoogleFonts.notoSansKannada(
+                          fontSize: bookmarks.fontSize,
+                          height: 1.9,
+                          letterSpacing: 0.3,
+                          color: isDark
+                              ? const Color(0xFFE8D5B5)
+                              : const Color(0xFF2D1B00),
+                        ),
+                      ),
               ),
 
               const SizedBox(height: 24),

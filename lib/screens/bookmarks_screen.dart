@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../services/stotra_service.dart';
 import '../services/bookmark_service.dart';
 import '../models/stotra.dart';
-import '../widgets/nudi_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'reader_screen.dart';
 
 class BookmarksScreen extends StatelessWidget {
@@ -55,12 +55,14 @@ class BookmarksScreen extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(Icons.favorite_rounded,
                         color: Colors.red.shade300, size: 22),
-                    title: NudiText(
-                      text: stotra.title,
-                      fontSize: 15,
+                    title: Text(
+                      stotra.title,
+                      style: GoogleFonts.notoSansKannada(
+                        fontSize: 15,
+                        height: 1.3,
+                      ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      height: 1.3,
                     ),
                     subtitle: Text(stotra.categoryTitle,
                         style: const TextStyle(fontSize: 12)),

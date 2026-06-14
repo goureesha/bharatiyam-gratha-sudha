@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/stotra.dart';
 import '../services/bookmark_service.dart';
-import '../widgets/nudi_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'reader_screen.dart';
 
 class CategoryScreen extends StatefulWidget {
@@ -92,12 +92,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               ),
                             ),
                           ),
-                          title: NudiText(
-                            text: stotra.title,
-                            fontSize: 16,
+                          title: Text(
+                            stotra.title,
+                            style: GoogleFonts.notoSansKannada(
+                              fontSize: 16,
+                              height: 1.3,
+                            ),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            height: 1.3,
                           ),
                           trailing: IconButton(
                             icon: Icon(
