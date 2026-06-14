@@ -6,461 +6,362 @@
     {
       "label": "app.js",
       "file_type": "code",
-      "source_file": "web/js/app.js",
+      "source_file": "admin/js/app.js",
       "source_location": "L1",
       "id": "js_app",
       "community": 15,
       "norm_label": "app.js"
     },
     {
-      "label": "iconHtml()",
-      "file_type": "code",
-      "source_file": "web/js/app.js",
-      "source_location": "L6",
-      "id": "js_app_iconhtml",
-      "community": 15,
-      "norm_label": "iconhtml()"
-    },
-    {
-      "label": "App",
-      "file_type": "code",
-      "source_file": "web/js/app.js",
-      "source_location": "L13",
-      "id": "js_app_app",
-      "community": 15,
-      "norm_label": "app"
-    },
-    {
-      "label": "data.js",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L1",
-      "id": "js_data",
-      "community": 1,
-      "norm_label": "data.js"
-    },
-    {
-      "label": "APP_DATA",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L5",
-      "id": "js_data_app_data",
-      "community": 1,
-      "norm_label": "app_data"
-    },
-    {
-      "label": "getAllShlokas()",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L611",
-      "id": "js_data_getallshlokas",
-      "community": 1,
-      "norm_label": "getallshlokas()"
-    },
-    {
-      "label": "getBooksByCategory()",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L633",
-      "id": "js_data_getbooksbycategory",
-      "community": 1,
-      "norm_label": "getbooksbycategory()"
-    },
-    {
-      "label": "getBooksBySubcategory()",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L637",
-      "id": "js_data_getbooksbysubcategory",
-      "community": 1,
-      "norm_label": "getbooksbysubcategory()"
-    },
-    {
-      "label": "getBooksByGod()",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L641",
-      "id": "js_data_getbooksbygod",
-      "community": 1,
-      "norm_label": "getbooksbygod()"
-    },
-    {
-      "label": "getBookById()",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L647",
-      "id": "js_data_getbookbyid",
-      "community": 1,
-      "norm_label": "getbookbyid()"
-    },
-    {
-      "label": "searchShlokas()",
-      "file_type": "code",
-      "source_file": "web/js/data.js",
-      "source_location": "L651",
-      "id": "js_data_searchshlokas",
-      "community": 1,
-      "norm_label": "searchshlokas()"
-    },
-    {
-      "label": "stotra_data.js",
-      "file_type": "code",
-      "source_file": "web/js/stotra_data.js",
-      "source_location": "L1",
-      "id": "js_stotra_data",
-      "community": 11,
-      "norm_label": "stotra_data.js"
-    },
-    {
-      "label": "STOTRA_DATA",
-      "file_type": "code",
-      "source_file": "web/js/stotra_data.js",
-      "source_location": "L2",
-      "id": "js_stotra_data_stotra_data",
-      "community": 11,
-      "norm_label": "stotra_data"
-    },
-    {
       "label": "auth",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L17",
+      "id": "js_app_auth",
       "community": 15,
-      "norm_label": "auth",
-      "id": "js_app_auth"
+      "norm_label": "auth"
     },
     {
       "label": "db",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L18",
+      "id": "js_app_db",
       "community": 15,
-      "norm_label": "db",
-      "id": "js_app_db"
+      "norm_label": "db"
     },
     {
       "label": "State",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L21",
+      "id": "js_app_state",
       "community": 0,
-      "norm_label": "state",
-      "id": "js_app_state"
+      "norm_label": "state"
     },
     {
       "label": "SEED",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L29",
+      "id": "js_app_seed",
       "community": 15,
-      "norm_label": "seed",
-      "id": "js_app_seed"
+      "norm_label": "seed"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L207",
+      "id": "js_app_app",
+      "community": 15,
+      "norm_label": "app"
     },
     {
       "label": "firebase_service.dart",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service",
       "community": 5,
-      "norm_label": "firebase_service.dart",
-      "id": "services_firebase_service"
+      "norm_label": "firebase_service.dart"
     },
     {
       "label": "FirebaseService",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_firebaseservice",
       "community": 5,
-      "norm_label": "firebaseservice",
-      "id": "services_firebase_service_firebaseservice"
+      "norm_label": "firebaseservice"
     },
     {
       "label": "ChangeNotifier",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "changenotifier",
       "community": 5,
-      "norm_label": "changenotifier",
-      "id": "changenotifier"
+      "norm_label": "changenotifier"
     },
     {
       "label": "_instance",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_instance",
       "community": 5,
-      "norm_label": "_instance",
-      "id": "services_firebase_service_instance"
+      "norm_label": "_instance"
     },
     {
       "label": "static final FirebaseService",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "static_final_firebaseservice",
       "community": 5,
-      "norm_label": "static final firebaseservice",
-      "id": "static_final_firebaseservice"
+      "norm_label": "static final firebaseservice"
     },
     {
       "label": "_db",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_db",
       "community": 5,
-      "norm_label": "_db",
-      "id": "services_firebase_service_db"
+      "norm_label": "_db"
     },
     {
       "label": "FirebaseFirestore?",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "firebasefirestore",
       "community": 5,
-      "norm_label": "firebasefirestore?",
-      "id": "firebasefirestore"
+      "norm_label": "firebasefirestore?"
     },
     {
       "label": "_initialized",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_initialized",
       "community": 5,
-      "norm_label": "_initialized",
-      "id": "services_firebase_service_initialized"
+      "norm_label": "_initialized"
     },
     {
       "label": "_useFirestore",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_usefirestore",
       "community": 5,
-      "norm_label": "_usefirestore",
-      "id": "services_firebase_service_usefirestore"
+      "norm_label": "_usefirestore"
     },
     {
       "label": "_loading",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_loading",
       "community": 5,
-      "norm_label": "_loading",
-      "id": "services_firebase_service_loading"
+      "norm_label": "_loading"
     },
     {
       "label": "_books",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_books",
       "community": 5,
-      "norm_label": "_books",
-      "id": "services_firebase_service_books"
+      "norm_label": "_books"
     },
     {
       "label": "List",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "list",
       "community": 3,
-      "norm_label": "list",
-      "id": "list"
+      "norm_label": "list"
     },
     {
       "label": "_categories",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_categories",
       "community": 5,
-      "norm_label": "_categories",
-      "id": "services_firebase_service_categories"
+      "norm_label": "_categories"
     },
     {
       "label": "Map",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "map",
       "community": 6,
-      "norm_label": "map",
-      "id": "map"
+      "norm_label": "map"
     },
     {
       "label": "isInitialized",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_isinitialized",
       "community": 5,
-      "norm_label": "isinitialized",
-      "id": "services_firebase_service_isinitialized"
+      "norm_label": "isinitialized"
     },
     {
       "label": "bool get",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "bool_get",
       "community": 6,
-      "norm_label": "bool get",
-      "id": "bool_get"
+      "norm_label": "bool get"
     },
     {
       "label": "isLoading",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_isloading",
       "community": 5,
-      "norm_label": "isloading",
-      "id": "services_firebase_service_isloading"
+      "norm_label": "isloading"
     },
     {
       "label": "_deityIcons",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_deityicons",
       "community": 5,
-      "norm_label": "_deityicons",
-      "id": "services_firebase_service_deityicons"
+      "norm_label": "_deityicons"
     },
     {
       "label": "static const",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "static_const",
       "community": 7,
-      "norm_label": "static const",
-      "id": "static_const"
+      "norm_label": "static const"
     },
     {
       "label": "init",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_init",
       "community": 5,
-      "norm_label": "init",
-      "id": "services_firebase_service_init"
+      "norm_label": "init"
     },
     {
       "label": "_loadBundledData",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_loadbundleddata",
       "community": 5,
-      "norm_label": "_loadbundleddata",
-      "id": "services_firebase_service_loadbundleddata"
+      "norm_label": "_loadbundleddata"
     },
     {
       "label": "refreshData",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_refreshdata",
       "community": 5,
-      "norm_label": "refreshdata",
-      "id": "services_firebase_service_refreshdata"
+      "norm_label": "refreshdata"
     },
     {
       "label": "getBooksByCategory",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_getbooksbycategory",
       "community": 5,
-      "norm_label": "getbooksbycategory",
-      "id": "services_firebase_service_getbooksbycategory"
+      "norm_label": "getbooksbycategory"
     },
     {
       "label": "getBooksBySubcategory",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_getbooksbysubcategory",
       "community": 5,
-      "norm_label": "getbooksbysubcategory",
-      "id": "services_firebase_service_getbooksbysubcategory"
+      "norm_label": "getbooksbysubcategory"
     },
     {
       "label": "getBooksByGod",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_getbooksbygod",
       "community": 5,
-      "norm_label": "getbooksbygod",
-      "id": "services_firebase_service_getbooksbygod"
+      "norm_label": "getbooksbygod"
     },
     {
       "label": "getBookById",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_getbookbyid",
       "community": 5,
-      "norm_label": "getbookbyid",
-      "id": "services_firebase_service_getbookbyid"
+      "norm_label": "getbookbyid"
     },
     {
       "label": "searchShlokas",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_searchshlokas",
       "community": 5,
-      "norm_label": "searchshlokas",
-      "id": "services_firebase_service_searchshlokas"
+      "norm_label": "searchshlokas"
     },
     {
       "label": "getAllShlokas",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_getallshlokas",
       "community": 5,
-      "norm_label": "getallshlokas",
-      "id": "services_firebase_service_getallshlokas"
+      "norm_label": "getallshlokas"
     },
     {
       "label": "_overrideDeityIcons",
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
+      "id": "services_firebase_service_overridedeityicons",
       "community": 5,
-      "norm_label": "_overridedeityicons",
-      "id": "services_firebase_service_overridedeityicons"
+      "norm_label": "_overridedeityicons"
     },
     {
       "label": "package:cloud_firestore/cloud_firestore.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "package_cloud_firestore_cloud_firestore_dart",
       "community": 5,
-      "norm_label": "package:cloud_firestore/cloud_firestore.dart",
-      "id": "package_cloud_firestore_cloud_firestore_dart"
+      "norm_label": "package:cloud_firestore/cloud_firestore.dart"
     },
     {
       "label": "package:firebase_core/firebase_core.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "package_firebase_core_firebase_core_dart",
       "community": 4,
-      "norm_label": "package:firebase_core/firebase_core.dart",
-      "id": "package_firebase_core_firebase_core_dart"
+      "norm_label": "package:firebase_core/firebase_core.dart"
     },
     {
       "label": "package:flutter/foundation.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "package_flutter_foundation_dart",
       "community": 6,
-      "norm_label": "package:flutter/foundation.dart",
-      "id": "package_flutter_foundation_dart"
+      "norm_label": "package:flutter/foundation.dart"
     },
     {
       "label": "../models/shloka.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "models_shloka_dart",
       "community": 4,
-      "norm_label": "../models/shloka.dart",
-      "id": "models_shloka_dart"
+      "norm_label": "../models/shloka.dart"
     },
     {
       "label": "../data/content_data.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "data_content_data_dart",
       "community": 5,
-      "norm_label": "../data/content_data.dart",
-      "id": "data_content_data_dart"
+      "norm_label": "../data/content_data.dart"
     },
     {
       "label": "build.gradle",
@@ -746,7 +647,7 @@
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "bharatiyamapp",
       "id": "lib_main_bharatiyamapp"
     },
@@ -755,7 +656,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "statelesswidget",
       "id": "statelesswidget"
     },
@@ -1259,7 +1160,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "_savedtab",
       "id": "screens_home_screen_savedtab"
     },
@@ -1304,7 +1205,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "settingspage",
       "id": "screens_home_screen_settingspage"
     },
@@ -1313,7 +1214,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "_searchbar",
       "id": "screens_home_screen_searchbar"
     },
@@ -1583,7 +1484,7 @@
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "bookmarkservice",
       "id": "services_bookmark_service_bookmarkservice"
     },
@@ -1970,7 +1871,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "bookcard",
       "id": "widgets_book_card_bookcard"
     },
@@ -2024,7 +1925,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "categorycard",
       "id": "widgets_category_card_categorycard"
     },
@@ -2168,7 +2069,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "build",
       "id": "widgets_shloka_card_build"
     },
@@ -2180,6 +2081,96 @@
       "community": 1,
       "norm_label": "push_with_backup.ps1",
       "id": "scripts_push_with_backup"
+    },
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "web/js/app.js",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "app.js",
+      "id": "web_js_app_js_js_app"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "web/js/app.js",
+      "source_location": "L5",
+      "community": 11,
+      "norm_label": "app",
+      "id": "web_js_app_js_js_app_app"
+    },
+    {
+      "label": "data.js",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "data.js",
+      "id": "js_data"
+    },
+    {
+      "label": "APP_DATA",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L5",
+      "community": 1,
+      "norm_label": "app_data",
+      "id": "js_data_app_data"
+    },
+    {
+      "label": "getAllShlokas()",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L610",
+      "community": 1,
+      "norm_label": "getallshlokas()",
+      "id": "js_data_getallshlokas"
+    },
+    {
+      "label": "getBooksByCategory()",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L632",
+      "community": 1,
+      "norm_label": "getbooksbycategory()",
+      "id": "js_data_getbooksbycategory"
+    },
+    {
+      "label": "getBooksBySubcategory()",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L636",
+      "community": 1,
+      "norm_label": "getbooksbysubcategory()",
+      "id": "js_data_getbooksbysubcategory"
+    },
+    {
+      "label": "getBooksByGod()",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L640",
+      "community": 1,
+      "norm_label": "getbooksbygod()",
+      "id": "js_data_getbooksbygod"
+    },
+    {
+      "label": "getBookById()",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L646",
+      "community": 1,
+      "norm_label": "getbookbyid()",
+      "id": "js_data_getbookbyid"
+    },
+    {
+      "label": "searchShlokas()",
+      "file_type": "code",
+      "source_file": "web/js/data.js",
+      "source_location": "L650",
+      "community": 1,
+      "norm_label": "searchshlokas()",
+      "id": "js_data_searchshlokas"
     },
     {
       "label": "storage.js",
@@ -2408,6 +2399,58 @@
       "id": "pubspec"
     },
     {
+      "label": "Web index.html (Entry Point)",
+      "file_type": "code",
+      "source_file": "web/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 1,
+      "norm_label": "web index.html (entry point)",
+      "id": "web_index"
+    },
+    {
+      "label": "Hash-based SPA Routing",
+      "file_type": "concept",
+      "source_file": "web/js/app.js",
+      "source_location": "L39-L76",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 15,
+      "norm_label": "hash-based spa routing",
+      "id": "concept_hash_routing"
+    },
+    {
+      "label": "Three-Layer Shloka Display (Sanskrit/Kannada/Meaning)",
+      "file_type": "concept",
+      "source_file": "web/js/app.js",
+      "source_location": "L180-L216",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 15,
+      "norm_label": "three-layer shloka display (sanskrit/kannada/meaning)",
+      "id": "concept_three_layer_display"
+    },
+    {
+      "label": "Script Filter (Devanagari/Kannada/Both)",
+      "file_type": "concept",
+      "source_file": "web/js/app.js",
+      "source_location": "L783-L808",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 15,
+      "norm_label": "script filter (devanagari/kannada/both)",
+      "id": "concept_script_filter"
+    },
+    {
       "label": "Bookmark/Favorites System",
       "file_type": "concept",
       "source_file": "web/js/storage.js",
@@ -2419,6 +2462,32 @@
       "community": 15,
       "norm_label": "bookmark/favorites system",
       "id": "concept_bookmark_system"
+    },
+    {
+      "label": "Category Hierarchy (library/mantras/stotras \u2192 subcategory \u2192 book \u2192 chapter \u2192 shloka)",
+      "file_type": "concept",
+      "source_file": "web/js/data.js",
+      "source_location": "L12-L58",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 1,
+      "norm_label": "category hierarchy (library/mantras/stotras \u2192 subcategory \u2192 book \u2192 chapter \u2192 shloka)",
+      "id": "concept_category_hierarchy"
+    },
+    {
+      "label": "Deity-Based Content Organization",
+      "file_type": "concept",
+      "source_file": "web/js/data.js",
+      "source_location": "L24-L57",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 1,
+      "norm_label": "deity-based content organization",
+      "id": "concept_deity_based_organization"
     },
     {
       "label": "Conversation Backup & Build Artifact Strategy",
@@ -2596,14 +2665,44 @@
       "target": "concept_firestore_backend"
     },
     {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L34,L39-L76",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_hash_routing"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L783-L808",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_script_filter"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/app.js",
+      "source_location": "L180-L216",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "concept_three_layer_display"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "admin/js/app.js",
       "source_location": "L207",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "js_app",
-      "target": "js_app_app"
+      "target": "js_app_app",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2611,9 +2710,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "js_app",
-      "target": "js_app_auth"
+      "target": "js_app_auth",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2621,18 +2720,8 @@
       "source_file": "admin/js/app.js",
       "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "js_app",
-      "target": "js_app_db"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/app.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "js_app",
-      "target": "js_app_iconhtml",
+      "target": "js_app_db",
       "confidence_score": 1.0
     },
     {
@@ -2641,9 +2730,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L29",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "js_app",
-      "target": "js_app_seed"
+      "target": "js_app_seed",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2651,9 +2740,9 @@
       "source_file": "admin/js/app.js",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "js_app",
-      "target": "js_app_state"
+      "target": "js_app_state",
+      "confidence_score": 1.0
     },
     {
       "relation": "shares_data_with",
@@ -2679,101 +2768,11 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "conversation_backup/implementation_plan.md",
-      "source_location": "L20",
+      "source_file": "web/index.html",
+      "source_location": "L68",
       "weight": 1.0,
-      "source": "conversation_backup_implementation_plan",
-      "target": "js_data"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "conversation_backup/walkthrough.md",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "conversation_backup_walkthrough",
-      "target": "js_data"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_app_data"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L610",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_getallshlokas"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L646",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_getbookbyid"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L632",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_getbooksbycategory"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L640",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_getbooksbygod"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L636",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_getbooksbysubcategory"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/data.js",
-      "source_location": "L650",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "js_data",
-      "target": "js_data_searchshlokas"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "web/js/stotra_data.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "js_stotra_data",
-      "target": "js_stotra_data_stotra_data",
-      "confidence_score": 1.0
+      "source": "web_index",
+      "target": "js_app"
     },
     {
       "relation": "inherits",
@@ -6203,6 +6202,136 @@
       "target": "conversation_backup_walkthrough"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/app.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "web_js_app_js_js_app",
+      "target": "web_js_app_js_js_app_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "conversation_backup/implementation_plan.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "conversation_backup_implementation_plan",
+      "target": "js_data"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "conversation_backup/walkthrough.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "conversation_backup_walkthrough",
+      "target": "js_data"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/data.js",
+      "source_location": "L5-L58",
+      "weight": 1.0,
+      "source": "js_data",
+      "target": "concept_category_hierarchy"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/js/data.js",
+      "source_location": "L24-L57",
+      "weight": 1.0,
+      "source": "js_data",
+      "target": "concept_deity_based_organization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_app_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L610",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_getallshlokas"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L646",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_getbookbyid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L632",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_getbooksbycategory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L640",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_getbooksbygod"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L636",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_getbooksbysubcategory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "web/js/data.js",
+      "source_location": "L650",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "js_data",
+      "target": "js_data_searchshlokas"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/index.html",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "web_index",
+      "target": "js_data"
+    },
+    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -6221,6 +6350,16 @@
       "confidence_score": 1.0,
       "source": "js_storage",
       "target": "js_storage_bookmarkstorage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "web/index.html",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "web_index",
+      "target": "js_storage"
     },
     {
       "relation": "references",
@@ -6296,6 +6435,16 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": ".github/workflows/deploy-web.yml",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "workflows_deploy_web",
+      "target": "web_index"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": "L18-L27",
       "weight": 1.0,
@@ -6351,6 +6500,26 @@
       "weight": 1.0,
       "source": "pubspec",
       "target": "concept_flutter_web_dual_platform"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "web/js/app.js",
+      "source_location": "L199-L213",
+      "weight": 0.9,
+      "source": "concept_three_layer_display",
+      "target": "concept_script_filter"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "web/js/data.js",
+      "source_location": "L24-L57",
+      "weight": 0.9,
+      "source": "concept_category_hierarchy",
+      "target": "concept_deity_based_organization"
     },
     {
       "relation": "conceptually_related_to",
@@ -6444,5 +6613,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a907c8f24411dc4c29992ea1310a6993a3c3bda9"
+  "built_at_commit": "7079c11d03eba7d79cae598289f4834fd80d85c1"
 }

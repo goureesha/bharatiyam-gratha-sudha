@@ -1,13 +1,13 @@
 {
   "admin/js/app.js": {
-    "mtime": 1780831432.7434328,
+    "mtime": 1780831335.9383333,
     "ast_hash": "48ddd0ae985e5b67f2dda7822d0a1e19",
     "semantic_hash": ""
   },
   "android/app/build.gradle": {
-    "mtime": 1781264457.7413487,
-    "ast_hash": "737116cff069ebc1a5b7e436ebf76719",
-    "semantic_hash": ""
+    "mtime": 1779862003.9820554,
+    "ast_hash": "2a564a951ba06cbe18ebcafceffde289",
+    "semantic_hash": "2a564a951ba06cbe18ebcafceffde289"
   },
   "android/app/src/main/kotlin/com/bharatiyam/granthasudha/MainActivity.kt": {
     "mtime": 1779605997.9378068,
@@ -34,25 +34,55 @@
     "ast_hash": "72835bcea21ad1dc53cb1b9cd32c92fa",
     "semantic_hash": "72835bcea21ad1dc53cb1b9cd32c92fa"
   },
+  "lib/data/content_data.dart": {
+    "mtime": 1779856050.75766,
+    "ast_hash": "e64a5c14436aa6ba4685d57325e3d17b",
+    "semantic_hash": "e64a5c14436aa6ba4685d57325e3d17b"
+  },
   "lib/main.dart": {
-    "mtime": 1781274418.5236862,
-    "ast_hash": "dfac1fd406b6d7113f1bbc23c59e002d",
-    "semantic_hash": ""
+    "mtime": 1779860633.7411494,
+    "ast_hash": "7aa12aa39ae4ea5ef18c679de8794ae6",
+    "semantic_hash": "7aa12aa39ae4ea5ef18c679de8794ae6"
+  },
+  "lib/models/shloka.dart": {
+    "mtime": 1779860633.742146,
+    "ast_hash": "5b5f7ea0b31c99a7437f430c4ee1b1a8",
+    "semantic_hash": "5b5f7ea0b31c99a7437f430c4ee1b1a8"
   },
   "lib/screens/home_screen.dart": {
-    "mtime": 1781274394.0147152,
-    "ast_hash": "b9f9e14d876ae29c6f9ba1b86549f791",
-    "semantic_hash": ""
+    "mtime": 1780318444.445112,
+    "ast_hash": "557d6d16915a8a9fbedfc993bcbb91c4",
+    "semantic_hash": "557d6d16915a8a9fbedfc993bcbb91c4"
   },
   "lib/services/bookmark_service.dart": {
-    "mtime": 1781264457.956583,
-    "ast_hash": "4cafb602f81006e66612fa8f4a7480c6",
+    "mtime": 1779607210.4641385,
+    "ast_hash": "395b51dfd0da4ef3321b5778665da6b9",
+    "semantic_hash": "395b51dfd0da4ef3321b5778665da6b9"
+  },
+  "lib/services/firebase_service.dart": {
+    "mtime": 1780831313.6718757,
+    "ast_hash": "be450a3126470ccea11ec884c3ac0bbe",
     "semantic_hash": ""
   },
   "lib/theme/app_theme.dart": {
-    "mtime": 1781419160.3435557,
-    "ast_hash": "8a9c518e96039f08ce22120d27e00935",
-    "semantic_hash": ""
+    "mtime": 1779606273.7868962,
+    "ast_hash": "c6d25d812cc04441105c68884c5469c6",
+    "semantic_hash": "c6d25d812cc04441105c68884c5469c6"
+  },
+  "lib/widgets/book_card.dart": {
+    "mtime": 1779608063.4050725,
+    "ast_hash": "2e3ed21f24e4200ff23141666a644ef7",
+    "semantic_hash": "2e3ed21f24e4200ff23141666a644ef7"
+  },
+  "lib/widgets/category_card.dart": {
+    "mtime": 1779854366.1092682,
+    "ast_hash": "ffce2ce09d15b48f72aecf6f5d973cfd",
+    "semantic_hash": "ffce2ce09d15b48f72aecf6f5d973cfd"
+  },
+  "lib/widgets/shloka_card.dart": {
+    "mtime": 1779897513.1245735,
+    "ast_hash": "543eb52e739fa6d39e5aea369be27329",
+    "semantic_hash": "543eb52e739fa6d39e5aea369be27329"
   },
   "scripts/push_with_backup.ps1": {
     "mtime": 1779854428.1559746,
@@ -60,14 +90,14 @@
     "semantic_hash": "989069be493d6b741b8312d0743dab1f"
   },
   "web/js/app.js": {
-    "mtime": 1781446489.2164912,
-    "ast_hash": "54d09dcefd21499b872e2ba960502572",
-    "semantic_hash": ""
+    "mtime": 1779809805.4505446,
+    "ast_hash": "66c6cd7468294afb87d6c5391a0895d3",
+    "semantic_hash": "66c6cd7468294afb87d6c5391a0895d3"
   },
   "web/js/data.js": {
-    "mtime": 1781446443.6038218,
-    "ast_hash": "ef9daaa9a018c9726017cdf42ea057f8",
-    "semantic_hash": ""
+    "mtime": 1779854381.8777125,
+    "ast_hash": "f512d5e5bd936045f327a1a2d76cf9c9",
+    "semantic_hash": "f512d5e5bd936045f327a1a2d76cf9c9"
   },
   "web/js/storage.js": {
     "mtime": 1779763328.036752,
@@ -75,9 +105,9 @@
     "semantic_hash": "601096b05a798d83ff52d634369dc781"
   },
   ".github/workflows/build.yml": {
-    "mtime": 1781264457.7403502,
-    "ast_hash": "2eb2b358c924ceb4e2460d016fe2c82c",
-    "semantic_hash": ""
+    "mtime": 1779897896.9927034,
+    "ast_hash": "35b5c2e062f40bf4ef4ca33347671d68",
+    "semantic_hash": "35b5c2e062f40bf4ef4ca33347671d68"
   },
   ".github/workflows/deploy-admin.yml": {
     "mtime": 1779865190.4258847,
@@ -100,8 +130,8 @@
     "semantic_hash": ""
   },
   "conversation_backup/build_log.txt": {
-    "mtime": 1781264457.5831363,
-    "ast_hash": "e9d2edf8c41c1f6e28623c99a346b6d7",
+    "mtime": 1780830734.0224833,
+    "ast_hash": "cbf37ab2efc5ef780362c0bcfadd0076",
     "semantic_hash": ""
   },
   "conversation_backup/implementation_plan.md": {
@@ -120,14 +150,14 @@
     "semantic_hash": "e26176d11d82bf4b5e291df88dd0fbcf"
   },
   "pubspec.yaml": {
-    "mtime": 1781419136.1845827,
-    "ast_hash": "d9a2e71f842b715234b8f5201b479bd0",
-    "semantic_hash": ""
+    "mtime": 1779860633.742146,
+    "ast_hash": "525141b0a2d5da86cdc3d464992f749c",
+    "semantic_hash": "525141b0a2d5da86cdc3d464992f749c"
   },
   "web/index.html": {
-    "mtime": 1781446095.938294,
-    "ast_hash": "71431d758796037ee4212494c4e33a83",
-    "semantic_hash": ""
+    "mtime": 1779761366.1827734,
+    "ast_hash": "9503a5c0827565ed05423214756a539a",
+    "semantic_hash": "9503a5c0827565ed05423214756a539a"
   },
   "assets/images/devi.png": {
     "mtime": 1779765422.5401783,
@@ -208,60 +238,5 @@
     "mtime": 1779765422.578694,
     "ast_hash": "8b76f8795979c378e9d9d5d66f7a18c3",
     "semantic_hash": "8b76f8795979c378e9d9d5d66f7a18c3"
-  },
-  "assets/data/stotra_data.json": {
-    "mtime": 1781444289.56315,
-    "ast_hash": "07baa65c655e63331780b6eee4f5608f",
-    "semantic_hash": ""
-  },
-  "lib/models/stotra.dart": {
-    "mtime": 1781444246.884025,
-    "ast_hash": "28394af3666e5c1bcfea4f9b7d8dcbc2",
-    "semantic_hash": ""
-  },
-  "lib/screens/bookmarks_screen.dart": {
-    "mtime": 1781444353.1248193,
-    "ast_hash": "817b3ef677fd83af017d2985c314be18",
-    "semantic_hash": ""
-  },
-  "lib/screens/category_screen.dart": {
-    "mtime": 1781444336.5066752,
-    "ast_hash": "5c7507a960a0978da17d48886c53fdd4",
-    "semantic_hash": ""
-  },
-  "lib/screens/extras_screen.dart": {
-    "mtime": 1781264457.9555862,
-    "ast_hash": "842e77d8a81ba4192e35ac92141f0417",
-    "semantic_hash": ""
-  },
-  "lib/screens/reader_screen.dart": {
-    "mtime": 1781444306.7365558,
-    "ast_hash": "d5b5d7e07dd7a0c2d635152800c6e895",
-    "semantic_hash": ""
-  },
-  "lib/screens/search_screen.dart": {
-    "mtime": 1781444369.3398707,
-    "ast_hash": "29682cc555db065206c58f12b9b43652",
-    "semantic_hash": ""
-  },
-  "lib/screens/settings_screen.dart": {
-    "mtime": 1781264457.956583,
-    "ast_hash": "8c88bad23493c587febbad911cabcee0",
-    "semantic_hash": ""
-  },
-  "lib/services/stotra_service.dart": {
-    "mtime": 1781264457.9595754,
-    "ast_hash": "0f688c62176519d4c2d06cfa00d55cd5",
-    "semantic_hash": ""
-  },
-  "lib/widgets/nudi_text.dart": {
-    "mtime": 1781419196.5451226,
-    "ast_hash": "887dc75e976e5cad73a9e1a858bc5027",
-    "semantic_hash": ""
-  },
-  "web/js/stotra_data.js": {
-    "mtime": 1781446063.3596735,
-    "ast_hash": "4ba5f950a5e890ec59767399c2405ea9",
-    "semantic_hash": ""
   }
 }
