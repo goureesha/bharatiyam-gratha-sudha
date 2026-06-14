@@ -585,6 +585,38 @@ body::before {
   box-shadow: 0 4px 16px rgba(212, 168, 67, 0.5);
 }
 
+.section-icon-img {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.breadcrumb-icon-img {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.empty-icon-img {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.inline-icon-img {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  vertical-align: middle;
+}
+
 .category-card .card-title {
   font-family: var(--font-kannada);
   font-size: var(--font-size-base);

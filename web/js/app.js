@@ -2,6 +2,14 @@
 // Bharatiyam Gratha Sudha — App Logic & Routing
 // ============================================================
 
+// Helper: render icon as img tag if it's an image path, otherwise as text
+function iconHtml(icon, alt = '', cssClass = '') {
+  if (icon && icon.includes('/')) {
+    return `<img src="${icon}" alt="${alt}" class="${cssClass || 'inline-icon-img'}">`;
+  }
+  return icon || '';
+}
+
 const App = {
   currentSection: "home",
   currentSubcategory: null,
@@ -152,9 +160,13 @@ const App = {
   },
 
   renderSectionHeader(icon, title, titleEn) {
+    const isImage = icon && icon.includes('/');
+    const iconHtml = isImage
+      ? `<img src="${icon}" alt="${titleEn}" class="section-icon-img">`
+      : `<span class="section-icon">${icon}</span>`;
     return `
       <div class="section-header">
-        <span class="section-icon">${icon}</span>
+        ${iconHtml}
         <h2 class="section-title">${title}</h2>
         <span class="section-title-en">${titleEn}</span>
       </div>
@@ -361,7 +373,7 @@ const App = {
       ${this.renderBreadcrumb([
         { label: "🏠 ಮುಖಪುಟ", action: "App.navigate('home')" },
         { label: `${section.icon} ${section.title}`, action: `App.navigate('${parentSection}')` },
-        { label: `${subcat.icon} ${subcat.title}` },
+        { label: `${iconHtml(subcat.icon, subcat.titleEn, 'breadcrumb-icon-img')} ${subcat.title}` },
       ])}
 
       ${this.renderSectionHeader(subcat.icon, subcat.title, subcat.titleEn)}
@@ -375,7 +387,7 @@ const App = {
       `
           : `
         <div class="empty-state">
-          <span class="empty-icon">${subcat.icon}</span>
+          <span class="empty-icon">${iconHtml(subcat.icon, subcat.titleEn, 'empty-icon-img')}</span>
           <div class="empty-title">ಶೀಘ್ರದಲ್ಲಿ ಬರುತ್ತಿದೆ</div>
           <div class="empty-desc">ಈ ವಿಭಾಗದಲ್ಲಿ ಪುಸ್ತಕಗಳನ್ನು ಶೀಘ್ರದಲ್ಲಿ ಸೇರಿಸಲಾಗುವುದು. Coming soon!</div>
         </div>
@@ -408,7 +420,7 @@ const App = {
         { label: "🏠 ಮುಖಪುಟ", action: "App.navigate('home')" },
         { label: `${section?.icon || "📚"} ${section?.title || ""}`, action: `App.navigate('${this.currentSection}')` },
         {
-          label: `${subcat?.icon || "📖"} ${subcat?.title || ""}`,
+          label: `${iconHtml(subcat?.icon || '📖', subcat?.titleEn || '', 'breadcrumb-icon-img')} ${subcat?.title || ''}`,
           action: `App.navigate('${this.currentSection}/${book.subcategory}')`,
         },
         { label: book.title },
