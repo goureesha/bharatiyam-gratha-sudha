@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 /// Renders Nudi-encoded Kannada text using bundled Nudi fonts.
-/// The text is stored as Latin-1 string (byte values 0-255 as Unicode codepoints).
+/// Used ONLY for stotra/mantra content that requires the Nudi font.
+/// All UI text should use the default theme font (Noto Sans Kannada).
 class NudiText extends StatelessWidget {
   final String text;
   final String fontFamily;
@@ -11,6 +12,8 @@ class NudiText extends StatelessWidget {
   final double height;
   final int? maxLines;
   final TextOverflow? overflow;
+  final FontWeight fontWeight;
+  final double letterSpacing;
 
   const NudiText({
     super.key,
@@ -19,9 +22,11 @@ class NudiText extends StatelessWidget {
     this.fontSize = 20.0,
     this.textAlign = TextAlign.left,
     this.color,
-    this.height = 1.6,
+    this.height = 1.8,
     this.maxLines,
     this.overflow,
+    this.fontWeight = FontWeight.normal,
+    this.letterSpacing = 0.3,
   });
 
   @override
@@ -36,6 +41,8 @@ class NudiText extends StatelessWidget {
         fontSize: fontSize,
         color: color ?? Theme.of(context).colorScheme.onSurface,
         height: height,
+        fontWeight: fontWeight,
+        letterSpacing: letterSpacing,
       ),
     );
   }
