@@ -15,7 +15,7 @@ class ReaderScreen extends StatelessWidget {
     final isBookmarked = bookmarks.isBookmarked(stotra.id);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final fontFamily = stotra.font == 'brhknde' ? 'Brhknde' : 'Brhknd';
-    final isVedic = stotra.font == 'brhknde';
+    final isVedic = !stotra.isUnicode;
 
     return Scaffold(
       appBar: AppBar(

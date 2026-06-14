@@ -87,15 +87,8 @@ class _SearchScreenState extends State<SearchScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: ListTile(
-                        title: stotra.font == 'brhknde'
-                            ? NudiText(
-                                text: stotra.title,
-                                fontSize: 15,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                height: 1.3,
-                              )
-                            : Text(
+                        title: stotra.isUnicode
+                            ? Text(
                                 stotra.title,
                                 style: GoogleFonts.notoSansKannada(
                                   fontSize: 15,
@@ -103,6 +96,13 @@ class _SearchScreenState extends State<SearchScreen> {
                                 ),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
+                              )
+                            : NudiText(
+                                text: stotra.title,
+                                fontSize: 15,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                height: 1.3,
                               ),
                         subtitle: Text(stotra.categoryTitle,
                             style: TextStyle(

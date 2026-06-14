@@ -93,15 +93,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               ),
                             ),
                           ),
-                          title: stotra.font == 'brhknde'
-                              ? NudiText(
-                                  text: stotra.title,
-                                  fontSize: 16,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  height: 1.3,
-                                )
-                              : Text(
+                          title: stotra.isUnicode
+                              ? Text(
                                   stotra.title,
                                   style: GoogleFonts.notoSansKannada(
                                     fontSize: 16,
@@ -109,6 +102,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
+                                )
+                              : NudiText(
+                                  text: stotra.title,
+                                  fontSize: 16,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  height: 1.3,
                                 ),
                           trailing: IconButton(
                             icon: Icon(

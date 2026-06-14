@@ -40,6 +40,7 @@ class Stotra {
   final String title;
   final String content;
   final String font;
+  final bool isUnicode;
   final String categoryId;
   final String categoryTitle;
 
@@ -48,6 +49,7 @@ class Stotra {
     required this.title,
     required this.content,
     required this.font,
+    required this.isUnicode,
     required this.categoryId,
     required this.categoryTitle,
   });
@@ -62,6 +64,7 @@ class Stotra {
       title: json['title'] ?? '',
       content: json['content'] ?? '',
       font: json['font'] ?? 'brhknd',
+      isUnicode: json['unicode'] == true,
       categoryId: categoryId,
       categoryTitle: categoryTitle,
     );
