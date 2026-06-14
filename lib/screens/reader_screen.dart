@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/stotra.dart';
 import '../services/bookmark_service.dart';
-import '../widgets/nudi_text.dart';
 
 class ReaderScreen extends StatelessWidget {
   final Stotra stotra;
@@ -14,31 +13,19 @@ class ReaderScreen extends StatelessWidget {
     final bookmarks = context.watch<BookmarkService>();
     final isBookmarked = bookmarks.isBookmarked(stotra.id);
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final fontFamily = stotra.font == 'brhknde' ? 'Brhknde' : 'Brhknd';
-    final isVedic = !stotra.isUnicode;
 
     return Scaffold(
       appBar: AppBar(
-        // App bar title uses modern Noto Sans Kannada (via theme)
-        title: isVedic
-            ? NudiText(
-                text: stotra.title,
-                fontSize: 16,
-                color: Colors.white,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                height: 1.3,
-              )
-            : Text(
-                stotra.title,
-                style: GoogleFonts.notoSansKannada(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+        title: Text(
+          stotra.title,
+          style: GoogleFonts.notoSansKannada(
+            fontSize: 16,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
         actions: [
           IconButton(
             icon: Icon(
@@ -56,38 +43,6 @@ class ReaderScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Vedic indicator badge
-              if (isVedic)
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  margin: const EdgeInsets.only(bottom: 16),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? const Color(0xFF2D1B4E)
-                        : const Color(0xFFE8722A).withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                      color: const Color(0xFFE8722A).withOpacity(0.3),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(Icons.auto_awesome, size: 16,
-                          color: Color(0xFFE8722A)),
-                      const SizedBox(width: 8),
-                      Text(
-                        'ವೇದ ಮಂತ್ರ · Vedic Mantra (with svaras)',
-                        style: GoogleFonts.notoSansKannada(
-                          fontSize: 13,
-                          color: const Color(0xFFE8722A),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
               // Content card
               Container(
                 padding: const EdgeInsets.all(20),
@@ -102,28 +57,17 @@ class ReaderScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: isVedic
-                    ? NudiText(
-                        text: stotra.content,
-                        fontFamily: fontFamily,
-                        fontSize: bookmarks.fontSize,
-                        height: 2.4,
-                        letterSpacing: 0.5,
-                        color: isDark
-                            ? const Color(0xFFE8D5B5)
-                            : const Color(0xFF2D1B00),
-                      )
-                    : Text(
-                        stotra.content,
-                        style: GoogleFonts.notoSansKannada(
-                          fontSize: bookmarks.fontSize,
-                          height: 1.9,
-                          letterSpacing: 0.3,
-                          color: isDark
-                              ? const Color(0xFFE8D5B5)
-                              : const Color(0xFF2D1B00),
-                        ),
-                      ),
+                child: Text(
+                  stotra.content,
+                  style: GoogleFonts.notoSansKannada(
+                    fontSize: bookmarks.fontSize,
+                    height: 1.9,
+                    letterSpacing: 0.3,
+                    color: isDark
+                        ? const Color(0xFFE8D5B5)
+                        : const Color(0xFF2D1B00),
+                  ),
+                ),
               ),
 
               const SizedBox(height: 24),
