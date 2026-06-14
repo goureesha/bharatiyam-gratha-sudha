@@ -121,7 +121,7 @@ class ReaderScreen extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        'ಮೂಲ: ${stotra.source}',
+                        'ಮೂಲ: ${stotra.categoryTitle}',
                         style: GoogleFonts.notoSansKannada(
                           fontSize: 12,
                           color: Colors.grey.shade500,
