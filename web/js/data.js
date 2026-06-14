@@ -53,6 +53,7 @@ const APP_DATA = {
         { id: "surya", title: "ಸೂರ್ಯ", titleEn: "Lord Surya", icon: "images/surya.png" },
         { id: "krishna", title: "ಕೃಷ್ಣ", titleEn: "Lord Krishna", icon: "images/krishna.png" },
         { id: "rama", title: "ರಾಮ", titleEn: "Lord Rama", icon: "images/rama.png" },
+        { id: "other", title: "ಇತರೆ", titleEn: "Others", icon: "📿" },
       ],
     },
   },
@@ -673,4 +674,33 @@ function searchShlokas(query) {
     });
   });
   return results;
+}
+
+// ── Merge STOTRA_DATA into APP_DATA.books ──────────────────
+if (typeof STOTRA_DATA !== 'undefined') {
+  STOTRA_DATA.forEach((cat) => {
+    const book = {
+      id: cat.id,
+      title: cat.title,
+      titleEn: cat.titleEn || cat.title,
+      category: 'stotras',
+      subcategory: cat.god,
+      godRelated: [cat.god],
+      chapters: [{
+        id: cat.id + '_ch1',
+        number: 1,
+        title: cat.title,
+        titleEn: cat.titleEn || '',
+        shlokas: cat.stotras.map((s, i) => ({
+          id: s.id,
+          number: String(i + 1),
+          sanskrit: '',
+          kannada: s.content,
+          meaning: '',
+          stotraTitle: s.title,
+        })),
+      }],
+    };
+    APP_DATA.books.push(book);
+  });
 }

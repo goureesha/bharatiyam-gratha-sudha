@@ -199,7 +199,7 @@ const App = {
     return `
       <article class="shloka-card" id="shloka-${shloka.id}">
         <div class="shloka-header">
-          <span class="shloka-number">श्लोक ${shloka.number}</span>
+          <span class="shloka-number">${shloka.stotraTitle || 'श्लोक ' + shloka.number}</span>
           ${sourceLabel}
           <button class="bookmark-btn ${isBookmarked ? "bookmarked" : ""}"
                   onclick="App.toggleBookmark('${shloka.id}')"
@@ -208,7 +208,7 @@ const App = {
             ${isBookmarked ? "❤️" : "🤍"}
           </button>
         </div>
-        ${filter === "both" || filter === "devanagari" ? `
+        ${(filter === "both" || filter === "devanagari") && shloka.sanskrit ? `
         <div class="shloka-sanskrit">
           <div class="layer-label">📜 ಸಂಸ್ಕೃತ · Sanskrit</div>
           <div class="sanskrit-text">${shloka.sanskrit}</div>
@@ -474,8 +474,8 @@ const App = {
       <!-- Book Header -->
       <div class="hero-section" style="text-align: left; padding: var(--space-xl);">
         <h1 class="hero-title" style="font-size: var(--font-size-2xl);">${book.title}</h1>
-        <p class="hero-subtitle" style="font-size: var(--font-size-md);">${book.titleSanskrit}</p>
-        <p class="hero-tagline">${book.description}</p>
+        ${book.titleSanskrit ? `<p class="hero-subtitle" style="font-size: var(--font-size-md);">${book.titleSanskrit}</p>` : ''}
+        <p class="hero-tagline">${book.description || allShlokas.length + ' ಸ್ತೋತ್ರಗಳು'}</p>
       </div>
 
       ${this.renderScriptFilter()}
@@ -710,6 +710,7 @@ const App = {
               bookTitleEn: book.titleEn,
               chapterTitle: chapter.title,
               category: book.category,
+              subcategory: book.subcategory,
             };
           }
         });
