@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// Renders Vedic text with svara marks using Flutter's TextDecoration.
-/// Strips combining marks (U+0951, U+0952, U+1CDA) and renders them as:
-/// - Anudātta (U+0952): underline below the syllable
-/// - Svarita (U+0951): overline above the syllable
-/// - Double Svarita (U+1CDA): thick overline above the syllable
+/// Renders Vedic text with Baraha-style svara marks.
+///
+/// The data contains Baraha prefix marks:
+/// - † (U+2020) = svarita → line ABOVE the next syllable
+/// - … (U+2026) = anudātta → line BELOW the next syllable
+/// - ‡ (U+2021) = double svarita → double line ABOVE the next syllable
+///
+/// These are stripped from the text and rendered as TextDecoration
+/// on the syllable they mark.
 class VedicTextWidget extends StatelessWidget {
   final String text;
   final double fontSize;
@@ -18,17 +22,20 @@ class VedicTextWidget extends StatelessWidget {
     required this.textColor,
   });
 
-  static const int _anudatta = 0x0952;
-  static const int _svarita = 0x0951;
-  static const int _doubleSvarita = 0x1CDA;
+  // Baraha prefix mark characters
+  static const String _svarita = '\u2020';       // †
+  static const String _anudatta = '\u2026';      // …
+  static const String _doubleSvarita = '\u2021';  // ‡
 
-  static bool _isMark(int cp) =>
-      cp == _anudatta || cp == _svarita || cp == _doubleSvarita;
+  static bool _isMark(String ch) =>
+      ch == _svarita || ch == _anudatta || ch == _doubleSvarita;
 
   @override
   Widget build(BuildContext context) {
     // If no marks, use simple Text
-    if (!text.runes.any((r) => _isMark(r))) {
+    if (!text.contains(_svarita) &&
+        !text.contains(_anudatta) &&
+        !text.contains(_doubleSvarita)) {
       return Text(
         text,
         style: GoogleFonts.notoSansKannada(
@@ -55,31 +62,33 @@ class VedicTextWidget extends StatelessWidget {
 
   List<TextSpan> _buildSpans() {
     final spans = <TextSpan>[];
-    final runes = text.runes.toList();
     final buffer = StringBuffer();
-    int? pendingMark;
+    int i = 0;
 
-    for (int i = 0; i < runes.length; i++) {
-      final cp = runes[i];
+    while (i < text.length) {
+      final ch = text[i];
 
-      if (_isMark(cp)) {
-        // Found a mark — flush buffer as plain text, then mark the
-        // PREVIOUS syllable. We need to go back and split it.
-        final plain = buffer.toString();
-        buffer.clear();
-
-        if (plain.isNotEmpty) {
-          // Find last syllable boundary
-          final splitIdx = _lastSyllableStart(plain);
-          if (splitIdx > 0) {
-            spans.add(TextSpan(text: plain.substring(0, splitIdx)));
-          }
-          // The marked syllable
-          final syllable = plain.substring(splitIdx);
-          spans.add(_decoratedSpan(syllable, cp));
+      if (_isMark(ch)) {
+        // Flush any buffered text
+        if (buffer.isNotEmpty) {
+          spans.add(TextSpan(text: buffer.toString()));
+          buffer.clear();
         }
+
+        // This is a PREFIX mark — applies to the NEXT syllable
+        i++; // skip the mark character
+
+        // Consume the next syllable
+        final syllableEnd = _consumeNextSyllable(i);
+        final syllable = text.substring(i, syllableEnd);
+
+        if (syllable.isNotEmpty) {
+          spans.add(_decoratedSpan(syllable, ch));
+        }
+        i = syllableEnd;
       } else {
-        buffer.writeCharCode(cp);
+        buffer.write(ch);
+        i++;
       }
     }
 
@@ -91,10 +100,60 @@ class VedicTextWidget extends StatelessWidget {
     return spans;
   }
 
-  TextSpan _decoratedSpan(String syllable, int markType) {
+  /// Consume the next Kannada syllable starting at position [start].
+  /// A syllable is: consonant(+virama+consonant)* + dependent_vowel
+  int _consumeNextSyllable(int start) {
+    int i = start;
+    final n = text.length;
+    if (i >= n) return i;
+
+    final cp = text.codeUnitAt(i);
+
+    // If it starts with an independent vowel
+    if (_isKnVowel(cp)) {
+      i++;
+      while (i < n && _isKnDepVowel(text.codeUnitAt(i))) i++;
+      return i;
+    }
+
+    // If it starts with a consonant
+    if (_isKnConsonant(cp)) {
+      i++;
+      while (i < n) {
+        final c = text.codeUnitAt(i);
+        if (c == 0x0CCD) {
+          // virama — check for next consonant
+          if (i + 1 < n && _isKnConsonant(text.codeUnitAt(i + 1))) {
+            i += 2; // consume virama + consonant
+          } else {
+            i++; break; // bare virama
+          }
+        } else if (c == 0x200D) {
+          // ZWJ
+          if (i + 1 < n && _isKnConsonant(text.codeUnitAt(i + 1))) {
+            i += 2;
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+      // Consume dependent vowel
+      if (i < n && _isKnDepVowel(text.codeUnitAt(i))) {
+        i++;
+      }
+      return i;
+    }
+
+    // Not a Kannada character — just consume one character
+    return start + 1;
+  }
+
+  TextSpan _decoratedSpan(String syllable, String markType) {
     TextDecoration decoration;
-    Color decoColor = textColor.withOpacity(0.7);
-    double thickness = 1.5;
+    TextDecorationStyle decoStyle = TextDecorationStyle.solid;
+    double thickness = 1.2;
 
     if (markType == _anudatta) {
       decoration = TextDecoration.underline;
@@ -103,56 +162,22 @@ class VedicTextWidget extends StatelessWidget {
     } else {
       // double svarita
       decoration = TextDecoration.overline;
-      thickness = 3.0;
+      decoStyle = TextDecorationStyle.double;
+      thickness = 1.2;
     }
 
     return TextSpan(
       text: syllable,
       style: TextStyle(
         decoration: decoration,
-        decorationColor: decoColor,
+        decorationColor: textColor,
         decorationThickness: thickness,
-        decorationStyle: markType == _doubleSvarita
-            ? TextDecorationStyle.double
-            : TextDecorationStyle.solid,
+        decorationStyle: decoStyle,
       ),
     );
   }
 
-  /// Find start index of the last syllable in a string.
-  int _lastSyllableStart(String s) {
-    final runes = s.runes.toList();
-    int i = runes.length - 1;
-
-    // Skip trailing anusvara/visarga (they're part of syllable display)
-    while (i >= 0 && (runes[i] == 0x0C82 || runes[i] == 0x0C83)) {
-      i--;
-    }
-
-    // Skip trailing dependent vowels
-    while (i >= 0 && _isDepVowel(runes[i])) {
-      i--;
-    }
-
-    // Walk back through consonant+virama clusters
-    while (i >= 0) {
-      if (_isConsonant(runes[i])) {
-        if (i - 1 >= 0 && runes[i - 1] == 0x0CCD) {
-          i -= 2; // virama + consonant
-        } else if (i - 1 >= 0 && runes[i - 1] == 0x200D) {
-          i -= 2; // ZWJ
-        } else {
-          break; // start of syllable
-        }
-      } else {
-        break;
-      }
-    }
-
-    if (i < 0) i = 0;
-    return i;
-  }
-
-  static bool _isConsonant(int cp) => cp >= 0x0C95 && cp <= 0x0CB9;
-  static bool _isDepVowel(int cp) => cp >= 0x0CBE && cp <= 0x0CCC;
+  static bool _isKnConsonant(int cp) => cp >= 0x0C95 && cp <= 0x0CB9;
+  static bool _isKnVowel(int cp) => cp >= 0x0C85 && cp <= 0x0C94;
+  static bool _isKnDepVowel(int cp) => cp >= 0x0CBE && cp <= 0x0CCC;
 }
