@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 /// Renders Vedic text with Baraha-style svara marks.
-///
-/// The data contains Baraha prefix marks:
-/// - † (U+2020) = svarita → line ABOVE the next syllable
-/// - … (U+2026) = anudātta → line BELOW the next syllable
-/// - ‡ (U+2021) = double svarita → double line ABOVE the next syllable
-///
-/// These are stripped from the text and rendered as TextDecoration
-/// on the syllable they mark.
+/// Marks are prefix characters in the text:
+/// - † (U+2020) = svarita → line ABOVE next syllable
+/// - … (U+2026) = anudātta → line BELOW next syllable
+/// - ‡ (U+2021) = double svarita → double line ABOVE next syllable
 class VedicTextWidget extends StatelessWidget {
   final String text;
   final double fontSize;
@@ -22,20 +18,25 @@ class VedicTextWidget extends StatelessWidget {
     required this.textColor,
   });
 
-  // Baraha prefix mark characters
-  static const String _svarita = '\u2020';       // †
-  static const String _anudatta = '\u2026';      // …
-  static const String _doubleSvarita = '\u2021';  // ‡
+  static const int _svarita = 0x2020;       // †
+  static const int _anudatta = 0x2026;      // …
+  static const int _doubleSvarita = 0x2021;  // ‡
 
-  static bool _isMark(String ch) =>
-      ch == _svarita || ch == _anudatta || ch == _doubleSvarita;
+  static bool _isMark(int cp) =>
+      cp == _svarita || cp == _anudatta || cp == _doubleSvarita;
 
   @override
   Widget build(BuildContext context) {
     // If no marks, use simple Text
-    if (!text.contains(_svarita) &&
-        !text.contains(_anudatta) &&
-        !text.contains(_doubleSvarita)) {
+    bool hasMarks = false;
+    for (int i = 0; i < text.length; i++) {
+      if (_isMark(text.codeUnitAt(i))) {
+        hasMarks = true;
+        break;
+      }
+    }
+
+    if (!hasMarks) {
       return Text(
         text,
         style: GoogleFonts.notoSansKannada(
@@ -51,7 +52,7 @@ class VedicTextWidget extends StatelessWidget {
       text: TextSpan(
         style: GoogleFonts.notoSansKannada(
           fontSize: fontSize,
-          height: 1.9,
+          height: 2.2,
           letterSpacing: 0.3,
           color: textColor,
         ),
@@ -60,39 +61,36 @@ class VedicTextWidget extends StatelessWidget {
     );
   }
 
-  List<TextSpan> _buildSpans() {
-    final spans = <TextSpan>[];
+  List<InlineSpan> _buildSpans() {
+    final spans = <InlineSpan>[];
     final buffer = StringBuffer();
     int i = 0;
 
     while (i < text.length) {
-      final ch = text[i];
+      final cp = text.codeUnitAt(i);
 
-      if (_isMark(ch)) {
-        // Flush any buffered text
+      if (_isMark(cp)) {
+        // Flush buffered plain text
         if (buffer.isNotEmpty) {
           spans.add(TextSpan(text: buffer.toString()));
           buffer.clear();
         }
 
-        // This is a PREFIX mark — applies to the NEXT syllable
         i++; // skip the mark character
 
-        // Consume the next syllable
+        // Consume next syllable
         final syllableEnd = _consumeNextSyllable(i);
-        final syllable = text.substring(i, syllableEnd);
-
-        if (syllable.isNotEmpty) {
-          spans.add(_decoratedSpan(syllable, ch));
+        if (syllableEnd > i) {
+          final syllable = text.substring(i, syllableEnd);
+          spans.add(_buildMarkedWidget(syllable, cp));
+          i = syllableEnd;
         }
-        i = syllableEnd;
       } else {
-        buffer.write(ch);
+        buffer.write(text[i]);
         i++;
       }
     }
 
-    // Flush remaining
     if (buffer.isNotEmpty) {
       spans.add(TextSpan(text: buffer.toString()));
     }
@@ -100,8 +98,28 @@ class VedicTextWidget extends StatelessWidget {
     return spans;
   }
 
-  /// Consume the next Kannada syllable starting at position [start].
-  /// A syllable is: consonant(+virama+consonant)* + dependent_vowel
+  /// Build a WidgetSpan with the syllable + painted mark
+  WidgetSpan _buildMarkedWidget(String syllable, int markType) {
+    return WidgetSpan(
+      alignment: PlaceholderAlignment.baseline,
+      baseline: TextBaseline.alphabetic,
+      child: CustomPaint(
+        foregroundPainter: _SvaraPainter(
+          markType: markType,
+          color: textColor,
+        ),
+        child: Text(
+          syllable,
+          style: GoogleFonts.notoSansKannada(
+            fontSize: fontSize,
+            letterSpacing: 0.3,
+            color: textColor,
+          ),
+        ),
+      ),
+    );
+  }
+
   int _consumeNextSyllable(int start) {
     int i = start;
     final n = text.length;
@@ -109,28 +127,36 @@ class VedicTextWidget extends StatelessWidget {
 
     final cp = text.codeUnitAt(i);
 
-    // If it starts with an independent vowel
-    if (_isKnVowel(cp)) {
-      i++;
-      while (i < n && _isKnDepVowel(text.codeUnitAt(i))) i++;
-      return i;
-    }
-
-    // If it starts with a consonant
-    if (_isKnConsonant(cp)) {
+    // Independent vowel
+    if (cp >= 0x0C85 && cp <= 0x0C94) {
       i++;
       while (i < n) {
         final c = text.codeUnitAt(i);
-        if (c == 0x0CCD) {
-          // virama — check for next consonant
-          if (i + 1 < n && _isKnConsonant(text.codeUnitAt(i + 1))) {
-            i += 2; // consume virama + consonant
+        if (c >= 0x0CBE && c <= 0x0CCC) { i++; } else { break; }
+      }
+      return i;
+    }
+
+    // Consonant
+    if (cp >= 0x0C95 && cp <= 0x0CB9) {
+      i++;
+      while (i < n) {
+        final c = text.codeUnitAt(i);
+        if (c == 0x0CCD) { // virama
+          if (i + 1 < n) {
+            final next = text.codeUnitAt(i + 1);
+            if (next == 0x200D && i + 2 < n && text.codeUnitAt(i + 2) >= 0x0C95 && text.codeUnitAt(i + 2) <= 0x0CB9) {
+              i += 3; // virama + ZWJ + consonant
+            } else if (next >= 0x0C95 && next <= 0x0CB9) {
+              i += 2; // virama + consonant
+            } else {
+              i++; break;
+            }
           } else {
-            i++; break; // bare virama
+            i++; break;
           }
-        } else if (c == 0x200D) {
-          // ZWJ
-          if (i + 1 < n && _isKnConsonant(text.codeUnitAt(i + 1))) {
+        } else if (c == 0x200D) { // ZWJ
+          if (i + 1 < n && text.codeUnitAt(i + 1) >= 0x0C95 && text.codeUnitAt(i + 1) <= 0x0CB9) {
             i += 2;
           } else {
             break;
@@ -139,45 +165,47 @@ class VedicTextWidget extends StatelessWidget {
           break;
         }
       }
-      // Consume dependent vowel
-      if (i < n && _isKnDepVowel(text.codeUnitAt(i))) {
-        i++;
+      // Dependent vowel
+      if (i < n) {
+        final c = text.codeUnitAt(i);
+        if (c >= 0x0CBE && c <= 0x0CCC) i++;
       }
       return i;
     }
 
-    // Not a Kannada character — just consume one character
     return start + 1;
   }
+}
 
-  TextSpan _decoratedSpan(String syllable, String markType) {
-    TextDecoration decoration;
-    TextDecorationStyle decoStyle = TextDecorationStyle.solid;
-    double thickness = 1.2;
+/// Paints svara marks as horizontal lines above or below the text
+class _SvaraPainter extends CustomPainter {
+  final int markType;
+  final Color color;
 
-    if (markType == _anudatta) {
-      decoration = TextDecoration.underline;
-    } else if (markType == _svarita) {
-      decoration = TextDecoration.overline;
-    } else {
-      // double svarita
-      decoration = TextDecoration.overline;
-      decoStyle = TextDecorationStyle.double;
-      thickness = 1.2;
+  _SvaraPainter({required this.markType, required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1.5
+      ..style = PaintingStyle.stroke;
+
+    if (markType == VedicTextWidget._anudatta) {
+      // Line BELOW
+      final y = size.height - 1.0;
+      canvas.drawLine(Offset(1, y), Offset(size.width - 1, y), paint);
+    } else if (markType == VedicTextWidget._svarita) {
+      // Line ABOVE
+      canvas.drawLine(const Offset(1, 1), Offset(size.width - 1, 1), paint);
+    } else if (markType == VedicTextWidget._doubleSvarita) {
+      // Double line ABOVE
+      canvas.drawLine(const Offset(1, 0), Offset(size.width - 1, 0), paint);
+      canvas.drawLine(const Offset(1, 3), Offset(size.width - 1, 3), paint);
     }
-
-    return TextSpan(
-      text: syllable,
-      style: TextStyle(
-        decoration: decoration,
-        decorationColor: textColor,
-        decorationThickness: thickness,
-        decorationStyle: decoStyle,
-      ),
-    );
   }
 
-  static bool _isKnConsonant(int cp) => cp >= 0x0C95 && cp <= 0x0CB9;
-  static bool _isKnVowel(int cp) => cp >= 0x0C85 && cp <= 0x0C94;
-  static bool _isKnDepVowel(int cp) => cp >= 0x0CBE && cp <= 0x0CCC;
+  @override
+  bool shouldRepaint(covariant _SvaraPainter old) =>
+      markType != old.markType || color != old.color;
 }

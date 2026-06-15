@@ -210,8 +210,8 @@
     "semantic_hash": "8b76f8795979c378e9d9d5d66f7a18c3"
   },
   "assets/data/stotra_data.json": {
-    "mtime": 1781507084.4952083,
-    "ast_hash": "b629517c2f211b2fed3e9e4fac0d9bee",
+    "mtime": 1781504460.2402015,
+    "ast_hash": "02ae1f9d254914ccb702d45f6234ff5f",
     "semantic_hash": ""
   },
   "lib/models/stotra.dart": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "lib/screens/reader_screen.dart": {
-    "mtime": 1781505854.7850797,
-    "ast_hash": "6640583c38715fae070d1d264901281d",
+    "mtime": 1781447718.5135882,
+    "ast_hash": "f101e71f6330b68f43360bcefce86f89",
     "semantic_hash": ""
   },
   "lib/screens/search_screen.dart": {
@@ -262,11 +262,6 @@
   "web/js/stotra_data.js": {
     "mtime": 1781446063.3596735,
     "ast_hash": "4ba5f950a5e890ec59767399c2405ea9",
-    "semantic_hash": ""
-  },
-  "lib/widgets/vedic_text_widget.dart": {
-    "mtime": 1781507023.3566852,
-    "ast_hash": "64b83f9e4a19c5c29b46173a90c17f60",
     "semantic_hash": ""
   }
 }

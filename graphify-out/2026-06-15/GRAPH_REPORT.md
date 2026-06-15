@@ -1,16 +1,16 @@
-# Graph Report - bharatheeyam books  (2026-06-15)
+# Graph Report - bharatheeyam books  (2026-06-14)
 
 ## Corpus Check
-- 31 files · ~3,780,416 words
+- 30 files · ~3,779,831 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 311 nodes · 431 edges · 19 communities (18 shown, 1 thin omitted)
+- 293 nodes · 411 edges · 16 communities (15 shown, 1 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e2e5eb2e`
+- Built from commit: `ca241958`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,9 +28,6 @@
 - [[_COMMUNITY_Android Build System|Android Build System]]
 - [[_COMMUNITY_Web App Frontend|Web App Frontend]]
 - [[_COMMUNITY_Community 15|Community 15]]
-- [[_COMMUNITY_Community 16|Community 16]]
-- [[_COMMUNITY_Community 17|Community 17]]
-- [[_COMMUNITY_Community 18|Community 18]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `BookmarkService` - 11 edges
@@ -47,23 +44,23 @@
 ## Surprising Connections (you probably didn't know these)
 - `Build APK & Backup (CI)` --implements--> `Conversation Backup & Build Artifact Strategy`  [EXTRACTED]
   .github/workflows/build.yml → scripts/push_with_backup.ps1
-- `_ShlokaCardState` --inherits--> `State`  [EXTRACTED]
-  lib/widgets/shloka_card.dart → admin/js/app.js
 - `Build APK & Backup (CI)` --references--> `pubspec.yaml (Flutter Config)`  [INFERRED]
   .github/workflows/build.yml → pubspec.yaml
 - `README.md (Project Overview)` --references--> `GitHub Pages Deployment`  [INFERRED]
   README.md → .github/workflows/deploy-web.yml
 - `_HomeScreenState` --inherits--> `State`  [EXTRACTED]
   lib/screens/home_screen.dart → admin/js/app.js
+- `_HomeTabState` --inherits--> `State`  [EXTRACTED]
+  lib/screens/home_screen.dart → admin/js/app.js
 
 ## Import Cycles
 - None detected.
 
-## Communities (19 total, 1 thin omitted)
+## Communities (16 total, 1 thin omitted)
 
 ### Community 0 - "Navigation and Routing"
 Cohesion: 0.08
-Nodes (39): Chapter, FirebaseService, State, MaterialPageRoute, book, BookDetailPage, BookListPage, books (+31 more)
+Nodes (41): Chapter, FirebaseService, State, MaterialPageRoute, book, BookDetailPage, BookListPage, books (+33 more)
 
 ### Community 1 - "Admin Panel and Concepts"
 Cohesion: 0.11
@@ -79,19 +76,19 @@ Nodes (35): List, AppCategory, Book, bookId, bookTitle, bookTitleEn, category, C
 
 ### Community 4 - "App Bootstrap and Providers"
 Cohesion: 0.07
-Nodes (35): Book, BookmarkService, Provider state management pattern, BharatiyamApp, build, firebaseService, init, main (+27 more)
+Nodes (36): Book, BookmarkService, Provider state management pattern, build, firebaseService, init, main, ../models/shloka.dart (+28 more)
 
 ### Community 5 - "Firestore Service Layer"
-Cohesion: 0.08
-Nodes (25): Offline-first architecture (bundled data + Firestore sync), ../data/content_data.dart, FirebaseFirestore?, package:cloud_firestore/cloud_firestore.dart, _books, _categories, _db, _deityIcons (+17 more)
+Cohesion: 0.07
+Nodes (27): ChangeNotifier, Offline-first architecture (bundled data + Firestore sync), ../data/content_data.dart, FirebaseFirestore?, package:cloud_firestore/cloud_firestore.dart, _books, _categories, _db (+19 more)
 
 ### Community 6 - "Bookmark and Preferences"
-Cohesion: 0.08
-Nodes (23): bool get, dart:convert, double get, int get, Map, package:flutter/foundation.dart, package:shared_preferences/shared_preferences.dart, _bookmarks (+15 more)
+Cohesion: 0.07
+Nodes (33): bool get, dart:convert, double get, int get, BharatiyamApp, Map, package:flutter/foundation.dart, package:shared_preferences/shared_preferences.dart (+25 more)
 
 ### Community 7 - "Content Data and Seed"
-Cohesion: 0.16
-Nodes (10): Bookmark/Favorites System, Firestore backend (books/chapters/shlokas/categories collections), Firebase project config (hosting + firestore), fieldOverrides, indexes, App, auth, db (+2 more)
+Cohesion: 0.08
+Nodes (23): Bookmark/Favorites System, Firestore backend (books/chapters/shlokas/categories collections), appName, appNameEn, appTagline, books, categories, ContentData (+15 more)
 
 ### Community 8 - "Firebase Config"
 Cohesion: 0.25
@@ -109,37 +106,25 @@ Nodes (5): Android root build.gradle, Android settings.gradle, Android app build
 Cohesion: 0.14
 Nodes (13): int?, TextOverflow?, build, color, fontFamily, fontSize, fontWeight, height (+5 more)
 
-### Community 16 - "Community 16"
-Cohesion: 0.14
-Nodes (16): ChangeNotifier, _SavedTab, SettingsPage, BookmarkService, FirebaseService, Shloka, build, createState (+8 more)
-
-### Community 17 - "Community 17"
-Cohesion: 0.12
-Nodes (16): Color, static const String, _anudatta, build, _buildSpans, _consumeNextSyllable, _decoratedSpan, _doubleSvarita (+8 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.14
-Nodes (13): appName, appNameEn, appTagline, books, categories, ContentData, getAllShlokas, getBookById (+5 more)
-
 ## Knowledge Gaps
-- **174 isolated node(s):** `text`, `fontSize`, `textColor`, `_svarita`, `_anudatta` (+169 more)
+- **160 isolated node(s):** `stotra`, `text`, `fontFamily`, `fontSize`, `textAlign` (+155 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `State` connect `Navigation and Routing` to `Community 16`, `Content Data and Seed`?**
+- **Why does `State` connect `Navigation and Routing` to `Content Data and Seed`?**
   _High betweenness centrality (0.062) - this node is a cross-community bridge._
-- **Why does `SEED` connect `Content Data and Seed` to `Community 18`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
-- **What connects `text`, `fontSize`, `textColor` to the rest of the system?**
-  _174 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `stotra`, `text`, `fontFamily` to the rest of the system?**
+  _160 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Navigation and Routing` be split into smaller, more focused modules?**
-  _Cohesion score 0.08076923076923077 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07665505226480836 - nodes in this community are weakly interconnected._
 - **Should `Admin Panel and Concepts` be split into smaller, more focused modules?**
   _Cohesion score 0.11428571428571428 - nodes in this community are weakly interconnected._
 - **Should `Theme and UI Components` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Data Models` be split into smaller, more focused modules?**
   _Cohesion score 0.06031746031746032 - nodes in this community are weakly interconnected._
+- **Should `App Bootstrap and Providers` be split into smaller, more focused modules?**
+  _Cohesion score 0.06585365853658537 - nodes in this community are weakly interconnected._

@@ -4,22 +4,22 @@
   "graph": {},
   "nodes": [
     {
-      "label": "vedic_text_widget.dart",
+      "label": "reader_screen.dart",
       "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
-      "id": "widgets_vedic_text_widget",
-      "community": 17,
-      "norm_label": "vedic_text_widget.dart"
+      "id": "screens_reader_screen",
+      "community": 4,
+      "norm_label": "reader_screen.dart"
     },
     {
-      "label": "VedicTextWidget",
+      "label": "ReaderScreen",
       "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
-      "id": "widgets_vedic_text_widget_vedictextwidget",
+      "id": "screens_reader_screen_readerscreen",
       "community": 4,
-      "norm_label": "vedictextwidget"
+      "norm_label": "readerscreen"
     },
     {
       "label": "StatelessWidget",
@@ -27,152 +27,35 @@
       "source_file": null,
       "source_location": null,
       "id": "statelesswidget",
-      "community": 4,
+      "community": 6,
       "norm_label": "statelesswidget"
     },
     {
-      "label": "text",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_text",
-      "community": 17,
-      "norm_label": "text"
-    },
-    {
-      "label": "fontSize",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_fontsize",
-      "community": 17,
-      "norm_label": "fontsize"
-    },
-    {
-      "label": "textColor",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_textcolor",
-      "community": 17,
-      "norm_label": "textcolor"
-    },
-    {
-      "label": "Color",
+      "label": "BookmarkService",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "id": "color",
-      "community": 17,
-      "norm_label": "color"
+      "id": "bookmarkservice",
+      "community": 4,
+      "norm_label": "bookmarkservice"
     },
     {
-      "label": "_svarita",
+      "label": "stotra",
       "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
-      "id": "widgets_vedic_text_widget_svarita",
-      "community": 17,
-      "norm_label": "_svarita"
-    },
-    {
-      "label": "static const String",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "id": "static_const_string",
-      "community": 17,
-      "norm_label": "static const string"
-    },
-    {
-      "label": "_anudatta",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_anudatta",
-      "community": 17,
-      "norm_label": "_anudatta"
-    },
-    {
-      "label": "_doubleSvarita",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_doublesvarita",
-      "community": 17,
-      "norm_label": "_doublesvarita"
-    },
-    {
-      "label": "_isMark",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_ismark",
-      "community": 17,
-      "norm_label": "_ismark"
+      "id": "screens_reader_screen_stotra",
+      "community": 4,
+      "norm_label": "stotra"
     },
     {
       "label": "build",
       "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
-      "id": "widgets_vedic_text_widget_build",
-      "community": 17,
+      "id": "screens_reader_screen_build",
+      "community": 4,
       "norm_label": "build"
-    },
-    {
-      "label": "_buildSpans",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_buildspans",
-      "community": 17,
-      "norm_label": "_buildspans"
-    },
-    {
-      "label": "_consumeNextSyllable",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_consumenextsyllable",
-      "community": 17,
-      "norm_label": "_consumenextsyllable"
-    },
-    {
-      "label": "_decoratedSpan",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_decoratedspan",
-      "community": 17,
-      "norm_label": "_decoratedspan"
-    },
-    {
-      "label": "_isKnConsonant",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_isknconsonant",
-      "community": 17,
-      "norm_label": "_isknconsonant"
-    },
-    {
-      "label": "_isKnVowel",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_isknvowel",
-      "community": 17,
-      "norm_label": "_isknvowel"
-    },
-    {
-      "label": "_isKnDepVowel",
-      "file_type": "code",
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "id": "widgets_vedic_text_widget_iskndepvowel",
-      "community": 17,
-      "norm_label": "_iskndepvowel"
     },
     {
       "label": "package:flutter/material.dart",
@@ -184,6 +67,15 @@
       "norm_label": "package:flutter/material.dart"
     },
     {
+      "label": "package:provider/provider.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_provider_provider_dart",
+      "community": 4,
+      "norm_label": "package:provider/provider.dart"
+    },
+    {
       "label": "package:google_fonts/google_fonts.dart",
       "file_type": "code",
       "source_file": null,
@@ -193,211 +85,157 @@
       "norm_label": "package:google_fonts/google_fonts.dart"
     },
     {
-      "label": "reader_screen.dart",
-      "file_type": "code",
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "community": 4,
-      "norm_label": "reader_screen.dart",
-      "id": "screens_reader_screen"
-    },
-    {
-      "label": "ReaderScreen",
-      "file_type": "code",
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "community": 4,
-      "norm_label": "readerscreen",
-      "id": "screens_reader_screen_readerscreen"
-    },
-    {
-      "label": "BookmarkService",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "bookmarkservice",
-      "id": "bookmarkservice"
-    },
-    {
-      "label": "stotra",
-      "file_type": "code",
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "community": 4,
-      "norm_label": "stotra",
-      "id": "screens_reader_screen_stotra"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "community": 4,
-      "norm_label": "build",
-      "id": "screens_reader_screen_build"
-    },
-    {
-      "label": "package:provider/provider.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "package:provider/provider.dart",
-      "id": "package_provider_provider_dart"
-    },
-    {
       "label": "../models/stotra.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "models_stotra_dart",
       "community": 4,
-      "norm_label": "../models/stotra.dart",
-      "id": "models_stotra_dart"
+      "norm_label": "../models/stotra.dart"
     },
     {
       "label": "../services/bookmark_service.dart",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "services_bookmark_service_dart",
       "community": 4,
-      "norm_label": "../services/bookmark_service.dart",
-      "id": "services_bookmark_service_dart"
+      "norm_label": "../services/bookmark_service.dart"
     },
     {
       "label": "nudi_text.dart",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text",
       "community": 15,
-      "norm_label": "nudi_text.dart",
-      "id": "widgets_nudi_text"
+      "norm_label": "nudi_text.dart"
     },
     {
       "label": "NudiText",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
-      "community": 4,
-      "norm_label": "nuditext",
-      "id": "widgets_nudi_text_nuditext"
+      "id": "widgets_nudi_text_nuditext",
+      "community": 6,
+      "norm_label": "nuditext"
     },
     {
       "label": "text",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_text",
       "community": 15,
-      "norm_label": "text",
-      "id": "widgets_nudi_text_text"
+      "norm_label": "text"
     },
     {
       "label": "fontFamily",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_fontfamily",
       "community": 15,
-      "norm_label": "fontfamily",
-      "id": "widgets_nudi_text_fontfamily"
+      "norm_label": "fontfamily"
     },
     {
       "label": "fontSize",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_fontsize",
       "community": 15,
-      "norm_label": "fontsize",
-      "id": "widgets_nudi_text_fontsize"
+      "norm_label": "fontsize"
     },
     {
       "label": "textAlign",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_textalign",
       "community": 15,
-      "norm_label": "textalign",
-      "id": "widgets_nudi_text_textalign"
+      "norm_label": "textalign"
     },
     {
       "label": "color",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_color",
       "community": 15,
-      "norm_label": "color",
-      "id": "widgets_nudi_text_color"
+      "norm_label": "color"
     },
     {
       "label": "height",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_height",
       "community": 15,
-      "norm_label": "height",
-      "id": "widgets_nudi_text_height"
+      "norm_label": "height"
     },
     {
       "label": "maxLines",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_maxlines",
       "community": 15,
-      "norm_label": "maxlines",
-      "id": "widgets_nudi_text_maxlines"
+      "norm_label": "maxlines"
     },
     {
       "label": "int?",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "int",
       "community": 15,
-      "norm_label": "int?",
-      "id": "int"
+      "norm_label": "int?"
     },
     {
       "label": "overflow",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_overflow",
       "community": 15,
-      "norm_label": "overflow",
-      "id": "widgets_nudi_text_overflow"
+      "norm_label": "overflow"
     },
     {
       "label": "TextOverflow?",
       "file_type": "code",
       "source_file": null,
       "source_location": null,
+      "id": "textoverflow",
       "community": 15,
-      "norm_label": "textoverflow?",
-      "id": "textoverflow"
+      "norm_label": "textoverflow?"
     },
     {
       "label": "fontWeight",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_fontweight",
       "community": 15,
-      "norm_label": "fontweight",
-      "id": "widgets_nudi_text_fontweight"
+      "norm_label": "fontweight"
     },
     {
       "label": "letterSpacing",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_letterspacing",
       "community": 15,
-      "norm_label": "letterspacing",
-      "id": "widgets_nudi_text_letterspacing"
+      "norm_label": "letterspacing"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/widgets/nudi_text.dart",
       "source_location": null,
+      "id": "widgets_nudi_text_build",
       "community": 15,
-      "norm_label": "build",
-      "id": "widgets_nudi_text_build"
+      "norm_label": "build"
     },
     {
       "label": "app.js",
@@ -566,7 +404,7 @@
       "file_type": "code",
       "source_file": "lib/services/firebase_service.dart",
       "source_location": null,
-      "community": 16,
+      "community": 5,
       "norm_label": "firebaseservice",
       "id": "services_firebase_service_firebaseservice"
     },
@@ -575,7 +413,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 16,
+      "community": 5,
       "norm_label": "changenotifier",
       "id": "changenotifier"
     },
@@ -719,7 +557,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "static const",
       "id": "static_const"
     },
@@ -1016,7 +854,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "content_data.dart",
       "id": "data_content_data"
     },
@@ -1025,7 +863,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "contentdata",
       "id": "data_content_data_contentdata"
     },
@@ -1034,7 +872,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "appname",
       "id": "data_content_data_appname"
     },
@@ -1043,7 +881,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "appnameen",
       "id": "data_content_data_appnameen"
     },
@@ -1052,7 +890,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "apptagline",
       "id": "data_content_data_apptagline"
     },
@@ -1061,7 +899,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "categories",
       "id": "data_content_data_categories"
     },
@@ -1070,7 +908,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "books",
       "id": "data_content_data_books"
     },
@@ -1079,7 +917,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "getallshlokas",
       "id": "data_content_data_getallshlokas"
     },
@@ -1088,7 +926,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "getbooksbycategory",
       "id": "data_content_data_getbooksbycategory"
     },
@@ -1097,7 +935,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "getbooksbysubcategory",
       "id": "data_content_data_getbooksbysubcategory"
     },
@@ -1106,7 +944,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "getbooksbygod",
       "id": "data_content_data_getbooksbygod"
     },
@@ -1115,7 +953,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "getbookbyid",
       "id": "data_content_data_getbookbyid"
     },
@@ -1124,7 +962,7 @@
       "file_type": "code",
       "source_file": "lib/data/content_data.dart",
       "source_location": null,
-      "community": 18,
+      "community": 7,
       "norm_label": "searchshlokas",
       "id": "data_content_data_searchshlokas"
     },
@@ -1142,7 +980,7 @@
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "bharatiyamapp",
       "id": "lib_main_bharatiyamapp"
     },
@@ -1619,7 +1457,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 16,
+      "community": 6,
       "norm_label": "_savedtab",
       "id": "screens_home_screen_savedtab"
     },
@@ -1664,7 +1502,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 16,
+      "community": 6,
       "norm_label": "settingspage",
       "id": "screens_home_screen_settingspage"
     },
@@ -1673,7 +1511,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "_searchbar",
       "id": "screens_home_screen_searchbar"
     },
@@ -1934,7 +1772,7 @@
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "community": 16,
+      "community": 6,
       "norm_label": "bookmarkservice",
       "id": "services_bookmark_service_bookmarkservice"
     },
@@ -2321,7 +2159,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "bookcard",
       "id": "widgets_book_card_bookcard"
     },
@@ -2375,7 +2213,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "categorycard",
       "id": "widgets_category_card_categorycard"
     },
@@ -2420,7 +2258,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "shloka_card.dart",
       "id": "widgets_shloka_card"
     },
@@ -2429,7 +2267,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 0,
       "norm_label": "shlokacard",
       "id": "widgets_shloka_card_shlokacard"
     },
@@ -2438,7 +2276,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 0,
       "norm_label": "_shlokacardstate",
       "id": "widgets_shloka_card_shlokacardstate"
     },
@@ -2447,7 +2285,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "shloka",
       "id": "widgets_shloka_card_shloka"
     },
@@ -2456,7 +2294,7 @@
       "file_type": "code",
       "source_file": null,
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "shloka",
       "id": "shloka"
     },
@@ -2465,7 +2303,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "showsource",
       "id": "widgets_shloka_card_showsource"
     },
@@ -2474,7 +2312,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "showsanskrit",
       "id": "widgets_shloka_card_showsanskrit"
     },
@@ -2483,7 +2321,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "showkannada",
       "id": "widgets_shloka_card_showkannada"
     },
@@ -2492,7 +2330,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "showmeaning",
       "id": "widgets_shloka_card_showmeaning"
     },
@@ -2501,7 +2339,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "_explanationexpanded",
       "id": "widgets_shloka_card_explanationexpanded"
     },
@@ -2510,7 +2348,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 4,
       "norm_label": "createstate",
       "id": "widgets_shloka_card_createstate"
     },
@@ -2519,7 +2357,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 16,
+      "community": 6,
       "norm_label": "build",
       "id": "widgets_shloka_card_build"
     },
@@ -2920,202 +2758,113 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "context": "variable_type",
-      "source": "widgets_vedic_text_widget",
-      "target": "color"
+      "context": "type_lookup",
+      "source": "screens_reader_screen",
+      "target": "bookmarkservice"
     },
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
+      "source": "screens_reader_screen",
+      "target": "models_stotra_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
       "target": "package_flutter_material_dart"
     },
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
+      "source": "screens_reader_screen",
       "target": "package_google_fonts_google_fonts_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "screens_reader_screen_build"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "screens_reader_screen_readerscreen"
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
       "context": "variable_type",
-      "source": "widgets_vedic_text_widget",
-      "target": "static_const_string"
+      "source": "screens_reader_screen",
+      "target": "screens_reader_screen_stotra"
     },
     {
-      "relation": "defines",
+      "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_anudatta"
+      "source": "screens_reader_screen",
+      "target": "services_bookmark_service_dart"
     },
     {
-      "relation": "defines",
+      "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_build"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_buildspans"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_consumenextsyllable"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_decoratedspan"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_doublesvarita"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_fontsize"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_isknconsonant"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_iskndepvowel"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_isknvowel"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_ismark"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_svarita"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_text"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_textcolor"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_vedic_text_widget",
-      "target": "widgets_vedic_text_widget_vedictextwidget"
+      "context": "bloc_lookup",
+      "source": "screens_reader_screen_readerscreen",
+      "target": "bookmarkservice"
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/widgets/vedic_text_widget.dart",
+      "source_file": "lib/screens/reader_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "widgets_vedic_text_widget_vedictextwidget",
+      "source": "screens_reader_screen_readerscreen",
       "target": "statelesswidget"
     },
     {
@@ -3182,16 +2931,6 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen_readerscreen",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
       "weight": 1.0,
@@ -3219,6 +2958,17 @@
       "target": "statelesswidget"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "bloc_lookup",
+      "source": "screens_reader_screen_build",
+      "target": "bookmarkservice"
+    },
+    {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3236,16 +2986,6 @@
       "source_location": null,
       "weight": 1.0,
       "source": "screens_home_screen",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen",
       "target": "package_flutter_material_dart"
     },
     {
@@ -3302,20 +3042,40 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
+      "source_file": "lib/main.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "package_google_fonts_google_fonts_dart"
+      "source": "lib_main",
+      "target": "package_provider_provider_dart"
     },
     {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
+      "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
       "weight": 1.0,
-      "source": "screens_reader_screen",
+      "source": "screens_home_screen",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/shloka_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_shloka_card",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
       "target": "package_google_fonts_google_fonts_dart"
     },
     {
@@ -3347,130 +3107,6 @@
       "weight": 1.0,
       "source": "widgets_shloka_card",
       "target": "package_google_fonts_google_fonts_dart"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "type_lookup",
-      "source": "screens_reader_screen",
-      "target": "bookmarkservice"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen",
-      "target": "models_stotra_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen",
-      "target": "package_provider_provider_dart"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen",
-      "target": "screens_reader_screen_build"
-    },
-    {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen",
-      "target": "screens_reader_screen_readerscreen"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "variable_type",
-      "source": "screens_reader_screen",
-      "target": "screens_reader_screen_stotra"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_reader_screen",
-      "target": "services_bookmark_service_dart"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "bloc_lookup",
-      "source": "screens_reader_screen_readerscreen",
-      "target": "bookmarkservice"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/reader_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "context": "bloc_lookup",
-      "source": "screens_reader_screen_build",
-      "target": "bookmarkservice"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_main",
-      "target": "package_provider_provider_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "package_provider_provider_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/shloka_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_shloka_card",
-      "target": "package_provider_provider_dart"
     },
     {
       "relation": "imports",
@@ -7286,5 +6922,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e2e5eb2e10cd9c11dd5696046b3404c184a118a6"
+  "built_at_commit": "ca24195836805c7502cfeb6194f8a7d234ee9074"
 }
