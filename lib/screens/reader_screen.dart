@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/stotra.dart';
 import '../services/bookmark_service.dart';
-import '../widgets/vedic_text_widget.dart';
 
 class ReaderScreen extends StatelessWidget {
   final Stotra stotra;
@@ -58,12 +57,16 @@ class ReaderScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: VedicTextWidget(
-                  text: stotra.content,
-                  fontSize: bookmarks.fontSize,
-                  textColor: isDark
-                      ? const Color(0xFFE8D5B5)
-                      : const Color(0xFF2D1B00),
+                child: Text(
+                  stotra.content,
+                  style: GoogleFonts.notoSansKannada(
+                    fontSize: bookmarks.fontSize,
+                    height: 1.9,
+                    letterSpacing: 0.3,
+                    color: isDark
+                        ? const Color(0xFFE8D5B5)
+                        : const Color(0xFF2D1B00),
+                  ),
                 ),
               ),
 
