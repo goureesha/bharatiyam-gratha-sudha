@@ -4,128 +4,362 @@
   "graph": {},
   "nodes": [
     {
+      "label": "reader_screen.dart",
+      "file_type": "code",
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "id": "screens_reader_screen",
+      "community": 4,
+      "norm_label": "reader_screen.dart"
+    },
+    {
+      "label": "ReaderScreen",
+      "file_type": "code",
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "id": "screens_reader_screen_readerscreen",
+      "community": 4,
+      "norm_label": "readerscreen"
+    },
+    {
+      "label": "StatelessWidget",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "statelesswidget",
+      "community": 6,
+      "norm_label": "statelesswidget"
+    },
+    {
+      "label": "BookmarkService",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "bookmarkservice",
+      "community": 4,
+      "norm_label": "bookmarkservice"
+    },
+    {
+      "label": "stotra",
+      "file_type": "code",
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "id": "screens_reader_screen_stotra",
+      "community": 4,
+      "norm_label": "stotra"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "id": "screens_reader_screen_build",
+      "community": 4,
+      "norm_label": "build"
+    },
+    {
+      "label": "package:flutter/material.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_flutter_material_dart",
+      "community": 4,
+      "norm_label": "package:flutter/material.dart"
+    },
+    {
+      "label": "package:provider/provider.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_provider_provider_dart",
+      "community": 4,
+      "norm_label": "package:provider/provider.dart"
+    },
+    {
+      "label": "package:google_fonts/google_fonts.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_google_fonts_google_fonts_dart",
+      "community": 4,
+      "norm_label": "package:google_fonts/google_fonts.dart"
+    },
+    {
+      "label": "../models/stotra.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "models_stotra_dart",
+      "community": 4,
+      "norm_label": "../models/stotra.dart"
+    },
+    {
+      "label": "../services/bookmark_service.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "services_bookmark_service_dart",
+      "community": 4,
+      "norm_label": "../services/bookmark_service.dart"
+    },
+    {
+      "label": "nudi_text.dart",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text",
+      "community": 15,
+      "norm_label": "nudi_text.dart"
+    },
+    {
+      "label": "NudiText",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_nuditext",
+      "community": 6,
+      "norm_label": "nuditext"
+    },
+    {
+      "label": "text",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_text",
+      "community": 15,
+      "norm_label": "text"
+    },
+    {
+      "label": "fontFamily",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_fontfamily",
+      "community": 15,
+      "norm_label": "fontfamily"
+    },
+    {
+      "label": "fontSize",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_fontsize",
+      "community": 15,
+      "norm_label": "fontsize"
+    },
+    {
+      "label": "textAlign",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_textalign",
+      "community": 15,
+      "norm_label": "textalign"
+    },
+    {
+      "label": "color",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_color",
+      "community": 15,
+      "norm_label": "color"
+    },
+    {
+      "label": "height",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_height",
+      "community": 15,
+      "norm_label": "height"
+    },
+    {
+      "label": "maxLines",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_maxlines",
+      "community": 15,
+      "norm_label": "maxlines"
+    },
+    {
+      "label": "int?",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "int",
+      "community": 15,
+      "norm_label": "int?"
+    },
+    {
+      "label": "overflow",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_overflow",
+      "community": 15,
+      "norm_label": "overflow"
+    },
+    {
+      "label": "TextOverflow?",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "textoverflow",
+      "community": 15,
+      "norm_label": "textoverflow?"
+    },
+    {
+      "label": "fontWeight",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_fontweight",
+      "community": 15,
+      "norm_label": "fontweight"
+    },
+    {
+      "label": "letterSpacing",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_letterspacing",
+      "community": 15,
+      "norm_label": "letterspacing"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "id": "widgets_nudi_text_build",
+      "community": 15,
+      "norm_label": "build"
+    },
+    {
       "label": "app.js",
       "file_type": "code",
       "source_file": "web/js/app.js",
       "source_location": "L1",
-      "id": "js_app",
-      "community": 15,
-      "norm_label": "app.js"
+      "community": 7,
+      "norm_label": "app.js",
+      "id": "js_app"
     },
     {
       "label": "iconHtml()",
       "file_type": "code",
       "source_file": "web/js/app.js",
       "source_location": "L6",
-      "id": "js_app_iconhtml",
-      "community": 15,
-      "norm_label": "iconhtml()"
+      "community": 7,
+      "norm_label": "iconhtml()",
+      "id": "js_app_iconhtml"
     },
     {
       "label": "App",
       "file_type": "code",
       "source_file": "web/js/app.js",
       "source_location": "L13",
-      "id": "js_app_app",
-      "community": 15,
-      "norm_label": "app"
+      "community": 7,
+      "norm_label": "app",
+      "id": "js_app_app"
     },
     {
       "label": "data.js",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L1",
-      "id": "js_data",
       "community": 1,
-      "norm_label": "data.js"
+      "norm_label": "data.js",
+      "id": "js_data"
     },
     {
       "label": "APP_DATA",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L5",
-      "id": "js_data_app_data",
       "community": 1,
-      "norm_label": "app_data"
+      "norm_label": "app_data",
+      "id": "js_data_app_data"
     },
     {
       "label": "getAllShlokas()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L611",
-      "id": "js_data_getallshlokas",
       "community": 1,
-      "norm_label": "getallshlokas()"
+      "norm_label": "getallshlokas()",
+      "id": "js_data_getallshlokas"
     },
     {
       "label": "getBooksByCategory()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L633",
-      "id": "js_data_getbooksbycategory",
       "community": 1,
-      "norm_label": "getbooksbycategory()"
+      "norm_label": "getbooksbycategory()",
+      "id": "js_data_getbooksbycategory"
     },
     {
       "label": "getBooksBySubcategory()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L637",
-      "id": "js_data_getbooksbysubcategory",
       "community": 1,
-      "norm_label": "getbooksbysubcategory()"
+      "norm_label": "getbooksbysubcategory()",
+      "id": "js_data_getbooksbysubcategory"
     },
     {
       "label": "getBooksByGod()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L641",
-      "id": "js_data_getbooksbygod",
       "community": 1,
-      "norm_label": "getbooksbygod()"
+      "norm_label": "getbooksbygod()",
+      "id": "js_data_getbooksbygod"
     },
     {
       "label": "getBookById()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L647",
-      "id": "js_data_getbookbyid",
       "community": 1,
-      "norm_label": "getbookbyid()"
+      "norm_label": "getbookbyid()",
+      "id": "js_data_getbookbyid"
     },
     {
       "label": "searchShlokas()",
       "file_type": "code",
       "source_file": "web/js/data.js",
       "source_location": "L651",
-      "id": "js_data_searchshlokas",
       "community": 1,
-      "norm_label": "searchshlokas()"
+      "norm_label": "searchshlokas()",
+      "id": "js_data_searchshlokas"
     },
     {
       "label": "stotra_data.js",
       "file_type": "code",
       "source_file": "web/js/stotra_data.js",
       "source_location": "L1",
-      "id": "js_stotra_data",
       "community": 11,
-      "norm_label": "stotra_data.js"
+      "norm_label": "stotra_data.js",
+      "id": "js_stotra_data"
     },
     {
       "label": "STOTRA_DATA",
       "file_type": "code",
       "source_file": "web/js/stotra_data.js",
       "source_location": "L2",
-      "id": "js_stotra_data_stotra_data",
       "community": 11,
-      "norm_label": "stotra_data"
+      "norm_label": "stotra_data",
+      "id": "js_stotra_data_stotra_data"
     },
     {
       "label": "auth",
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L17",
-      "community": 15,
+      "community": 7,
       "norm_label": "auth",
       "id": "js_app_auth"
     },
@@ -134,7 +368,7 @@
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L18",
-      "community": 15,
+      "community": 7,
       "norm_label": "db",
       "id": "js_app_db"
     },
@@ -152,7 +386,7 @@
       "file_type": "code",
       "source_file": "admin/js/app.js",
       "source_location": "L29",
-      "community": 15,
+      "community": 7,
       "norm_label": "seed",
       "id": "js_app_seed"
     },
@@ -593,7 +827,7 @@
       "file_type": "code",
       "source_file": "firestore.indexes.json",
       "source_location": "L1",
-      "community": 15,
+      "community": 7,
       "norm_label": "firestore.indexes.json",
       "id": "firestore_indexes"
     },
@@ -602,7 +836,7 @@
       "file_type": "code",
       "source_file": "firestore.indexes.json",
       "source_location": "L2",
-      "community": 15,
+      "community": 7,
       "norm_label": "indexes",
       "id": "firestore_indexes_indexes"
     },
@@ -611,7 +845,7 @@
       "file_type": "code",
       "source_file": "firestore.indexes.json",
       "source_location": "L52",
-      "community": 15,
+      "community": 7,
       "norm_label": "fieldoverrides",
       "id": "firestore_indexes_fieldoverrides"
     },
@@ -746,18 +980,9 @@
       "file_type": "code",
       "source_file": "lib/main.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "bharatiyamapp",
       "id": "lib_main_bharatiyamapp"
-    },
-    {
-      "label": "StatelessWidget",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 0,
-      "norm_label": "statelesswidget",
-      "id": "statelesswidget"
     },
     {
       "label": "firebaseService",
@@ -794,33 +1019,6 @@
       "community": 4,
       "norm_label": "build",
       "id": "lib_main_build"
-    },
-    {
-      "label": "package:flutter/material.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "package:flutter/material.dart",
-      "id": "package_flutter_material_dart"
-    },
-    {
-      "label": "package:provider/provider.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "package:provider/provider.dart",
-      "id": "package_provider_provider_dart"
-    },
-    {
-      "label": "../services/bookmark_service.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "../services/bookmark_service.dart",
-      "id": "services_bookmark_service_dart"
     },
     {
       "label": "../services/firebase_service.dart",
@@ -1259,7 +1457,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "_savedtab",
       "id": "screens_home_screen_savedtab"
     },
@@ -1304,7 +1502,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "settingspage",
       "id": "screens_home_screen_settingspage"
     },
@@ -1313,7 +1511,7 @@
       "file_type": "code",
       "source_file": "lib/screens/home_screen.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "_searchbar",
       "id": "screens_home_screen_searchbar"
     },
@@ -1534,15 +1732,6 @@
       "id": "screens_home_screen_buildfilterchip"
     },
     {
-      "label": "package:google_fonts/google_fonts.dart",
-      "file_type": "code",
-      "source_file": null,
-      "source_location": null,
-      "community": 4,
-      "norm_label": "package:google_fonts/google_fonts.dart",
-      "id": "package_google_fonts_google_fonts_dart"
-    },
-    {
       "label": "../widgets/shloka_card.dart",
       "file_type": "code",
       "source_file": null,
@@ -1583,7 +1772,7 @@
       "file_type": "code",
       "source_file": "lib/services/bookmark_service.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "bookmarkservice",
       "id": "services_bookmark_service_bookmarkservice"
     },
@@ -1970,7 +2159,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/book_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "bookcard",
       "id": "widgets_book_card_bookcard"
     },
@@ -2024,7 +2213,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/category_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "categorycard",
       "id": "widgets_category_card_categorycard"
     },
@@ -2078,7 +2267,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 0,
       "norm_label": "shlokacard",
       "id": "widgets_shloka_card_shlokacard"
     },
@@ -2087,7 +2276,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 4,
+      "community": 0,
       "norm_label": "_shlokacardstate",
       "id": "widgets_shloka_card_shlokacardstate"
     },
@@ -2168,7 +2357,7 @@
       "file_type": "code",
       "source_file": "lib/widgets/shloka_card.dart",
       "source_location": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "build",
       "id": "widgets_shloka_card_build"
     },
@@ -2186,7 +2375,7 @@
       "file_type": "code",
       "source_file": "web/js/storage.js",
       "source_location": "L1",
-      "community": 15,
+      "community": 7,
       "norm_label": "storage.js",
       "id": "js_storage"
     },
@@ -2195,7 +2384,7 @@
       "file_type": "code",
       "source_file": "web/js/storage.js",
       "source_location": "L5",
-      "community": 15,
+      "community": 7,
       "norm_label": "bookmarkstorage",
       "id": "js_storage_bookmarkstorage"
     },
@@ -2247,7 +2436,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 7,
       "norm_label": "firebase project config (hosting + firestore)",
       "id": "firebase_json"
     },
@@ -2260,7 +2449,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 7,
       "norm_label": "firestore backend (books/chapters/shlokas/categories collections)",
       "id": "concept_firestore_backend"
     },
@@ -2416,7 +2605,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 7,
       "norm_label": "bookmark/favorites system",
       "id": "concept_bookmark_system"
     },
@@ -2567,6 +2756,535 @@
   "links": [
     {
       "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "type_lookup",
+      "source": "screens_reader_screen",
+      "target": "bookmarkservice"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "models_stotra_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "package_google_fonts_google_fonts_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "screens_reader_screen_build"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "screens_reader_screen_readerscreen"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "screens_reader_screen",
+      "target": "screens_reader_screen_stotra"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen",
+      "target": "services_bookmark_service_dart"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "bloc_lookup",
+      "source": "screens_reader_screen_readerscreen",
+      "target": "bookmarkservice"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_reader_screen_readerscreen",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_main_bharatiyamapp",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen_bookdetailpage",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen_booklistpage",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen_savedtab",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen_searchbar",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen_settingspage",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/book_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_book_card_bookcard",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/category_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_category_card_categorycard",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text_nuditext",
+      "target": "statelesswidget"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/reader_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "bloc_lookup",
+      "source": "screens_reader_screen_build",
+      "target": "bookmarkservice"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_main",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/theme/app_theme.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "theme_app_theme",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/book_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_book_card",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/category_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_category_card",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/shloka_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_shloka_card",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_main",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/shloka_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_shloka_card",
+      "target": "package_provider_provider_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "package_google_fonts_google_fonts_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/theme/app_theme.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "theme_app_theme",
+      "target": "package_google_fonts_google_fonts_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/book_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_book_card",
+      "target": "package_google_fonts_google_fonts_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/shloka_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_shloka_card",
+      "target": "package_google_fonts_google_fonts_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/main.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_main",
+      "target": "services_bookmark_service_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/screens/home_screen.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "screens_home_screen",
+      "target": "services_bookmark_service_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/shloka_card.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_shloka_card",
+      "target": "services_bookmark_service_dart"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "widgets_nudi_text",
+      "target": "int"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "widgets_nudi_text",
+      "target": "textoverflow"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_build"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_color"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_fontfamily"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_fontsize"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_fontweight"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_height"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_letterspacing"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_maxlines"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_nuditext"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_overflow"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_text"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/widgets/nudi_text.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "widgets_nudi_text",
+      "target": "widgets_nudi_text_textalign"
+    },
+    {
+      "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "firebase.json",
@@ -2631,9 +3349,9 @@
       "source_file": "web/js/app.js",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_app",
-      "target": "js_app_iconhtml",
-      "confidence_score": 1.0
+      "target": "js_app_iconhtml"
     },
     {
       "relation": "contains",
@@ -2771,9 +3489,9 @@
       "source_file": "web/js/stotra_data.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "js_stotra_data",
-      "target": "js_stotra_data_stotra_data",
-      "confidence_score": 1.0
+      "target": "js_stotra_data_stotra_data"
     },
     {
       "relation": "inherits",
@@ -3826,26 +4544,6 @@
       "source_location": null,
       "weight": 1.0,
       "source": "lib_main",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_main",
-      "target": "package_provider_provider_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_main",
       "target": "screens_home_screen_dart"
     },
     {
@@ -3868,16 +4566,6 @@
       "context": "type_lookup",
       "source": "lib_main",
       "target": "services_bookmark_service_bookmarkservice"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_main",
-      "target": "services_bookmark_service_dart"
     },
     {
       "relation": "imports",
@@ -3920,16 +4608,6 @@
       "target": "services_bookmark_service"
     },
     {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/main.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_main_bharatiyamapp",
-      "target": "statelesswidget"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3938,166 +4616,6 @@
       "weight": 1.0,
       "source": "lib_main_bharatiyamapp",
       "target": "theme_app_theme"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen_bookdetailpage",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen_booklistpage",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen_savedtab",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen_searchbar",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen_settingspage",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/book_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_book_card_bookcard",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/category_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_category_card_categorycard",
-      "target": "statelesswidget"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/theme/app_theme.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "theme_app_theme",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/book_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_book_card",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/category_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_category_card",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/shloka_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_shloka_card",
-      "target": "package_flutter_material_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "package_provider_provider_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/shloka_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_shloka_card",
-      "target": "package_provider_provider_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "services_bookmark_service_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/shloka_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_shloka_card",
-      "target": "services_bookmark_service_dart"
     },
     {
       "relation": "imports",
@@ -4614,16 +5132,6 @@
       "context": "type_lookup",
       "source": "screens_home_screen",
       "target": "firebaseservice"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/screens/home_screen.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "screens_home_screen",
-      "target": "package_google_fonts_google_fonts_dart"
     },
     {
       "relation": "defines",
@@ -5403,36 +5911,6 @@
       "context": "route_object",
       "source": "screens_home_screen_opensubcategory",
       "target": "materialpageroute"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/theme/app_theme.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "theme_app_theme",
-      "target": "package_google_fonts_google_fonts_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/book_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_book_card",
-      "target": "package_google_fonts_google_fonts_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/widgets/shloka_card.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "widgets_shloka_card",
-      "target": "package_google_fonts_google_fonts_dart"
     },
     {
       "relation": "implements",
@@ -6444,5 +6922,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a907c8f24411dc4c29992ea1310a6993a3c3bda9"
+  "built_at_commit": "ca24195836805c7502cfeb6194f8a7d234ee9074"
 }

@@ -210,8 +210,8 @@
     "semantic_hash": "8b76f8795979c378e9d9d5d66f7a18c3"
   },
   "assets/data/stotra_data.json": {
-    "mtime": 1781444289.56315,
-    "ast_hash": "07baa65c655e63331780b6eee4f5608f",
+    "mtime": 1781447678.7653563,
+    "ast_hash": "2b01d3544f707963b9b17c79f4011b34",
     "semantic_hash": ""
   },
   "lib/models/stotra.dart": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "lib/screens/reader_screen.dart": {
-    "mtime": 1781444306.7365558,
-    "ast_hash": "d5b5d7e07dd7a0c2d635152800c6e895",
+    "mtime": 1781447718.5135882,
+    "ast_hash": "f101e71f6330b68f43360bcefce86f89",
     "semantic_hash": ""
   },
   "lib/screens/search_screen.dart": {
@@ -255,7 +255,7 @@
     "semantic_hash": ""
   },
   "lib/widgets/nudi_text.dart": {
-    "mtime": 1781419196.5451226,
+    "mtime": 1781447692.414013,
     "ast_hash": "887dc75e976e5cad73a9e1a858bc5027",
     "semantic_hash": ""
   },
