@@ -210,8 +210,8 @@
     "semantic_hash": "8b76f8795979c378e9d9d5d66f7a18c3"
   },
   "assets/data/stotra_data.json": {
-    "mtime": 1781501403.287619,
-    "ast_hash": "16e425f60aa03e11252925566749f31b",
+    "mtime": 1781502628.471777,
+    "ast_hash": "1d88bb415205466408cd2ccbc5589edc",
     "semantic_hash": ""
   },
   "lib/models/stotra.dart": {
