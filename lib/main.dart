@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'services/stotra_service.dart';
 import 'services/bookmark_service.dart';
+import 'services/veda_service.dart';
 import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
 
@@ -10,6 +11,7 @@ void main() async {
 
   final stotraService = StotraService();
   final bookmarkService = BookmarkService();
+  final vedaService = VedaService();
 
   await bookmarkService.init();
   stotraService.init(); // Load async, show loading state
@@ -19,6 +21,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider.value(value: stotraService),
         ChangeNotifierProvider.value(value: bookmarkService),
+        ChangeNotifierProvider.value(value: vedaService),
       ],
       child: const BharatiyamGranthaSudhaApp(),
     ),

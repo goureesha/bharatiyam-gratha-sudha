@@ -9,6 +9,7 @@ import 'extras_screen.dart';
 import 'bookmarks_screen.dart';
 import 'settings_screen.dart';
 import 'search_screen.dart';
+import 'veda_browser_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -148,6 +149,90 @@ class _HomeBody extends StatelessWidget {
                 _StatItem('${stotraService.totalStotras}', 'ಸ್ತೋತ್ರಗಳು'),
                 _StatItem('${context.watch<BookmarkService>().count}', 'ಉಳಿಸಿದ'),
               ],
+            ),
+          ),
+        ),
+
+        // Section: Vedas
+        SliverToBoxAdapter(
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: isDark
+                    ? [const Color(0xFF3A1C0E), const Color(0xFF1F0D07)]
+                    : [const Color(0xFFFFECE0), const Color(0xFFFFF3EC)],
+              ),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: isDark
+                    ? Colors.white.withOpacity(0.06)
+                    : const Color(0xFFE8722A).withOpacity(0.15),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(isDark ? 0.3 : 0.04),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Material(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(16),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const VedaBrowserScreen()),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFE8722A).withOpacity(isDark ? 0.25 : 0.12),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Text('🕉️', style: TextStyle(fontSize: 26)),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'ವೇದಗಳು — Vedas',
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color: isDark ? Colors.amber.shade300 : const Color(0xFF8B1A2B),
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              'ಋಗ್ವೇದ ಹಾಗೂ ಯಜುರ್ವೇದ ಮಂತ್ರಗಳು',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: isDark ? Colors.white70 : Colors.grey.shade700,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(
+                        Icons.chevron_right_rounded,
+                        color: isDark ? Colors.white60 : const Color(0xFFE8722A),
+                        size: 28,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
         ),
