@@ -8,6 +8,21 @@ class ReaderScreen extends StatelessWidget {
   final Stotra stotra;
   const ReaderScreen({super.key, required this.stotra});
 
+  String _formatContent(String content) {
+    var formatted = content;
+    // Replace space before single/double bar with non-breaking space
+    formatted = formatted.replaceAllMapped(
+      RegExp(r'\s+(\|\|?)'),
+      (match) => '\u00A0${match.group(1)}',
+    );
+    // Ensure no breaking spaces inside the end number and bars (e.g. || 1 ||)
+    formatted = formatted.replaceAllMapped(
+      RegExp(r'(\|\|?)\s*(\d+|[\u0ce6-\u0cef]+)\s*(\|\|?)'),
+      (match) => '${match.group(1)}\u00A0${match.group(2)}\u00A0${match.group(3)}',
+    );
+    return formatted;
+  }
+
   @override
   Widget build(BuildContext context) {
     final bookmarks = context.watch<BookmarkService>();
@@ -65,7 +80,7 @@ class ReaderScreen extends StatelessWidget {
                 ),
                 child: SelectionArea(
                   child: Text(
-                    stotra.content,
+                    _formatContent(stotra.content),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.notoSansKannada(
                       fontSize: bookmarks.fontSize,
