@@ -1,4 +1,4 @@
-/// Data models for Stotramala app
+/// Data models for Bharatiyam Grantha Sudha app
 class StotraCategory {
   final String id;
   final String title;

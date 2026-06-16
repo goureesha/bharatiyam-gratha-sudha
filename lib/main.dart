@@ -20,13 +20,13 @@ void main() async {
         ChangeNotifierProvider.value(value: stotraService),
         ChangeNotifierProvider.value(value: bookmarkService),
       ],
-      child: const StotramalaApp(),
+      child: const BharatiyamGranthaSudhaApp(),
     ),
   );
 }
 
-class StotramalaApp extends StatelessWidget {
-  const StotramalaApp({super.key});
+class BharatiyamGranthaSudhaApp extends StatelessWidget {
+  const BharatiyamGranthaSudhaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
