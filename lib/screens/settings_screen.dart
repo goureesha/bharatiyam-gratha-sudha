@@ -184,7 +184,7 @@ class SettingsScreen extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                Text('ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ v2.0 (Build 2a81d94)',
+                Text('ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ v2.0 (Build 101168b)',
                     style: TextStyle(
                         fontSize: 14,
                         color: Theme.of(context)
