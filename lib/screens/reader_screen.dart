@@ -66,6 +66,7 @@ class ReaderScreen extends StatelessWidget {
                 child: SelectionArea(
                   child: Text(
                     stotra.content,
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.notoSansKannada(
                       fontSize: bookmarks.fontSize,
                       height: 1.9,
