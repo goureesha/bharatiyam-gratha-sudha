@@ -8,22 +8,6 @@ class ReaderScreen extends StatelessWidget {
   final Stotra stotra;
   const ReaderScreen({super.key, required this.stotra});
 
-  String _toKannadaDigits(String input) {
-    const englishToKannada = {
-      '0': '೦',
-      '1': '೧',
-      '2': '೨',
-      '3': '೩',
-      '4': '೪',
-      '5': '೫',
-      '6': '೬',
-      '7': '೭',
-      '8': '೮',
-      '9': '೯',
-    };
-    return input.split('').map((char) => englishToKannada[char] ?? char).join('');
-  }
-
   String _formatContent(String content) {
     var formatted = content;
     // Replace horizontal space before single/double bar with non-breaking space
@@ -31,15 +15,10 @@ class ReaderScreen extends StatelessWidget {
       RegExp(r'[ \t]+(\|\|?)'),
       (match) => '\u00A0${match.group(1)}',
     );
-    // Convert numbers inside double/single bars to Kannada digits and ensure non-breaking spaces
+    // Remove numbers inside single/double bars (e.g. || 1 || or || ೧ || becomes ||)
     formatted = formatted.replaceAllMapped(
       RegExp(r'(\|\|?)\s*([0-9\u0ce6-\u0cef]+)\s*(\|\|?)'),
-      (match) {
-        final danda1 = match.group(1)!;
-        final numStr = match.group(2)!;
-        final danda2 = match.group(3)!;
-        return '$danda1\u00A0${_toKannadaDigits(numStr)}\u00A0$danda2';
-      },
+      (match) => '${match.group(1)}',
     );
     return formatted;
   }
