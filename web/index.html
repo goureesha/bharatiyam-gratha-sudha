@@ -1,71 +1,23 @@
 <!DOCTYPE html>
-<html lang="kn" data-theme="light" data-font-size="medium">
+<html>
 <head>
+  <base href="$FLUTTER_BASE_HREF">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ — ಭಾರತೀಯ ಆಧ್ಯಾತ್ಮಿಕ ಗ್ರಂಥಗಳ ಡಿಜಿಟಲ್ ಗ್ರಂಥಾಲಯ | Digital Library of Indian Spiritual Texts">
-  <meta name="theme-color" content="#8B1A2B">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ | Bharatiyam Gratha Sudha</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ">
+  <meta name="theme-color" content="#8B1A2B">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <title>ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ</title>
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
 </head>
 <body>
-
-  <!-- ── Top Navigation ──────────────────────────────────── -->
-  <nav class="top-nav" id="topNav">
-    <div class="app-logo" onclick="App.navigate('home')">
-      <div class="logo-icon">🕉️</div>
-      <div>
-        <div class="logo-text">ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ</div>
-        <div class="logo-subtext">Bharatiyam Gratha Sudha</div>
-      </div>
-    </div>
-    <div class="top-nav-actions">
-      <button class="nav-btn" id="themeToggleBtn" onclick="App.toggleTheme()" title="Toggle Theme">🌙</button>
-      <button class="nav-btn" id="settingsBtn" onclick="App.navigate('settings')" title="Settings">⚙️</button>
-    </div>
-  </nav>
-
-  <!-- ── Main Content Area ───────────────────────────────── -->
-  <main class="app-container">
-    <div class="content-area" id="contentArea">
-      <!-- Dynamic content rendered here by app.js -->
-    </div>
-  </main>
-
-  <!-- ── Bottom Navigation ───────────────────────────────── -->
-  <nav class="bottom-nav" id="bottomNav">
-    <button class="bottom-nav-item active" data-section="home" onclick="App.navigate('home')">
-      <span class="nav-icon">🏠</span>
-      <span class="nav-label">ಮುಖಪುಟ</span>
-    </button>
-    <button class="bottom-nav-item" data-section="library" onclick="App.navigate('library')">
-      <span class="nav-icon">📚</span>
-      <span class="nav-label">ಗ್ರಂಥಾಲಯ</span>
-    </button>
-    <button class="bottom-nav-item" data-section="mantras" onclick="App.navigate('mantras')">
-      <span class="nav-icon">🙏</span>
-      <span class="nav-label">ಮಂತ್ರಗಳು</span>
-    </button>
-    <button class="bottom-nav-item" data-section="stotras" onclick="App.navigate('stotras')">
-      <span class="nav-icon">📿</span>
-      <span class="nav-label">ಸ್ತೋತ್ರಗಳು</span>
-    </button>
-    <button class="bottom-nav-item" data-section="saved" onclick="App.navigate('saved')">
-      <span class="nav-icon">💖</span>
-      <span class="nav-label">ಉಳಿಸಿದವು</span>
-      <span class="bookmark-badge hidden" id="bookmarkBadge">0</span>
-    </button>
-  </nav>
-
-  <!-- ── Toast Notification ──────────────────────────────── -->
-  <div class="toast" id="toast"></div>
-
-  <!-- ── Scripts ─────────────────────────────────────────── -->
-  <script src="js/data.js"></script>
-  <script src="js/stotra_data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
 </body>
 </html>
