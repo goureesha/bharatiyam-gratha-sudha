@@ -10,9 +10,9 @@ class ReaderScreen extends StatelessWidget {
 
   String _formatContent(String content) {
     var formatted = content;
-    // Replace space before single/double bar with non-breaking space
+    // Replace horizontal space before single/double bar with non-breaking space
     formatted = formatted.replaceAllMapped(
-      RegExp(r'\s+(\|\|?)'),
+      RegExp(r'[ \t]+(\|\|?)'),
       (match) => '\u00A0${match.group(1)}',
     );
     // Ensure no breaking spaces inside the end number and bars (e.g. || 1 ||)
@@ -79,16 +79,19 @@ class ReaderScreen extends StatelessWidget {
                   ],
                 ),
                 child: SelectionArea(
-                  child: Text(
-                    _formatContent(stotra.content),
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.notoSansKannada(
-                      fontSize: bookmarks.fontSize,
-                      height: 1.9,
-                      letterSpacing: 0.3,
-                      color: isDark
-                          ? const Color(0xFFE8D5B5)
-                          : const Color(0xFF2D1B00),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      _formatContent(stotra.content),
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.notoSansKannada(
+                        fontSize: bookmarks.fontSize,
+                        height: 1.9,
+                        letterSpacing: 0.3,
+                        color: isDark
+                            ? const Color(0xFFE8D5B5)
+                            : const Color(0xFF2D1B00),
+                      ),
                     ),
                   ),
                 ),
