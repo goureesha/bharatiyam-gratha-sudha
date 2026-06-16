@@ -29,6 +29,57 @@ class SettingsScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
 
+          // Color Theme Selector
+          Card(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.palette_rounded),
+                      const SizedBox(width: 12),
+                      const Text('ಬಣ್ಣದ ಥೀಮ್', style: TextStyle(fontSize: 16)),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _ThemeOption(
+                        color: const Color(0xFFE8722A),
+                        name: 'ಕೇಸರಿ',
+                        isSelected: bookmarks.themeColorIndex == 0,
+                        onTap: () => bookmarks.themeColorIndex = 0,
+                      ),
+                      _ThemeOption(
+                        color: const Color(0xFF8B1A2B),
+                        name: 'ಮರೂನ್',
+                        isSelected: bookmarks.themeColorIndex == 1,
+                        onTap: () => bookmarks.themeColorIndex = 1,
+                      ),
+                      _ThemeOption(
+                        color: const Color(0xFF0A6E90),
+                        name: 'ನೀಲಿ',
+                        isSelected: bookmarks.themeColorIndex == 2,
+                        onTap: () => bookmarks.themeColorIndex = 2,
+                      ),
+                      _ThemeOption(
+                        color: const Color(0xFF1E5C3F),
+                        name: 'ಹಸಿರು',
+                        isSelected: bookmarks.themeColorIndex == 3,
+                        onTap: () => bookmarks.themeColorIndex = 3,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+
           // Font size
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -149,6 +200,64 @@ class SettingsScreen extends StatelessWidget {
                             .onSurface
                             .withOpacity(0.4))),
               ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ThemeOption extends StatelessWidget {
+  final Color color;
+  final String name;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const _ThemeOption({
+    required this.color,
+    required this.name,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: color,
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: isSelected
+                    ? (isDark ? Colors.white : Colors.black87)
+                    : Colors.transparent,
+                width: 3,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: color.withOpacity(0.3),
+                  blurRadius: 6,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: isSelected
+                ? const Icon(Icons.check_rounded, color: Colors.white, size: 24)
+                : null,
+          ),
+          const SizedBox(height: 6),
+          Text(
+            name,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
           ),
         ],

@@ -91,13 +91,13 @@ class _HomeBody extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: isDark
-                      ? [const Color(0xFF1A1130), const Color(0xFF2D1B4E)]
-                      : [const Color(0xFFE8722A), const Color(0xFFD4A843)],
+                      ? [Theme.of(context).colorScheme.surface, Theme.of(context).colorScheme.primary.withOpacity(0.2)]
+                      : [Theme.of(context).colorScheme.primary, Theme.of(context).colorScheme.secondary],
                 ),
               ),
               child: const Center(
                 child: Opacity(
-                  opacity: 0.15,
+                  opacity: 0.12,
                   child: Text('ॐ', style: TextStyle(fontSize: 100, color: Colors.white)),
                 ),
               ),
@@ -123,13 +123,18 @@ class _HomeBody extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(16, 16, 16, 8),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1A1130) : Colors.white,
-              borderRadius: BorderRadius.circular(12),
+              color: isDark ? const Color(0xFF120C24) : Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: isDark
+                    ? Colors.white.withOpacity(0.06)
+                    : Colors.grey.withOpacity(0.12),
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 2),
+                  color: Colors.black.withOpacity(isDark ? 0.35 : 0.04),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
                 ),
               ],
             ),
@@ -289,11 +294,43 @@ class _DeityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    // Map category id to asset filename
+    String imagePath;
+    switch (category.id) {
+      case 'shiva':
+        imagePath = 'assets/images/shiva.png';
+        break;
+      case 'vishnu':
+        imagePath = 'assets/images/vishnu.png';
+        break;
+      case 'devi':
+        imagePath = 'assets/images/devi.png';
+        break;
+      case 'ganapati':
+        imagePath = 'assets/images/ganesha.png';
+        break;
+      case 'hanumanta':
+        imagePath = 'assets/images/hanuman.png';
+        break;
+      case 'krishna':
+        imagePath = 'assets/images/krishna.png';
+        break;
+      case 'rama':
+        imagePath = 'assets/images/rama.png';
+        break;
+      case 'surya':
+        imagePath = 'assets/images/surya.png';
+        break;
+      default:
+        imagePath = '';
+    }
+
     return Material(
       borderRadius: BorderRadius.circular(16),
-      color: isDark ? const Color(0xFF1A1130) : Colors.white,
-      elevation: 2,
-      shadowColor: Colors.black.withOpacity(0.1),
+      color: isDark ? const Color(0xFF120C24) : Colors.white,
+      elevation: 3,
+      shadowColor: Colors.black.withOpacity(isDark ? 0.3 : 0.08),
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
         onTap: () => Navigator.push(
@@ -306,31 +343,110 @@ class _DeityCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: isDark
-                  ? const Color(0xFFD4A843).withOpacity(0.2)
-                  : const Color(0xFFE8722A).withOpacity(0.15),
+                  ? Colors.white.withOpacity(0.06)
+                  : Colors.grey.withOpacity(0.12),
             ),
           ),
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(category.icon, style: const TextStyle(fontSize: 28)),
-              const SizedBox(height: 6),
-              Text(
-                category.title,
-                style: const TextStyle(
-                    fontSize: 16, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 2),
-              Text(
-                '${category.stotras.length} ಸ್ತೋತ್ರ',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Theme.of(context).colorScheme.primary,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Stack(
+              children: [
+                // Illustration or fallback background gradient
+                if (imagePath.isNotEmpty)
+                  Positioned.fill(
+                    child: Opacity(
+                      opacity: isDark ? 0.75 : 0.95,
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  )
+                else
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: isDark
+                              ? [const Color(0xFF1E1035), const Color(0xFF120C24)]
+                              : [const Color(0xFFFFF8EE), Colors.white],
+                        ),
+                      ),
+                    ),
+                  ),
+                
+                // Dark overlay at the bottom for text readability
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.black.withOpacity(0.0),
+                          Colors.black.withOpacity(0.2),
+                          Colors.black.withOpacity(0.7),
+                        ],
+                        stops: const [0.0, 0.4, 1.0],
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                
+                // Content
+                Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Circular emoji icon
+                      Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.black.withOpacity(0.3),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.2),
+                          ),
+                        ),
+                        child: Text(
+                          category.icon,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      const Spacer(),
+                      Text(
+                        category.title,
+                        style: GoogleFonts.notoSansKannada(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          shadows: [
+                            const Shadow(
+                              blurRadius: 4,
+                              color: Colors.black,
+                              offset: Offset(0, 1.5),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        '${category.stotras.length} ಕೃತಿಗಳು',
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFFF5B041),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -345,12 +461,15 @@ class _ExtraCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final primary = Theme.of(context).colorScheme.primary;
+
     return Material(
-      borderRadius: BorderRadius.circular(12),
-      color: isDark ? const Color(0xFF1A1130) : Colors.white,
-      elevation: 1,
+      borderRadius: BorderRadius.circular(14),
+      color: isDark ? const Color(0xFF120C24) : Colors.white,
+      elevation: 2,
+      shadowColor: Colors.black.withOpacity(isDark ? 0.35 : 0.05),
       child: InkWell(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(14),
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
@@ -358,31 +477,48 @@ class _ExtraCard extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(14),
             border: Border.all(
               color: isDark
-                  ? Colors.white.withOpacity(0.08)
-                  : Colors.grey.withOpacity(0.2),
+                  ? Colors.white.withOpacity(0.06)
+                  : Colors.grey.withOpacity(0.12),
             ),
           ),
           padding: const EdgeInsets.all(8),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(category.icon, style: const TextStyle(fontSize: 24)),
-              const SizedBox(height: 4),
+              // Emoji badge with glowing container
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: primary.withOpacity(0.08),
+                  border: Border.all(
+                    color: primary.withOpacity(0.15),
+                  ),
+                ),
+                child: Text(category.icon, style: const TextStyle(fontSize: 20)),
+              ),
+              const SizedBox(height: 8),
               Text(
                 category.title,
-                style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                style: GoogleFonts.notoSansKannada(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  height: 1.2,
+                ),
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
+              const SizedBox(height: 2),
               Text(
                 '${category.stotras.length}',
                 style: TextStyle(
                   fontSize: 11,
-                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.bold,
+                  color: primary,
                 ),
               ),
             ],

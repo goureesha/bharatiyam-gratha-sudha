@@ -6,15 +6,18 @@ class BookmarkService extends ChangeNotifier {
   static const _kBookmarks = 'bookmarked_ids';
   static const _kDarkMode = 'dark_mode';
   static const _kFontSize = 'font_size';
+  static const _kThemeColorIndex = 'theme_color_index';
 
   SharedPreferences? _prefs;
   Set<String> _bookmarkedIds = {};
   bool _isDarkMode = false;
   double _fontSize = 20.0;
+  int _themeColorIndex = 0;
 
   Set<String> get bookmarkedIds => _bookmarkedIds;
   bool get isDarkMode => _isDarkMode;
   double get fontSize => _fontSize;
+  int get themeColorIndex => _themeColorIndex;
   int get count => _bookmarkedIds.length;
 
   Future<void> init() async {
@@ -25,6 +28,7 @@ class BookmarkService extends ChangeNotifier {
     }
     _isDarkMode = _prefs?.getBool(_kDarkMode) ?? false;
     _fontSize = _prefs?.getDouble(_kFontSize) ?? 20.0;
+    _themeColorIndex = _prefs?.getInt(_kThemeColorIndex) ?? 0;
     notifyListeners();
   }
 
@@ -49,6 +53,12 @@ class BookmarkService extends ChangeNotifier {
   set fontSize(double value) {
     _fontSize = value.clamp(14.0, 36.0);
     _prefs?.setDouble(_kFontSize, _fontSize);
+    notifyListeners();
+  }
+
+  set themeColorIndex(int value) {
+    _themeColorIndex = value;
+    _prefs?.setInt(_kThemeColorIndex, value);
     notifyListeners();
   }
 

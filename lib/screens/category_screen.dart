@@ -72,58 +72,104 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     itemBuilder: (context, index) {
                       final stotra = stotras[index];
                       final isBookmarked = bookmarks.isBookmarked(stotra.id);
-                      return Card(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 3),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        child: ListTile(
-                          leading: CircleAvatar(
-                            radius: 18,
-                            backgroundColor: Theme.of(context)
-                                .colorScheme
-                                .primary
-                                .withOpacity(0.1),
-                            child: Text(
-                              '${index + 1}',
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                                color: Theme.of(context).colorScheme.primary,
+                      return Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: isDark ? const Color(0xFF120C24) : Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: isDark
+                                ? Colors.white.withOpacity(0.06)
+                                : Colors.grey.withOpacity(0.12),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(isDark ? 0.2 : 0.02),
+                              blurRadius: 6,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(12),
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => ReaderScreen(stotra: stotra),
                               ),
                             ),
-                          ),
-                          title: stotra.isUnicode
-                              ? Text(
-                                  stotra.title,
-                                  style: GoogleFonts.notoSansKannada(
-                                    fontSize: 16,
-                                    height: 1.3,
+                            child: IntrinsicHeight(
+                              child: Row(
+                                children: [
+                                  // Left accent bar
+                                  Container(
+                                    width: 4,
+                                    color: Theme.of(context).colorScheme.primary,
                                   ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                )
-                              : NudiText(
-                                  text: stotra.title,
-                                  fontSize: 16,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  height: 1.3,
-                                ),
-                          trailing: IconButton(
-                            icon: Icon(
-                              isBookmarked
-                                  ? Icons.favorite_rounded
-                                  : Icons.favorite_border_rounded,
-                              color: isBookmarked ? Colors.red : Colors.grey,
-                              size: 22,
-                            ),
-                            onPressed: () => bookmarks.toggle(stotra.id),
-                          ),
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => ReaderScreen(stotra: stotra),
+                                  const SizedBox(width: 12),
+                                  // Circular index
+                                  Container(
+                                    width: 32,
+                                    height: 32,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary
+                                          .withOpacity(0.08),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).colorScheme.primary,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  // Title
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(vertical: 12),
+                                      child: stotra.isUnicode
+                                          ? Text(
+                                              stotra.title,
+                                              style: GoogleFonts.notoSansKannada(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                                height: 1.3,
+                                              ),
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                            )
+                                          : NudiText(
+                                              text: stotra.title,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              height: 1.3,
+                                            ),
+                                    ),
+                                  ),
+                                  // Bookmark
+                                  IconButton(
+                                    icon: Icon(
+                                      isBookmarked
+                                          ? Icons.favorite_rounded
+                                          : Icons.favorite_border_rounded,
+                                      color: isBookmarked ? Colors.red : Colors.grey,
+                                      size: 22,
+                                    ),
+                                    onPressed: () => bookmarks.toggle(stotra.id),
+                                  ),
+                                  const SizedBox(width: 8),
+                                ],
+                              ),
                             ),
                           ),
                         ),

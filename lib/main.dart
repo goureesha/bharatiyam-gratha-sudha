@@ -35,8 +35,8 @@ class StotramalaApp extends StatelessWidget {
         return MaterialApp(
           title: 'ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ',
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
+          theme: AppTheme.lightTheme(bookmarks.themeColorIndex),
+          darkTheme: AppTheme.darkTheme(bookmarks.themeColorIndex),
           themeMode: bookmarks.isDarkMode ? ThemeMode.dark : ThemeMode.light,
           home: const HomeScreen(),
         );

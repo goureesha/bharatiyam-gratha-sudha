@@ -37,7 +37,7 @@ class ReaderScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        color: isDark ? const Color(0xFF0F0A1A) : const Color(0xFFFFF8EE),
+        color: isDark ? const Color(0xFF0A0516) : const Color(0xFFFFF8EE),
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           child: Column(
@@ -45,39 +45,47 @@ class ReaderScreen extends StatelessWidget {
             children: [
               // Content card
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1A1130) : Colors.white,
+                  color: isDark ? const Color(0xFF120C24) : const Color(0xFFFDFBF7),
                   borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withOpacity(0.06)
+                        : Theme.of(context).colorScheme.primary.withOpacity(0.15),
+                    width: 1.5,
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(isDark ? 0.3 : 0.08),
-                      blurRadius: 12,
+                      color: Colors.black.withOpacity(isDark ? 0.35 : 0.04),
+                      blurRadius: 16,
                       offset: const Offset(0, 4),
                     ),
                   ],
                 ),
-                child: Text(
-                  stotra.content,
-                  style: GoogleFonts.notoSansKannada(
-                    fontSize: bookmarks.fontSize,
-                    height: 1.9,
-                    letterSpacing: 0.3,
-                    color: isDark
-                        ? const Color(0xFFE8D5B5)
-                        : const Color(0xFF2D1B00),
+                child: SelectionArea(
+                  child: Text(
+                    stotra.content,
+                    style: GoogleFonts.notoSansKannada(
+                      fontSize: bookmarks.fontSize,
+                      height: 1.9,
+                      letterSpacing: 0.3,
+                      color: isDark
+                          ? const Color(0xFFE8D5B5)
+                          : const Color(0xFF2D1B00),
+                    ),
                   ),
                 ),
               ),
-
+ 
               const SizedBox(height: 24),
-
+ 
               // Source info
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: isDark
-                      ? Colors.white.withOpacity(0.05)
+                      ? Colors.white.withOpacity(0.04)
                       : Colors.black.withOpacity(0.03),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -98,7 +106,7 @@ class ReaderScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
+ 
               const SizedBox(height: 40),
             ],
           ),
