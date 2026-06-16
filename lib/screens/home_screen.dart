@@ -323,6 +323,9 @@ class _DeityCard extends StatelessWidget {
       case 'surya':
         imagePath = 'assets/images/surya.png';
         break;
+      case 'narasimha':
+        imagePath = 'assets/images/narasimha.png';
+        break;
       default:
         imagePath = '';
     }
