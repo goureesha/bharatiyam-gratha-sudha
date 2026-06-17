@@ -6,7 +6,7 @@ param(
     [string]$CommitMessage = "Update project"
 )
 
-$ProjectRoot = "d:\bharatheeyam books"
+$ProjectRoot = Split-Path -Parent $PSScriptRoot
 $ConvId = "9dd96f49-1b5d-49be-9d15-005bfbd79edd"
 $BrainPath = "C:\Users\goure\.gemini\antigravity\brain\$ConvId"
 $BackupDir = "$ProjectRoot\conversation_backup"
