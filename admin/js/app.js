@@ -637,13 +637,13 @@ const App = {
       }
 
       // 4. Batch items to respect Firestore limits
-      // - Max 500 documents per batch write (we use 100 to keep payload small and stable)
-      // - Max 10MB per batch write (we use 2MB serialized length to be safe)
+      // - Max 500 documents per batch write (we use 15 to keep payload very small and prevent timeouts)
+      // - Max 10MB per batch write (we use 250KB to be extremely safe on slow networks)
       const batches = [];
       let currentBatchItems = [];
       let currentBatchSize = 0;
-      const MAX_BATCH_COUNT = 100;
-      const MAX_BATCH_SIZE = 2 * 1024 * 1024;
+      const MAX_BATCH_COUNT = 15;
+      const MAX_BATCH_SIZE = 250 * 1024;
 
       itemsToUpload.forEach(item => {
         const itemSize = JSON.stringify(item).length;
@@ -662,9 +662,9 @@ const App = {
       text.textContent = `Uploading ${itemsToUpload.length} modified documents in ${batches.length} batches...`;
       fill.style.width = '30%';
 
-      // 5. Upload batches with a small concurrency pool (3 parallel streams) for speed + network stability
+      // 5. Upload batches with a small concurrency pool (5 parallel streams) for speed + network stability
       let doneBatches = 0;
-      const concurrency = 3;
+      const concurrency = 5;
       let nextBatchIndex = 0;
 
       const uploadWorker = async () => {
