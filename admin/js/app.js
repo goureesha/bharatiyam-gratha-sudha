@@ -662,24 +662,38 @@ const App = {
       text.textContent = `Uploading ${itemsToUpload.length} modified documents in ${batches.length} batches...`;
       fill.style.width = '30%';
 
-      // 5. Upload batches sequentially for maximum network stability
+      // 5. Upload batches with a small concurrency pool (3 parallel streams) for speed + network stability
       let doneBatches = 0;
-      for (let i = 0; i < batches.length; i++) {
-        const batchItems = batches[i];
-        const batch = db.batch();
-        
-        batchItems.forEach(item => {
-          const docRef = db.collection(item.collection).doc(item.id);
-          batch.set(docRef, item.data);
-        });
+      const concurrency = 3;
+      let nextBatchIndex = 0;
 
-        await batch.commit();
-        doneBatches++;
-        
-        const pct = Math.min(30 + Math.floor((doneBatches / batches.length) * 55), 85);
-        fill.style.width = `${pct}%`;
-        text.textContent = `Uploading to Firestore... (Batch ${doneBatches}/${batches.length})`;
+      const uploadWorker = async () => {
+        while (true) {
+          const idx = nextBatchIndex++;
+          if (idx >= batches.length) break;
+          
+          const batchItems = batches[idx];
+          const batch = db.batch();
+          
+          batchItems.forEach(item => {
+            const docRef = db.collection(item.collection).doc(item.id);
+            batch.set(docRef, item.data);
+          });
+
+          await batch.commit();
+          doneBatches++;
+          
+          const pct = Math.min(30 + Math.floor((doneBatches / batches.length) * 55), 85);
+          fill.style.width = `${pct}%`;
+          text.textContent = `Uploading to Firestore... (Batch ${doneBatches}/${batches.length})`;
+        }
+      };
+
+      const workers = [];
+      for (let i = 0; i < Math.min(concurrency, batches.length); i++) {
+        workers.push(uploadWorker());
       }
+      await Promise.all(workers);
 
       // 6. Save new hashes to Firestore
       text.textContent = 'Updating hash indexes...';
