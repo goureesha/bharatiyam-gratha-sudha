@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'services/stotra_service.dart';
 import 'services/bookmark_service.dart';
 import 'services/veda_service.dart';
@@ -9,6 +10,23 @@ import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  try {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: "AIzaSyC-Xqs_9z5hWQObGqPVUvo0jmWzQjUuo0k",
+        authDomain: "bharatiyam-grantha-sudha.firebaseapp.com",
+        projectId: "bharatiyam-grantha-sudha",
+        storageBucket: "bharatiyam-grantha-sudha.firebasestorage.app",
+        messagingSenderId: "396596689592",
+        appId: "1:396596689592:web:e24a32f238b6546432924d",
+        measurementId: "G-LS7BG9X2P6",
+      ),
+    );
+    debugPrint('🔥 Firebase initialized successfully');
+  } catch (e) {
+    debugPrint('⚠️ Firebase initialization failed: $e');
+  }
 
   final stotraService = StotraService();
   final bookmarkService = BookmarkService();

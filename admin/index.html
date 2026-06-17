@@ -100,13 +100,7 @@
               <span class="stat-label">Chapters</span>
             </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-icon">📿</div>
-            <div class="stat-info">
-              <span class="stat-value" id="stat-shlokas">—</span>
-              <span class="stat-label">Shlokas</span>
-            </div>
-          </div>
+
           <div class="stat-card">
             <div class="stat-icon">🏷️</div>
             <div class="stat-info">
@@ -127,9 +121,6 @@
           <div class="filters">
             <select id="filter-category" class="input-select">
               <option value="">All Categories</option>
-            </select>
-            <select id="filter-subcategory" class="input-select">
-              <option value="">All Subcategories</option>
             </select>
           </div>
           <a href="#add-book" class="btn btn-primary">➕ Add Book</a>
@@ -163,8 +154,8 @@
                 <select id="book-category" class="input-select" required></select>
               </div>
               <div class="form-group">
-                <label>Subcategory</label>
-                <select id="book-subcategory" class="input-select" required></select>
+                <label>Icon (Emoji or Path)</label>
+                <input type="text" id="book-icon" class="input" placeholder="🕉️" required>
               </div>
             </div>
             <div class="form-group">
@@ -212,92 +203,38 @@
         <!-- Chapter Modal -->
         <div id="chapter-modal" class="modal hidden">
           <div class="modal-overlay"></div>
-          <div class="modal-content">
+          <div class="modal-content modal-lg">
             <h3 id="chapter-modal-title">Add Chapter</h3>
             <form id="chapter-form">
               <input type="hidden" id="chapter-id">
               <input type="hidden" id="chapter-bookId">
-              <div class="form-group">
-                <label>Chapter Number</label>
-                <input type="number" id="chapter-number" class="input" required>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Chapter/Stotra Number / Order</label>
+                  <input type="number" id="chapter-number" class="input" required>
+                </div>
+                <div class="form-group">
+                  <label>Title (Kannada)</label>
+                  <input type="text" id="chapter-title" class="input" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Title (Sanskrit)</label>
+                  <input type="text" id="chapter-titleSanskrit" class="input">
+                </div>
+                <div class="form-group">
+                  <label>Title (English)</label>
+                  <input type="text" id="chapter-titleEn" class="input">
+                </div>
               </div>
               <div class="form-group">
-                <label>Title (Kannada)</label>
-                <input type="text" id="chapter-title" class="input" required>
-              </div>
-              <div class="form-group">
-                <label>Title (Sanskrit)</label>
-                <input type="text" id="chapter-titleSanskrit" class="input">
-              </div>
-              <div class="form-group">
-                <label>Title (English)</label>
-                <input type="text" id="chapter-titleEn" class="input">
+                <label>Content (Text)</label>
+                <textarea id="chapter-content" class="input textarea" rows="12" placeholder="Enter text content here..."></textarea>
               </div>
               <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Save Chapter</button>
                 <button type="button" class="btn btn-ghost" onclick="App.closeModal('chapter-modal')">Cancel</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── SHLOKAS ── -->
-      <section id="page-shlokas" class="page-section">
-        <div class="toolbar">
-          <div>
-            <button class="btn btn-ghost" id="back-to-chapters-btn">← Back to Chapters</button>
-            <h3 id="shlokas-chapter-title" class="inline-title"></h3>
-          </div>
-          <button class="btn btn-primary" id="add-shloka-btn">➕ Add Shloka</button>
-        </div>
-        <div id="shlokas-list" class="shlokas-list"><p class="muted">Loading…</p></div>
-
-        <!-- Shloka Modal -->
-        <div id="shloka-modal" class="modal hidden">
-          <div class="modal-overlay"></div>
-          <div class="modal-content modal-lg">
-            <h3 id="shloka-modal-title">Add Shloka</h3>
-            <form id="shloka-form">
-              <input type="hidden" id="shloka-id">
-              <input type="hidden" id="shloka-chapterId">
-              <input type="hidden" id="shloka-bookId">
-              <div class="form-row">
-                <div class="form-group">
-                  <label>Number</label>
-                  <input type="text" id="shloka-number" class="input" required>
-                </div>
-                <div class="form-group">
-                  <label>Order</label>
-                  <input type="number" id="shloka-order" class="input" value="0">
-                </div>
-                <div class="form-group toggle-group">
-                  <label>Premium</label>
-                  <label class="toggle">
-                    <input type="checkbox" id="shloka-isPremium">
-                    <span class="toggle-slider"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Sanskrit Text</label>
-                <textarea id="shloka-sanskrit" class="input textarea sanskrit-text" rows="4" required></textarea>
-              </div>
-              <div class="form-group">
-                <label>Kannada Text</label>
-                <textarea id="shloka-kannada" class="input textarea kannada-text" rows="4" required></textarea>
-              </div>
-              <div class="form-group">
-                <label>Meaning (Kannada)</label>
-                <textarea id="shloka-meaning" class="input textarea" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label>Explanation</label>
-                <textarea id="shloka-explanation" class="input textarea" rows="3"></textarea>
-              </div>
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Save Shloka</button>
-                <button type="button" class="btn btn-ghost" onclick="App.closeModal('shloka-modal')">Cancel</button>
               </div>
             </form>
           </div>
@@ -315,10 +252,9 @@
           <h3 class="card-title">🌱 Seed Firestore Data</h3>
           <p class="card-desc">Upload all bundled content (categories, books, chapters, shlokas) to Firestore. This will create or overwrite documents with matching IDs.</p>
           <div class="seed-stats" id="seed-stats">
-            <div class="seed-stat"><strong id="seed-cat-count">3</strong> Categories</div>
-            <div class="seed-stat"><strong id="seed-book-count">9</strong> Books</div>
-            <div class="seed-stat"><strong id="seed-ch-count">12</strong> Chapters</div>
-            <div class="seed-stat"><strong id="seed-sh-count">41</strong> Shlokas</div>
+            <div class="seed-stat"><strong id="seed-cat-count">—</strong> Categories</div>
+            <div class="seed-stat"><strong id="seed-book-count">—</strong> Books</div>
+            <div class="seed-stat"><strong id="seed-ch-count">—</strong> Chapters</div>
           </div>
           <button class="btn btn-primary btn-lg" id="seed-btn">
             <span class="btn-text">🚀 Seed All Data to Firestore</span>

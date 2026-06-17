@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/stotra.dart';
 
 class StotraService extends ChangeNotifier {
@@ -18,6 +19,86 @@ class StotraService extends ChangeNotifier {
 
   Future<void> init() async {
     if (_isLoaded) return;
+
+    // 1. Try loading from Firestore
+    try {
+      final firestore = FirebaseFirestore.instance;
+      final booksSnap = await firestore.collection('books').get();
+      final chaptersSnap = await firestore.collection('chapters').get();
+
+      final Map<String, List<Stotra>> stotrasByBook = {};
+      for (final doc in chaptersSnap.docs) {
+        final data = doc.data();
+        final bookId = data['bookId'] as String? ?? '';
+        final stotra = Stotra(
+          id: doc.id,
+          title: data['title'] as String? ?? '',
+          content: data['content'] as String? ?? '',
+          font: data['font'] as String? ?? 'brhknd',
+          isUnicode: data['isUnicode'] == true,
+          categoryId: bookId,
+          categoryTitle: '', // populated below
+        );
+        stotrasByBook.putIfAbsent(bookId, () => []).add(stotra);
+      }
+
+      final List<StotraCategory> loadedMain = [];
+      final List<StotraCategory> loadedExtras = [];
+
+      for (final doc in booksSnap.docs) {
+        final data = doc.data();
+        final id = doc.id;
+        final category = data['category'] as String? ?? '';
+        
+        if (category == 'stotra_main' || category == 'stotra_extras') {
+          final list = stotrasByBook[id] ?? [];
+          final categoryTitle = data['title'] as String? ?? '';
+          
+          // Re-map category titles for each stotra in this category
+          final mappedList = list.map((s) => Stotra(
+            id: s.id,
+            title: s.title,
+            content: s.content,
+            font: s.font,
+            isUnicode: s.isUnicode,
+            categoryId: s.categoryId,
+            categoryTitle: categoryTitle,
+          )).toList();
+          
+          mappedList.sort((a, b) => a.id.compareTo(b.id));
+          
+          final stotraCategory = StotraCategory(
+            id: id,
+            title: categoryTitle,
+            titleEn: data['titleEn'] as String? ?? '',
+            icon: data['icon'] as String? ?? '',
+            count: mappedList.length,
+            stotras: mappedList,
+          );
+          
+          if (category == 'stotra_main') {
+            loadedMain.add(stotraCategory);
+          } else {
+            loadedExtras.add(stotraCategory);
+          }
+        }
+      }
+
+      if (loadedMain.isNotEmpty || loadedExtras.isNotEmpty) {
+        loadedMain.sort((a, b) => a.titleEn.compareTo(b.titleEn));
+        loadedExtras.sort((a, b) => a.titleEn.compareTo(b.titleEn));
+        _mainCategories = loadedMain;
+        _extrasCategories = loadedExtras;
+        _isLoaded = true;
+        debugPrint('📚 Loaded ${totalStotras} stotras in ${allCategories.length} categories from Firestore');
+        notifyListeners();
+        return;
+      }
+    } catch (e) {
+      debugPrint('⚠️ StotraService: Firestore load failed, falling back to local JSON: $e');
+    }
+
+    // 2. Fallback to Local Asset
     try {
       final jsonStr = await rootBundle.loadString('assets/data/stotra_data.json');
       final data = json.decode(jsonStr) as Map<String, dynamic>;
@@ -31,7 +112,7 @@ class StotraService extends ChangeNotifier {
           .toList() ?? [];
 
       _isLoaded = true;
-      debugPrint('📚 Loaded ${totalStotras} stotras in ${allCategories.length} categories');
+      debugPrint('📚 Loaded ${totalStotras} stotras in ${allCategories.length} categories from local JSON');
       notifyListeners();
     } catch (e) {
       debugPrint('❌ Error loading stotra data: $e');

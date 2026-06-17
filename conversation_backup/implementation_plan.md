@@ -1,56 +1,97 @@
-# Goal Description
+# Implementation Plan - Firestore Integration for App & Admin Website
 
-The user requested to add some stotras to the Shiva section in the Stotras category.
-To keep the digital library completely in sync and high quality, we will:
-1. Add three beautiful and widely chanted Shiva stotras with full Devanagari Sanskrit, Kannada transliteration, and Kannada meanings:
-   - **ಶಿವ ಪಂಚಾಕ್ಷರಿ ಸ್ತೋತ್ರಮ್ (Shiva Panchakshari Stotram)**: Praise of the five sacred syllables (Na-Ma-Shi-Va-Ya) comprising 5 verses + 1 Phala Shruti verse.
-   - **ಲಿಂಗಾಷ್ಟಕಮ್ (Lingashtakam)**: Lord Shiva's Lingam worship stotra comprising 3 key verses.
-   - **ಬಿಲ್ವಾಷ್ಟಕಮ್ (Bilvashtakam)**: Praise of offering Bilva leaves comprising 3 key verses.
-2. Ensure both **Web (`web/js/data.js`)** and **Flutter (`lib/data/content_data.dart`)** codebases are in perfect synchronization by:
-   - Syncing the library subcategory layout (simplifying to Vaiidika Grantha & Jyotisha Grantha).
-   - Syncing the stotras subcategory layout (by Deity/God instead of individual stotras).
-   - Adding the new Shiva stotras in both places.
-
-## Proposed Changes
-
-### 1. Web Data (`web/js/data.js`)
-
-We will add three new books under `category: "stotras"`, `subcategory: "shiva"`, and `godRelated: ["shiva"]`:
-
-#### [MODIFY] [data.js](file:///d:/bharatheeyam%20books/web/js/data.js)
-- Add **Shiva Panchakshari Stotram** (id: `shiva_panchakshari`)
-- Add **Lingashtakam** (id: `lingashtakam`)
-- Add **Bilvashtakam** (id: `bilvashtakam`)
-- Each book will bypass chapters in rendering (single chapter wrapper) and have shlokas containing `sanskrit`, `kannada`, and `meaning` (no `explanation` as per user settings).
+We will connect the Flutter web app and the separate admin portal via Google Cloud Firestore. Whatever edits are made in the admin portal will immediately reflect in the app. The app will fetch live data from Firestore when online, falling back to local JSON assets (`scriptures_data.json` and `stotra_data.json`) when offline.
 
 ---
 
-### 2. Flutter Data (`lib/data/content_data.dart`)
-
-We will update the static data classes to perfectly align with Request 7, 8, and 9:
-
-#### [MODIFY] [content_data.dart](file:///d:/bharatheeyam%20books/lib/data/content_data.dart)
-- Simplify `library` subcategories to: `vaidika_grantha` (ವೈದಿಕ ಗ್ರಂಥ) and `jyotisha_grantha` (ಜ್ಯೋತಿಷ ಗ್ರಂಥ).
-- Change `stotras` subcategories to be Deity-based matching the web app (`shiva`, `vishnu`, `devi`, etc.).
-- Update `bhagavad_gita` and `ishavasya` book subcategories to `vaidika_grantha` and `upanishads` subcategory references.
-- Update `shiva_tandava`, `gayatri_mantra`, `vishnu_sahasranama`, and `hanuman_chalisa` to use their respective deity subcategory keys (`shiva`, `surya`, `vishnu`, `hanuman`).
-- Add the three new Shiva stotras: **Shiva Panchakshari Stotram**, **Lingashtakam**, and **Bilvashtakam** with Devanagari Sanskrit, Kannada transliteration, and Kannada meanings (no explanations).
+## 1. Simplified Unified Firestore Schema
+To bypass the 1MB Firestore document limit on large books (like Harivansha Purana which is 4MB+) and match the app's structure, we will use a unified 2-level hierarchy:
+1. **`books` collection**: Represents both scripture books and stotra categories.
+   - `id`: String (e.g., `upanishad_isha`, `shiva_stotras`)
+   - `title`: String (Kannada)
+   - `titleEn`: String (English)
+   - `category`: String (e.g., `upanishad`, `purana`, `gita`, `smriti`, `stotra_main`, `stotra_extras`)
+   - `icon`: String (emoji or path)
+   - `order`: Number
+2. **`chapters` collection**: Represents both scripture chapters and individual stotras.
+   - `id`: String (unique identifier)
+   - `bookId`: String (references the book ID)
+   - `title`: String (Kannada)
+   - `content`: String (large text content of the chapter/stotra)
+   - `order`: Number
 
 ---
 
-## Verification Plan
+## 2. Proposed Changes
 
-### Automated Build & CI
-- Trigger and verify that the Flutter project builds successfully with `flutter build apk` (or using the local workspace build triggers).
-- Check that the GitHub Actions build is triggered on push and succeeds.
+### A. Flutter App (Firebase/Firestore Client Integration)
+We will add Firebase packages and modify the data services to load from Firestore when online, falling back to local files.
 
-### Manual Verification
-- Launch the web prototype in a browser.
-- Navigate to the **Stotras (ಸ್ತೋತ್ರಗಳು)** section.
-- Select the **Shiva (ಶಿವ)** deity category.
-- Verify that **ಶಿವ ತಾಂಡವ ಸ್ತೋತ್ರಮ್**, **ಶಿವ ಪಂಚಾಕ್ಷರಿ ಸ್ತೋತ್ರಮ್**, **ಲಿಂಗಾಷ್ಟಕಮ್**, and **ಬಿಲ್ವಾಷ್ಟಕಮ್** are all listed.
-- Tap each stotra and verify:
-  - Text is formatted cleanly.
-  - Script filter (Sanskrit/Kannada/Both) works flawlessly.
-  - Meaning toggle (ಅರ್ಥ ✓/✗) hides/shows meanings correctly.
-  - Bookmarking works for all new shlokas.
+#### [MODIFY] [pubspec.yaml](file:///d:/bharatheeyam%20books/pubspec.yaml)
+Add Firebase dependencies compatible with the Dart SDK constraints:
+```yaml
+dependencies:
+  firebase_core: ^2.27.0
+  cloud_firestore: ^4.15.8
+```
+
+#### [MODIFY] [main.dart](file:///d:/bharatheeyam%20books/lib/main.dart)
+Initialize Firebase in `main()` using the existing Firebase credentials (using a try-catch block to prevent crashes if offline or configuration fails).
+
+#### [MODIFY] [scripture_service.dart](file:///d:/bharatheeyam%20books/lib/services/scripture_service.dart)
+Modify `init()` to:
+1. Try fetching books and chapters from the Firestore `books` and `chapters` collections.
+2. If successful, populate the local scriptures cache.
+3. If it fails (network error, offline), fall back to loading from `assets/data/scriptures_data.json`.
+
+#### [MODIFY] [stotra_service.dart](file:///d:/bharatheeyam%20books/lib/services/stotra_service.dart)
+Modify `init()` to:
+1. Try fetching stotra categories and items from Firestore.
+2. If it fails, fall back to loading from `assets/data/stotra_data.json`.
+
+---
+
+### B. Admin Panel Website
+We will simplify the admin panel to allow direct editing of chapter text content, removing the unnecessary `shlokas` sub-tier, and update the "Seed Data" utility.
+
+#### [MODIFY] [index.html](file:///d:/bharatheeyam%20books/admin/index.html)
+1. In the `chapter-modal` form, add a large `<textarea>` for editing the chapter/stotra `content` directly.
+2. Remove the **Shlokas** section/view entirely from the navigation and UI, as all text editing will now happen inside the chapter form.
+
+#### [MODIFY] [app.js](file:///d:/bharatheeyam%20books/admin/js/app.js)
+1. Simplify CRUD operations to only support `books` and `chapters` collections (saving `content` directly on the chapter document).
+2. Rewrite the **Seed Data** function to dynamically `fetch()` the local JSON assets (`/assets/data/scriptures_data.json` and `/assets/data/stotra_data.json`) and upload them to Firestore, so we don't have to hardcode 68MB of text in the JavaScript file.
+
+---
+
+### C. Deployment Configuration
+#### [MODIFY] [firebase.json](file:///d:/bharatheeyam%20books/firebase.json)
+Configure Firebase Hosting to serve the compiled Flutter web app at the root (`/`) and serve the admin portal at `/admin/`.
+```json
+{
+  "hosting": [
+    {
+      "target": "app",
+      "public": "build/web",
+      "rewrites": [
+        { "source": "/admin/**", "destination": "/admin/index.html" },
+        { "source": "**", "destination": "/index.html" }
+      ]
+    }
+  ]
+}
+```
+
+---
+
+## 3. Verification Plan
+
+### Seeding Verification
+- Log in to the admin panel, go to **Seed Data**, and run the seeding process.
+- Verify in the Firebase Console that the `books` and `chapters` collections are fully populated.
+
+### App Sync Verification
+- Open the Flutter web app (locally or via hosting).
+- Verify all Upanishads, Puranas, and Stotras load correctly.
+- Edit a chapter text in the admin website.
+- Refresh the Flutter app and verify that the edited text immediately reflects in the reader view.
