@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'services/stotra_service.dart';
 import 'services/bookmark_service.dart';
 import 'services/veda_service.dart';
+import 'services/scripture_service.dart';
 import 'theme/app_theme.dart';
 import 'screens/home_screen.dart';
 
@@ -12,9 +13,11 @@ void main() async {
   final stotraService = StotraService();
   final bookmarkService = BookmarkService();
   final vedaService = VedaService();
+  final scriptureService = ScriptureService();
 
   await bookmarkService.init();
   stotraService.init(); // Load async, show loading state
+  scriptureService.init(); // Load async
 
   runApp(
     MultiProvider(
@@ -22,6 +25,7 @@ void main() async {
         ChangeNotifierProvider.value(value: stotraService),
         ChangeNotifierProvider.value(value: bookmarkService),
         ChangeNotifierProvider.value(value: vedaService),
+        ChangeNotifierProvider.value(value: scriptureService),
       ],
       child: const BharatiyamGranthaSudhaApp(),
     ),

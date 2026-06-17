@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/stotra_service.dart';
 import '../services/bookmark_service.dart';
+import '../services/scripture_service.dart';
 import '../models/stotra.dart';
 import '../widgets/nudi_text.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,20 +14,41 @@ class BookmarksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stotraService = context.watch<StotraService>();
+    final scriptureService = context.watch<ScriptureService>();
     final bookmarks = context.watch<BookmarkService>();
 
-    if (!stotraService.isLoaded) {
+    if (!stotraService.isLoaded || !scriptureService.isLoaded) {
       return const Center(child: CircularProgressIndicator());
     }
 
     final bookmarkedStotras = <Stotra>[];
     for (final id in bookmarks.bookmarkedIds) {
       final stotra = stotraService.getStotra(id);
-      if (stotra != null) bookmarkedStotras.add(stotra);
+      if (stotra != null) {
+        bookmarkedStotras.add(stotra);
+      } else {
+        // Search in ScriptureService
+        for (final book in scriptureService.books) {
+          for (final chapter in book.chapters) {
+            if (chapter.id == id) {
+              bookmarkedStotras.add(Stotra(
+                id: chapter.id,
+                title: book.chapters.length == 1 ? book.title : '${book.title} - ${chapter.title}',
+                content: chapter.content,
+                font: 'brhknd',
+                isUnicode: true,
+                categoryId: book.id,
+                categoryTitle: book.title,
+              ));
+              break;
+            }
+          }
+        }
+      }
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('ಉಳಿಸಿದ ಸ್ತೋತ್ರಗಳು')),
+      appBar: AppBar(title: const Text('ಉಳಿಸಿದವು')),
       body: bookmarkedStotras.isEmpty
           ? Center(
               child: Column(
@@ -36,10 +58,10 @@ class BookmarksScreen extends StatelessWidget {
                       size: 64,
                       color: Theme.of(context).colorScheme.primary.withOpacity(0.3)),
                   const SizedBox(height: 16),
-                  Text('ಯಾವುದೇ ಸ್ತೋತ್ರ ಉಳಿಸಿಲ್ಲ',
+                  Text('ಯಾವುದೇ ಗ್ರಂಥ ಅಥವಾ ಸ್ತೋತ್ರ ಉಳಿಸಿಲ್ಲ',
                       style: Theme.of(context).textTheme.titleMedium),
                   const SizedBox(height: 8),
-                  Text('♥ ಬಟನ್ ಒತ್ತಿ ಸ್ತೋತ್ರವನ್ನು ಉಳಿಸಿ',
+                  Text('♥ ಬಟನ್ ಒತ್ತಿ ವಿಷಯವನ್ನು ಉಳಿಸಿ',
                       style: Theme.of(context).textTheme.bodyMedium),
                 ],
               ),
