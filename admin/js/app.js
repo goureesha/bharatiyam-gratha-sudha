@@ -637,13 +637,13 @@ const App = {
       }
 
       // 4. Batch items to respect Firestore limits
-      // - Max 500 documents per batch write (we use 200 to be safe and avoid huge payloads)
-      // - Max 10MB per batch write (we use 4MB serialized length to be safe)
+      // - Max 500 documents per batch write (we use 100 to keep payload small and stable)
+      // - Max 10MB per batch write (we use 2MB serialized length to be safe)
       const batches = [];
       let currentBatchItems = [];
       let currentBatchSize = 0;
-      const MAX_BATCH_COUNT = 200;
-      const MAX_BATCH_SIZE = 4 * 1024 * 1024;
+      const MAX_BATCH_COUNT = 100;
+      const MAX_BATCH_SIZE = 2 * 1024 * 1024;
 
       itemsToUpload.forEach(item => {
         const itemSize = JSON.stringify(item).length;
@@ -662,38 +662,24 @@ const App = {
       text.textContent = `Uploading ${itemsToUpload.length} modified documents in ${batches.length} batches...`;
       fill.style.width = '30%';
 
-      // 5. Upload batches in parallel with concurrency limit
+      // 5. Upload batches sequentially for maximum network stability
       let doneBatches = 0;
-      const concurrency = 8;
-      let nextBatchIndex = 0;
+      for (let i = 0; i < batches.length; i++) {
+        const batchItems = batches[i];
+        const batch = db.batch();
+        
+        batchItems.forEach(item => {
+          const docRef = db.collection(item.collection).doc(item.id);
+          batch.set(docRef, item.data);
+        });
 
-      const uploadWorker = async () => {
-        while (true) {
-          const idx = nextBatchIndex++;
-          if (idx >= batches.length) break;
-          
-          const batchItems = batches[idx];
-          const batch = db.batch();
-          
-          batchItems.forEach(item => {
-            const docRef = db.collection(item.collection).doc(item.id);
-            batch.set(docRef, item.data);
-          });
-
-          await batch.commit();
-          doneBatches++;
-          
-          const pct = Math.min(30 + Math.floor((doneBatches / batches.length) * 55), 85);
-          fill.style.width = `${pct}%`;
-          text.textContent = `Uploading to Firestore... (Batch ${doneBatches}/${batches.length})`;
-        }
-      };
-
-      const workers = [];
-      for (let i = 0; i < Math.min(concurrency, batches.length); i++) {
-        workers.push(uploadWorker());
+        await batch.commit();
+        doneBatches++;
+        
+        const pct = Math.min(30 + Math.floor((doneBatches / batches.length) * 55), 85);
+        fill.style.width = `${pct}%`;
+        text.textContent = `Uploading to Firestore... (Batch ${doneBatches}/${batches.length})`;
       }
-      await Promise.all(workers);
 
       // 6. Save new hashes to Firestore
       text.textContent = 'Updating hash indexes...';
