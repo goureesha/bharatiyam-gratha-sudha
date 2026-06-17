@@ -424,6 +424,14 @@ const App = {
     const text = document.getElementById('seed-progress-text');
     const result = document.getElementById('seed-result');
 
+    const scripturesFile = document.getElementById('seed-scriptures-file').files[0];
+    const stotrasFile = document.getElementById('seed-stotras-file').files[0];
+
+    if (!scripturesFile || !stotrasFile) {
+      this.toast('Please select both scriptures_data.json and stotra_data.json files!', 'error');
+      return;
+    }
+
     btn.disabled = true;
     btn.querySelector('.btn-text').classList.add('hidden');
     btn.querySelector('.btn-loader').classList.remove('hidden');
@@ -431,14 +439,16 @@ const App = {
     result.classList.add('hidden');
 
     try {
-      // 1. Fetch assets
-      text.textContent = 'Fetching scriptures_data.json...';
+      // 1. Read and parse local files
+      text.textContent = 'Reading scriptures_data.json...';
       fill.style.width = '5%';
-      const scriptures = await fetchAsset('scriptures_data.json');
+      const scripturesText = await scripturesFile.text();
+      const scriptures = JSON.parse(scripturesText);
 
-      text.textContent = 'Fetching stotra_data.json...';
+      text.textContent = 'Reading stotra_data.json...';
       fill.style.width = '10%';
-      const stotrasData = await fetchAsset('stotra_data.json');
+      const stotrasText = await stotrasFile.text();
+      const stotrasData = JSON.parse(stotrasText);
 
       text.textContent = 'Parsing and preparing documents...';
       fill.style.width = '15%';
