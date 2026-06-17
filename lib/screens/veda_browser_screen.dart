@@ -15,8 +15,13 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
   String? _selectedVeda; // 'rigveda' or 'yajurveda'
   
   // Navigation stack within the Veda Browser
-  // For Rigveda: null -> Mandala -> Sukta list
+  // For Rigveda Mandala Method (0): null -> Mandala -> Sukta list
   RigMandala? _activeMandala;
+  
+  // For Rigveda Ashtaka Method (1): null -> Ashtaka -> Adhyaya -> Varga list
+  int _rigvedaBrowseMethod = 0; // 0 = Mandala, 1 = Ashtaka
+  RigAshtaka? _activeAshtaka;
+  RigAdhyaya? _activeAdhyaya;
   
   // For Yajurveda: null -> Book -> Section -> Prashna list
   VedaBook? _activeBook;
@@ -45,10 +50,20 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
     }
     
     if (_selectedVeda == 'rigveda') {
-      if (_activeMandala == null) {
-        return 'ಋಗ್ವೇದ ಸಂಹಿತಾ';
+      if (_rigvedaBrowseMethod == 0) {
+        if (_activeMandala == null) {
+          return 'ಋಗ್ವೇದ ಸಂಹಿತಾ';
+        }
+        return _activeMandala!.title;
+      } else {
+        if (_activeAshtaka == null) {
+          return 'ಋಗ್ವೇದ (ಅಷ್ಟಕ ಕ್ರಮ)';
+        }
+        if (_activeAdhyaya == null) {
+          return 'ಅಷ್ಟಕ ${_activeAshtaka!.number}';
+        }
+        return 'ಅಷ್ಟಕ ${_activeAshtaka!.number} - ಅಧ್ಯಾಯ ${_activeAdhyaya!.number}';
       }
-      return _activeMandala!.title;
     } else {
       if (_activeBook == null) {
         return 'ಯಜುರ್ವೇದ';
@@ -63,10 +78,20 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
   void _handleBack() {
     setState(() {
       if (_selectedVeda == 'rigveda') {
-        if (_activeMandala != null) {
-          _activeMandala = null;
+        if (_rigvedaBrowseMethod == 0) {
+          if (_activeMandala != null) {
+            _activeMandala = null;
+          } else {
+            _selectedVeda = null;
+          }
         } else {
-          _selectedVeda = null;
+          if (_activeAdhyaya != null) {
+            _activeAdhyaya = null;
+          } else if (_activeAshtaka != null) {
+            _activeAshtaka = null;
+          } else {
+            _selectedVeda = null;
+          }
         }
       } else if (_selectedVeda == 'yajurveda') {
         if (_activeSection != null) {
@@ -245,119 +270,330 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
   }
 
   // ===================== RIGVEDA BROWSER =====================
-  Widget _buildRigvedaBrowser(VedaService vedaService, bool isDark) {
-    if (_activeMandala == null) {
-      // List Mandalas
-      return GridView.builder(
-        padding: const EdgeInsets.all(16),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 16,
-          crossAxisSpacing: 16,
-          childAspectRatio: 1.3,
+  Widget _buildMethodSelector() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      child: Center(
+        child: SegmentedButton<int>(
+          segments: const <ButtonSegment<int>>[
+            ButtonSegment<int>(
+              value: 0,
+              label: Text('ಮಂಡಲ ಕ್ರಮ', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+            ),
+            ButtonSegment<int>(
+              value: 1,
+              label: Text('ಅಷ್ಟಕ ಕ್ರಮ', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+            ),
+          ],
+          selected: <int>{_rigvedaBrowseMethod},
+          onSelectionChanged: (Set<int> newSelection) {
+            setState(() {
+              _rigvedaBrowseMethod = newSelection.first;
+            });
+          },
         ),
-        itemCount: vedaService.rigveda.length,
-        itemBuilder: (context, index) {
-          final mandala = vedaService.rigveda[index];
-          return Card(
-            elevation: 2,
-            color: isDark ? const Color(0xFF1E1635) : Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(16),
-              onTap: () => setState(() => _activeMandala = mandala),
-              child: Container(
+      ),
+    );
+  }
+
+  Widget _buildRigvedaBrowser(VedaService vedaService, bool isDark) {
+    if (_rigvedaBrowseMethod == 0) {
+      if (_activeMandala == null) {
+        // List Mandalas
+        return Column(
+          children: [
+            _buildMethodSelector(),
+            Expanded(
+              child: GridView.builder(
                 padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: isDark ? Colors.white12 : Colors.grey.shade200,
-                  ),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  childAspectRatio: 1.3,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('ॐ', style: TextStyle(fontSize: 22, color: Color(0xFFD4A843))),
-                    const SizedBox(height: 8),
-                    Text(
-                      mandala.title,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      '${mandala.suktas.length} ಸೂಕ್ತಗಳು',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: isDark ? Colors.white60 : Colors.grey[600],
+                itemCount: vedaService.rigveda.length,
+                itemBuilder: (context, index) {
+                  final mandala = vedaService.rigveda[index];
+                  return Card(
+                    elevation: 2,
+                    color: isDark ? const Color(0xFF1E1635) : Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: () => setState(() => _activeMandala = mandala),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: isDark ? Colors.white12 : Colors.grey.shade200,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('ॐ', style: TextStyle(fontSize: 22, color: Color(0xFFD4A843))),
+                            const SizedBox(height: 8),
+                            Text(
+                              mandala.title,
+                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              '${mandala.suktas.length} ಸೂಕ್ತಗಳು',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: isDark ? Colors.white60 : Colors.grey[600],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  );
+                },
               ),
             ),
-          );
-        },
-      );
-    } else {
-      // List Suktas in Active Mandala
-      return ListView.builder(
-        itemCount: _activeMandala!.suktas.length,
-        itemBuilder: (context, index) {
-          final sukta = _activeMandala!.suktas[index];
-          // Extrapolate index from label, e.g. [1] ಅಗ್ನಿಮೀಳ ...
-          final label = sukta.label;
-          final match = RegExp(r'^\[(\d+)\]').firstMatch(label);
-          final suktaNum = match != null ? match.group(1) : '${index + 1}';
-          
-          // Clean display text by removing the bracket prefix if present
-          final cleanLabel = label.replaceFirst(RegExp(r'^\[\d+\]\s*'), '').trim();
+          ],
+        );
+      } else {
+        // List Suktas in Active Mandala
+        return ListView.builder(
+          itemCount: _activeMandala!.suktas.length,
+          itemBuilder: (context, index) {
+            final sukta = _activeMandala!.suktas[index];
+            // Extrapolate index from label, e.g. [1] ಅಗ್ನಿಮೀಳ ...
+            final label = sukta.label;
+            final match = RegExp(r'^\[(\d+)\]').firstMatch(label);
+            final suktaNum = match != null ? match.group(1) : '${index + 1}';
+            
+            // Clean display text by removing the bracket prefix if present
+            final cleanLabel = label.replaceFirst(RegExp(r'^\[\d+\]\s*'), '').trim();
 
-          return Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-            color: isDark ? const Color(0xFF1E1635) : Colors.white,
-            elevation: 1,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: const Color(0xFFE8722A).withOpacity(0.15),
-                child: Text(
-                  suktaNum!,
-                  style: const TextStyle(
-                    color: Color(0xFFE8722A),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              title: Text(
-                'ಸೂಕ್ತ $suktaNum',
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                cleanLabel,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 13,
-                  color: isDark ? Colors.white70 : Colors.grey[700],
-                ),
-              ),
-              trailing: const Icon(Icons.chevron_right_rounded),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => VedaReaderScreen(
-                      title: 'ಋಗ್ವೇದ - ${_activeMandala!.title} - ಸೂಕ್ತ $suktaNum',
-                      sukta: sukta,
+            return Card(
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+              color: isDark ? const Color(0xFF1E1635) : Colors.white,
+              elevation: 1,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: const Color(0xFFE8722A).withOpacity(0.15),
+                  child: Text(
+                    suktaNum!,
+                    style: const TextStyle(
+                      color: Color(0xFFE8722A),
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                );
-              },
+                ),
+                title: Text(
+                  'ಸೂಕ್ತ $suktaNum',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(
+                  cleanLabel,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: isDark ? Colors.white70 : Colors.grey[700],
+                  ),
+                ),
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => VedaReaderScreen(
+                        title: 'ಋಗ್ವೇದ - ${_activeMandala!.title} - ಸೂಕ್ತ $suktaNum',
+                        sukta: sukta,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
+        );
+      }
+    } else {
+      // Ashtaka Method
+      if (_activeAshtaka == null) {
+        return Column(
+          children: [
+            _buildMethodSelector(),
+            Expanded(
+              child: GridView.builder(
+                padding: const EdgeInsets.all(16),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                  childAspectRatio: 1.3,
+                ),
+                itemCount: vedaService.rigAshtakas.length,
+                itemBuilder: (context, index) {
+                  final ashtaka = vedaService.rigAshtakas[index];
+                  return Card(
+                    elevation: 2,
+                    color: isDark ? const Color(0xFF1E1635) : Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: () => setState(() => _activeAshtaka = ashtaka),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: isDark ? Colors.white12 : Colors.grey.shade200,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('ॐ', style: TextStyle(fontSize: 22, color: Color(0xFFD4A843))),
+                            const SizedBox(height: 8),
+                            Text(
+                              'ಅಷ್ಟಕ ${ashtaka.number}',
+                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              '${ashtaka.adhyayas.length} ಅಧ್ಯಾಯಗಳು',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: isDark ? Colors.white60 : Colors.grey[600],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
-          );
-        },
-      );
+          ],
+        );
+      } else if (_activeAdhyaya == null) {
+        // List Adhyayas of _activeAshtaka
+        return GridView.builder(
+          padding: const EdgeInsets.all(16),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+            childAspectRatio: 1.3,
+          ),
+          itemCount: _activeAshtaka!.adhyayas.length,
+          itemBuilder: (context, index) {
+            final adhyaya = _activeAshtaka!.adhyayas[index];
+            return Card(
+              elevation: 2,
+              color: isDark ? const Color(0xFF1E1635) : Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16),
+                onTap: () => setState(() => _activeAdhyaya = adhyaya),
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: isDark ? Colors.white12 : Colors.grey.shade200,
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('📖', style: TextStyle(fontSize: 20)),
+                      const SizedBox(height: 8),
+                      Text(
+                        'ಅಧ್ಯಾಯ ${adhyaya.number}',
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        '${adhyaya.vargas.length} ವರ್ಗಗಳು',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: isDark ? Colors.white60 : Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      } else {
+        // List Vargas of _activeAdhyaya
+        return GridView.builder(
+          padding: const EdgeInsets.all(16),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 12,
+            childAspectRatio: 1.1,
+          ),
+          itemCount: _activeAdhyaya!.vargas.length,
+          itemBuilder: (context, index) {
+            final varga = _activeAdhyaya!.vargas[index];
+            return Card(
+              elevation: 1,
+              color: isDark ? const Color(0xFF1E1635) : Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(12),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => VedaReaderScreen(
+                        title: 'ಅಷ್ಟಕ ${_activeAshtaka!.number} - ಅಧ್ಯಾಯ ${_activeAdhyaya!.number} - ವರ್ಗ ${varga.number}',
+                        varga: varga,
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: isDark ? Colors.white12 : Colors.grey.shade200,
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'ವರ್ಗ ${varga.number}',
+                        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        '${varga.mantras.length} ಮಂತ್ರಗಳು',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: isDark ? Colors.white60 : Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        );
+      }
     }
   }
 

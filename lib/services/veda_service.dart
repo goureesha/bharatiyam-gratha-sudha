@@ -17,15 +17,18 @@ List<VedaBook> _parseYajurvedaData(String jsonStr) {
 class VedaService extends ChangeNotifier {
   List<RigMandala> _rigveda = [];
   List<VedaBook> _yajurveda = [];
+  List<RigAshtaka> _rigAshtakas = [];
   
   bool _isRigvedaLoading = false;
   bool _isYajurvedaLoading = false;
   
   bool _isRigvedaLoaded = false;
   bool _isYajurvedaLoaded = false;
+  bool _isAshtakaBuilt = false;
 
   List<RigMandala> get rigveda => _rigveda;
   List<VedaBook> get yajurveda => _yajurveda;
+  List<RigAshtaka> get rigAshtakas => _rigAshtakas;
   
   bool get isRigvedaLoading => _isRigvedaLoading;
   bool get isYajurvedaLoading => _isYajurvedaLoading;
@@ -45,6 +48,10 @@ class VedaService extends ChangeNotifier {
       
       // Compute runs the parsing on a background thread, preventing UI jank
       _rigveda = await compute(_parseRigvedaData, jsonStr);
+      
+      // Build the Ashtaka hierarchical structure from the parsed numbering fields
+      _buildAshtakaStructure();
+      
       _isRigvedaLoaded = true;
       debugPrint('✅ Loaded ${_rigveda.length} Rigveda Mandalas successfully!');
     } catch (e) {
@@ -52,6 +59,63 @@ class VedaService extends ChangeNotifier {
     } finally {
       _isRigvedaLoading = false;
       notifyListeners();
+    }
+  }
+
+  void _buildAshtakaStructure() {
+    if (_isAshtakaBuilt) return;
+    
+    try {
+      // Map format: Ashtaka -> Adhyaya -> Varga -> List<RigMantra>
+      final Map<int, Map<int, Map<int, List<RigMantra>>>> temp = {};
+      
+      for (final mandala in _rigveda) {
+        for (final sukta in mandala.suktas) {
+          for (final mantra in sukta.mantras) {
+            // numbering format: {1/9}{1.1.1}{1.1.1.1}{1.1.1.1}{1, 1, 1}
+            // Brackets index 3 contains the Ashtaka coordinate (e.g. {1.1.1.1})
+            final reg = RegExp(r'\{([^\}]+)\}');
+            final matches = reg.allMatches(mantra.numbering).toList();
+            if (matches.length >= 4) {
+              final coordStr = matches[3].group(1) ?? '';
+              final parts = coordStr.split('.');
+              if (parts.length == 4) {
+                final aNum = int.tryParse(parts[0]);
+                final adNum = int.tryParse(parts[1]);
+                final vNum = int.tryParse(parts[2]);
+                if (aNum != null && adNum != null && vNum != null) {
+                  temp.putIfAbsent(aNum, () => {});
+                  temp[aNum]!.putIfAbsent(adNum, () => {});
+                  temp[aNum]![adNum]!.putIfAbsent(vNum, () => []);
+                  temp[aNum]![adNum]![vNum]!.add(mantra);
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      _rigAshtakas = [];
+      final sortedANums = temp.keys.toList()..sort();
+      for (final aNum in sortedANums) {
+        final adhyayasList = <RigAdhyaya>[];
+        final sortedAdNums = temp[aNum]!.keys.toList()..sort();
+        for (final adNum in sortedAdNums) {
+          final vargasList = <RigVarga>[];
+          final sortedVNums = temp[aNum]![adNum]!.keys.toList()..sort();
+          for (final vNum in sortedVNums) {
+            final mantras = temp[aNum]![adNum]![vNum]!;
+            vargasList.add(RigVarga(number: vNum, mantras: mantras));
+          }
+          adhyayasList.add(RigAdhyaya(number: adNum, vargas: vargasList));
+        }
+        _rigAshtakas.add(RigAshtaka(number: aNum, adhyayas: adhyayasList));
+      }
+      
+      _isAshtakaBuilt = true;
+      debugPrint('⭐ Successfully built ${_rigAshtakas.length} Rigveda Ashtakas in memory!');
+    } catch (e) {
+      debugPrint('❌ Error building Ashtaka structure: $e');
     }
   }
 

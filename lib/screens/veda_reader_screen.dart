@@ -7,12 +7,14 @@ import '../services/bookmark_service.dart';
 class VedaReaderScreen extends StatefulWidget {
   final String title;
   final RigSukta? sukta;
+  final RigVarga? varga;
   final VedaChapter? chapter;
 
   const VedaReaderScreen({
     super.key,
     required this.title,
     this.sukta,
+    this.varga,
     this.chapter,
   });
 
@@ -24,16 +26,68 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
   // Rigveda display mode: 0 = Samhita, 1 = Padapatha, 2 = Both
   int _rigvedaMode = 2; 
 
+  // String transformation helper for Swahakara Mode
+  String _applySwahakara(String samhita) {
+    var text = samhita.trim();
+    String suffix = "";
+    
+    // Find trailing vertical bars and separate them
+    final barsMatch = RegExp(r'\s*\|+\s*$').firstMatch(text);
+    if (barsMatch != null) {
+      suffix = text.substring(barsMatch.start);
+      text = text.substring(0, barsMatch.start).trim();
+    }
+    
+    // Remove any trailing accent marks if they exist on the final syllable
+    while (text.endsWith('\u0951') || text.endsWith('\u0952') || text.endsWith('\u1CDA')) {
+      text = text.substring(0, text.length - 1);
+    }
+    
+    if (text.endsWith('ಂ')) {
+      // Replace final anusvara 'ಂ' with anudatta accent + ZWNJ + 'ಮ್(ಸ್ವಾಹಾ᳚)'
+      text = text.substring(0, text.length - 1) + "\u0952\u200Cಮ್(ಸ್ವಾಹಾ\u1CDA)";
+    } else {
+      // Append anudatta accent + '(ಸ್ವಾಹಾ᳚)'
+      text = text + "\u0952(ಸ್ವಾಹಾ\u1CDA)";
+    }
+    
+    return text + (suffix.isNotEmpty ? " " + suffix : " ||");
+  }
+
   @override
   Widget build(BuildContext context) {
     final bookmarks = context.watch<BookmarkService>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final double fontSize = bookmarks.fontSize;
+    final isRigveda = widget.sukta != null || widget.varga != null;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
+          // Swahakara yajna toggle button (only for Rigveda)
+          if (isRigveda)
+            IconButton(
+              icon: Icon(
+                Icons.local_fire_department_rounded,
+                color: bookmarks.isSwahakaraMode ? const Color(0xFFE8722A) : null,
+              ),
+              tooltip: 'ಸ್ವಾಹಾಕಾರ ವೀಕ್ಷಣೆ (Yajna Mode)',
+              onPressed: () {
+                bookmarks.isSwahakaraMode = !bookmarks.isSwahakaraMode;
+                ScaffoldMessenger.of(context).clearSnackBars();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      bookmarks.isSwahakaraMode 
+                          ? 'ಸ್ವಾಹಾಕಾರ ವೀಕ್ಷಣೆ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ 🔥' 
+                          : 'ಸಾಮಾನ್ಯ ಸಂಹಿತಾ ವೀಕ್ಷಣೆ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ',
+                    ),
+                    duration: const Duration(seconds: 1),
+                  ),
+                );
+              },
+            ),
           // Zoom out button
           IconButton(
             icon: const Icon(Icons.zoom_out_rounded),
@@ -60,11 +114,13 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
       ),
       body: Column(
         children: [
-          if (widget.sukta != null) _buildRigvedaControls(isDark),
+          if (isRigveda) _buildRigvedaControls(isDark),
           Expanded(
             child: widget.sukta != null
-                ? _buildRigvedaContent(widget.sukta!, fontSize, isDark)
-                : _buildYajurvedaContent(widget.chapter!, fontSize, isDark),
+                ? _buildRigvedaContent(widget.sukta!.mantras, widget.sukta!.label, fontSize, bookmarks.isSwahakaraMode, isDark)
+                : (widget.varga != null
+                    ? _buildRigvedaContent(widget.varga!.mantras, 'ವರ್ಗ ${widget.varga!.number}', fontSize, bookmarks.isSwahakaraMode, isDark)
+                    : _buildYajurvedaContent(widget.chapter!, fontSize, isDark)),
           ),
         ],
       ),
@@ -113,13 +169,12 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
     );
   }
 
-  Widget _buildRigvedaContent(RigSukta sukta, double fontSize, bool isDark) {
-    // Show Sukta label / Devata info at the top if present
-    final labelText = sukta.label.replaceFirst(RegExp(r'^\[\d+\]\s*'), '').trim();
+  Widget _buildRigvedaContent(List<RigMantra> mantras, String headerLabel, double fontSize, bool isSwahakara, bool isDark) {
+    final cleanLabel = headerLabel.replaceFirst(RegExp(r'^\[\d+\]\s*'), '').trim();
 
     return ListView.builder(
       padding: const EdgeInsets.all(16),
-      itemCount: sukta.mantras.length + 1,
+      itemCount: mantras.length + 1,
       itemBuilder: (context, index) {
         if (index == 0) {
           return Container(
@@ -135,16 +190,19 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   children: [
-                    Icon(Icons.info_outline_rounded, color: Color(0xFFD4A843), size: 20),
-                    SizedBox(width: 8),
-                    Text('ಸೂಕ್ತ ವಿವರಣೆ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                    const Icon(Icons.info_outline_rounded, color: Color(0xFFD4A843), size: 20),
+                    const SizedBox(width: 8),
+                    Text(
+                      widget.sukta != null ? 'ಸೂಕ್ತ ವಿವರಣೆ' : 'ವರ್ಗ ವಿವರಣೆ', 
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  labelText,
+                  cleanLabel,
                   style: GoogleFonts.notoSansKannada(
                     fontSize: 14,
                     height: 1.5,
@@ -156,15 +214,18 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
           );
         }
 
-        final mantra = sukta.mantras[index - 1];
-        return _buildRigMantraCard(mantra, index, fontSize, isDark);
+        final mantra = mantras[index - 1];
+        return _buildRigMantraCard(mantra, index, fontSize, isSwahakara, isDark);
       },
     );
   }
 
-  Widget _buildRigMantraCard(RigMantra mantra, int mantraIndex, double fontSize, bool isDark) {
-    // Clean Padapatha: replace '¦' separator with a dot or a thin space
+  Widget _buildRigMantraCard(RigMantra mantra, int mantraIndex, double fontSize, bool isSwahakara, bool isDark) {
+    // Clean Padapatha: replace '¦' separator with spaces
     final cleanPada = mantra.pada.replaceAll('¦', ' ').replaceAll('  ', ' ').trim();
+    
+    // Apply Swahakara transformation if yajna mode is active
+    final samhitaText = isSwahakara ? _applySwahakara(mantra.samhita) : mantra.samhita;
 
     return Card(
       margin: const EdgeInsets.only(bottom: 16),
@@ -193,7 +254,7 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    'ಮಂತ್ರ ${mantra.number}',
+                    widget.sukta != null ? 'ಮಂತ್ರ ${mantra.number}' : 'ಮಂತ್ರ ${mantraIndex}',
                     style: const TextStyle(
                       color: Color(0xFFE8722A),
                       fontWeight: FontWeight.bold,
@@ -237,7 +298,7 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
                   ),
                 ),
               Text(
-                mantra.samhita,
+                samhitaText,
                 style: GoogleFonts.notoSansKannada(
                   fontSize: fontSize,
                   height: 1.6,
@@ -351,7 +412,6 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
 // Extension to clean up rishi_dev formatting
 extension on RigMantra {
   String get rishi_dev_str {
-    // strip the surrounding curly braces if any
     return rishiDev.replaceAll('{', '').replaceAll('}', '').trim();
   }
 }

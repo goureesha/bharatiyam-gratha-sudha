@@ -156,3 +156,35 @@ class RigMandala {
     );
   }
 }
+
+// ===================== ASHTAKA MODELS =====================
+
+class RigAshtaka {
+  final int number;
+  final List<RigAdhyaya> adhyayas;
+
+  const RigAshtaka({
+    required this.number,
+    required this.adhyayas,
+  });
+}
+
+class RigAdhyaya {
+  final int number;
+  final List<RigVarga> vargas;
+
+  const RigAdhyaya({
+    required this.number,
+    required this.vargas,
+  });
+}
+
+class RigVarga {
+  final int number;
+  final List<RigMantra> mantras;
+
+  const RigVarga({
+    required this.number,
+    required this.mantras,
+  });
+}
