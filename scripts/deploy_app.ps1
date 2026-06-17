@@ -21,16 +21,17 @@ if (Get-Command flutter -ErrorAction SilentlyContinue) {
     Write-Host "  Skipping Flutter compilation. Will attempt to deploy existing build/web folder if it exists." -ForegroundColor Yellow
 }
 
-# Step 2: Copy Admin Panel files to the build output folder
-Write-Host "Step 2: Injecting Admin Panel into build output..." -ForegroundColor Cyan
+# Step 2: Copy Admin Panel and Assets to the build output folder
+Write-Host "Step 2: Injecting Admin Panel and Assets into build output..." -ForegroundColor Cyan
 $AdminDest = Join-Path $ProjectRoot "build\web\admin"
+$AssetsDest = Join-Path $ProjectRoot "build\web\assets"
 
 # Ensure build/web folder exists if we skipped flutter build
 if (-not (Test-Path (Join-Path $ProjectRoot "build\web"))) {
     New-Item -ItemType Directory -Path (Join-Path $ProjectRoot "build\web") -Force | Out-Null
 }
 
-# Ensure clean destination
+# Ensure clean admin destination
 if (Test-Path $AdminDest) {
     Remove-Item -Path $AdminDest -Recurse -Force | Out-Null
 }
@@ -38,6 +39,19 @@ if (Test-Path $AdminDest) {
 # Copy admin directory recursive
 Copy-Item -Path (Join-Path $ProjectRoot "admin") -Destination $AdminDest -Recurse -Force
 Write-Host "  Admin Panel copied to build/web/admin" -ForegroundColor Green
+
+# Copy assets directory recursive if it does not already exist
+if (-not (Test-Path $AssetsDest)) {
+    Copy-Item -Path (Join-Path $ProjectRoot "assets") -Destination $AssetsDest -Recurse -Force
+    Write-Host "  Assets folder copied to build/web/assets" -ForegroundColor Green
+} else {
+    # If assets folder exists, ensure data subfolder exists
+    $AssetsDataDest = Join-Path $AssetsDest "data"
+    if (-not (Test-Path $AssetsDataDest)) {
+        Copy-Item -Path (Join-Path $ProjectRoot "assets\data") -Destination $AssetsDataDest -Recurse -Force
+        Write-Host "  Assets data folder copied to build/web/assets/data" -ForegroundColor Green
+    }
+}
 
 # Step 3: Deploy to Firebase Hosting
 Write-Host "Step 3: Deploying to Firebase Hosting..." -ForegroundColor Cyan

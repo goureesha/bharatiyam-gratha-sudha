@@ -1,0 +1,123 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "backup_meta.json",
+      "file_type": "code",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L1",
+      "id": "conversation_backup_backup_meta",
+      "community": 0,
+      "norm_label": "backup_meta.json"
+    },
+    {
+      "label": "timestamp",
+      "file_type": "code",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L2",
+      "id": "conversation_backup_backup_meta_timestamp",
+      "community": 0,
+      "norm_label": "timestamp"
+    },
+    {
+      "label": "conversation_id",
+      "file_type": "code",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L3",
+      "id": "conversation_backup_backup_meta_conversation_id",
+      "community": 0,
+      "norm_label": "conversation_id"
+    },
+    {
+      "label": "commit_message",
+      "file_type": "code",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L4",
+      "id": "conversation_backup_backup_meta_commit_message",
+      "community": 0,
+      "norm_label": "commit_message"
+    },
+    {
+      "label": "task.md",
+      "file_type": "document",
+      "source_file": "conversation_backup/task.md",
+      "source_location": "L1",
+      "id": "conversation_backup_task",
+      "community": 1,
+      "norm_label": "task.md"
+    },
+    {
+      "label": "Task List - Admin Website & Firestore Integration",
+      "file_type": "document",
+      "source_file": "conversation_backup/task.md",
+      "source_location": "L1",
+      "id": "conversation_backup_task_task_list_admin_website_firestore_integration",
+      "community": 1,
+      "norm_label": "task list - admin website & firestore integration"
+    },
+    {
+      "label": "deploy_app.ps1",
+      "file_type": "code",
+      "source_file": "scripts/deploy_app.ps1",
+      "source_location": "L1",
+      "id": "scripts_deploy_app",
+      "community": 2,
+      "norm_label": "deploy_app.ps1"
+    },
+    {
+      "label": "push_with_backup.ps1",
+      "file_type": "code",
+      "source_file": "scripts/push_with_backup.ps1",
+      "source_location": "L1",
+      "id": "scripts_push_with_backup",
+      "community": 3,
+      "norm_label": "push_with_backup.ps1"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "conversation_backup_backup_meta",
+      "target": "conversation_backup_backup_meta_commit_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "conversation_backup_backup_meta",
+      "target": "conversation_backup_backup_meta_conversation_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "conversation_backup/backup_meta.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "conversation_backup_backup_meta",
+      "target": "conversation_backup_backup_meta_timestamp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "conversation_backup/task.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "conversation_backup_task",
+      "target": "conversation_backup_task_task_list_admin_website_firestore_integration",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "67bcd569d1ef959e00bb6126352f677acf92fe47"
+}
