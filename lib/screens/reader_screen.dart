@@ -23,6 +23,64 @@ class ReaderScreen extends StatelessWidget {
     return formatted;
   }
 
+  List<Widget> _buildContentBlocks(String content, double fontSize, bool isDark) {
+    final blocks = content.split(RegExp(r'\n\s*\n'));
+    final List<Widget> widgets = [];
+
+    // Keywords that indicate meaning, word-by-word translation, or notes
+    final leftAlignKeywords = [
+      'ಅರ್ಥ:', 'ಭಾವಾರ್ಥ:', 'ಶಬ್ದಾರ್ಥ:', 'ಪ್ರತಿಪದಾರ್ಥ:', 'ವಿವರಣೆ:', 'ಟಿಪ್ಪಣಿ:',
+      'ಅರ್ಥ', 'ಭಾವಾರ್ಥ', 'ಶಬ್ದಾರ್ಥ', 'ಪ್ರತಿಪದಾರ್ಥ', 'ವಿವರಣೆ', 'ಟಿಪ್ಪಣಿ',
+      'meaning:', 'shabdartha:', 'translation:', 'explanation:', 'note:',
+      'word-by-word:'
+    ];
+
+    for (int i = 0; i < blocks.length; i++) {
+      final block = blocks[i].trim();
+      if (block.isEmpty) continue;
+
+      final blockLower = block.toLowerCase();
+      
+      // Check if the block should be left-aligned
+      bool alignLeft = false;
+      for (final kw in leftAlignKeywords) {
+        if (blockLower.startsWith(kw)) {
+          alignLeft = true;
+          break;
+        }
+      }
+
+      // Also left-align if it looks like a list or bullet points
+      if (!alignLeft) {
+        final firstChar = block.isNotEmpty ? block[0] : '';
+        if (firstChar == '-' || firstChar == '*' || firstChar == '•' || RegExp(r'^\d+\.').hasMatch(block)) {
+          alignLeft = true;
+        }
+      }
+
+      widgets.add(
+        Padding(
+          padding: EdgeInsets.only(bottom: i == blocks.length - 1 ? 0 : 16),
+          child: Text(
+            block,
+            textAlign: alignLeft ? TextAlign.left : TextAlign.center,
+            style: GoogleFonts.notoSansKannada(
+              fontSize: fontSize,
+              height: 1.9,
+              letterSpacing: 0.3,
+              color: isDark
+                  ? (alignLeft ? const Color(0xFFDCD6CD) : const Color(0xFFE8D5B5))
+                  : (alignLeft ? const Color(0xFF4A3C2A) : const Color(0xFF2D1B00)),
+              fontWeight: alignLeft ? FontWeight.normal : FontWeight.w500,
+            ),
+          ),
+        ),
+      );
+    }
+
+    return widgets;
+  }
+
   @override
   Widget build(BuildContext context) {
     final bookmarks = context.watch<BookmarkService>();
@@ -79,19 +137,12 @@ class ReaderScreen extends StatelessWidget {
                   ],
                 ),
                 child: SelectionArea(
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Text(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: _buildContentBlocks(
                       _formatContent(stotra.content),
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.notoSansKannada(
-                        fontSize: bookmarks.fontSize,
-                        height: 1.9,
-                        letterSpacing: 0.3,
-                        color: isDark
-                            ? const Color(0xFFE8D5B5)
-                            : const Color(0xFF2D1B00),
-                      ),
+                      bookmarks.fontSize,
+                      isDark,
                     ),
                   ),
                 ),
