@@ -465,18 +465,40 @@ const App = {
         booksToUpload.push({ id: b.id, data: bookData });
 
         (chapters || []).forEach((c, cIdx) => {
-          chaptersToUpload.push({
+          const chData = {
             id: c.id,
-            data: {
+            bookId: b.id,
+            title: c.title,
+            titleSanskrit: c.titleSanskrit || '',
+            titleEn: c.titleEn || '',
+            order: c.order !== undefined ? c.order : cIdx
+          };
+
+          const content = c.content || '';
+          const maxChunkSize = 800000; // 800KB chunks (safe under 1MB)
+          
+          if (content.length <= maxChunkSize) {
+            chaptersToUpload.push({
               id: c.id,
-              bookId: b.id,
-              title: c.title,
-              titleSanskrit: c.titleSanskrit || '',
-              titleEn: c.titleEn || '',
-              content: c.content || '',
-              order: c.order !== undefined ? c.order : cIdx
+              data: { ...chData, content: content }
+            });
+          } else {
+            let partIndex = 0;
+            for (let offset = 0; offset < content.length; offset += maxChunkSize) {
+              const chunk = content.substring(offset, offset + maxChunkSize);
+              chaptersToUpload.push({
+                id: `${c.id}_part_${partIndex}`,
+                data: {
+                  ...chData,
+                  id: `${c.id}_part_${partIndex}`,
+                  content: chunk,
+                  isPart: true,
+                  partIndex: partIndex
+                }
+              });
+              partIndex++;
             }
-          });
+          }
         });
       });
 
@@ -489,20 +511,42 @@ const App = {
         booksToUpload.push({ id: cat.id, data: catData });
 
         (stotras || []).forEach((s, sIdx) => {
-          chaptersToUpload.push({
+          const stData = {
             id: s.id,
-            data: {
+            bookId: cat.id,
+            title: s.title,
+            titleSanskrit: s.titleSanskrit || '',
+            titleEn: s.titleEn || '',
+            font: s.font || 'brhknd',
+            isUnicode: s.unicode === true || s.isUnicode === true,
+            order: sIdx
+          };
+
+          const content = s.content || '';
+          const maxChunkSize = 800000;
+          
+          if (content.length <= maxChunkSize) {
+            chaptersToUpload.push({
               id: s.id,
-              bookId: cat.id,
-              title: s.title,
-              titleSanskrit: s.titleSanskrit || '',
-              titleEn: s.titleEn || '',
-              content: s.content || '',
-              font: s.font || 'brhknd',
-              isUnicode: s.unicode === true || s.isUnicode === true,
-              order: sIdx
+              data: { ...stData, content: content }
+            });
+          } else {
+            let partIndex = 0;
+            for (let offset = 0; offset < content.length; offset += maxChunkSize) {
+              const chunk = content.substring(offset, offset + maxChunkSize);
+              chaptersToUpload.push({
+                id: `${s.id}_part_${partIndex}`,
+                data: {
+                  ...stData,
+                  id: `${s.id}_part_${partIndex}`,
+                  content: chunk,
+                  isPart: true,
+                  partIndex: partIndex
+                }
+              });
+              partIndex++;
             }
-          });
+          }
         });
       };
 

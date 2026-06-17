@@ -26,16 +26,48 @@ class StotraService extends ChangeNotifier {
       final booksSnap = await firestore.collection('books').get();
       final chaptersSnap = await firestore.collection('chapters').get();
 
-      final Map<String, List<Stotra>> stotrasByBook = {};
+      // Group chunked stotra parts by base ID
+      final Map<String, Map<int, String>> stotraParts = {}; // baseId -> { partIndex -> content }
+      final Map<String, Map<String, dynamic>> stotraMetadata = {}; // baseId -> data
+
       for (final doc in chaptersSnap.docs) {
         final data = doc.data();
-        final bookId = data['bookId'] as String? ?? '';
+        final id = doc.id;
+        
+        String baseId = id;
+        int partIndex = 0;
+        
+        if (id.contains('_part_')) {
+          final parts = id.split('_part_');
+          baseId = parts[0];
+          partIndex = int.tryParse(parts[1]) ?? 0;
+        }
+        
+        stotraParts.putIfAbsent(baseId, () => {})[partIndex] = data['content'] as String? ?? '';
+        
+        stotraMetadata.putIfAbsent(baseId, () => {
+          'bookId': data['bookId'] as String? ?? '',
+          'title': data['title'] as String? ?? '',
+          'font': data['font'] as String? ?? 'brhknd',
+          'isUnicode': data['isUnicode'] == true,
+        });
+      }
+
+      final Map<String, List<Stotra>> stotrasByBook = {};
+      for (final baseId in stotraParts.keys) {
+        final partsMap = stotraParts[baseId]!;
+        final metadata = stotraMetadata[baseId]!;
+        final bookId = metadata['bookId'] as String;
+        
+        final sortedPartIndices = partsMap.keys.toList()..sort();
+        final fullContent = sortedPartIndices.map((idx) => partsMap[idx]!).join('');
+        
         final stotra = Stotra(
-          id: doc.id,
-          title: data['title'] as String? ?? '',
-          content: data['content'] as String? ?? '',
-          font: data['font'] as String? ?? 'brhknd',
-          isUnicode: data['isUnicode'] == true,
+          id: baseId,
+          title: metadata['title'] as String? ?? '',
+          content: fullContent,
+          font: metadata['font'] as String? ?? 'brhknd',
+          isUnicode: metadata['isUnicode'] == true,
           categoryId: bookId,
           categoryTitle: '', // populated below
         );

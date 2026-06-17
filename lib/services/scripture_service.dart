@@ -20,14 +20,45 @@ class ScriptureService extends ChangeNotifier {
       final booksSnap = await firestore.collection('books').get();
       final chaptersSnap = await firestore.collection('chapters').get();
 
-      final Map<String, List<ScriptureChapter>> chaptersByBook = {};
+      // Group chunked chapter parts by base chapter ID
+      final Map<String, Map<int, String>> chapterParts = {}; // baseId -> { partIndex -> content }
+      final Map<String, Map<String, dynamic>> chapterMetadata = {}; // baseId -> data
+
       for (final doc in chaptersSnap.docs) {
         final data = doc.data();
-        final bookId = data['bookId'] as String? ?? '';
+        final id = doc.id;
+        
+        String baseId = id;
+        int partIndex = 0;
+        
+        if (id.contains('_part_')) {
+          final parts = id.split('_part_');
+          baseId = parts[0];
+          partIndex = int.tryParse(parts[1]) ?? 0;
+        }
+        
+        chapterParts.putIfAbsent(baseId, () => {})[partIndex] = data['content'] as String? ?? '';
+        
+        chapterMetadata.putIfAbsent(baseId, () => {
+          'bookId': data['bookId'] as String? ?? '',
+          'title': data['title'] as String? ?? '',
+          'number': data['number'] as int? ?? data['order'] as int? ?? 0,
+        });
+      }
+
+      final Map<String, List<ScriptureChapter>> chaptersByBook = {};
+      for (final baseId in chapterParts.keys) {
+        final partsMap = chapterParts[baseId]!;
+        final metadata = chapterMetadata[baseId]!;
+        final bookId = metadata['bookId'] as String;
+        
+        final sortedPartIndices = partsMap.keys.toList()..sort();
+        final fullContent = sortedPartIndices.map((idx) => partsMap[idx]!).join('');
+        
         final chapter = ScriptureChapter(
-          id: doc.id,
-          title: data['title'] as String? ?? '',
-          content: data['content'] as String? ?? '',
+          id: baseId,
+          title: metadata['title'] as String? ?? '',
+          content: fullContent,
         );
         chaptersByBook.putIfAbsent(bookId, () => []).add(chapter);
       }
