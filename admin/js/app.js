@@ -62,6 +62,16 @@ async function fetchAsset(filename) {
 // ═══════════════════════════════════════════════════════════════
 
 const App = {
+  // Simple FNV-1a hash function
+  hashString(str) {
+    let hash = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) {
+      hash ^= str.charCodeAt(i);
+      hash = Math.imul(hash, 0x01000193);
+    }
+    return (hash >>> 0).toString(36);
+  },
+
   // ── Init ──────────────────────────────────────────────────
   init() {
     this.bindAuth();
@@ -427,8 +437,8 @@ const App = {
     const scripturesFile = document.getElementById('seed-scriptures-file').files[0];
     const stotrasFile = document.getElementById('seed-stotras-file').files[0];
 
-    if (!scripturesFile || !stotrasFile) {
-      this.toast('Please select both scriptures_data.json and stotra_data.json files!', 'error');
+    if (!scripturesFile && !stotrasFile) {
+      this.toast('Please select at least scriptures_data.json or stotra_data.json to upload!', 'error');
       return;
     }
 
@@ -439,170 +449,277 @@ const App = {
     result.classList.add('hidden');
 
     try {
-      // 1. Read and parse local files
-      text.textContent = 'Reading scriptures_data.json...';
+      // 1. Fetch remote hashes to perform delta seeding
+      text.textContent = 'Fetching current database state (hashes)...';
       fill.style.width = '5%';
-      const scripturesText = await scripturesFile.text();
-      const scriptures = JSON.parse(scripturesText);
 
-      text.textContent = 'Reading stotra_data.json...';
-      fill.style.width = '10%';
-      const stotrasText = await stotrasFile.text();
-      const stotrasData = JSON.parse(stotrasText);
+      const remoteHashes = { books: {}, scriptures: {}, stotras: {} };
+      
+      const hashDocRefs = [
+        { key: 'books', doc: db.collection('config').doc('hashes_books') }
+      ];
+      if (scripturesFile) {
+        hashDocRefs.push({ key: 'scriptures', doc: db.collection('config').doc('hashes_scriptures') });
+      }
+      if (stotrasFile) {
+        hashDocRefs.push({ key: 'stotras', doc: db.collection('config').doc('hashes_stotras') });
+      }
 
-      text.textContent = 'Parsing and preparing documents...';
-      fill.style.width = '15%';
+      for (const ref of hashDocRefs) {
+        const snap = await ref.doc.get();
+        if (snap.exists) {
+          remoteHashes[ref.key] = snap.data() || {};
+        }
+      }
 
-      const booksToUpload = [];
-      const chaptersToUpload = [];
-
-      // Process scriptures
-      scriptures.forEach((b, bIdx) => {
-        const { chapters, ...bookData } = b;
-        bookData.category = b.category || 'upanishad';
-        bookData.icon = b.icon || '🕉️';
-        bookData.order = b.order !== undefined ? b.order : bIdx;
-        booksToUpload.push({ id: b.id, data: bookData });
-
-        (chapters || []).forEach((c, cIdx) => {
-          const chData = {
-            id: c.id,
-            bookId: b.id,
-            title: c.title,
-            titleSanskrit: c.titleSanskrit || '',
-            titleEn: c.titleEn || '',
-            order: c.order !== undefined ? c.order : cIdx
-          };
-
-          const content = c.content || '';
-          const maxChunkSize = 200000; // 200,000 characters (max 600KB in UTF-8, safe under 1MB)
-          
-          if (content.length <= maxChunkSize) {
-            chaptersToUpload.push({
-              id: c.id,
-              data: { ...chData, content: content }
-            });
-          } else {
-            let partIndex = 0;
-            for (let offset = 0; offset < content.length; offset += maxChunkSize) {
-              const chunk = content.substring(offset, offset + maxChunkSize);
-              chaptersToUpload.push({
-                id: `${c.id}_part_${partIndex}`,
-                data: {
-                  ...chData,
-                  id: `${c.id}_part_${partIndex}`,
-                  content: chunk,
-                  isPart: true,
-                  partIndex: partIndex
-                }
-              });
-              partIndex++;
-            }
-          }
-        });
-      });
-
-      // Process stotras
-      const processStotraCategory = (cat, catIdx, categoryGroup) => {
-        const { stotras, ...catData } = cat;
-        catData.category = categoryGroup;
-        catData.icon = cat.icon || '📿';
-        catData.order = catIdx;
-        booksToUpload.push({ id: cat.id, data: catData });
-
-        (stotras || []).forEach((s, sIdx) => {
-          const stData = {
-            id: s.id,
-            bookId: cat.id,
-            title: s.title,
-            titleSanskrit: s.titleSanskrit || '',
-            titleEn: s.titleEn || '',
-            font: s.font || 'brhknd',
-            isUnicode: s.unicode === true || s.isUnicode === true,
-            order: sIdx
-          };
-
-          const content = s.content || '';
-          const maxChunkSize = 200000; // 200,000 characters (max 600KB in UTF-8, safe under 1MB)
-          
-          if (content.length <= maxChunkSize) {
-            chaptersToUpload.push({
-              id: s.id,
-              data: { ...stData, content: content }
-            });
-          } else {
-            let partIndex = 0;
-            for (let offset = 0; offset < content.length; offset += maxChunkSize) {
-              const chunk = content.substring(offset, offset + maxChunkSize);
-              chaptersToUpload.push({
-                id: `${s.id}_part_${partIndex}`,
-                data: {
-                  ...stData,
-                  id: `${s.id}_part_${partIndex}`,
-                  content: chunk,
-                  isPart: true,
-                  partIndex: partIndex
-                }
-              });
-              partIndex++;
-            }
-          }
-        });
-      };
-
-      (stotrasData.mainCategories || []).forEach((cat, idx) => processStotraCategory(cat, idx, 'stotra_main'));
-      (stotrasData.extrasCategories || []).forEach((cat, idx) => processStotraCategory(cat, idx, 'stotra_extras'));
+      const newBooksHashes = { ...remoteHashes.books };
+      const newScripturesHashes = scripturesFile ? {} : { ...remoteHashes.scriptures };
+      const newStotrasHashes = stotrasFile ? {} : { ...remoteHashes.stotras };
 
       const itemsToUpload = [];
-      booksToUpload.forEach(b => {
-        itemsToUpload.push({ collection: 'books', id: b.id, data: b.data });
-      });
-      chaptersToUpload.forEach(ch => {
-        itemsToUpload.push({ collection: 'chapters', id: ch.id, data: ch.data });
-      });
 
-      const totalOperations = itemsToUpload.length + 1; // +1 for config doc
-      let doneOperations = 0;
+      // 2. Process scriptures if selected
+      if (scripturesFile) {
+        text.textContent = 'Reading scriptures_data.json...';
+        fill.style.width = '10%';
+        const scripturesText = await scripturesFile.text();
+        const scriptures = JSON.parse(scripturesText);
 
-      const updateProgress = (msg) => {
-        const pct = Math.min(15 + Math.floor((doneOperations / totalOperations) * 80), 98);
-        fill.style.width = `${pct}%`;
-        text.textContent = `${msg} (${doneOperations}/${totalOperations})`;
-      };
+        text.textContent = 'Parsing scriptures and comparing hashes...';
+        fill.style.width = '15%';
 
-      // Upload all documents in parallel with a concurrency pool of 60
-      text.textContent = 'Uploading documents...';
-      let index = 0;
-      const worker = async () => {
-        while (index < itemsToUpload.length) {
-          const item = itemsToUpload[index++];
-          if (!item) break;
-          await db.collection(item.collection).doc(item.id).set(item.data);
-          doneOperations++;
-          if (doneOperations % 25 === 0 || doneOperations === totalOperations) {
-            updateProgress('Uploading to Firestore...');
+        scriptures.forEach((b, bIdx) => {
+          const { chapters, ...bookData } = b;
+          bookData.category = b.category || 'upanishad';
+          bookData.icon = b.icon || '🕉️';
+          bookData.order = b.order !== undefined ? b.order : bIdx;
+          
+          const bSerialized = JSON.stringify(bookData);
+          const bLocalHash = this.hashString(bSerialized);
+          newBooksHashes[b.id] = bLocalHash;
+          if (bLocalHash !== remoteHashes.books[b.id]) {
+            itemsToUpload.push({ collection: 'books', id: b.id, data: bookData });
           }
+
+          (chapters || []).forEach((c, cIdx) => {
+            const chData = {
+              id: c.id,
+              bookId: b.id,
+              title: c.title,
+              titleSanskrit: c.titleSanskrit || '',
+              titleEn: c.titleEn || '',
+              order: c.order !== undefined ? c.order : cIdx
+            };
+
+            const content = c.content || '';
+            const maxChunkSize = 200000; // 200,000 characters
+            
+            if (content.length <= maxChunkSize) {
+              const fullData = { ...chData, content: content };
+              const cSerialized = JSON.stringify(fullData);
+              const cLocalHash = this.hashString(cSerialized);
+              newScripturesHashes[c.id] = cLocalHash;
+              if (cLocalHash !== remoteHashes.scriptures[c.id]) {
+                itemsToUpload.push({ collection: 'chapters', id: c.id, data: fullData });
+              }
+            } else {
+              let partIndex = 0;
+              for (let offset = 0; offset < content.length; offset += maxChunkSize) {
+                const chunk = content.substring(offset, offset + maxChunkSize);
+                const partId = `${c.id}_part_${partIndex}`;
+                const fullData = {
+                  ...chData,
+                  id: partId,
+                  content: chunk,
+                  isPart: true,
+                  partIndex: partIndex
+                };
+                const cSerialized = JSON.stringify(fullData);
+                const cLocalHash = this.hashString(cSerialized);
+                newScripturesHashes[partId] = cLocalHash;
+                if (cLocalHash !== remoteHashes.scriptures[partId]) {
+                  itemsToUpload.push({ collection: 'chapters', id: partId, data: fullData });
+                }
+                partIndex++;
+              }
+            }
+          });
+        });
+      }
+
+      // 3. Process stotras if selected
+      if (stotrasFile) {
+        text.textContent = 'Reading stotra_data.json...';
+        fill.style.width = '20%';
+        const stotrasText = await stotrasFile.text();
+        const stotrasData = JSON.parse(stotrasText);
+
+        text.textContent = 'Parsing stotras and comparing hashes...';
+        fill.style.width = '25%';
+
+        const processStotraCategory = (cat, catIdx, categoryGroup) => {
+          const { stotras, ...catData } = cat;
+          catData.category = categoryGroup;
+          catData.icon = cat.icon || '📿';
+          catData.order = catIdx;
+          
+          const bSerialized = JSON.stringify(catData);
+          const bLocalHash = this.hashString(bSerialized);
+          newBooksHashes[cat.id] = bLocalHash;
+          if (bLocalHash !== remoteHashes.books[cat.id]) {
+            itemsToUpload.push({ collection: 'books', id: cat.id, data: catData });
+          }
+
+          (stotras || []).forEach((s, sIdx) => {
+            const stData = {
+              id: s.id,
+              bookId: cat.id,
+              title: s.title,
+              titleSanskrit: s.titleSanskrit || '',
+              titleEn: s.titleEn || '',
+              font: s.font || 'brhknd',
+              isUnicode: s.unicode === true || s.isUnicode === true,
+              order: sIdx
+            };
+
+            const content = s.content || '';
+            const maxChunkSize = 200000;
+            
+            if (content.length <= maxChunkSize) {
+              const fullData = { ...stData, content: content };
+              const cSerialized = JSON.stringify(fullData);
+              const cLocalHash = this.hashString(cSerialized);
+              newStotrasHashes[s.id] = cLocalHash;
+              if (cLocalHash !== remoteHashes.stotras[s.id]) {
+                itemsToUpload.push({ collection: 'chapters', id: s.id, data: fullData });
+              }
+            } else {
+              let partIndex = 0;
+              for (let offset = 0; offset < content.length; offset += maxChunkSize) {
+                const chunk = content.substring(offset, offset + maxChunkSize);
+                const partId = `${s.id}_part_${partIndex}`;
+                const fullData = {
+                  ...stData,
+                  id: partId,
+                  content: chunk,
+                  isPart: true,
+                  partIndex: partIndex
+                };
+                const cSerialized = JSON.stringify(fullData);
+                const cLocalHash = this.hashString(cSerialized);
+                newStotrasHashes[partId] = cLocalHash;
+                if (cLocalHash !== remoteHashes.stotras[partId]) {
+                  itemsToUpload.push({ collection: 'chapters', id: partId, data: fullData });
+                }
+                partIndex++;
+              }
+            }
+          });
+        };
+
+        (stotrasData.mainCategories || []).forEach((cat, idx) => processStotraCategory(cat, idx, 'stotra_main'));
+        (stotrasData.extrasCategories || []).forEach((cat, idx) => processStotraCategory(cat, idx, 'stotra_extras'));
+      }
+
+      // If no items have changed, we are done!
+      if (itemsToUpload.length === 0) {
+        fill.style.width = '100%';
+        text.textContent = 'Done!';
+        result.innerHTML = `<p class="success-msg">✅ No changes detected. All books and chapters are already up to date in Firestore!</p>`;
+        result.classList.remove('hidden');
+        this.toast('All data is already up to date! 🎉', 'success');
+        this.loadDashboard();
+        
+        btn.disabled = false;
+        btn.querySelector('.btn-text').classList.remove('hidden');
+        btn.querySelector('.btn-loader').classList.add('hidden');
+        return;
+      }
+
+      // 4. Batch items to respect Firestore limits
+      // - Max 500 documents per batch write (we use 200 to be safe and avoid huge payloads)
+      // - Max 10MB per batch write (we use 4MB serialized length to be safe)
+      const batches = [];
+      let currentBatchItems = [];
+      let currentBatchSize = 0;
+      const MAX_BATCH_COUNT = 200;
+      const MAX_BATCH_SIZE = 4 * 1024 * 1024;
+
+      itemsToUpload.forEach(item => {
+        const itemSize = JSON.stringify(item).length;
+        if (currentBatchItems.length >= MAX_BATCH_COUNT || (currentBatchSize + itemSize) > MAX_BATCH_SIZE) {
+          batches.push(currentBatchItems);
+          currentBatchItems = [];
+          currentBatchSize = 0;
+        }
+        currentBatchItems.push(item);
+        currentBatchSize += itemSize;
+      });
+      if (currentBatchItems.length > 0) {
+        batches.push(currentBatchItems);
+      }
+
+      text.textContent = `Uploading ${itemsToUpload.length} modified documents in ${batches.length} batches...`;
+      fill.style.width = '30%';
+
+      // 5. Upload batches in parallel with concurrency limit
+      let doneBatches = 0;
+      const concurrency = 8;
+      let nextBatchIndex = 0;
+
+      const uploadWorker = async () => {
+        while (true) {
+          const idx = nextBatchIndex++;
+          if (idx >= batches.length) break;
+          
+          const batchItems = batches[idx];
+          const batch = db.batch();
+          
+          batchItems.forEach(item => {
+            const docRef = db.collection(item.collection).doc(item.id);
+            batch.set(docRef, item.data);
+          });
+
+          await batch.commit();
+          doneBatches++;
+          
+          const pct = Math.min(30 + Math.floor((doneBatches / batches.length) * 55), 85);
+          fill.style.width = `${pct}%`;
+          text.textContent = `Uploading to Firestore... (Batch ${doneBatches}/${batches.length})`;
         }
       };
 
       const workers = [];
-      const concurrency = 60;
-      for (let i = 0; i < Math.min(concurrency, itemsToUpload.length); i++) {
-        workers.push(worker());
+      for (let i = 0; i < Math.min(concurrency, batches.length); i++) {
+        workers.push(uploadWorker());
       }
       await Promise.all(workers);
 
-      // 4. Update config doc
+      // 6. Save new hashes to Firestore
+      text.textContent = 'Updating hash indexes...';
+      fill.style.width = '90%';
+      
+      const hashWriteBatch = db.batch();
+      hashWriteBatch.set(db.collection('config').doc('hashes_books'), newBooksHashes);
+      if (scripturesFile) {
+        hashWriteBatch.set(db.collection('config').doc('hashes_scriptures'), newScripturesHashes);
+      }
+      if (stotrasFile) {
+        hashWriteBatch.set(db.collection('config').doc('hashes_stotras'), newStotrasHashes);
+      }
+      await hashWriteBatch.commit();
+
+      // 7. Update config doc to notify clients of content update
       text.textContent = 'Finalizing config...';
+      fill.style.width = '95%';
       await db.collection('config').doc('app').set({
         contentVersion: firebase.firestore.FieldValue.increment(1),
         lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
       });
-      doneOperations++;
 
       fill.style.width = '100%';
       text.textContent = 'Done!';
-      result.innerHTML = `<p class="success-msg">✅ Successfully seeded ${booksToUpload.length} books/categories and ${chaptersToUpload.length} chapters/stotras to Firestore!</p>`;
+      result.innerHTML = `<p class="success-msg">✅ Successfully uploaded ${itemsToUpload.length} modified documents to Firestore!</p>`;
       result.classList.remove('hidden');
       this.toast('Data seeded successfully! 🎉', 'success');
       this.loadDashboard();

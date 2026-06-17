@@ -250,16 +250,16 @@
       <section id="page-seed" class="page-section">
         <div class="card">
           <h3 class="card-title">🌱 Seed Firestore Data</h3>
-          <p class="card-desc">Select the local JSON data files from your <code>assets/data/</code> folder to upload them directly to Firestore from your browser.</p>
+          <p class="card-desc">Select the local JSON data files from your <code>assets/data/</code> folder to upload them directly to Firestore from your browser. You can select either one or both files depending on what has changed.</p>
           
           <div class="form-group mb-md" style="margin-bottom: 20px;">
-            <label style="font-weight: 600; display: block; margin-bottom: 8px;">1. Select scriptures_data.json</label>
-            <input type="file" id="seed-scriptures-file" class="input" accept=".json" required>
+            <label style="font-weight: 600; display: block; margin-bottom: 8px;">1. Select scriptures_data.json (optional)</label>
+            <input type="file" id="seed-scriptures-file" class="input" accept=".json">
           </div>
           
           <div class="form-group mb-lg" style="margin-bottom: 25px;">
-            <label style="font-weight: 600; display: block; margin-bottom: 8px;">2. Select stotra_data.json</label>
-            <input type="file" id="seed-stotras-file" class="input" accept=".json" required>
+            <label style="font-weight: 600; display: block; margin-bottom: 8px;">2. Select stotra_data.json (optional)</label>
+            <input type="file" id="seed-stotras-file" class="input" accept=".json">
           </div>
 
           <button class="btn btn-primary btn-lg" id="seed-btn">
