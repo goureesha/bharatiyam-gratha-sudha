@@ -66,7 +66,10 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
       }
     } else {
       if (_activeBook == null) {
-        return 'ಯಜುರ್ವೇದ';
+        if (_selectedVeda == 'krishna_yajurveda') return 'ಕೃಷ್ಣ ಯಜುರ್ವೇದ';
+        if (_selectedVeda == 'shukla_yajurveda') return 'ಶುಕ್ಲ ಯಜುರ್ವೇದ';
+        if (_selectedVeda == 'samaveda') return 'ಸಾಮವೇದ ಸಂಹಿತಾ';
+        return 'ಅಥರ್ವವೇದ ಸಂಹಿತಾ';
       }
       if (_activeSection == null) {
         return _activeBook!.title;
@@ -93,9 +96,14 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
             _selectedVeda = null;
           }
         }
-      } else if (_selectedVeda == 'yajurveda') {
+      } else if (_selectedVeda != null) {
         if (_activeSection != null) {
-          _activeSection = null;
+          if (_activeBook!.sections.length == 1) {
+            _activeSection = null;
+            _activeBook = null;
+          } else {
+            _activeSection = null;
+          }
         } else if (_activeBook != null) {
           _activeBook = null;
         } else {
@@ -120,14 +128,38 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
         return _buildErrorState(() => vedaService.loadRigveda());
       }
       return _buildRigvedaBrowser(vedaService, isDark);
-    } else {
+    } else if (_selectedVeda == 'krishna_yajurveda') {
       if (vedaService.isYajurvedaLoading) {
-        return _buildLoadingState('ಯಜುರ್ವೇದವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...');
+        return _buildLoadingState('ಕೃಷ್ಣ ಯಜುರ್ವೇದವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...');
       }
       if (!vedaService.isYajurvedaLoaded) {
         return _buildErrorState(() => vedaService.loadYajurveda());
       }
-      return _buildYajurvedaBrowser(vedaService, isDark);
+      return _buildGenericVedaBrowser(vedaService.yajurveda, isDark, const Color(0xFFC41E3A));
+    } else if (_selectedVeda == 'shukla_yajurveda') {
+      if (vedaService.isShuklaYajurvedaLoading) {
+        return _buildLoadingState('ಶುಕ್ಲ ಯಜುರ್ವೇದವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...');
+      }
+      if (!vedaService.isShuklaYajurvedaLoaded) {
+        return _buildErrorState(() => vedaService.loadShuklaYajurveda());
+      }
+      return _buildGenericVedaBrowser(vedaService.shuklaYajurveda, isDark, const Color(0xFFF97316));
+    } else if (_selectedVeda == 'samaveda') {
+      if (vedaService.isSamavedaLoading) {
+        return _buildLoadingState('ಸಾಮವೇದವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...');
+      }
+      if (!vedaService.isSamavedaLoaded) {
+        return _buildErrorState(() => vedaService.loadSamaveda());
+      }
+      return _buildGenericVedaBrowser(vedaService.samaveda, isDark, const Color(0xFF0EA5E9));
+    } else { // 'atharvaveda'
+      if (vedaService.isAtharvavedaLoading) {
+        return _buildLoadingState('ಅಥರ್ವವೇದವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...');
+      }
+      if (!vedaService.isAtharvavedaLoaded) {
+        return _buildErrorState(() => vedaService.loadAtharvaveda());
+      }
+      return _buildGenericVedaBrowser(vedaService.atharvaveda, isDark, const Color(0xFF22C55E));
     }
   }
 
@@ -180,7 +212,7 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
           ),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         
         // Rigveda Card
         _buildVedaSelectionCard(
@@ -193,17 +225,56 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
             vedaService.loadRigveda();
           },
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 16),
         
-        // Yajurveda Card
+        // Krishna Yajurveda Card
         _buildVedaSelectionCard(
-          title: 'ಯಜುರ್ವೇದ',
+          title: 'ಕೃಷ್ಣ ಯಜುರ್ವೇದ',
           subtitle: 'ತೈತ್ತಿರೀಯ ಸಂಹಿತಾ, ಬ್ರಾಹ್ಮಣ, ಆರಣ್ಯಕ ಮತ್ತು ಏಕಾಗ್ನಿ ಕಾಂಡ',
           icon: '🔥',
           gradient: const [Color(0xFF8B1A2B), Color(0xFFC41E3A)],
           onTap: () {
-            setState(() => _selectedVeda = 'yajurveda');
+            setState(() => _selectedVeda = 'krishna_yajurveda');
             vedaService.loadYajurveda();
+          },
+        ),
+        const SizedBox(height: 16),
+
+        // Shukla Yajurveda Card
+        _buildVedaSelectionCard(
+          title: 'ಶುಕ್ಲ ಯಜುರ್ವೇದ',
+          subtitle: 'ಮಾಧ್ಯನ್ದಿನ ಸಂಹಿತಾ (೪೦ ಅಧ್ಯಾಯಗಳು)',
+          icon: '☀️',
+          gradient: const [Color(0xFFC2410C), Color(0xFFF97316)],
+          onTap: () {
+            setState(() => _selectedVeda = 'shukla_yajurveda');
+            vedaService.loadShuklaYajurveda();
+          },
+        ),
+        const SizedBox(height: 16),
+
+        // Samaveda Card
+        _buildVedaSelectionCard(
+          title: 'ಸಾಮವೇದ ಸಂಹಿತಾ',
+          subtitle: 'ಕೌಥುಮ ಶಾಖಾ (ಪೂರ್ವಾರ್ಚಿಕ ಮತ್ತು ಉತ್ತರಾರ್ಚಿಕ)',
+          icon: '🎵',
+          gradient: const [Color(0xFF0369A1), Color(0xFF0EA5E9)],
+          onTap: () {
+            setState(() => _selectedVeda = 'samaveda');
+            vedaService.loadSamaveda();
+          },
+        ),
+        const SizedBox(height: 16),
+
+        // Atharvaveda Card
+        _buildVedaSelectionCard(
+          title: 'ಅಥರ್ವವೇದ ಸಂಹಿತಾ',
+          subtitle: 'ಶೌನಕ ಶಾಖಾ (೨೦ ಕಾಂಡಗಳು)',
+          icon: '🌿',
+          gradient: const [Color(0xFF15803D), Color(0xFF22C55E)],
+          onTap: () {
+            setState(() => _selectedVeda = 'atharvaveda');
+            vedaService.loadAtharvaveda();
           },
         ),
       ],
@@ -597,38 +668,22 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
     }
   }
 
-  // ===================== YAJURVEDA BROWSER =====================
-  Widget _buildYajurvedaBrowser(VedaService vedaService, bool isDark) {
+  // ===================== GENERIC VEDA BROWSER =====================
+  Widget _buildGenericVedaBrowser(List<VedaBook> books, bool isDark, Color accentColor) {
     if (_activeBook == null) {
-      // List Yajurveda Books
+      // List Books
       return ListView.builder(
         padding: const EdgeInsets.all(16),
-        itemCount: vedaService.yajurveda.length,
+        itemCount: books.length,
         itemBuilder: (context, index) {
-          final book = vedaService.yajurveda[index];
+          final book = books[index];
           return Card(
             margin: const EdgeInsets.only(bottom: 16),
             elevation: 3,
             color: isDark ? const Color(0xFF1E1635) : Colors.white,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-            child: ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              leading: Text(
-                _getYajurvedaBookIcon(index),
-                style: const TextStyle(fontSize: 32),
-              ),
-              title: Text(
-                book.title,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                '${book.sections.length} ಭಾಗಗಳು',
-                style: TextStyle(
-                  fontSize: 13,
-                  color: isDark ? Colors.white60 : Colors.grey[600],
-                ),
-              ),
-              trailing: const Icon(Icons.chevron_right_rounded, color: Color(0xFFC41E3A)),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16),
               onTap: () {
                 setState(() {
                   _activeBook = book;
@@ -638,6 +693,38 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
                   }
                 });
               },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                child: Row(
+                  children: [
+                    Text(
+                      _getVedaBookIcon(index),
+                      style: const TextStyle(fontSize: 32),
+                    ),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            book.title,
+                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            '${book.sections.length} ಭಾಗಗಳು',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: isDark ? Colors.white60 : Colors.grey[600],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(Icons.chevron_right_rounded, color: accentColor),
+                  ],
+                ),
+              ),
             ),
           );
         },
@@ -658,7 +745,7 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
                 section.title,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              subtitle: Text('${section.chapters.length} ಅಧ್ಯಾಯಗಳು/ಪ್ರಶ್ನೆಗಳು'),
+              subtitle: Text('${section.chapters.length} ಅಧ್ಯಾಯಗಳು/ಪ್ರಶ್ನೆಗಳು/ಸೂಕ್ತಗಳು'),
               trailing: const Icon(Icons.chevron_right_rounded),
               onTap: () => setState(() => _activeSection = section),
             ),
@@ -666,12 +753,16 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
         },
       );
     } else {
-      // List Chapters (Prashnas / Prapathakas) in Active Section
+      // List Chapters (Prashnas / Prapathakas / Suktas / Adhyayas) in Active Section
       return ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: _activeSection!.chapters.length,
         itemBuilder: (context, index) {
           final chapter = _activeSection!.chapters[index];
+          
+          // Clean the title prefix if it exists to display it nicely
+          final cleanTitle = chapter.title.replaceFirst(RegExp(r'^ಸೂಕ್ತ\s*\d+\s*-\s*'), '').trim();
+
           return Card(
             margin: const EdgeInsets.only(bottom: 10),
             color: isDark ? const Color(0xFF1E1635) : Colors.white,
@@ -680,23 +771,23 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
               leading: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFC41E3A).withOpacity(0.12),
+                  color: accentColor.withOpacity(0.12),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.menu_book_rounded, color: Color(0xFFC41E3A), size: 20),
+                child: Icon(Icons.menu_book_rounded, color: accentColor, size: 20),
               ),
               title: Text(
-                chapter.title,
+                cleanTitle,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              subtitle: Text('${chapter.anuvakas.length} ಅನುವಾಕಗಳು'),
+              subtitle: Text('${chapter.anuvakas.length} ಮಂತ್ರಗಳು/ಅನುವಾಕಗಳು'),
               trailing: const Icon(Icons.chevron_right_rounded),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) => VedaReaderScreen(
-                      title: '${_activeBook!.title} - ${chapter.title}',
+                      title: '${_activeBook!.title} - $cleanTitle',
                       chapter: chapter,
                     ),
                   ),
@@ -709,18 +800,16 @@ class _VedaBrowserScreenState extends State<VedaBrowserScreen> {
     }
   }
 
-  String _getYajurvedaBookIcon(int index) {
-    switch (index) {
+  String _getVedaBookIcon(int index) {
+    switch (index % 4) {
       case 0:
         return '📕';
       case 1:
         return '📙';
       case 2:
         return '📒';
-      case 3:
-        return '📗';
       default:
-        return '📖';
+        return '📗';
     }
   }
 }

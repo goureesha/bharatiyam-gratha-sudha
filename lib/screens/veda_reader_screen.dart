@@ -350,8 +350,33 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
     );
   }
 
-  // ===================== YAJURVEDA CONTENT =====================
+  // ===================== GENERIC VEDA CONTENT =====================
   Widget _buildYajurvedaContent(VedaChapter chapter, double fontSize, bool isDark) {
+    IconData headerIcon = Icons.menu_book_rounded;
+    Color headerIconColor = const Color(0xFFC41E3A);
+    String itemLabel = 'ಮಂತ್ರ';
+    
+    if (widget.title.contains('ತೈತ್ತಿರೀಯ') || 
+        widget.title.contains('ಬ್ರಾಹ್ಮಣ') || 
+        widget.title.contains('ಆರಣ್ಯಕ') || 
+        widget.title.contains('ಕೃಷ್ಣ ಯಜುರ್ವೇದ')) {
+      itemLabel = 'ಅನುವಾಕ';
+      headerIcon = Icons.fireplace_rounded;
+      headerIconColor = const Color(0xFFC41E3A);
+    } else if (widget.title.contains('ಶುಕ್ಲ ಯಜುರ್ವೇದ')) {
+      itemLabel = 'ಮಂತ್ರ';
+      headerIcon = Icons.wb_sunny_rounded;
+      headerIconColor = const Color(0xFFF97316);
+    } else if (widget.title.contains('ಸಾಮವೇದ')) {
+      itemLabel = 'ಮಂತ್ರ';
+      headerIcon = Icons.music_note_rounded;
+      headerIconColor = const Color(0xFF0EA5E9);
+    } else if (widget.title.contains('ಅಥರ್ವವೇದ')) {
+      itemLabel = 'ಮಂತ್ರ';
+      headerIcon = Icons.spa_rounded;
+      headerIconColor = const Color(0xFF22C55E);
+    }
+
     return ListView.builder(
       padding: const EdgeInsets.all(16),
       itemCount: chapter.anuvakas.length,
@@ -373,24 +398,24 @@ class _VedaReaderScreenState extends State<VedaReaderScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Anuvaka Header
+                // Anuvaka/Mantra Header
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'ಅನುವಾಕ ${anuvaka.number}',
+                      '$itemLabel ${anuvaka.number}',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.amber.shade300 : const Color(0xFFC41E3A),
+                        color: isDark ? Colors.amber.shade300 : headerIconColor,
                       ),
                     ),
-                    const Icon(Icons.fireplace_rounded, color: Color(0xFFC41E3A), size: 20),
+                    Icon(headerIcon, color: headerIconColor, size: 20),
                   ],
                 ),
                 const Divider(height: 20, thickness: 0.5),
                 const SizedBox(height: 4),
-                // Prose text (justified or left-aligned for readable reading)
+                // Prose text
                 Text(
                   anuvaka.content,
                   style: GoogleFonts.notoSansKannada(

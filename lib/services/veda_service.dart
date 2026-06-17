@@ -16,25 +16,43 @@ List<VedaBook> _parseYajurvedaData(String jsonStr) {
 
 class VedaService extends ChangeNotifier {
   List<RigMandala> _rigveda = [];
-  List<VedaBook> _yajurveda = [];
+  List<VedaBook> _yajurveda = []; // Krishna Yajurveda
+  List<VedaBook> _shuklaYajurveda = [];
+  List<VedaBook> _samaveda = [];
+  List<VedaBook> _atharvaveda = [];
   List<RigAshtaka> _rigAshtakas = [];
   
   bool _isRigvedaLoading = false;
   bool _isYajurvedaLoading = false;
+  bool _isShuklaYajurvedaLoading = false;
+  bool _isSamavedaLoading = false;
+  bool _isAtharvavedaLoading = false;
   
   bool _isRigvedaLoaded = false;
   bool _isYajurvedaLoaded = false;
+  bool _isShuklaYajurvedaLoaded = false;
+  bool _isSamavedaLoaded = false;
+  bool _isAtharvavedaLoaded = false;
   bool _isAshtakaBuilt = false;
 
   List<RigMandala> get rigveda => _rigveda;
   List<VedaBook> get yajurveda => _yajurveda;
+  List<VedaBook> get shuklaYajurveda => _shuklaYajurveda;
+  List<VedaBook> get samaveda => _samaveda;
+  List<VedaBook> get atharvaveda => _atharvaveda;
   List<RigAshtaka> get rigAshtakas => _rigAshtakas;
   
   bool get isRigvedaLoading => _isRigvedaLoading;
   bool get isYajurvedaLoading => _isYajurvedaLoading;
+  bool get isShuklaYajurvedaLoading => _isShuklaYajurvedaLoading;
+  bool get isSamavedaLoading => _isSamavedaLoading;
+  bool get isAtharvavedaLoading => _isAtharvavedaLoading;
   
   bool get isRigvedaLoaded => _isRigvedaLoaded;
   bool get isYajurvedaLoaded => _isYajurvedaLoaded;
+  bool get isShuklaYajurvedaLoaded => _isShuklaYajurvedaLoaded;
+  bool get isSamavedaLoaded => _isSamavedaLoaded;
+  bool get isAtharvavedaLoaded => _isAtharvavedaLoaded;
 
   Future<void> loadRigveda() async {
     if (_isRigvedaLoaded || _isRigvedaLoading) return;
@@ -126,16 +144,79 @@ class VedaService extends ChangeNotifier {
     notifyListeners();
     
     try {
-      debugPrint('⌛ Starting async load of Yajurveda JSON...');
+      debugPrint('⌛ Starting async load of Krishna Yajurveda JSON...');
       final jsonStr = await rootBundle.loadString('assets/data/yajurveda_data.json');
       
       _yajurveda = await compute(_parseYajurvedaData, jsonStr);
       _isYajurvedaLoaded = true;
-      debugPrint('✅ Loaded ${_yajurveda.length} Yajurveda Books successfully!');
+      debugPrint('✅ Loaded ${_yajurveda.length} Krishna Yajurveda Books successfully!');
     } catch (e) {
-      debugPrint('❌ Error loading Yajurveda JSON: $e');
+      debugPrint('❌ Error loading Krishna Yajurveda JSON: $e');
     } finally {
       _isYajurvedaLoading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> loadShuklaYajurveda() async {
+    if (_isShuklaYajurvedaLoaded || _isShuklaYajurvedaLoading) return;
+    
+    _isShuklaYajurvedaLoading = true;
+    notifyListeners();
+    
+    try {
+      debugPrint('⌛ Starting async load of Shukla Yajurveda JSON...');
+      final jsonStr = await rootBundle.loadString('assets/data/shukla_yajurveda_data.json');
+      
+      _shuklaYajurveda = await compute(_parseYajurvedaData, jsonStr);
+      _isShuklaYajurvedaLoaded = true;
+      debugPrint('✅ Loaded ${_shuklaYajurveda.length} Shukla Yajurveda Books successfully!');
+    } catch (e) {
+      debugPrint('❌ Error loading Shukla Yajurveda JSON: $e');
+    } finally {
+      _isShuklaYajurvedaLoading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> loadSamaveda() async {
+    if (_isSamavedaLoaded || _isSamavedaLoading) return;
+    
+    _isSamavedaLoading = true;
+    notifyListeners();
+    
+    try {
+      debugPrint('⌛ Starting async load of Samaveda JSON...');
+      final jsonStr = await rootBundle.loadString('assets/data/samaveda_data.json');
+      
+      _samaveda = await compute(_parseYajurvedaData, jsonStr);
+      _isSamavedaLoaded = true;
+      debugPrint('✅ Loaded ${_samaveda.length} Samaveda Books successfully!');
+    } catch (e) {
+      debugPrint('❌ Error loading Samaveda JSON: $e');
+    } finally {
+      _isSamavedaLoading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> loadAtharvaveda() async {
+    if (_isAtharvavedaLoaded || _isAtharvavedaLoading) return;
+    
+    _isAtharvavedaLoading = true;
+    notifyListeners();
+    
+    try {
+      debugPrint('⌛ Starting async load of Atharvaveda JSON...');
+      final jsonStr = await rootBundle.loadString('assets/data/atharvaveda_data.json');
+      
+      _atharvaveda = await compute(_parseYajurvedaData, jsonStr);
+      _isAtharvavedaLoaded = true;
+      debugPrint('✅ Loaded ${_atharvaveda.length} Atharvaveda Books successfully!');
+    } catch (e) {
+      debugPrint('❌ Error loading Atharvaveda JSON: $e');
+    } finally {
+      _isAtharvavedaLoading = false;
       notifyListeners();
     }
   }
