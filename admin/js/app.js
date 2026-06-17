@@ -475,7 +475,7 @@ const App = {
           };
 
           const content = c.content || '';
-          const maxChunkSize = 800000; // 800KB chunks (safe under 1MB)
+          const maxChunkSize = 200000; // 200,000 characters (max 600KB in UTF-8, safe under 1MB)
           
           if (content.length <= maxChunkSize) {
             chaptersToUpload.push({
@@ -523,7 +523,7 @@ const App = {
           };
 
           const content = s.content || '';
-          const maxChunkSize = 800000;
+          const maxChunkSize = 200000; // 200,000 characters (max 600KB in UTF-8, safe under 1MB)
           
           if (content.length <= maxChunkSize) {
             chaptersToUpload.push({

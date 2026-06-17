@@ -1,7 +1,7 @@
 {
   "admin/js/app.js": {
-    "mtime": 1781694426.2655797,
-    "ast_hash": "99811a32bfc7a3854657e0551acc50c9",
+    "mtime": 1781696510.2791998,
+    "ast_hash": "e7463e4b48d71c96b69aebe17a700b2c",
     "semantic_hash": ""
   },
   "android/app/build.gradle": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "conversation_backup/backup_meta.json": {
-    "mtime": 1781695476.9819753,
-    "ast_hash": "ef062cb91d527a14c16116eca073f79f",
+    "mtime": 1781696541.2747834,
+    "ast_hash": "3cebcd5bbc5ba46ba5b60528d313194f",
     "semantic_hash": ""
   },
   "firebase.json": {
@@ -155,13 +155,13 @@
     "semantic_hash": ""
   },
   "lib/services/scripture_service.dart": {
-    "mtime": 1781694234.7972617,
-    "ast_hash": "828c0eac4df572c01da48c45dec3bd50",
+    "mtime": 1781696521.1364915,
+    "ast_hash": "0ea0999026a108c9334042b230a08826",
     "semantic_hash": ""
   },
   "lib/services/stotra_service.dart": {
-    "mtime": 1781694245.9057748,
-    "ast_hash": "1f64a14b4c5f69d8f22dc99a975719ca",
+    "mtime": 1781696530.4974203,
+    "ast_hash": "663e76881d535173b98aabf2464949f2",
     "semantic_hash": ""
   },
   "lib/services/veda_service.dart": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "scripts/deploy_app.ps1": {
-    "mtime": 1781695470.948099,
-    "ast_hash": "1ab974d2904593862ba09d95253d7dbc",
+    "mtime": 1781695845.1393876,
+    "ast_hash": "8abd81d3589fc8c97b048f8eab4a7943",
     "semantic_hash": ""
   },
   "scripts/push_with_backup.ps1": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "admin/index.html": {
-    "mtime": 1781694376.283338,
-    "ast_hash": "df155970afcf889d488251308c09ab8d",
+    "mtime": 1781695818.762648,
+    "ast_hash": "e33646400f414ceaa51e3d7e2a632b96",
     "semantic_hash": ""
   },
   "conversation_backup/build_log.txt": {

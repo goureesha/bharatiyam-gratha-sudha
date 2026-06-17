@@ -4,6 +4,69 @@
   "graph": {},
   "nodes": [
     {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L1",
+      "id": "js_app",
+      "community": 6,
+      "norm_label": "app.js"
+    },
+    {
+      "label": "auth",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L17",
+      "id": "js_app_auth",
+      "community": 6,
+      "norm_label": "auth"
+    },
+    {
+      "label": "db",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L18",
+      "id": "js_app_db",
+      "community": 6,
+      "norm_label": "db"
+    },
+    {
+      "label": "State",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L21",
+      "id": "js_app_state",
+      "community": 6,
+      "norm_label": "state"
+    },
+    {
+      "label": "CATEGORIES",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L28",
+      "id": "js_app_categories",
+      "community": 6,
+      "norm_label": "categories"
+    },
+    {
+      "label": "fetchAsset()",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L38",
+      "id": "js_app_fetchasset",
+      "community": 6,
+      "norm_label": "fetchasset()"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "admin/js/app.js",
+      "source_location": "L64",
+      "id": "js_app_app",
+      "community": 6,
+      "norm_label": "app"
+    },
+    {
       "label": "backup_meta.json",
       "file_type": "code",
       "source_file": "conversation_backup/backup_meta.json",
@@ -40,52 +103,364 @@
       "norm_label": "commit_message"
     },
     {
+      "label": "scripture_service.dart",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service",
+      "community": 5,
+      "norm_label": "scripture_service.dart"
+    },
+    {
+      "label": "ScriptureService",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service_scriptureservice",
+      "community": 7,
+      "norm_label": "scriptureservice"
+    },
+    {
+      "label": "ChangeNotifier",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "changenotifier",
+      "community": 7,
+      "norm_label": "changenotifier"
+    },
+    {
+      "label": "_books",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service_books",
+      "community": 5,
+      "norm_label": "_books"
+    },
+    {
+      "label": "List",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "list",
+      "community": 4,
+      "norm_label": "list"
+    },
+    {
+      "label": "_isLoaded",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service_isloaded",
+      "community": 5,
+      "norm_label": "_isloaded"
+    },
+    {
+      "label": "bool get",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "bool_get",
+      "community": 5,
+      "norm_label": "bool get"
+    },
+    {
+      "label": "init",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service_init",
+      "community": 5,
+      "norm_label": "init"
+    },
+    {
+      "label": "getByCategory",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service_getbycategory",
+      "community": 5,
+      "norm_label": "getbycategory"
+    },
+    {
+      "label": "getBook",
+      "file_type": "code",
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "id": "services_scripture_service_getbook",
+      "community": 5,
+      "norm_label": "getbook"
+    },
+    {
+      "label": "dart:convert",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "dart_convert",
+      "community": 5,
+      "norm_label": "dart:convert"
+    },
+    {
+      "label": "package:flutter/material.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_flutter_material_dart",
+      "community": 5,
+      "norm_label": "package:flutter/material.dart"
+    },
+    {
+      "label": "package:flutter/services.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_flutter_services_dart",
+      "community": 5,
+      "norm_label": "package:flutter/services.dart"
+    },
+    {
+      "label": "package:cloud_firestore/cloud_firestore.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "package_cloud_firestore_cloud_firestore_dart",
+      "community": 5,
+      "norm_label": "package:cloud_firestore/cloud_firestore.dart"
+    },
+    {
+      "label": "../models/scripture.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "models_scripture_dart",
+      "community": 5,
+      "norm_label": "../models/scripture.dart"
+    },
+    {
+      "label": "stotra_service.dart",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service",
+      "community": 4,
+      "norm_label": "stotra_service.dart"
+    },
+    {
+      "label": "StotraService",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_stotraservice",
+      "community": 7,
+      "norm_label": "stotraservice"
+    },
+    {
+      "label": "_mainCategories",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_maincategories",
+      "community": 4,
+      "norm_label": "_maincategories"
+    },
+    {
+      "label": "_extrasCategories",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_extrascategories",
+      "community": 4,
+      "norm_label": "_extrascategories"
+    },
+    {
+      "label": "_isLoaded",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_isloaded",
+      "community": 4,
+      "norm_label": "_isloaded"
+    },
+    {
+      "label": "allCategories",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_allcategories",
+      "community": 4,
+      "norm_label": "allcategories"
+    },
+    {
+      "label": "totalStotras",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_totalstotras",
+      "community": 4,
+      "norm_label": "totalstotras"
+    },
+    {
+      "label": "int get",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "int_get",
+      "community": 4,
+      "norm_label": "int get"
+    },
+    {
+      "label": "init",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_init",
+      "community": 4,
+      "norm_label": "init"
+    },
+    {
+      "label": "getCategory",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_getcategory",
+      "community": 4,
+      "norm_label": "getcategory"
+    },
+    {
+      "label": "getStotra",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_getstotra",
+      "community": 4,
+      "norm_label": "getstotra"
+    },
+    {
+      "label": "search",
+      "file_type": "code",
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "id": "services_stotra_service_search",
+      "community": 4,
+      "norm_label": "search"
+    },
+    {
+      "label": "../models/stotra.dart",
+      "file_type": "code",
+      "source_file": null,
+      "source_location": null,
+      "id": "models_stotra_dart",
+      "community": 4,
+      "norm_label": "../models/stotra.dart"
+    },
+    {
       "label": "task.md",
       "file_type": "document",
       "source_file": "conversation_backup/task.md",
       "source_location": "L1",
-      "id": "conversation_backup_task",
       "community": 1,
-      "norm_label": "task.md"
+      "norm_label": "task.md",
+      "id": "conversation_backup_task"
     },
     {
       "label": "Task List - Admin Website & Firestore Integration",
       "file_type": "document",
       "source_file": "conversation_backup/task.md",
       "source_location": "L1",
-      "id": "conversation_backup_task_task_list_admin_website_firestore_integration",
       "community": 1,
-      "norm_label": "task list - admin website & firestore integration"
+      "norm_label": "task list - admin website & firestore integration",
+      "id": "conversation_backup_task_task_list_admin_website_firestore_integration"
     },
     {
       "label": "deploy_app.ps1",
       "file_type": "code",
       "source_file": "scripts/deploy_app.ps1",
       "source_location": "L1",
-      "id": "scripts_deploy_app",
       "community": 2,
-      "norm_label": "deploy_app.ps1"
+      "norm_label": "deploy_app.ps1",
+      "id": "scripts_deploy_app"
     },
     {
       "label": "push_with_backup.ps1",
       "file_type": "code",
       "source_file": "scripts/push_with_backup.ps1",
       "source_location": "L1",
-      "id": "scripts_push_with_backup",
       "community": 3,
-      "norm_label": "push_with_backup.ps1"
+      "norm_label": "push_with_backup.ps1",
+      "id": "scripts_push_with_backup"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "admin/js/app.js",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "admin/js/app.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_auth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "admin/js/app.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_categories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "admin/js/app.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "admin/js/app.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_fetchasset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "admin/js/app.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "js_app",
+      "target": "js_app_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "conversation_backup/backup_meta.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "conversation_backup_backup_meta",
-      "target": "conversation_backup_backup_meta_commit_message",
-      "confidence_score": 1.0
+      "target": "conversation_backup_backup_meta_commit_message"
     },
     {
       "relation": "contains",
@@ -93,9 +468,9 @@
       "source_file": "conversation_backup/backup_meta.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "conversation_backup_backup_meta",
-      "target": "conversation_backup_backup_meta_conversation_id",
-      "confidence_score": 1.0
+      "target": "conversation_backup_backup_meta_conversation_id"
     },
     {
       "relation": "contains",
@@ -103,9 +478,344 @@
       "source_file": "conversation_backup/backup_meta.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "conversation_backup_backup_meta",
-      "target": "conversation_backup_backup_meta_timestamp",
-      "confidence_score": 1.0
+      "target": "conversation_backup_backup_meta_timestamp"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_scripture_service",
+      "target": "bool_get"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_scripture_service",
+      "target": "list"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "models_scripture_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "package_cloud_firestore_cloud_firestore_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "package_flutter_services_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "services_scripture_service_books"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "services_scripture_service_getbook"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "services_scripture_service_getbycategory"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "services_scripture_service_init"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "services_scripture_service_isloaded"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service",
+      "target": "services_scripture_service_scriptureservice"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/scripture_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_scripture_service_scriptureservice",
+      "target": "changenotifier"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service_stotraservice",
+      "target": "changenotifier"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_stotra_service",
+      "target": "list"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_stotra_service",
+      "target": "bool_get"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "package_flutter_services_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "package_cloud_firestore_cloud_firestore_dart"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "context": "variable_type",
+      "source": "services_stotra_service",
+      "target": "int_get"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "models_stotra_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_allcategories"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_extrascategories"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_getcategory"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_getstotra"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_init"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_isloaded"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_maincategories"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_search"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_stotraservice"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/stotra_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_stotra_service",
+      "target": "services_stotra_service_totalstotras"
     },
     {
       "relation": "contains",
@@ -113,11 +823,11 @@
       "source_file": "conversation_backup/task.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "conversation_backup_task",
-      "target": "conversation_backup_task_task_list_admin_website_firestore_integration",
-      "confidence_score": 1.0
+      "target": "conversation_backup_task_task_list_admin_website_firestore_integration"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "67bcd569d1ef959e00bb6126352f677acf92fe47"
+  "built_at_commit": "fd09e4e79ad2ca0e25f1193d7a591c7e2b31685f"
 }
