@@ -1,5 +1,5 @@
 ﻿{
-    "timestamp":  "20260617_172429",
+    "timestamp":  "20260617_180303",
     "conversation_id":  "9dd96f49-1b5d-49be-9d15-005bfbd79edd",
-    "commit_message":  "Use parallel worker pool for seeding to bypass Firestore batch request size limits"
+    "commit_message":  "Support independent multi-site hosting deployments for app and admin"
 }

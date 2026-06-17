@@ -1,62 +1,61 @@
 # Build and Deploy script for Bharatiyam Grantha Sudha
-# This script builds the Flutter Web App and copies the Admin Panel into the build output, then deploys to Firebase Hosting.
+# Usage: 
+#   .\scripts\deploy_app.ps1 -Target "admin"  (Deploy the admin panel only - Default)
+#   .\scripts\deploy_app.ps1 -Target "app"    (Build and deploy the Flutter App only)
+#   .\scripts\deploy_app.ps1 -Target "both"   (Deploy both admin and app)
+
+param(
+    [Parameter(Mandatory=$false)]
+    [ValidateSet("admin", "app", "both")]
+    [string]$Target = "admin"
+)
 
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $ProjectRoot
 
 Write-Host "Bharatiyam Gratha Sudha - Build & Deploy Tool" -ForegroundColor Yellow
 Write-Host "=================================================" -ForegroundColor DarkYellow
+Write-Host "Target selected: $Target" -ForegroundColor Cyan
 
-# Step 1: Build the Flutter Web App
-Write-Host "Step 1: Compiling Flutter Web App..." -ForegroundColor Cyan
-if (Get-Command flutter -ErrorAction SilentlyContinue) {
-    flutter build web --release
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "Flutter web build failed! Deployment aborted."
-        exit $LASTEXITCODE
+# Step 1: Deploy Admin Website
+if ($Target -eq "admin" -or $Target -eq "both") {
+    Write-Host "`n🚀 Step 1: Deploying Admin Website to separate hosting site..." -ForegroundColor Cyan
+    if (Get-Command firebase -ErrorAction SilentlyContinue) {
+        firebase deploy --only hosting:bharatiyam-grantha-sudha-admin
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Admin Website deployment failed."
+            exit $LASTEXITCODE
+        }
+        Write-Host "  Admin Website deployed successfully to: https://bharatiyam-grantha-sudha-admin.web.app" -ForegroundColor Green
+    } else {
+        Write-Error "Firebase CLI ('firebase' command) is not installed or not in PATH."
+        exit 1
     }
-    Write-Host "  Flutter Web App compiled successfully." -ForegroundColor Green
-} else {
-    Write-Host "  WARNING: 'flutter' command not found on this system's PATH." -ForegroundColor Yellow
-    Write-Host "  Skipping Flutter compilation. Will attempt to deploy existing build/web folder if it exists." -ForegroundColor Yellow
 }
 
-# Step 2: Copy Admin Panel and Assets to the build output folder
-Write-Host "Step 2: Injecting Admin Panel into build output..." -ForegroundColor Cyan
-$AdminDest = Join-Path $ProjectRoot "build\web\admin"
-$AssetsDest = Join-Path $ProjectRoot "build\web\assets"
-
-# Ensure build/web folder exists if we skipped flutter build
-if (-not (Test-Path (Join-Path $ProjectRoot "build\web"))) {
-    New-Item -ItemType Directory -Path (Join-Path $ProjectRoot "build\web") -Force | Out-Null
-}
-
-# Ensure clean admin destination
-if (Test-Path $AdminDest) {
-    Remove-Item -Path $AdminDest -Recurse -Force | Out-Null
-}
-
-# Copy admin directory recursive
-Copy-Item -Path (Join-Path $ProjectRoot "admin") -Destination $AdminDest -Recurse -Force
-Write-Host "  Admin Panel copied to build/web/admin" -ForegroundColor Green
-
-# Clean up any previously copied assets to keep deployment lightweight
-if (Test-Path $AssetsDest) {
-    Remove-Item -Path $AssetsDest -Recurse -Force | Out-Null
-}
-
-# Step 3: Deploy to Firebase Hosting
-Write-Host "Step 3: Deploying to Firebase Hosting..." -ForegroundColor Cyan
-if (Get-Command firebase -ErrorAction SilentlyContinue) {
-    firebase deploy --only hosting
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "Firebase deployment failed."
-        exit $LASTEXITCODE
+# Step 2: Build & Deploy Flutter App
+if ($Target -eq "app" -or $Target -eq "both") {
+    Write-Host "`n🚀 Step 2: Compiling Flutter Web App..." -ForegroundColor Cyan
+    if (Get-Command flutter -ErrorAction SilentlyContinue) {
+        flutter build web --release
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Flutter web build failed! Deployment aborted."
+            exit $LASTEXITCODE
+        }
+        Write-Host "  Flutter Web App compiled successfully." -ForegroundColor Green
+        
+        Write-Host "Deploying Flutter Web App to main hosting site..." -ForegroundColor Cyan
+        firebase deploy --only hosting:bharatiyam-grantha-sudha
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Flutter Web App deployment failed."
+            exit $LASTEXITCODE
+        }
+        Write-Host "  Flutter Web App deployed successfully to: https://bharatiyam-grantha-sudha.web.app" -ForegroundColor Green
+    } else {
+        Write-Error "'flutter' command not found. Cannot compile or deploy the main app."
+        exit 1
     }
-} else {
-    Write-Error "Firebase CLI ('firebase' command) is not installed or not in PATH."
-    exit 1
 }
 
-Write-Host "Success! Both Flutter App (/) and Admin Panel (/admin/) are deployed." -ForegroundColor Green
-Write-Host "=================================================" -ForegroundColor DarkYellow
+Write-Host "`n=================================================" -ForegroundColor DarkYellow
+Write-Host "Deployment completed!" -ForegroundColor Green
