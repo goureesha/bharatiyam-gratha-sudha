@@ -553,59 +553,47 @@ const App = {
       (stotrasData.mainCategories || []).forEach((cat, idx) => processStotraCategory(cat, idx, 'stotra_main'));
       (stotrasData.extrasCategories || []).forEach((cat, idx) => processStotraCategory(cat, idx, 'stotra_extras'));
 
-      const totalOperations = booksToUpload.length + chaptersToUpload.length + 1; // +1 for config doc
+      const itemsToUpload = [];
+      booksToUpload.forEach(b => {
+        itemsToUpload.push({ collection: 'books', id: b.id, data: b.data });
+      });
+      chaptersToUpload.forEach(ch => {
+        itemsToUpload.push({ collection: 'chapters', id: ch.id, data: ch.data });
+      });
+
+      const totalOperations = itemsToUpload.length + 1; // +1 for config doc
       let doneOperations = 0;
 
       const updateProgress = (msg) => {
-        const pct = Math.min(15 + Math.floor((doneOperations / totalOperations) * 80), 95);
+        const pct = Math.min(15 + Math.floor((doneOperations / totalOperations) * 80), 98);
         fill.style.width = `${pct}%`;
         text.textContent = `${msg} (${doneOperations}/${totalOperations})`;
       };
 
-      // 2. Upload books in batches
-      text.textContent = 'Uploading books...';
-      let batch = db.batch();
-      let count = 0;
-
-      for (const book of booksToUpload) {
-        batch.set(db.collection('books').doc(book.id), book.data);
-        count++;
-        doneOperations++;
-        if (count === 400) {
-          await batch.commit();
-          batch = db.batch();
-          count = 0;
-          updateProgress('Uploaded books batch...');
+      // Upload all documents in parallel with a concurrency pool of 60
+      text.textContent = 'Uploading documents...';
+      let index = 0;
+      const worker = async () => {
+        while (index < itemsToUpload.length) {
+          const item = itemsToUpload[index++];
+          if (!item) break;
+          await db.collection(item.collection).doc(item.id).set(item.data);
+          doneOperations++;
+          if (doneOperations % 25 === 0 || doneOperations === totalOperations) {
+            updateProgress('Uploading to Firestore...');
+          }
         }
-      }
-      if (count > 0) {
-        await batch.commit();
-        updateProgress('Uploaded books...');
-      }
+      };
 
-      // 3. Upload chapters in batches
-      text.textContent = 'Uploading chapters...';
-      batch = db.batch();
-      count = 0;
-      let batchNum = 1;
-
-      for (const ch of chaptersToUpload) {
-        batch.set(db.collection('chapters').doc(ch.id), ch.data);
-        count++;
-        doneOperations++;
-        if (count === 400) {
-          await batch.commit();
-          batch = db.batch();
-          count = 0;
-          updateProgress(`Uploaded chapters batch ${batchNum++}...`);
-        }
+      const workers = [];
+      const concurrency = 60;
+      for (let i = 0; i < Math.min(concurrency, itemsToUpload.length); i++) {
+        workers.push(worker());
       }
-      if (count > 0) {
-        await batch.commit();
-        updateProgress('Uploaded all chapters...');
-      }
+      await Promise.all(workers);
 
       // 4. Update config doc
+      text.textContent = 'Finalizing config...';
       await db.collection('config').doc('app').set({
         contentVersion: firebase.firestore.FieldValue.increment(1),
         lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
