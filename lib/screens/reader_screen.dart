@@ -3,10 +3,66 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/stotra.dart';
 import '../services/bookmark_service.dart';
+import '../services/stotra_service.dart';
+import '../services/scripture_service.dart';
 
-class ReaderScreen extends StatelessWidget {
+class ReaderScreen extends StatefulWidget {
   final Stotra stotra;
   const ReaderScreen({super.key, required this.stotra});
+
+  @override
+  State<ReaderScreen> createState() => _ReaderScreenState();
+}
+
+class _ReaderScreenState extends State<ReaderScreen> {
+  String? _loadedContent;
+  bool _isLoading = false;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.stotra.content.isNotEmpty) {
+      _loadedContent = widget.stotra.content;
+    } else {
+      _loadContent();
+    }
+  }
+
+  Future<void> _loadContent() async {
+    if (!mounted) return;
+    setState(() {
+      _isLoading = true;
+      _error = null;
+    });
+
+    try {
+      final String content;
+      if (widget.stotra.id.contains('_ch_')) {
+        // It's a scripture chapter
+        final scriptureService = context.read<ScriptureService>();
+        content = await scriptureService.loadChapterContent(widget.stotra.id);
+      } else {
+        // It's a regular stotra
+        final stotraService = context.read<StotraService>();
+        content = await stotraService.loadStotraContent(widget.stotra.id);
+      }
+
+      if (mounted) {
+        setState(() {
+          _loadedContent = content;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _error = 'ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: $e';
+          _isLoading = false;
+        });
+      }
+    }
+  }
 
   String _formatContent(String content) {
     var formatted = content;
@@ -84,13 +140,13 @@ class ReaderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bookmarks = context.watch<BookmarkService>();
-    final isBookmarked = bookmarks.isBookmarked(stotra.id);
+    final isBookmarked = bookmarks.isBookmarked(widget.stotra.id);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          stotra.title,
+          widget.stotra.title,
           style: GoogleFonts.notoSansKannada(
             fontSize: 16,
             color: Colors.white,
@@ -105,7 +161,7 @@ class ReaderScreen extends StatelessWidget {
               isBookmarked ? Icons.favorite_rounded : Icons.favorite_border_rounded,
               color: isBookmarked ? Colors.red : Colors.white,
             ),
-            onPressed: () => bookmarks.toggle(stotra.id),
+            onPressed: () => bookmarks.toggle(widget.stotra.id),
           ),
         ],
       ),
@@ -136,20 +192,46 @@ class ReaderScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: SelectionArea(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: _buildContentBlocks(
-                      _formatContent(stotra.content),
-                      bookmarks.fontSize,
-                      isDark,
-                    ),
-                  ),
-                ),
+                child: _isLoading
+                    ? const Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 40),
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : _error != null
+                        ? Center(
+                            child: Column(
+                              children: [
+                                Text(
+                                  _error!,
+                                  style: TextStyle(
+                                    color: isDark ? Colors.white70 : Colors.black87,
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+                                ElevatedButton.icon(
+                                  onPressed: _loadContent,
+                                  icon: const Icon(Icons.refresh),
+                                  label: const Text('ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ'),
+                                ),
+                              ],
+                            ),
+                          )
+                        : SelectionArea(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: _buildContentBlocks(
+                                _formatContent(_loadedContent ?? ''),
+                                bookmarks.fontSize,
+                                isDark,
+                              ),
+                            ),
+                          ),
               ),
- 
+
               const SizedBox(height: 24),
- 
+
               // Source info
               Container(
                 padding: const EdgeInsets.all(12),
@@ -166,7 +248,7 @@ class ReaderScreen extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        'ಮೂಲ: ${stotra.categoryTitle}',
+                        'ಮೂಲ: ${widget.stotra.categoryTitle}',
                         style: GoogleFonts.notoSansKannada(
                           fontSize: 12,
                           color: Colors.grey.shade500,
@@ -176,7 +258,7 @@ class ReaderScreen extends StatelessWidget {
                   ],
                 ),
               ),
- 
+
               const SizedBox(height: 40),
             ],
           ),

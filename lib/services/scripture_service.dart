@@ -16,7 +16,7 @@ class ScriptureService extends ChangeNotifier {
     
     // Load directly from Local Asset
     try {
-      final jsonStr = await rootBundle.loadString('assets/data/scriptures_data.json');
+      final jsonStr = await rootBundle.loadString('assets/data/scriptures_index.json');
       final List<dynamic> decoded = json.decode(jsonStr);
       _books = decoded.map((item) => ScriptureBook.fromJson(Map<String, dynamic>.from(item))).toList();
       _isLoaded = true;
@@ -24,6 +24,15 @@ class ScriptureService extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       debugPrint('❌ ScriptureService: Error loading scriptures JSON: $e');
+    }
+  }
+
+  Future<String> loadChapterContent(String chapterId) async {
+    try {
+      return await rootBundle.loadString('assets/data/chapters/$chapterId.txt');
+    } catch (e) {
+      debugPrint('❌ ScriptureService: Error loading chapter content ($chapterId): $e');
+      return '';
     }
   }
 

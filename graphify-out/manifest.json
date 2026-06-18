@@ -1,7 +1,7 @@
 {
   "admin/js/app.js": {
-    "mtime": 1781697261.8401752,
-    "ast_hash": "efa7a63fd75b68e7eb72c18de3e62947",
+    "mtime": 1781705159.9545767,
+    "ast_hash": "6cb7a12b572ad161a7956b4890b9df56",
     "semantic_hash": ""
   },
   "android/app/build.gradle": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "assets/data/scriptures_data.json": {
-    "mtime": 1781679433.493741,
-    "ast_hash": "4b0d7108fdda42cdad7ce7ba8a4b39d5",
+    "mtime": 1781702384.3159945,
+    "ast_hash": "1aeddd300617839145793add867bae73",
     "semantic_hash": ""
   },
   "assets/data/shukla_yajurveda_data.json": {
@@ -60,13 +60,13 @@
     "semantic_hash": ""
   },
   "conversation_backup/backup_meta.json": {
-    "mtime": 1781697269.928202,
-    "ast_hash": "aa935f6b1af1e6023cd23ecd0e1ed83b",
+    "mtime": 1781699584.942953,
+    "ast_hash": "a19ebebac323b319c60348cf7ffcb865",
     "semantic_hash": ""
   },
   "firebase.json": {
-    "mtime": 1781694459.833527,
-    "ast_hash": "d360be23cda7facae55d33be83cd6dc0",
+    "mtime": 1781699573.1104908,
+    "ast_hash": "2bd4e0ad67d4118bb6538299bd0fcd43",
     "semantic_hash": ""
   },
   "firestore.indexes.json": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "lib/screens/reader_screen.dart": {
-    "mtime": 1781616851.3269956,
-    "ast_hash": "ac06cc27e8cf048bcd926f12f804dda9",
+    "mtime": 1781701080.9003263,
+    "ast_hash": "e49dcbd1632f7df7f443027323429e35",
     "semantic_hash": ""
   },
   "lib/screens/scripture_chapters_screen.dart": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "scripts/deploy_app.ps1": {
-    "mtime": 1781695845.1393876,
-    "ast_hash": "8abd81d3589fc8c97b048f8eab4a7943",
+    "mtime": 1781699578.5496385,
+    "ast_hash": "962b04258477276a3a7ec832133c54d3",
     "semantic_hash": ""
   },
   "scripts/push_with_backup.ps1": {
@@ -204,11 +204,6 @@
     "ast_hash": "068f5da7f410fdd5d6f95d4b75d69f4f",
     "semantic_hash": ""
   },
-  ".github/workflows/deploy-admin.yml": {
-    "mtime": 1779865190.4258847,
-    "ast_hash": "953eadb68a403718149d7a159e7ad129",
-    "semantic_hash": ""
-  },
   ".github/workflows/deploy-web.yml": {
     "mtime": 1781609007.0600061,
     "ast_hash": "7b0b59794ca275f7dde4a3f83cb8d515",
@@ -220,8 +215,8 @@
     "semantic_hash": ""
   },
   "admin/index.html": {
-    "mtime": 1781695818.762648,
-    "ast_hash": "e33646400f414ceaa51e3d7e2a632b96",
+    "mtime": 1781703232.7535884,
+    "ast_hash": "743965f49b16dd5619365406f68ebde0",
     "semantic_hash": ""
   },
   "conversation_backup/build_log.txt": {
@@ -297,6 +292,31 @@
   "assets/images/vishnu.png": {
     "mtime": 1779765422.578694,
     "ast_hash": "8b76f8795979c378e9d9d5d66f7a18c3",
+    "semantic_hash": ""
+  },
+  "scripts/clean_scriptures_data.py": {
+    "mtime": 1781700630.7614415,
+    "ast_hash": "8cbe668b6fa9fbb89b410445c9007310",
+    "semantic_hash": ""
+  },
+  "scripts/translate_batch1.py": {
+    "mtime": 1781701695.4262712,
+    "ast_hash": "dd54c93752b37d427c6a757b99948e98",
+    "semantic_hash": ""
+  },
+  "scripts/translate_batch2.py": {
+    "mtime": 1781701829.6524408,
+    "ast_hash": "98080282cf844bba9e7a530690234319",
+    "semantic_hash": ""
+  },
+  "scripts/translate_batch3.py": {
+    "mtime": 1781702045.9166107,
+    "ast_hash": "585c561a3edb6d0cfc91894fcf282479",
+    "semantic_hash": ""
+  },
+  "scripts/translate_batch4.py": {
+    "mtime": 1781702378.7410736,
+    "ast_hash": "93d8d665e3ad0b4c2a552b3491aba54a",
     "semantic_hash": ""
   }
 }

@@ -22,7 +22,7 @@ class StotraService extends ChangeNotifier {
 
     // Load directly from Local Asset
     try {
-      final jsonStr = await rootBundle.loadString('assets/data/stotra_data.json');
+      final jsonStr = await rootBundle.loadString('assets/data/stotra_index.json');
       final data = json.decode(jsonStr) as Map<String, dynamic>;
 
       _mainCategories = (data['mainCategories'] as List<dynamic>?)
@@ -38,6 +38,15 @@ class StotraService extends ChangeNotifier {
       notifyListeners();
     } catch (e) {
       debugPrint('❌ Error loading stotra data: $e');
+    }
+  }
+
+  Future<String> loadStotraContent(String stotraId) async {
+    try {
+      return await rootBundle.loadString('assets/data/stotras/$stotraId.txt');
+    } catch (e) {
+      debugPrint('❌ Error loading stotra content ($stotraId): $e');
+      return '';
     }
   }
 
