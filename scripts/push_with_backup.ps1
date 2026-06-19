@@ -7,7 +7,7 @@ param(
 )
 
 $ProjectRoot = Split-Path -Parent $PSScriptRoot
-$ConvId = "9dd96f49-1b5d-49be-9d15-005bfbd79edd"
+$ConvId = "fcebfe0c-6765-4c98-b670-f333b885c095"
 $BrainPath = "C:\Users\goure\.gemini\antigravity\brain\$ConvId"
 $BackupDir = "$ProjectRoot\conversation_backup"
 $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
