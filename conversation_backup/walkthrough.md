@@ -1,49 +1,52 @@
-# Walkthrough - Batch 4 Upanishad Translations
+# Walkthrough - Batch 5 Upanishad Translations
 
-We have successfully translated the fourth batch of 7 incomplete Upanishads into Kannada, adding word-by-word meanings (**ಶಬ್ದಾರ್ಥ**) and overall explanations (**ಭಾವಾರ್ಥ**).
+We have successfully translated the fifth batch of 8 incomplete Upanishads into Kannada, adding word-by-word meanings (**ಶಬ್ದಾರ್ಥ**) and overall explanations (**ಭಾವಾರ್ಥ**).
 
 ## Changes Made
 
 ### Upanishad Chapter Translations
 We updated the following files under `assets/data/chapters/` to include structured translations:
 
-1. [upanishad_dattatreya_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dattatreya_ch_1.txt)
-   - Grouped the text into 3 sections (First Khanda: Mantras & Chhandas, Second Khanda: Avadhuta Mahamantra, Third Khanda: Phalashruti).
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each.
-
-2. [upanishad_devakrritopanishatsararudrastavah_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_devakrritopanishatsararudrastavah_ch_1.txt)
-   - Grouped the 21 verses of praise to Rudra as all-pervading into 2 sections.
-   - Translated the transliterated English note at the bottom into proper Kannada.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
-
-3. [upanishad_devakrritopanishatsarashivastavah_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_devakrritopanishatsarashivastavah_ch_1.txt)
-   - Grouped the 38 verses (verses 22-59 of Shivastuti) into 4 logical sections.
-   - Translated the transliterated English note at the bottom into proper Kannada.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
-
-4. [upanishad_devi_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_devi_ch_1.txt)
-   - Grouped the 22 verses into 4 logical sections covering Devi's self-declaration, prayers by Devas, descriptions of seed-mantras/forms, and Phalashruti.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each.
-
-5. [upanishad_deviiatharva_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_deviiatharva_ch_1.txt)
-   - Grouped the 27 verses (similar to Devi Upanishad but with textual variants marked by `ವರ್`) into 4 logical sections.
+1. [upanishad_ganapatiaccent_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_ganapatiaccent_ch_1.txt)
+   - Translated Ganapatyatharvashirshopanishat with Vedic accents.
+   - Kept original accented verses intact.
    - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
 
-6. [upanishad_dhyanabindu_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dhyanabindu_ch_1.txt)
-   - Grouped the 105 verses of this longer Upanishad into 5 logical sections (Pranava meditation, deities, Sadanga Yoga, Nadis/Vayus, and Mudras/Atma-realization).
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
+2. [upanishad_ganeshatapiniupanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_ganeshatapiniupanishat_ch_1.txt)
+   - Translated Ganeshatapiniupanishat (Purva and Uttara parts, covering all sub-chapters).
+   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections mapping to chapter divisions.
 
-7. [upanishad_dramidopanishatsara_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dramidopanishatsara_ch_1.txt)
-   - Grouped the 26 verses of Vedanta Desika's summary of the Tiruvaimozhi into 3 logical sections.
+3. [upanishad_garbha_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_garbha_ch_1.txt)
+   - Translated Garbha Upanishad detailing embryonic development.
+   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
+
+4. [upanishad_garuda_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_garuda_ch_1.txt)
+   - Translated Garuda Upanishad focused on anti-poison mantras (Garuda Vidya).
+   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
+
+5. [upanishad_gaayatriirahasyopanishhat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_gaayatriirahasyopanishhat_ch_1.txt)
+   - Translated Gayatri-Rahasya Upanishad analyzing the syllables of Gayatri.
+   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
+
+6. [upanishad_gopala_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_gopala_ch_1.txt)
+   - Translated Gopalatapini Upanishad (Purva and Uttara parts).
+   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
+
+7. [upanishad_gopichandanopanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_gopichandanopanishat_ch_1.txt)
+   - Translated Gopichandanopanishat describing the origin of Gopichandana.
+   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
+
+8. [upanishad_guhyakalyupanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_guhyakalyupanishat_ch_1.txt)
+   - Translated Guhyakalyupanishat detailing the cosmic form of Guhyakali.
    - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
 
 ---
 
 ## Verification Results
 
-We verified the completion of Batch 4 by running:
+We verified the completion of Batch 5 by running:
 `python "C:\Users\goure\.gemini\antigravity\brain\fcebfe0c-6765-4c98-b670-f333b885c095\scratch\check_shabdartha_bhavartha.py"`
 
 ### Statistics Progress
-- **Fully Completed Upanishad Books**: Increased from **97** to **104** (+7)
-- **Completed Chapters**: Increased from **102** to **109** (+7)
+- **Fully Completed Upanishad Books**: Increased from **104** to **112** (+8)
+- **Completed Chapters**: Increased from **109** to **117** (+8)
