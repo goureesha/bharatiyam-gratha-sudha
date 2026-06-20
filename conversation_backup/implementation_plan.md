@@ -1,50 +1,54 @@
-# Implementation Plan - Batch 3 Upanishad Translations
+# Implementation Plan - Batch 4 Upanishad Translations
 
-This plan details the translation of the third batch of 6 incomplete Upanishads into Kannada, adding **ಶಬ್ದಾರ್ಥ** (Shabdartha - word-by-word meanings) and **ಭಾವಾರ್ಥ** (Bhavartha - overall explanation).
+This plan details the translation of the fourth batch of 7 incomplete Upanishads into Kannada, adding **ಶಬ್ದಾರ್ಥ** (Shabdartha - word-by-word meanings) and **ಭಾವಾರ್ಥ** (Bhavartha - overall explanation).
 
 ## Proposed Changes
 
-We will translate the following 6 Upanishads in alphabetical order (skipping the extremely long Brihadaranyaka Upanishad and Chandogya Upanishad versions for later dedicated handling):
+We will translate the following 7 Upanishads in alphabetical order:
 
-1. **Brihat-Jabala Upanishad** (ID: `upanishad_brihajjabala`)
-   - File: [upanishad_brihajjabala_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_brihajjabala_ch_1.txt)
-   - Action: Group the 501 lines into logical sections (creation, Bhasma origins, types of ash, bathing rules, and worship), adding `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each.
+1. **Dattatreya Upanishad** (ID: `upanishad_dattatreya`)
+   - File: [upanishad_dattatreya_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dattatreya_ch_1.txt)
+   - Action: Group the text into 3 sections (First Khanda: Mantras & Chhandas, Second Khanda: Avadhuta Mahamantra, Third Khanda: Phalashruti). Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each.
 
-2. **Chagaleya Upanishad** (ID: `upanishad_chagaleyopanishat`)
-   - File: [upanishad_chagaleyopanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_chagaleyopanishat_ch_1.txt)
-   - Action: Group the 73 lines of narrative dialogue between sages and Kavasha Ailusha, adding `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each section.
+2. **Devakritopanishatsara Rudrastavah** (ID: `upanishad_devakrritopanishatsararudrastavah`)
+   - File: [upanishad_devakrritopanishatsararudrastavah_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_devakrritopanishatsararudrastavah_ch_1.txt)
+   - Action: Group the 21 verses of praise to Rudra as all-pervading into 2 sections. Translate the transliterated English note at the bottom into proper Kannada. Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
 
-3. **Chakshushopanishat** (ID: `upanishad_chakshu`)
-   - File: [upanishad_chakshu_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_chakshu_ch_1.txt)
-   - Action: Group the 65 lines into 3 sections (prayer to Surya, Rigvedic verses, and instructions). Translate the garbled English-transliterated text in Kannada script to proper Kannada. Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
+3. **Devakritopanishatsara Shivastavah** (ID: `upanishad_devakrritopanishatsarashivastavah`)
+   - File: [upanishad_devakrritopanishatsarashivastavah_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_devakrritopanishatsarashivastavah_ch_1.txt)
+   - Action: Group the 38 verses (verses 22-59 of Shivastuti) into 4 logical sections. Translate the transliterated English note at the bottom into proper Kannada. Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
 
-4. **Chintanashchachidunmesha English** (ID: `upanishad_chintanashchachidunmeshaenglish`)
-   - File: [upanishad_chintanashchachidunmeshaenglish_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_chintanashchachidunmeshaenglish_ch_1.txt)
-   - Action: Translate Sri Aurobindo's "Thoughts and Glimpses" (transliterated English words in Kannada script) into proper Kannada. Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections to convey the philosophical meaning clearly.
+4. **Devi Upanishad** (ID: `upanishad_devi`)
+   - File: [upanishad_devi_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_devi_ch_1.txt)
+   - Action: Group the 22 verses into 4 logical sections covering Devi's self-declaration, prayers by Devas, descriptions of seed-mantras/forms, and Phalashruti. Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each.
 
-5. **Dakshinamurti** (ID: `upanishad_dakshinopan`)
-   - File: [upanishad_dakshinopan_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dakshinopan_ch_1.txt)
-   - Action: Translate Ram Balasubramanian's excerpts/explanations of Dakshinamurti Upanishad (transliterated English in Kannada script) into clean Kannada, matching the Sanskrit verses, and add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
+5. **Devyatharvashirsham Evam Devyupanishat** (ID: `upanishad_deviiatharva`)
+   - File: [upanishad_deviiatharva_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_deviiatharva_ch_1.txt)
+   - Action: Group the 27 verses (similar to Devi Upanishad but with textual variants marked by `ವರ್`) into 4 logical sections. Provide clean Shabdartha and Bhavartha in Kannada.
 
-6. **Dakshinamurti Upanishad** (ID: `upanishad_dakshina_upan`)
-   - File: [upanishad_dakshina_upan_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dakshina_upan_ch_1.txt)
-   - Action: Group the 93 lines of Sanskrit verses (sages' questions, meditation on Dakshinamurti, mantras, and their secrets) into logical sections, adding `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` for each.
+6. **Dhyanabindu Upanishad** (ID: `upanishad_dhyanabindu`)
+   - File: [upanishad_dhyanabindu_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dhyanabindu_ch_1.txt)
+   - Action: Group the 105 verses of this longer Upanishad into 5 logical sections (Pranava meditation, deities, Sadanga Yoga, Nadis/Vayus, and Mudras/Atma-realization). Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:`.
+
+7. **Dramidopanishatsara** (ID: `upanishad_dramidopanishatsara`)
+   - File: [upanishad_dramidopanishatsara_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_dramidopanishatsara_ch_1.txt)
+   - Action: Group the 26 verses of Vedanta Desika's summary of the Tiruvaimozhi into 3 logical sections. Add `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` in Kannada.
 
 ---
 
 ### [Component: Translation Script]
 
-We will create a Python script `translate_batch_alpha_3.py` under the scratch directory to write the completed translations directly to the respective files.
+We will create a Python script `translate_batch_alpha_4.py` under the scratch directory to write the completed translations directly to the respective files.
 
-#### [NEW] [translate_batch_alpha_3.py](file:///C:/Users/goure/.gemini/antigravity/brain/fcebfe0c-6765-4c98-b670-f333b885c095/scratch/translate_batch_alpha_3.py)
-Python script to store and write the Kannada translations of Batch 3 Upanishads.
+#### [NEW] [translate_batch_alpha_4.py](file:///C:/Users/goure/.gemini/antigravity/brain/fcebfe0c-6765-4c98-b670-f333b885c095/scratch/translate_batch_alpha_4.py)
+Python script to store and write the Kannada translations of Batch 4 Upanishads.
 
 ---
 
 ## Verification Plan
 
 ### Automated Tests
-- Run `check_shabdartha_bhavartha.py` to verify that the statistics update correctly and the 6 Upanishads are now counted as completed:
+- Run `check_shabdartha_bhavartha.py` to verify that the statistics update correctly and the 7 Upanishads are now counted as completed:
   `python "C:\Users\goure\.gemini\antigravity\brain\fcebfe0c-6765-4c98-b670-f333b885c095\scratch\check_shabdartha_bhavartha.py"`
 
 ### Manual Verification

@@ -1,10 +1,11 @@
-- [x] Draft translations for Batch 3:
-  - [x] 1. Brihat-Jabala Upanishad
-  - [x] 2. Chagaleya Upanishad
-  - [x] 3. Chakshushopanishat
-  - [x] 4. Chintanashchachidunmesha English
-  - [x] 5. Dakshinamurti
-  - [x] 6. Dakshinamurti Upanishad
-- [x] Create and run `translate_batch_alpha_3.py` to write translations
-- [x] Verify using check scripts
-- [/] Git commit and push with backup
+- [/] Draft translations for Batch 4:
+  - [ ] 1. Dattatreya Upanishad
+  - [ ] 2. Devakritopanishatsara Rudrastavah
+  - [ ] 3. Devakritopanishatsara Shivastavah
+  - [ ] 4. Devi Upanishad
+  - [ ] 5. Devyatharvashirsham Evam Devyupanishat
+  - [ ] 6. Dhyanabindu Upanishad
+  - [ ] 7. Dramidopanishatsara
+- [ ] Create and run `translate_batch_alpha_4.py` to write translations
+- [ ] Verify using check scripts
+- [ ] Git commit and push with backup
