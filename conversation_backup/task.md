@@ -11,5 +11,6 @@
   - [x] 10. Kundika Upanishad
 - [x] Create and run `translate_batch_alpha_6.py` to write translations
 - [x] Verify using check scripts
-- [ ] Git commit and push with backup
+- [x] Git commit and push with backup
+
 
