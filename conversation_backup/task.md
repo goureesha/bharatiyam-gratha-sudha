@@ -1,11 +1,11 @@
-- [/] Draft translations for Batch 4:
-  - [ ] 1. Dattatreya Upanishad
-  - [ ] 2. Devakritopanishatsara Rudrastavah
-  - [ ] 3. Devakritopanishatsara Shivastavah
-  - [ ] 4. Devi Upanishad
-  - [ ] 5. Devyatharvashirsham Evam Devyupanishat
-  - [ ] 6. Dhyanabindu Upanishad
-  - [ ] 7. Dramidopanishatsara
-- [ ] Create and run `translate_batch_alpha_4.py` to write translations
-- [ ] Verify using check scripts
-- [ ] Git commit and push with backup
+- [x] Draft translations for Batch 4:
+  - [x] 1. Dattatreya Upanishad
+  - [x] 2. Devakritopanishatsara Rudrastavah
+  - [x] 3. Devakritopanishatsara Shivastavah
+  - [x] 4. Devi Upanishad
+  - [x] 5. Devyatharvashirsham Evam Devyupanishat
+  - [x] 6. Dhyanabindu Upanishad
+  - [x] 7. Dramidopanishatsara
+- [x] Create and run `translate_batch_alpha_4.py` to write translations
+- [x] Verify using check scripts
+- [x] Git commit and push with backup
