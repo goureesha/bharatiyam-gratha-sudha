@@ -1,12 +1,9 @@
-# Task List - Admin Website & Firestore Integration
-
-- [x] Create Firestore-compatible schemas and services in Flutter app
-- [x] Configure Firebase initialization in Flutter main entry point
-- [x] Modify `admin/index.html` to remove Shlokas section, adjust statistics, and update Chapter modal with a direct content field
-- [x] Modify `admin/js/app.js` to support Direct Chapter Content editing and remove all Shlokas logic
-- [x] Rewrite `seedData()` in `admin/js/app.js` to fetch and batch-write scriptures and stotras JSON data
-- [x] Configure `firebase.json` to route `/admin/**` to the admin sub-directory
-- [x] Create a deployment automation script `deploy_app.ps1` to build and deploy the project
-- [x] Run deployment script to build the project locally and verify output structure (Skipped build due to local environment limits, but deploy script is ready)
-- [x] Perform a Git commit and push with conversation backup
-- [x] Create walkthrough documentation summarizing the changes
+- [x] Draft translations for Batch 2:
+  - [x] 1. 108 Upanishad List
+  - [x] 2. Atharvanadvitiyopanishat
+  - [x] 3. Bhasmajabala Upanishad
+  - [x] 4. Brahma Upanishad
+  - [x] 5. Brahmavidya Upanishad
+- [x] Create and run `translate_batch_alpha_2.py` to write translations
+- [x] Verify using check scripts
+- [/] Git commit and push with backup
