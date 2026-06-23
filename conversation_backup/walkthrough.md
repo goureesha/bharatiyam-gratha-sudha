@@ -1,59 +1,22 @@
-# Walkthrough - Batch 6 Upanishad Translations
+# Walkthrough - Paramatmikopanishat Shloka-by-Shloka Translation to Kannada
 
-We have successfully translated the sixth batch of 10 incomplete Upanishads into Kannada, adding word-by-word meanings (**ಶಬ್ದಾರ್ಥ**) and overall explanations (**ಭಾವಾರ್ಥ**).
+We have successfully restructured and translated all 98 chapters of *Paramatmikopanishat* into Kannada, matching the **Annapurna Upanishad style**. Every single Sanskrit verse (shloka) and prose commentary block now has its own interleaved **ಶಬ್ದಾರ್ಥ:** (word-by-word meaning) and **ಭಾವಾರ್ಥ:** (overall meaning) directly underneath it, rather than a single summary block appended at the end of the chapter.
 
 ## Changes Made
 
-### Upanishad Chapter Translations
-We updated the following files under `assets/data/chapters/` to include structured translations:
+### Chapters Directory
+Modified all 98 files in `assets/data/chapters/` to restructure the content with shloka-by-shloka translations:
+- From [upanishad_paramatmikopanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_paramatmikopanishat_ch_1.txt) to [upanishad_paramatmikopanishat_ch_98.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_paramatmikopanishat_ch_98.txt)
 
-1. [upanishad_hayagriva_upan_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_hayagriva_upan_ch_1.txt)
-   - Translated Hayagriva Upanishad detailing the three mantras and single-syllable initiation.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-2. [upanishad_itihasopanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_itihasopanishat_ch_1.txt)
-   - Translated Itihasopanishat covering King Shibi/Vrishadavi history and detailed rules of shraddha/purity.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-3. [upanishad_jabala_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_jabala_ch_1.txt)
-   - Translated Jabala Upanishad describing the Kurukshetra/Avimukta and the Paramahamsa renunciation.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-4. [upanishad_kalikopanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_kalikopanishat_ch_1.txt)
-   - Translated Kalikopanishat outlining the Dakshina Kali mantra and yantra.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-5. [upanishad_katha_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_katha_ch_1.txt)
-   - Translated Katha Upanishad (dialogue of Nachiketa and Yama) organized by its 6 Vallis.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-6. [upanishad_katharudra_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_katharudra_ch_1.txt)
-   - Translated Katharudra Upanishad describing the sannyasi's vows, staff rules, and five sheaths (Koshas).
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-7. [upanishad_kena_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_kena_ch_1.txt)
-   - Translated Kena Upanishad organized by its 4 Khandas.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-8. [upanishad_krishnopan_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_krishnopan_ch_1.txt)
-   - Translated Krishna Upanishad (Rama to Krishna, demon symbolism, Sankarshana/Shesha creation).
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-9. [upanishad_kumaropanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_kumaropanishat_ch_1.txt)
-   - Rewrote Kumaropanishat completely, removing the interspersed English explanations, and replacing them with standard clean Sanskrit verses and structured Kannada Shabdartha & Bhavartha.
-   - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
-10. [upanishad_kundika_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_kundika_ch_1.txt)
-    - Translated Kundika Upanishad detailing the transition to sannyasa, elemental creation, and sannyasi's self-identity.
-    - Added `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` sections.
-
----
+This ensures that the reader app correctly renders the translations and explanations aligned with each individual verse.
 
 ## Verification Results
 
-We verified the completion of Batch 6 by running:
-`python "C:\Users\goure\.gemini\antigravity\brain\fcebfe0c-6765-4c98-b670-f333b885c095\scratch\check_shabdartha_bhavartha.py"`
+### Character Cleanliness & Audits
+- Ran a strict character audit across all 98 modified files.
+- Verified that **0 Latin/English letters (A-Z, a-z)**, **0 Devanagari/Hindi letters**, and **0 other foreign characters** are present in any of the chapters.
+- Standardized the Sanskrit punctuation, replacing Sanskrit dandas (`।` and `॥`) with `|` and `||` to prevent rendering issues in standard Kannada text blocks.
 
-### Statistics Progress
-- **Fully Completed Upanishad Books**: Increased from **112** to **122** (+10)
-- **Completed Chapters**: Increased from **117** to **127** (+10)
+### Block Structure Validation
+- Verified that every chapter containing multiple shlokas has multiple corresponding Shabdartha and Bhavartha blocks, while single-shloka chapters correctly retain exactly one set of translation blocks.
+- Cleared out all old, single-summary translation blocks from the end of the files.

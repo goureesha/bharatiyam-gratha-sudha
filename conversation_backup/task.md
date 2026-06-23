@@ -1,16 +1,12 @@
-- [x] Draft translations for Batch 6:
-  - [x] 1. Hayagriva Upanishad
-  - [x] 2. Itihasopanishat
-  - [x] 3. Jabala Upanishad
-  - [x] 4. Kalikopanishat
-  - [x] 5. Katha Upanishad
-  - [x] 6. Katharudra Upanishad
-  - [x] 7. Kena Upanishad
-  - [x] 8. Krishna Upanishad
-  - [x] 9. Kumaropanishat
-  - [x] 10. Kundika Upanishad
-- [x] Create and run `translate_batch_alpha_6.py` to write translations
-- [x] Verify using check scripts
-- [x] Git commit and push with backup
+# Task List - Paramatmikopanishat Shloka-by-Shloka Translation
 
-
+- [x] Define translation subagent
+- [x] Process Batch A: Chapters 1–14
+- [x] Process Batch B: Chapters 15–28
+- [x] Process Batch C: Chapters 29–42
+- [x] Process Batch D: Chapters 43–56
+- [x] Process Batch E: Chapters 57–70
+- [x] Process Batch F: Chapters 71–84
+- [x] Process Batch G: Chapters 85–98
+- [x] Verify all 98 chapters (block counts and characters)
+- [x] Commit & Push to Git
