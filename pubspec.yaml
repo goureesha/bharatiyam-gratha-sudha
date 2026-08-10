@@ -1,7 +1,7 @@
 name: bharatiyam_gratha_sudha
 description: "ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ — Encyclopaedia of Encyclopaedias"
 publish_to: 'none'
-version: 2.1.3+14
+version: 2.1.4+15
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
