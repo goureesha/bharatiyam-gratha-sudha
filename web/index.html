@@ -13,8 +13,21 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <title>ಭಾರತೀಯಂ ಗ್ರಂಥ ಸುಧಾ</title>
   <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = null;
+    // Force unregister stale PWA Service Workers & clear old CacheStorage
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (let name of names) {
+          caches.delete(name);
+        }
+      });
+    }
   </script>
   <script src="flutter_bootstrap.js" async></script>
 </head>
