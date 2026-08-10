@@ -83,58 +83,219 @@ class _ReaderScreenState extends State<ReaderScreen> {
     final blocks = content.split(RegExp(r'\n\s*\n'));
     final List<Widget> widgets = [];
 
-    // Keywords that indicate meaning, word-by-word translation, or notes
-    final leftAlignKeywords = [
-      'ಅರ್ಥ:', 'ಭಾವಾರ್ಥ:', 'ಶಬ್ದಾರ್ಥ:', 'ಪ್ರತಿಪದಾರ್ಥ:', 'ವಿವರಣೆ:', 'ಟಿಪ್ಪಣಿ:',
-      'ಅರ್ಥ', 'ಭಾವಾರ್ಥ', 'ಶಬ್ದಾರ್ಥ', 'ಪ್ರತಿಪದಾರ್ಥ', 'ವಿವರಣೆ', 'ಟಿಪ್ಪಣಿ',
-      'meaning:', 'shabdartha:', 'translation:', 'explanation:', 'note:',
-      'word-by-word:'
-    ];
+    final primaryAccent = isDark ? const Color(0xFFE5A93C) : const Color(0xFFB85D14);
+    final shlokaColor = isDark ? const Color(0xFFF2E6D4) : const Color(0xFF231604);
+    final textColor = isDark ? const Color(0xFFE2DDD5) : const Color(0xFF332616);
 
     for (int i = 0; i < blocks.length; i++) {
       final block = blocks[i].trim();
       if (block.isEmpty) continue;
 
-      final blockLower = block.toLowerCase();
-      
-      // Check if the block should be left-aligned
-      bool alignLeft = false;
-      for (final kw in leftAlignKeywords) {
-        if (blockLower.startsWith(kw)) {
-          alignLeft = true;
-          break;
-        }
-      }
+      final hasShabdartha = block.contains('ಶಬ್ದಾರ್ಥ:') || block.contains('•');
+      final hasBhavartha = block.contains('ಭಾವಾರ್ಥ:');
 
-      // Also left-align if it looks like a list or bullet points
-      if (!alignLeft) {
-        final firstChar = block.isNotEmpty ? block[0] : '';
-        if (firstChar == '-' || firstChar == '*' || firstChar == '•' || RegExp(r'^\d+\.').hasMatch(block)) {
-          alignLeft = true;
-        }
-      }
+      if (hasShabdartha || hasBhavartha) {
+        // Structured Puranic Shloka Block
+        final lines = block.split('\n').map((l) => l.trim()).where((l) => l.isNotEmpty).toList();
+        final List<String> shlokaLines = [];
+        final List<String> shabdarthaLines = [];
+        final List<String> bhavarthaLines = [];
 
-      widgets.add(
-        Padding(
-          padding: EdgeInsets.only(bottom: i == blocks.length - 1 ? 0 : 16),
-          child: Text(
-            block,
-            textAlign: alignLeft ? TextAlign.left : TextAlign.center,
-            style: GoogleFonts.notoSansKannada(
-              fontSize: fontSize,
-              height: 1.9,
-              letterSpacing: 0.3,
-              color: isDark
-                  ? (alignLeft ? const Color(0xFFDCD6CD) : const Color(0xFFE8D5B5))
-                  : (alignLeft ? const Color(0xFF4A3C2A) : const Color(0xFF2D1B00)),
-              fontWeight: alignLeft ? FontWeight.normal : FontWeight.w500,
+        String state = 'SHLOKA';
+        for (final l in lines) {
+          if (l.startsWith('ಶಬ್ದಾರ್ಥ:')) {
+            state = 'SHABDARTHA';
+          } else if (l.startsWith('ಭಾವಾರ್ಥ:')) {
+            state = 'BHAVARTHA';
+            final clean = l.replaceFirst('ಭಾವಾರ್ಥ:', '').trim();
+            if (clean.isNotEmpty) bhavarthaLines.add(clean);
+          } else if (state == 'SHABDARTHA' || l.startsWith('•')) {
+            state = 'SHABDARTHA';
+            if (l != 'ಶಬ್ದಾರ್ಥ:') shabdarthaLines.add(l);
+          } else if (state == 'BHAVARTHA') {
+            bhavarthaLines.add(l);
+          } else {
+            shlokaLines.add(l);
+          }
+        }
+
+        final List<Widget> blockChildren = [];
+
+        // 1. Shloka Text (Centered)
+        if (shlokaLines.isNotEmpty) {
+          blockChildren.add(
+            Text(
+              shlokaLines.join('\n'),
+              textAlign: TextAlign.center,
+              style: GoogleFonts.notoSansKannada(
+                fontSize: fontSize,
+                height: 1.85,
+                letterSpacing: 0.3,
+                color: shlokaColor,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          );
+        }
+
+        // 2. Shabdartha Box (Left Aligned)
+        if (shabdarthaLines.isNotEmpty) {
+          blockChildren.add(const SizedBox(height: 12));
+          blockChildren.add(
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withOpacity(0.04) : Colors.black.withOpacity(0.025),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: primaryAccent.withOpacity(0.2),
+                  width: 1,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'ಶಬ್ದಾರ್ಥ:',
+                    style: GoogleFonts.notoSansKannada(
+                      fontSize: fontSize * 0.88,
+                      fontWeight: FontWeight.bold,
+                      color: primaryAccent,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  ...shabdarthaLines.map((line) {
+                    if (line.contains(' - ')) {
+                      final parts = line.split(' - ');
+                      final left = parts[0].trim();
+                      final right = parts.sublist(1).join(' - ').trim();
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2.5),
+                        child: RichText(
+                          textAlign: TextAlign.left,
+                          text: TextSpan(
+                            style: GoogleFonts.notoSansKannada(
+                              fontSize: fontSize * 0.88,
+                              height: 1.7,
+                              color: textColor,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: '$left ',
+                                style: const TextStyle(fontWeight: FontWeight.w600),
+                              ),
+                              const TextSpan(text: '- '),
+                              TextSpan(text: right),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 2),
+                      child: Text(
+                        line,
+                        textAlign: TextAlign.left,
+                        style: GoogleFonts.notoSansKannada(
+                          fontSize: fontSize * 0.88,
+                          height: 1.7,
+                          color: textColor,
+                        ),
+                      ),
+                    );
+                  }),
+                ],
+              ),
+            ),
+          );
+        }
+
+        // 3. Bhavartha Section (Left Aligned)
+        if (bhavarthaLines.isNotEmpty) {
+          blockChildren.add(const SizedBox(height: 10));
+          final bhavProse = bhavarthaLines.join(' ').trim();
+          blockChildren.add(
+            Align(
+              alignment: Alignment.centerLeft,
+              child: RichText(
+                textAlign: TextAlign.left,
+                text: TextSpan(
+                  style: GoogleFonts.notoSansKannada(
+                    fontSize: fontSize * 0.92,
+                    height: 1.8,
+                    letterSpacing: 0.2,
+                    color: textColor,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'ಭಾವಾರ್ಥ: ',
+                      style: GoogleFonts.notoSansKannada(
+                        fontWeight: FontWeight.bold,
+                        color: primaryAccent,
+                      ),
+                    ),
+                    TextSpan(text: bhavProse),
+                  ],
+                ),
+              ),
+            ),
+          );
+        }
+
+        widgets.add(
+          Padding(
+            padding: EdgeInsets.only(bottom: i == blocks.length - 1 ? 0 : 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: blockChildren,
             ),
           ),
-        ),
-      );
+        );
+      } else {
+        // Regular Text / Non-scripture Block
+        final blockLower = block.toLowerCase();
+        bool alignLeft = false;
+        final leftAlignKeywords = ['ಅರ್ಥ:', 'ಭಾವಾರ್ಥ:', 'ಶಬ್ದಾರ್ಥ:', 'ಪ್ರತಿಪದಾರ್ಥ:', 'ವಿವರಣೆ:', 'ಟಿಪ್ಪಣಿ:'];
+        for (final kw in leftAlignKeywords) {
+          if (blockLower.startsWith(kw)) {
+            alignLeft = true;
+            break;
+          }
+        }
+        if (!alignLeft) {
+          final firstChar = block.isNotEmpty ? block[0] : '';
+          if (firstChar == '-' || firstChar == '*' || firstChar == '•' || RegExp(r'^\d+\.').hasMatch(block)) {
+            alignLeft = true;
+          }
+        }
+
+        widgets.add(
+          Padding(
+            padding: EdgeInsets.only(bottom: i == blocks.length - 1 ? 0 : 16),
+            child: Text(
+              block,
+              textAlign: alignLeft ? TextAlign.left : TextAlign.center,
+              style: GoogleFonts.notoSansKannada(
+                fontSize: fontSize,
+                height: 1.9,
+                letterSpacing: 0.3,
+                color: isDark
+                    ? (alignLeft ? const Color(0xFFDCD6CD) : const Color(0xFFE8D5B5))
+                    : (alignLeft ? const Color(0xFF4A3C2A) : const Color(0xFF2D1B00)),
+                fontWeight: alignLeft ? FontWeight.normal : FontWeight.w500,
+              ),
+            ),
+          ),
+        );
+      }
     }
 
     return widgets;
+  }
+
+  void shloka_lines_add(String l, List<String> list) {
+    list.add(l);
   }
 
   @override
