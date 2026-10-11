@@ -1,37 +1,53 @@
-# Implementation Plan - Shloka-by-Shloka Translation of Paramatmikopanishat
+# Srimad Bhagavata Purana: Skandha 4 (Chapters 1 & 2) Translation Plan
 
-This plan details the process for restructuring and translating all 98 chapters of *Paramatmikopanishat* to have individual, shloka-by-shloka translations. Each verse (shloka) and prose commentary block will have its own **ಶಬ್ದಾರ್ಥ:** (word-by-word meaning) and **ಭಾವಾರ್ಥ:** (overall meaning) interleaved directly underneath it, matching the style of *Annapurna Upanishad*.
+## Overview
+Continue the translation and enrichment of **ಶ್ರೀಮದ್ಭಾಗವತ ಪುರಾಣ (Srimad Bhagavata Purana)** starting from **ಚತುರ್ಥ ಸ್ಕಂಧ (Skandha 4)** according to the established **17-Rule Gold Standard**.
+
+### Scope
+- **Chapter 1** (`purana_bhagavata_skandha4_ch_2.txt`): 66 Shlokas — *ಸ್ವಾಯಂಭುವಮನುವಂಶವರ್ಣನಂ (ಅತ್ರಿ, ಕರ್ದಮ, ದಕ್ಷ ಸಂತತಿ, ನರ-ನಾರಾಯಣ ಅವತಾರ, ಸತೀದೇವಿ)*.
+- **Chapter 2** (`purana_bhagavata_skandha4_ch_4.txt`): 35 Shlokas — *ದಕ್ಷಶಾಪೋ ನಾಮ (ದಕ್ಷ-ಶಿವ ವೈರವರ್ಣನಂ, ನಂದೀಶ್ವರ ಮತ್ತು ಭೃಗು ಮುನಿಗಳ ಪರಸ್ಪರ ಶಾಪಗಳು)*.
+- **Index Update** (`assets/data/scriptures_index.json`): Update chapter titles with clear, descriptive Kannada titles.
+
+---
+
+## The 17 Master Rules & Gold Standard Requirements
+1. **Three-Tier Structure**:
+   - Original Sanskrit Shloka in Kannada script with traditional danda markings (`॥ ೧ ॥`).
+   - `ಶಬ್ದಾರ್ಥ:` with bullet points (`• <Sanskrit word> - <Kannada meaning>`).
+   - `ಭಾವಾರ್ಥ:` with deep, grammatically flawless, natural Kannada sentence explanation.
+2. **Zero Template / Forbidden Words**: No filler phrases like `ವಿಷಯವು`, `ಸಂದರ್ಭದಲ್ಲಿ`, `ವಿವರಣೆ`, `ವಿಷಯನಿಂದ`, `ವಿಷಯದಲ್ಲಿ`.
+3. **Punctuation Standard**: Non-terminal shabdartha bullets end without periods (or with commas); the terminal shabdartha bullet must end with a single period (`.`).
+4. **Clean Scripts**: Zero English / ASCII characters in Kannada fields; zero corrupted agglutinations (e.g., `ನನ್ನುನನ್ನು`, `ನ್ನ್ನು`).
+5. **Colophon**: Faithful preservation of chapter concluding colophons.
+
+---
 
 ## Proposed Changes
 
-We will modify all 98 files of *Paramatmikopanishat* in `assets/data/chapters/`:
-- From [upanishad_paramatmikopanishat_ch_1.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_paramatmikopanishat_ch_1.txt) to [upanishad_paramatmikopanishat_ch_98.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/upanishad_paramatmikopanishat_ch_98.txt)
+### Content & Data Layer
 
-### Execution Strategy
+#### [MODIFY] [purana_bhagavata_skandha4_ch_2.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/purana_bhagavata_skandha4_ch_2.txt)
+- Full word-by-word `ಶಬ್ದಾರ್ಥ` and authentic `ಭಾವಾರ್ಥ` for all 66 shlokas of Skandha 4 Chapter 1.
 
-Since there are 98 chapters, we will divide the work into 7 batches of approximately 14 chapters each:
-- **Batch A:** Chapters 1–14
-- **Batch B:** Chapters 15–28
-- **Batch C:** Chapters 29–42
-- **Batch D:** Chapters 43–56
-- **Batch E:** Chapters 57–70
-- **Batch F:** Chapters 71–84
-- **Batch G:** Chapters 85–98
+#### [MODIFY] [purana_bhagavata_skandha4_ch_4.txt](file:///d:/bharatheeyam%20books/assets/data/chapters/purana_bhagavata_skandha4_ch_4.txt)
+- Full word-by-word `ಶಬ್ದಾರ್ಥ` and authentic `ಭಾವಾರ್ಥ` for all 35 shlokas of Skandha 4 Chapter 2.
 
-We will define a specialized `translation-agent` subagent to process each batch. For each chapter:
-1. Parse the existing file to separate it into distinct Sanskrit text blocks (each ending with `॥` or representing a separate quote/commentary paragraph).
-2. For each block, generate:
-   - **ಶಬ್ದಾರ್ಥ:** listing 3–7 key words/compounds and their direct meanings in Kannada.
-   - **ಭಾವಾರ್ಥ:** a clear, grammatical, and rich Kannada translation of the block.
-3. Rewrite the file by interleaving these blocks directly under their respective Sanskrit text blocks.
-4. Clean and verify that 0 Latin, English, Devanagari, or other foreign characters are present.
+#### [MODIFY] [scriptures_index.json](file:///d:/bharatheeyam%20books/assets/data/scriptures_index.json)
+- Update chapter titles for `purana_bhagavata_skandha4_ch_2` and `purana_bhagavata_skandha4_ch_4`.
+
+---
 
 ## Verification Plan
 
-### Automated Tests
-- **Block Count Check:** A scratch script `verify_paramatmika_shlokas.py` will be run after each batch to verify that the number of `ಶಬ್ದಾರ್ಥ:` and `ಭಾವಾರ್ಥ:` blocks matches the number of shlokas/sections in each modified file.
-- **Character Check:** Check for any non-permitted characters (Latin/English/Devanagari) in the modified files.
-- **Git Diff Review:** Check the git diff of edited files to ensure correct formatting and content.
+### Automated Validation
+- Run a dedicated audit script verifying all 17 Master Rules against the new chapters:
+  - Block count and integrity
+  - Forbidden phrases check
+  - Shabdartha bullet duplicate check
+  - Bullet punctuation period rule check
+  - Bhavartha uniqueness check
+  - English characters check
 
-### Manual Verification
-- Review the Kannada translations in a few sample chapters (e.g., Chapter 1, Chapter 51, Chapter 94) to confirm they are accurate, rich, and follow the exact *Annapurna Upanishad* style.
+```powershell
+python scratch/audit_skandha4_ch1_2.py
+```
