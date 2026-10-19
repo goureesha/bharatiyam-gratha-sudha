@@ -13493,5 +13493,114 @@
         "title": "ಕ್ಷುರಿಕೋಪನಿಷತ್"
       }
     ]
+  },
+  {
+    "id": "grantha_mantra_mahodadhi",
+    "title": "ಮಂತ್ರ ಮಹೋದಧಿ",
+    "titleEn": "Mantra Mahodadhi",
+    "category": "grantha",
+    "icon": "🔱",
+    "chapters": [
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_1",
+        "title": "ಪ್ರಥಮ ತರಂಗಃ — ಭೂತಶುದ್ಧಿ, ಪ್ರಾತಃಕೃತ್ಯ ಮತ್ತು ಗಣಪತಿ ಪೂಜಾವಿಧಾನ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_2",
+        "title": "ದ್ವಿತೀಯ ತರಂಗಃ — ಗಣಪತಿ ಭೇದ, ಉಚ್ಛಿಷ್ಟ ಗಣಪತಿ ಮತ್ತು ಪ್ರಯೋಗಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_3",
+        "title": "ತೃತೀಯ ತರಂಗಃ — ಕಾಳೀ, ಸುಮುಖೀ, ಲಘುಶ್ಯಾಮಲಾ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_4",
+        "title": "ಚತುರ್ಥ ತರಂಗಃ — ತಾರಾ ಮತ್ತು ಏಕಜಟಾ ಮಂತ್ರ ನಿರೂಪಣ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_5",
+        "title": "ಪಂಚಮ ತರಂಗಃ — ಛಿನ್ನಮಸ್ತಾ ಮಂತ್ರ ಮತ್ತು ಪೂಜಾವಿಧಾನ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_6",
+        "title": "ಷಷ್ಠ ತರಂಗಃ — ತ್ರಿಪುರಭೈರವೀ, ಭುವನೇಶ್ವರೀ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_7",
+        "title": "ಸಪ್ತಮ ತರಂಗಃ — ಧೂಮಾವತೀ, ಬಗಳಾಮುಖೀ ಮತ್ತು ಪ್ರತ್ಯಂಗಿರಾ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_8",
+        "title": "ಅಷ್ಟಮ ತರಂಗಃ — ಮಾತಂಗೀ ಮತ್ತು ಕರ್ಣಪಿಶಾಚಿನೀ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_9",
+        "title": "ನವಮ ತರಂಗಃ — ಬಾಲಾ ತ್ರಿಪುರಸುಂದರೀ ಮಂತ್ರ ನಿರೂಪಣ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_10",
+        "title": "ದಶಮ ತರಂಗಃ — ಅನ್ನಪೂರ್ಣಾ ಮತ್ತು ಸ್ವಪ್ನವಾರಾಹೀ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_11",
+        "title": "ಏಕಾದಶ ತರಂಗಃ — ಶ್ರೀವಿದ್ಯಾ ಮಹಾಷೋಡಶೀ ಮಂತ್ರ ನಿರೂಪಣ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_12",
+        "title": "ದ್ವಾದಶ ತರಂಗಃ — ಶ್ರೀಚಕ್ರ ಪೂಜಾವಿಧಾನ ಮತ್ತು ಹೋಮವಿಧಿ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_13",
+        "title": "ತ್ರಯೋದಶ ತರಂಗಃ — ಹನುಮನ್ಮಂತ್ರ ಮತ್ತು ಪ್ರಯೋಗಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_14",
+        "title": "ಚತುರ್ದಶ ತರಂಗಃ — ವಿಷ್ಣು ಮತ್ತು ಗರುಡ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_15",
+        "title": "ಪಂಚದಶ ತರಂಗಃ — ಸೂರ್ಯ, ಗೋಪಾಲ ಮತ್ತು ಕೃಷ್ಣ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_16",
+        "title": "ಷೋಡಶ ತರಂಗಃ — ಶಿವ, ಮೃತ್ಯುಂಜಯ ಮತ್ತು ದಕ್ಷಿಣಾಮೂರ್ತಿ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_17",
+        "title": "ಸಪ್ತದಶ ತರಂಗಃ — ಕಾರ್ತವೀರ್ಯಾರ್ಜುನ ಮಂತ್ರ ಮತ್ತು ಪ್ರಯೋಗಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_18",
+        "title": "ಅಷ್ಟಾದಶ ತರಂಗಃ — ಚಂಡೀ, ಶತಚಂಡೀ ಮತ್ತು ದುರ್ಗಾ ಸಪ್ತಶತೀ ಪ್ರಯೋಗಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_19",
+        "title": "ಏಕೋನವಿಂಶ ತರಂಗಃ — ರೇಣುಕಾ, ಕುಬೇರ ಮತ್ತು ಸ್ವರ್ಣಾಕರ್ಷಣ ಭೈರವ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_20",
+        "title": "ವಿಂಶ ತರಂಗಃ — ಸರ್ವದೇವತಾ ಯಂತ್ರ ರಚನಾ ವಿಧಾನ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_21",
+        "title": "ಏಕವಿಂಶ ತರಂಗಃ — ಸಾಮಾನ್ಯ ಪೂಜಾವಿಧಾನ ಮತ್ತು ದೀಕ್ಷಾ ಸಂಸ್ಕಾರ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_22",
+        "title": "ದ್ವಾವಿಂಶ ತರಂಗಃ — ಪುರಶ್ಚರಣ ವಿಧಿ ಮತ್ತು ತರ್ಪಣ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_23",
+        "title": "ತ್ರಯೋವಿಂಶ ತರಂಗಃ — ಪವಿತ್ರಾರೋಪಣ ಮತ್ತು ದಮನೋತ್ಸವ ವಿಧಿ"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_24",
+        "title": "ಚತುರ್ವಿಂಶ ತರಂಗಃ — ಮಂತ್ರದೋಷಗಳು ಮತ್ತು ಸಂಸ್ಕಾರಗಳು"
+      },
+      {
+        "id": "grantha_mantra_mahodadhi_taranga_25",
+        "title": "ಪಂಚವಿಂಶ ತರಂಗಃ — ಷಟ್ಕರ್ಮ ವಿಧಾನ ಮತ್ತು ಔಷಧ ಪ್ರಯೋಗಗಳು"
+      }
+    ]
   }
 ]

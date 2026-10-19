@@ -38,7 +38,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
 
     try {
       final String content;
-      if (widget.stotra.id.contains('_ch_')) {
+      if (widget.stotra.id.contains('_ch_') ||
+          widget.stotra.id.contains('_taranga_') ||
+          widget.stotra.id.startsWith('grantha_')) {
         // It's a scripture chapter
         final scriptureService = context.read<ScriptureService>();
         content = await scriptureService.loadChapterContent(widget.stotra.id);
@@ -100,6 +102,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
         final List<String> shlokaLines = [];
         final List<String> shabdarthaLines = [];
         final List<String> bhavarthaLines = [];
+        final List<String> vyakhyanaLines = [];
 
         String state = 'SHLOKA';
         for (final l in lines) {
@@ -109,11 +112,19 @@ class _ReaderScreenState extends State<ReaderScreen> {
             state = 'BHAVARTHA';
             final clean = l.replaceFirst('ಭಾವಾರ್ಥ:', '').trim();
             if (clean.isNotEmpty) bhavarthaLines.add(clean);
-          } else if (state == 'SHABDARTHA' || l.startsWith('•')) {
+          } else if (l.startsWith('ಮಹೀಧರರ') ||
+                     l.startsWith('ನೌಕಾ ವ್ಯಾಖ್ಯಾನ:') ||
+                     l.startsWith('ವ್ಯಾಖ್ಯಾನ:')) {
+            state = 'VYAKHYANA';
+            final clean = l.replaceFirst(RegExp(r'^(ಮಹೀಧರರ\s*[\x27\u2018\u2019]?ನೌಕಾ[\x27\u2018\u2019]?\s*ವ್ಯಾಖ್ಯಾನ(\s*\(ಕನ್ನಡ ಸಾರಾಂಶ\))?:?|ನೌಕಾ ವ್ಯಾಖ್ಯಾನ:|ವ್ಯಾಖ್ಯಾನ:)'), '').trim();
+            if (clean.isNotEmpty) vyakhyanaLines.add(clean);
+          } else if (state == 'SHABDARTHA' || (state != 'BHAVARTHA' && state != 'VYAKHYANA' && l.startsWith('•'))) {
             state = 'SHABDARTHA';
             if (l != 'ಶಬ್ದಾರ್ಥ:') shabdarthaLines.add(l);
           } else if (state == 'BHAVARTHA') {
             bhavarthaLines.add(l);
+          } else if (state == 'VYAKHYANA') {
+            vyakhyanaLines.add(l);
           } else {
             shlokaLines.add(l);
           }
@@ -238,6 +249,47 @@ class _ReaderScreenState extends State<ReaderScreen> {
                     TextSpan(text: bhavProse),
                   ],
                 ),
+              ),
+            ),
+          );
+        }
+
+        // 4. Vyakhya / Nauka Section (Left Aligned in elegant bordered container)
+        if (vyakhyanaLines.isNotEmpty) {
+          blockChildren.add(const SizedBox(height: 12));
+          blockChildren.add(
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E1730) : const Color(0xFFFAF5EE),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: primaryAccent.withOpacity(0.35),
+                  width: 1,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'ಮಹೀಧರರ \'ನೌಕಾ\' ವ್ಯಾಖ್ಯಾನ:',
+                    style: GoogleFonts.notoSansKannada(
+                      fontSize: fontSize * 0.88,
+                      fontWeight: FontWeight.bold,
+                      color: primaryAccent,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    vyakhyanaLines.join('\n'),
+                    style: GoogleFonts.notoSansKannada(
+                      fontSize: fontSize * 0.88,
+                      height: 1.7,
+                      color: textColor,
+                    ),
+                  ),
+                ],
               ),
             ),
           );

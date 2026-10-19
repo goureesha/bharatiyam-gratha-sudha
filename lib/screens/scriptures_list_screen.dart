@@ -116,7 +116,19 @@ class ScripturesListScreen extends StatelessWidget {
           originalObject: b,
         ));
       }
-    } else if (categoryId == 'charitra') {
+    } else if (categoryId == 'grantha' || categoryId == 'charitra') {
+      final granthas = scriptureService.getByCategory('grantha');
+      for (final b in granthas) {
+        books.add(LibraryBookItem(
+          id: b.id,
+          title: b.title,
+          subtitle: b.titleEn,
+          icon: b.icon,
+          source: 'scripture_service',
+          chapterCount: b.chapters.length,
+          originalObject: b,
+        ));
+      }
       final existingCharitras = ['guru_charitra', 'harikathamrutasara'];
       for (final id in existingCharitras) {
         final cat = stotraService.getCategory(id);

@@ -205,10 +205,10 @@ class _HomeBody extends StatelessWidget {
                     MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'smriti', categoryTitle: 'ಸ್ಮೃತಿಗಳು ಮತ್ತು ನೀತಿಗಳು'))),
               ),
               _ScriptureGridCard(
-                title: 'ಚರಿತ್ರೆಗಳು',
-                icon: '🔱',
+                title: 'ಗ್ರಂಥಗಳು',
+                icon: '📚',
                 onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'charitra', categoryTitle: 'ಚರಿತ್ರೆಗಳು ಮತ್ತು ಇತರ ಗ್ರಂಥಗಳು'))),
+                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'grantha', categoryTitle: 'ಗ್ರಂಥಗಳು — Granthas'))),
               ),
             ],
           ),
@@ -319,7 +319,7 @@ class _LibraryBody extends StatelessWidget {
       {'id': 'upanishad', 'title': 'ಉಪನಿಷತ್ತುಗಳು', 'titleEn': 'Upanishads', 'icon': '🕉️'},
       {'id': 'purana', 'title': 'ಪುರಾಣಗಳು', 'titleEn': 'Puranas', 'icon': '🛕'},
       {'id': 'smriti', 'title': 'ಸ್ಮೃತಿಗಳು ಮತ್ತು ನೀತಿಗಳು', 'titleEn': 'Smritis & Nitis', 'icon': '📜'},
-      {'id': 'charitra', 'title': 'ಚರಿತ್ರೆಗಳು ಮತ್ತು ಇತರ ಗ್ರಂಥಗಳು', 'titleEn': 'Charitras & Others', 'icon': '🔱'},
+      {'id': 'grantha', 'title': 'ಗ್ರಂಥಗಳು', 'titleEn': 'Granthas', 'icon': '📚'},
     ];
 
     return Scaffold(
