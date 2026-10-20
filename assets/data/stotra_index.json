@@ -8046,6 +8046,62 @@
       "icon": "🐘",
       "stotras": [
         {
+          "id": "mantra_ganapati_mahodadhi_sarva",
+          "title": "ಗಣಪತಿ — ಮಂತ್ರ ಮಹೋದಧೋಕ್ತ ಸಮಸ್ತ ಗಣೇಶ ಮಂತ್ರ ರಹಸ್ಯ ಸಂಗ್ರಹ (೧೭ ಮಂತ್ರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_mahaganapati_28",
+          "title": "ಗಣಪತಿ — ಮಹಾಗಣಪತಿ ಅಷ್ಟಾವಿಂಶತ್ಯಕ್ಷರ ಮಂತ್ರ (೨೮ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_vakratunda",
+          "title": "ಗಣಪತಿ — ವಕ್ರತುಂಡ, ರಾಯಸ್ಪೋಷ ಮತ್ತು ಮೇಘೋಲ್ಕಾ ಮಂತ್ರಗಳು",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_ucchishta",
+          "title": "ಗಣಪತಿ — ಉಚ್ಛಿಷ್ಟ ಗಣಪತಿ ಸಕಲ ಮಂತ್ರಗಳು (೯, ೧೦, ೧೨, ೧೯, ೩೨, ೩೭ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_shakti",
+          "title": "ಗಣಪತಿ — ಶಕ್ತಿ ವಿನಾಯಕ ಮಂತ್ರ (ಚತುರ್ಬೀಜ)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_lakshmi",
+          "title": "ಗಣಪತಿ — ಲಕ್ಷ್ಮೀ ಗಣಪತಿ ಅಷ್ಟಾವಿಂಶತ್ಯಕ್ಷರ ಮಂತ್ರ (೨೮ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_trailokyamohana",
+          "title": "ಗಣಪತಿ — ತ್ರೈಲೋಕ್ಯಮೋಹನ ಗಣಪತಿ ದಶಭುಜ ಮಹಾಮಂತ್ರ (೩೩ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_haridra",
+          "title": "ಗಣಪತಿ — ಹರಿದ್ರಾ ಗಣಪತಿ ಮಂತ್ರ ಮತ್ತು ಏಕಾಕ್ಷರ ಬೀಜ (೩೨ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
           "id": "ganapati_SGActivity_6",
           "title": "ಅಂಗಪೂಜಾ .. ನವಶಕ್ತಿ ಪೂಜಾ",
           "font": "brhknd",
@@ -33113,6 +33169,62 @@
       "titleEn": "Mantra",
       "icon": "🕉️",
       "stotras": [
+        {
+          "id": "mantra_ganapati_mahodadhi_sarva",
+          "title": "ಗಣಪತಿ — ಮಂತ್ರ ಮಹೋದಧೋಕ್ತ ಸಮಸ್ತ ಗಣೇಶ ಮಂತ್ರ ರಹಸ್ಯ ಸಂಗ್ರಹ (೧೭ ಮಂತ್ರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_mahaganapati_28",
+          "title": "ಗಣಪತಿ — ಮಹಾಗಣಪತಿ ಅಷ್ಟಾವಿಂಶತ್ಯಕ್ಷರ ಮಂತ್ರ (೨೮ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_vakratunda",
+          "title": "ಗಣಪತಿ — ವಕ್ರತುಂಡ, ರಾಯಸ್ಪೋಷ ಮತ್ತು ಮೇಘೋಲ್ಕಾ ಮಂತ್ರಗಳು",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_ucchishta",
+          "title": "ಗಣಪತಿ — ಉಚ್ಛಿಷ್ಟ ಗಣಪತಿ ಸಕಲ ಮಂತ್ರಗಳು (೯, ೧೦, ೧೨, ೧೯, ೩೨, ೩೭ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_shakti",
+          "title": "ಗಣಪತಿ — ಶಕ್ತಿ ವಿನಾಯಕ ಮಂತ್ರ (ಚತುರ್ಬೀಜ)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_lakshmi",
+          "title": "ಗಣಪತಿ — ಲಕ್ಷ್ಮೀ ಗಣಪತಿ ಅಷ್ಟಾವಿಂಶತ್ಯಕ್ಷರ ಮಂತ್ರ (೨೮ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_trailokyamohana",
+          "title": "ಗಣಪತಿ — ತ್ರೈಲೋಕ್ಯಮೋಹನ ಗಣಪತಿ ದಶಭುಜ ಮಹಾಮಂತ್ರ (೩೩ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
+        {
+          "id": "mantra_ganapati_haridra",
+          "title": "ಗಣಪತಿ — ಹರಿದ್ರಾ ಗಣಪತಿ ಮಂತ್ರ ಮತ್ತು ಏಕಾಕ್ಷರ ಬೀಜ (೩೨ ಅಕ್ಷರಗಳು)",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true
+        },
         {
           "id": "mantra_MantraActivity_109",
           "title": "ಅಂಭ್ರಿಣೀ ಸೂಕ್ತಮ್",
