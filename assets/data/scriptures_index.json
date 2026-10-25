@@ -13602,5 +13602,58 @@
         "title": "ಪಂಚವಿಂಶ ತರಂಗಃ — ಷಟ್ಕರ್ಮ ವಿಧಾನ ಮತ್ತು ಔಷಧ ಪ್ರಯೋಗಗಳು"
       }
     ]
+  },
+  {
+    "id": "grantha_bodhayana_grihyasutra",
+    "title": "ಬೋಧಾಯನ ಗೃಹ್ಯಸೂತ್ರ",
+    "titleEn": "Bodhayana Grihya Sutra",
+    "category": "grantha",
+    "icon": "🔥",
+    "chapters": [
+      {
+        "id": "grantha_bodhayana_grihya_p1_a1",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೧: ಪಾಕಯಜ್ಞ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ವಿವಾಹ ಸಂಸ್ಕಾರ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a2",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೨: ಮಧುಪರ್ಕ, ಅರ್ಘ್ಯಪ್ರದಾನ ಮತ್ತು ಋತ್ವಿಗ್ವರಣ ವಿಧಿ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a3",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೩: ವಿವಾಹ ಅಗ್ನಿಮುಖ ಮತ್ತು ಲೌಕಿಕಾಗ್ನಿ ಸಂಸ್ಕಾರ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a4",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೪: ಪಾಣಿಗ್ರಹಣ, ಅಶ್ಮಾರೋಹಣ ಮತ್ತು ಲಾಜಾಹೋಮ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a5",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೫: ವಧೂ ಗೃಹಪ್ರವೇಶ, ಧ್ರುವ-ಅರುಂಧತೀ ದರ್ಶನ ಮತ್ತು ತ್ರೀರಾತ್ರ ವ್ರತ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a6",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೬: ಚತುರ್ಥೀ ಕರ್ಮ ಮತ್ತು ಪ್ರಾಯಶ್ಚಿತ್ತ ಹೋಮ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a7",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೭: ಗರ್ಭಾಧಾನ ವಿಧಿ ಮತ್ತು ಗರ್ಭಧಾರಣ ಮಂತ್ರಗಳು"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a8",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೮: ಪಂಚಮಾಹ್ಣಿಕ ವಿಧಿ ಮತ್ತು ಉದುಂಬರ ಶಾಂತಿ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a9",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೯: ಪುಂಸವನ ಸಂಸ್ಕಾರ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a10",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೧೦: ಸೀಮಂತೋನ್ನಯನ ಸಂಸ್ಕಾರ"
+      },
+      {
+        "id": "grantha_bodhayana_grihya_p1_a11",
+        "title": "ಪ್ರಥಮ ಪ್ರಶ್ನಃ — ಅಧ್ಯಾಯ ೧೧: ವಿಷ್ಣುಬಲಿ ಮತ್ತು ದ್ವಾದಶನಾಮ ಪೂಜೆ"
+      }
+    ]
   }
 ]
