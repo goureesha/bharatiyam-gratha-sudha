@@ -1996,6 +1996,13 @@
           "unicode": true
         },
         {
+          "id": "rama_RSVActivity_29",
+          "title": "ಅನಂತ ರೂಪಿಣಿ",
+          "font": "brhknd",
+          "source": "RSVActivity",
+          "unicode": true
+        },
+        {
           "id": "vishnu_VishnuActivity_102",
           "title": "ಅನುಸ್ಮೃತಿಃ",
           "font": "brhknd",
@@ -4059,6 +4066,13 @@
           "title": "ಕನಕಧಾರಾ ಸ್ತೋತ್ರ",
           "font": "brhknd",
           "source": "LakshmiActivity",
+          "unicode": true
+        },
+        {
+          "id": "rama_RamaActivity_62",
+          "title": "ಕನಕಾಂಬರ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "RamaActivity",
           "unicode": true
         },
         {
@@ -7835,13 +7849,6 @@
           "unicode": true
         },
         {
-          "id": "devi_LakshmiActivity_70",
-          "title": "ಸೀತೇ ಪ್ರೀತಾ ಭವ",
-          "font": "brhknd",
-          "source": "LakshmiActivity",
-          "unicode": true
-        },
-        {
           "id": "devi_ParvatiActivity_330",
           "title": "ಸುದ್ಯುಮ ರಾಜಸ್ಯ ಶ್ರೀ ದೇವೀ ಸ್ತುತಿ",
           "font": "brhknd",
@@ -10499,6 +10506,13 @@
           "unicode": true
         },
         {
+          "id": "rama_RSSActivity_55",
+          "title": "ವಂದಿಪೆ ಮಾಧವ",
+          "font": "brhknd",
+          "source": "RSSActivity",
+          "unicode": true
+        },
+        {
           "id": "krishna_BGActivity_11",
           "title": "ವಿಭೂತಿ ಯೋಗ",
           "font": "brhknd",
@@ -10913,13 +10927,6 @@
           "unicode": true
         },
         {
-          "id": "rama_RSVActivity_29",
-          "title": "ಅನಂತ ರೂಪಿಣಿ",
-          "font": "brhknd",
-          "source": "RSVActivity",
-          "unicode": true
-        },
-        {
           "id": "rama_RSSActivity_2",
           "title": "ಅನುಪಮ ಆದರ್ಶದ ನುಡಿಯೊಂದಕೆ",
           "font": "brhknd",
@@ -11029,13 +11036,6 @@
           "title": "ಓ ಬಂದ ಶ್ರೀಗುರು",
           "font": "brhknd",
           "source": "RSVActivity",
-          "unicode": true
-        },
-        {
-          "id": "rama_RamaActivity_62",
-          "title": "ಕನಕಾಂಬರ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "RamaActivity",
           "unicode": true
         },
         {
@@ -11585,13 +11585,6 @@
           "unicode": true
         },
         {
-          "id": "rama_RSSActivity_55",
-          "title": "ವಂದಿಪೆ ಮಾಧವ",
-          "font": "brhknd",
-          "source": "RSSActivity",
-          "unicode": true
-        },
-        {
           "id": "rama_RSSActivity_26",
           "title": "ವಂದಿಸುವೆ ಭಗವಾ ಗುಡಿ",
           "font": "brhknd",
@@ -12093,6 +12086,13 @@
           "title": "ಸೀತಾರಾಮ/ವಿವಾಹ ಮಂಗಲಾಷ್ಟಕಂ",
           "font": "brhknd",
           "source": "RamaActivity",
+          "unicode": true
+        },
+        {
+          "id": "devi_LakshmiActivity_70",
+          "title": "ಸೀತೇ ಪ್ರೀತಾ ಭವ",
+          "font": "brhknd",
+          "source": "LakshmiActivity",
           "unicode": true
         },
         {
