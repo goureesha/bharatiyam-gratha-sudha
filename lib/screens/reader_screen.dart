@@ -103,6 +103,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
         final List<String> shabdarthaLines = [];
         final List<String> bhavarthaLines = [];
         final List<String> vyakhyanaLines = [];
+        String vyakhyanaHeader = 'ವ್ಯಾಖ್ಯಾನ:';
 
         String state = 'SHLOKA';
         for (final l in lines) {
@@ -112,12 +113,18 @@ class _ReaderScreenState extends State<ReaderScreen> {
             state = 'BHAVARTHA';
             final clean = l.replaceFirst('ಭಾವಾರ್ಥ:', '').trim();
             if (clean.isNotEmpty) bhavarthaLines.add(clean);
-          } else if (l.startsWith('ಮಹೀಧರರ') ||
+          } else if (l.startsWith('ವ್ಯಾಖ್ಯಾನ') ||
                      l.startsWith('ನೌಕಾ ವ್ಯಾಖ್ಯಾನ:') ||
-                     l.startsWith('ವ್ಯಾಖ್ಯಾನ:')) {
+                     l.startsWith('ಮಹೀಧರರ')) {
             state = 'VYAKHYANA';
-            final clean = l.replaceFirst(RegExp(r'^(ಮಹೀಧರರ\s*[\x27\u2018\u2019]?ನೌಕಾ[\x27\u2018\u2019]?\s*ವ್ಯಾಖ್ಯಾನ(\s*\(ಕನ್ನಡ ಸಾರಾಂಶ\))?:?|ನೌಕಾ ವ್ಯಾಖ್ಯಾನ:|ವ್ಯಾಖ್ಯಾನ:)'), '').trim();
-            if (clean.isNotEmpty) vyakhyanaLines.add(clean);
+            final colonIdx = l.indexOf(':');
+            if (colonIdx != -1) {
+              vyakhyanaHeader = l.substring(0, colonIdx + 1).trim();
+              final clean = l.substring(colonIdx + 1).trim();
+              if (clean.isNotEmpty) vyakhyanaLines.add(clean);
+            } else {
+              vyakhyanaHeader = l.trim();
+            }
           } else if (state == 'SHABDARTHA' || (state != 'BHAVARTHA' && state != 'VYAKHYANA' && l.startsWith('•'))) {
             state = 'SHABDARTHA';
             if (l != 'ಶಬ್ದಾರ್ಥ:') shabdarthaLines.add(l);
@@ -273,7 +280,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'ಮಹೀಧರರ \'ನೌಕಾ\' ವ್ಯಾಖ್ಯಾನ:',
+                    vyakhyanaHeader,
                     style: GoogleFonts.notoSansKannada(
                       fontSize: fontSize * 0.88,
                       fontWeight: FontWeight.bold,
