@@ -109,6 +109,19 @@ class _ReaderScreenState extends State<ReaderScreen> {
         for (final l in lines) {
           if (l.startsWith('ಶಬ್ದಾರ್ಥ:')) {
             state = 'SHABDARTHA';
+            final clean = l.replaceFirst('ಶಬ್ದಾರ್ಥ:', '').trim();
+            if (clean.isNotEmpty) {
+              if (clean.contains(';')) {
+                for (final part in clean.split(';')) {
+                  final p = part.trim();
+                  if (p.isNotEmpty) {
+                    shabdarthaLines.add(p.startsWith('•') ? p : '• $p');
+                  }
+                }
+              } else {
+                shabdarthaLines.add(clean.startsWith('•') ? clean : '• $clean');
+              }
+            }
           } else if (l.startsWith('ಭಾವಾರ್ಥ:')) {
             state = 'BHAVARTHA';
             final clean = l.replaceFirst('ಭಾವಾರ್ಥ:', '').trim();
@@ -184,10 +197,17 @@ class _ReaderScreenState extends State<ReaderScreen> {
                   ),
                   const SizedBox(height: 6),
                   ...shabdarthaLines.map((line) {
-                    if (line.contains(' - ')) {
-                      final parts = line.split(' - ');
+                    final cleanLine = line.trim();
+                    String? sep;
+                    if (cleanLine.contains(' - ')) {
+                      sep = ' - ';
+                    } else if (cleanLine.contains(' = ')) {
+                      sep = ' = ';
+                    }
+                    if (sep != null) {
+                      final parts = cleanLine.split(sep);
                       final left = parts[0].trim();
-                      final right = parts.sublist(1).join(' - ').trim();
+                      final right = parts.sublist(1).join(sep).trim();
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 2.5),
                         child: RichText(
@@ -200,7 +220,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                             ),
                             children: [
                               TextSpan(
-                                text: '$left ',
+                                text: left.startsWith('•') ? '$left ' : '• $left ',
                                 style: const TextStyle(fontWeight: FontWeight.w600),
                               ),
                               const TextSpan(text: '- '),
@@ -213,7 +233,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 2),
                       child: Text(
-                        line,
+                        line.startsWith('•') ? line : '• $line',
                         textAlign: TextAlign.left,
                         style: GoogleFonts.notoSansKannada(
                           fontSize: fontSize * 0.88,
