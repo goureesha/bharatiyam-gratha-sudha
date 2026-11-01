@@ -8,9 +8,9 @@
       "imageAsset": "assets/images/ganesha.png",
       "color": "#FFE65100",
       "count": 213,
-      "shlokaCount": 85,
+      "shlokaCount": 86,
       "mantraCount": 81,
-      "bhajanaCount": 47,
+      "bhajanaCount": 46,
       "stotras": [
         {
           "id": "ganapati_GaneshaActivity_53",
@@ -467,6 +467,15 @@
           "title": "ವಿಘ್ನೇಶ್ವರ ಅಷ್ಟೋತ್ತರ ಶತನಾಮಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
           "source": "GaneshaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "ganapati"
+        },
+        {
+          "id": "bhajana_MBActivity_40",
+          "title": "ವಿಘ್ನೇಶ್ವರ ಸ್ತೋತ್ರ ಸಂಧಿ - ಹರಿಕಥಾಮೃತ ಸಾರ",
+          "font": "brhknd",
+          "source": "MBActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "ganapati"
@@ -1813,15 +1822,6 @@
           "deityId": "ganapati"
         },
         {
-          "id": "bhajana_MBActivity_40",
-          "title": "ವಿಘ್ನೇಶ್ವರ ಸ್ತೋತ್ರ ಸಂಧಿ - ಹರಿಕಥಾಮೃತ ಸಾರ",
-          "font": "brhknd",
-          "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "ganapati"
-        },
-        {
           "id": "ganapati_GaneshaActivity_47",
           "title": "ವಿಘ್ನೇಶ್ವರಾಷ್ಟಕಂ",
           "font": "brhknd",
@@ -1938,10 +1938,10 @@
       "icon": "🔱",
       "imageAsset": "assets/images/shiva.png",
       "color": "#FF37474F",
-      "count": 589,
-      "shlokaCount": 367,
-      "mantraCount": 131,
-      "bhajanaCount": 91,
+      "count": 556,
+      "shlokaCount": 351,
+      "mantraCount": 127,
+      "bhajanaCount": 78,
       "stotras": [
         {
           "id": "shiva_ShivaActivity_167",
@@ -2259,15 +2259,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "ashtottara_AshtottaraActivity_71",
-          "title": "ಉಮಾಮಹೇಶ್ವರೀ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "namasthe_NamasteActivity_201",
           "title": "ಋಷ್ಯಶೃಂಗಾಷ್ಟಕಮ್",
           "font": "brhknd",
@@ -2281,6 +2272,15 @@
           "title": "ಓಂ ನಮಃ ಶಿವಾಯ",
           "font": "brhknd",
           "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "shiva"
+        },
+        {
+          "id": "bhajana_BMActivity_201",
+          "title": "ಓಂ ಮಹಾಪ್ರಾಣ ದೀಪಂ ಶಿವಂ ಶಿವಂ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "shiva"
@@ -2430,24 +2430,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "ashtottara_AshtottaraActivity_244",
-          "title": "ಗುರು ಲಿಂಗವಧೂತ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_161",
-          "title": "ಗುರುಸಾರ್ವಭೌಮ ಶ್ರೀಚಿದಂಬರ ಷಡಕ್ಷರ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "hanumanta_HSActivity_13",
           "title": "ಗೊರವಿಗೆ ಸದ್ಗತಿ ಫಲ",
           "font": "brhknd",
@@ -2502,71 +2484,8 @@
           "deityId": "shiva"
         },
         {
-          "id": "shiva_ShivaActivity_162",
-          "title": "ಚಿದಂಬರ ನವರತ್ನಮಾಲಾ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_160",
-          "title": "ಚಿದಂಬರ ಪಂಚರತ್ನಮಾಲಾ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_ShivaActivity_74",
           "title": "ಚಿದಂಬರ ಪಂಚಾಕ್ಷರ ಸ್ತವಃ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_163",
-          "title": "ಚಿದಂಬರ ಭಕ್ತಾನಂದ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_46",
-          "title": "ಚಿದಂಬರ ಮಂಗಲಾಷ್ಟಕಂ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_44",
-          "title": "ಚಿದಂಬರ ಷಡಕ್ಷರ ಸ್ತೋತ್ರಂ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_165",
-          "title": "ಚಿದಂಬರ ಸಹಸ್ರನಾಮ ಸ್ತವಃ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_45",
-          "title": "ಚಿದಂಬರ ಸುಪ್ರಭಾತ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
           "source": "ShivaActivity",
           "unicode": true,
@@ -3330,6 +3249,15 @@
           "deityId": "shiva"
         },
         {
+          "id": "bhajana_BMActivity_491",
+          "title": "ಮಲೆ ಮಹದೇಶ್ವರ ಸುಪ್ರಭಾತ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "shiva"
+        },
+        {
           "id": "ashtottara_AshtottaraActivity_309",
           "title": "ಮಲ್ಲಾರಿ",
           "font": "brhknd",
@@ -3708,15 +3636,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "namasthe_NamasteActivity_151",
-          "title": "ವಧೂ ವರ ಮಂಗಲಾಷ್ಟಕಮ್",
-          "font": "brhknd",
-          "source": "NamasteActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_ShivaActivity_205",
           "title": "ವರುಣಪ್ರೋಕ್ತಂ ಹಾಲಾಸ್ಯಾಷ್ಟಕಂ",
           "font": "brhknd",
@@ -3955,6 +3874,15 @@
           "title": "ಶಂಕರಾಯ ಮಂಗಳಂ",
           "font": "brhknd",
           "source": "NamasteActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "shiva"
+        },
+        {
+          "id": "bhajana_BMActivity_190",
+          "title": "ಶಂಭೋ ಮಹಾದೇವ ದೇವ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "shiva"
@@ -4311,15 +4239,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "ashtottara_AshtottaraActivity_277",
-          "title": "ಶಿವಕಾಮ ಸುಂದರಿ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_ShivaActivity_13",
           "title": "ಶಿವತಾಂಡವ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
@@ -4482,6 +4401,15 @@
           "deityId": "shiva"
         },
         {
+          "id": "bhajana_BMActivity_520",
+          "title": "ಶಿವಾದ್ವೈತ ಸ್ತೋತ್ರ/ ಓಂಕಾರ ರೂಪಗೆ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "shiva"
+        },
+        {
           "id": "shiva_ShivaActivity_16",
           "title": "ಶಿವಾನಂದಲಹರೀ",
           "font": "brhknd",
@@ -4495,6 +4423,15 @@
           "title": "ಶಿವಾನಂದಲಹರೀ ಭಾವಾರ್ಥ",
           "font": "brhknd",
           "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "shiva"
+        },
+        {
+          "id": "bhajana_BMActivity_838",
+          "title": "ಶಿವಾಪರಾಧ ಸ್ತೋತ್ರ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "shiva"
@@ -4590,8 +4527,8 @@
           "deityId": "shiva"
         },
         {
-          "id": "shiva_ShivaActivity_50",
-          "title": "ಶ್ರೀ ಚಿದಂಬರ ಮಂಗಲಸ್ತವನ",
+          "id": "shiva_ShivaActivity_69",
+          "title": "ಶ್ರೀ ಚಿದಂಬರೇಶ್ವರ ಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
           "source": "ShivaActivity",
           "unicode": true,
@@ -4599,8 +4536,8 @@
           "deityId": "shiva"
         },
         {
-          "id": "shiva_ShivaActivity_69",
-          "title": "ಶ್ರೀ ಚಿದಂಬರೇಶ್ವರ ಸ್ತೋತ್ರಮ್",
+          "id": "shiva_ShivaActivity_135",
+          "title": "ಶ್ರೀ ತ್ರ್ಯಂಬಕಾಷ್ಟಕಂ",
           "font": "brhknd",
           "source": "ShivaActivity",
           "unicode": true,
@@ -4655,15 +4592,6 @@
         {
           "id": "shiva_ShivaActivity_125",
           "title": "ಶ್ರೀ ಮೃತ್ಯುಂಜಯಾಷ್ಟಕಂ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_56",
-          "title": "ಶ್ರೀ ಲಲಿತಾಂಬಾಪರಮೇಶ್ವರ ಸ್ತವಃ",
           "font": "brhknd",
           "source": "ShivaActivity",
           "unicode": true,
@@ -4869,26 +4797,8 @@
           "deityId": "shiva"
         },
         {
-          "id": "shiva_ShivaActivity_166",
-          "title": "ಶ್ರೀಚಿದಂಬರ ಪಂಚಾಕ್ಷರೀ ತ್ರಿಶತೀ ಸ್ತೋತ್ರನಾಮಾವಲಿಃ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_ShivaActivity_132",
           "title": "ಶ್ರೀಭವಾನೀ ಚಂದ್ರಶೇಖರ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_164",
-          "title": "ಶ್ರೀಮಚ್ಚಿದಂಬರ ಕವಚಮ್",
           "font": "brhknd",
           "source": "ShivaActivity",
           "unicode": true,
@@ -4900,24 +4810,6 @@
           "title": "ಶ್ರೀಮಹಾಕಾಲ ಸಹಸ್ರನಾಮಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
           "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "sahasranama_SahasraActivity_31",
-          "title": "ಶ್ರೀಮಹಾರಾಜ್ಞೀ ಶ್ರೀರಾಜರಾಜೇಶ್ವರೀ",
-          "font": "brhknd",
-          "source": "SahasraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "sahasranama_SahasraActivity_30",
-          "title": "ಶ್ರೀಯೋಗನಾಯಿಕಾ / ರಾಜರಾಜೇಶ್ವರೀ",
-          "font": "brhknd",
-          "source": "SahasraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "shiva"
@@ -5058,28 +4950,10 @@
           "deityId": "shiva"
         },
         {
-          "id": "ashtottara_AshtottaraActivity_219",
-          "title": "ಸನ್ನತಿ ಶ್ರೀ ಗುರು ಸೋಮೇಶ್ವರ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_ShivaActivity_136",
           "title": "ಸರ್ವ ಪಾಪ ವ್ಯಪೋಹನ ಸ್ತವಃ",
           "font": "brhknd",
           "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "ashtottara_AshtottaraActivity_319",
-          "title": "ಸರ್ವಮಂಗಳಾ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "shiva"
@@ -5157,28 +5031,10 @@
           "deityId": "shiva"
         },
         {
-          "id": "ashtottara_AshtottaraActivity_69",
-          "title": "ಸಿದ್ಧಲಿಂಗೇಶ್ವರ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_ShivaActivity_61",
           "title": "ಸುವರ್ಣಮಾಲಾ ಸ್ತುತಿಃ",
           "font": "brhknd",
           "source": "ShivaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "shiva"
-        },
-        {
-          "id": "ashtottara_AshtottaraActivity_274",
-          "title": "ಸ್ವತಂತ್ರ ಸಿದ್ಧಲಿಂಗೇಶ್ವರ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "shiva"
@@ -5409,15 +5265,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "mantra_MantraActivity_129",
-          "title": "ಕಲ್ಯಾಣೋತ್ಸವ ಪ್ರವರಾಃ",
-          "font": "brhknd",
-          "source": "MantraActivity",
-          "unicode": true,
-          "type": "mantra",
-          "deityId": "shiva"
-        },
-        {
           "id": "shiva_MahanyasaActivity_0",
           "title": "ಕಳಶಸ್ಥಾಪನಮ್",
           "font": "brhknd",
@@ -5440,15 +5287,6 @@
           "title": "ಕೈವಲ್ಯೋಪನಿಷತ್",
           "font": "brhknd",
           "source": "MantraActivity",
-          "unicode": true,
-          "type": "mantra",
-          "deityId": "shiva"
-        },
-        {
-          "id": "namasthe_NamasteActivity_258",
-          "title": "ಕ್ಷೇತ್ರ ಸಂಕಲ್ಪಾಃ",
-          "font": "brhknd",
-          "source": "NamasteActivity",
           "unicode": true,
           "type": "mantra",
           "deityId": "shiva"
@@ -5895,28 +5733,10 @@
           "deityId": "shiva"
         },
         {
-          "id": "pooja_PoojaActivity_20",
-          "title": "ಯಜ್ಞೋಪವೀತಧಾರಣ ಮಂತ್ರ",
-          "font": "brhknd",
-          "source": "PoojaActivity",
-          "unicode": true,
-          "type": "mantra",
-          "deityId": "shiva"
-        },
-        {
           "id": "pooja_VSActivity_1",
           "title": "ರತ್ನ ಸಿಂಹಾಸನ .. ಶುದ್ಧೋದಕ ಸ್ನಾನಂ",
           "font": "brhknd",
           "source": "VSActivity",
-          "unicode": true,
-          "type": "mantra",
-          "deityId": "shiva"
-        },
-        {
-          "id": "mantra_MantraActivity_82",
-          "title": "ರಾಕ್ಷೋಘ್ನಮ್",
-          "font": "brhknd",
-          "source": "MantraActivity",
           "unicode": true,
           "type": "mantra",
           "deityId": "shiva"
@@ -6426,15 +6246,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_4",
-          "title": "ಅಂಬಿಗ ನಾ ನಿನ್ನ ನಂಬಿದೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
           "id": "bhajana_MBActivity_43",
           "title": "ಅಕ್ಕ ಕೇಳೆ ನಿನ್ನ",
           "font": "brhknd",
@@ -6446,6 +6257,15 @@
         {
           "id": "bhajana_BMActivity_296",
           "title": "ಅಡವಿಯ ಶಿವನೆ ಬಡವಿಯು ನಾನು",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "shiva"
+        },
+        {
+          "id": "bhajana_BMActivity_586",
+          "title": "ಅಮ್ಮ ಗುಮ್ಮ ಬಂದಿಹ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -6471,24 +6291,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_0",
-          "title": "ಆರತಿ ಎತ್ತಿರೆ ನಾರಿಯರೆಲ್ಲರು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_996",
-          "title": "ಆರತಿ ಮಾಡಿರೆ ಬಸವಣ್ಣನಿಗೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
           "id": "bhajana_BMActivity_347",
           "title": "ಈತ ಲಿಂಗದೇವ ಶಿವನು,",
           "font": "brhknd",
@@ -6500,15 +6302,6 @@
         {
           "id": "bhajana_BMActivity_281",
           "title": "ಎಂಥಾ ಚೆಲುವಗೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_297",
-          "title": "ಎಲ್ಲಾ ರೂಪವು ತಾನಂತೆ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -6536,15 +6329,6 @@
         {
           "id": "bhajana_BMActivity_338",
           "title": "ಓಂ ನಮಃ ಶಿವಾಯ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_201",
-          "title": "ಓಂ ಮಹಾಪ್ರಾಣ ದೀಪಂ ಶಿವಂ ಶಿವಂ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -6597,6 +6381,15 @@
           "deityId": "shiva"
         },
         {
+          "id": "bhajana_BMActivity_252",
+          "title": "ಗಿರಿಜಾ ಕಲ್ಯಾಣ ಹಾಡು",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "shiva"
+        },
+        {
           "id": "bhajana_BMActivity_711",
           "title": "ಗೋಕರ್ಣ ಮಹಾತ್ಮೆ",
           "font": "brhknd",
@@ -6617,15 +6410,6 @@
         {
           "id": "bhajana_BMActivity_1020",
           "title": "ಚಿಂತ್ಯಾಕ ಮಾಡುತಿದ್ದಿ ಚಿನ್ಮಯನಿದ್ದಾನೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_388",
-          "title": "ಚಿದಂಬರ ಸ್ತವನ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -6660,15 +6444,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_124",
-          "title": "ತಂಗಿ ಹೋಗೊನ್ನಡಿ ಮುರಗೋಡಕ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
           "id": "bhajana_BMActivity_893",
           "title": "ತಾನೇ ಗೋಕುಲಕೆ ಬಂದ ಶಿವ",
           "font": "brhknd",
@@ -6689,15 +6464,6 @@
         {
           "id": "bhajana_BMActivity_805",
           "title": "ದಯ ಮಾಡೋ ವೀರೇಶ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_602",
-          "title": "ದಾಸ ದಾಸರ ಸಂಗವ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -6867,24 +6633,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_405",
-          "title": "ಭಗವಾನ್ ಸಿದ್ಧಲಿಂಗೇಶ್ವರ ಮಂಗಳಾರತಿ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_176",
-          "title": "ಭಗವಾನ್ ಸಿದ್ಧಲಿಂಗೇಶ್ವರನ ಮಂಗಳಾರತಿ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
           "id": "bhajana_BMActivity_946",
           "title": "ಭಸ್ಮಧಾರಿ ಶಿವನೆ ನೀನು ಭೂತನಾಥ",
           "font": "brhknd",
@@ -6912,24 +6660,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_491",
-          "title": "ಮಲೆ ಮಹದೇಶ್ವರ ಸುಪ್ರಭಾತ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_504",
-          "title": "ಮಹಾಮಂಗಲ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
           "id": "bhajana_BMActivity_942",
           "title": "ಮಾಲತೇಶನ ಆರತಿ ಹಾಡು",
           "font": "brhknd",
@@ -6950,6 +6680,24 @@
         {
           "id": "bhajana_BMActivity_389",
           "title": "ಯಡೂರು ವೀರಭದ್ರಾಷ್ಟಕಂ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "shiva"
+        },
+        {
+          "id": "bhajana_BMActivity_438",
+          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "shiva"
+        },
+        {
+          "id": "bhajana_BMActivity_724",
+          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -7013,24 +6761,6 @@
         {
           "id": "bhajana_BMActivity_1031",
           "title": "ಶಂಕರಾಯ ಮಂಗಳಂ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_105",
-          "title": "ಶಂಕರಾರ್ಯನೆ ಲೋಕಶಂಕರ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_190",
-          "title": "ಶಂಭೋ ಮಹಾದೇವ ದೇವ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -7128,28 +6858,10 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_520",
-          "title": "ಶಿವಾದ್ವೈತ ಸ್ತೋತ್ರ/ ಓಂಕಾರ ರೂಪಗೆ",
+          "id": "bhajana_BMActivity_958",
+          "title": "ಶೀಶ ಗಂಗ ಅರ್ಧಂಗ ಪಾರ್ವತೀ",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_838",
-          "title": "ಶಿವಾಪರಾಧ ಸ್ತೋತ್ರ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "shiva_ShivaActivity_135",
-          "title": "ಶ್ರೀ ತ್ರ್ಯಂಬಕಾಷ್ಟಕಂ",
-          "font": "brhknd",
-          "source": "ShivaActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "shiva"
@@ -7193,15 +6905,6 @@
         {
           "id": "bhajana_BMActivity_514",
           "title": "ಸಿರಿಯಾಳ ಷಷ್ಠಿ ಹಾಡು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_122",
-          "title": "ಸುಮ್ಮನೇ ಬ್ರಹ್ಮವಾಗುವನೇ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -7253,10 +6956,10 @@
       "icon": "🌺",
       "imageAsset": "assets/images/devi.png",
       "color": "#FFAD1457",
-      "count": 1303,
-      "shlokaCount": 851,
+      "count": 1299,
+      "shlokaCount": 865,
       "mantraCount": 184,
-      "bhajanaCount": 268,
+      "bhajanaCount": 250,
       "stotras": [
         {
           "id": "devi_ParvatiActivity_76",
@@ -7947,6 +7650,15 @@
           "title": "ಉತ್ತಮ ಚರಿತ್ರಮ್-ಅಧ್ಯಾಯ-9",
           "font": "brhknd",
           "source": "CSActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "ashtottara_AshtottaraActivity_71",
+          "title": "ಉಮಾಮಹೇಶ್ವರೀ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -8991,6 +8703,15 @@
           "title": "ಜಗನ್ಮಾತಾದೇವಿ ಸ್ತುತಿ",
           "font": "brhknd",
           "source": "ParvatiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "devi_LakshmiActivity_33",
+          "title": "ಜಯ ಕೋಲ್ಹಾಪುರ ಸ್ತೋತ್ರಂ",
+          "font": "brhknd",
+          "source": "LakshmiActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -10139,6 +9860,15 @@
           "deityId": "devi"
         },
         {
+          "id": "bhajana_BMActivity_80",
+          "title": "ನಿತ್ಯಾನಂದಕರಿ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "ashtottara_AshtottaraActivity_168",
           "title": "ನಿಮಿಷಾಂಬಾ",
           "font": "brhknd",
@@ -10692,6 +10422,15 @@
           "title": "ಭಗವತ್ಯಷ್ಟಕಂ",
           "font": "brhknd",
           "source": "ParvatiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "bhajana_BMActivity_414",
+          "title": "ಭಜ ಗಾಯತ್ರೀಂ/ ಶ್ರೀ ಗಾಯತ್ರೀ ಪಂಚರತ್ನಂ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -11597,15 +11336,6 @@
           "deityId": "devi"
         },
         {
-          "id": "devi_LakshmiActivity_98",
-          "title": "ರುಕ್ಮಿಣೀ ಪಾಂಡುರಂಗ ಯುಗಲಾಷ್ಟಕಮ್",
-          "font": "brhknd",
-          "source": "LakshmiActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "devi"
-        },
-        {
           "id": "devi_LakshmiActivity_48",
           "title": "ರುಕ್ಮಿಣೀ ಸಹಸ್ರನಾಮ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
@@ -11804,6 +11534,15 @@
           "deityId": "devi"
         },
         {
+          "id": "bhajana_BMActivity_410",
+          "title": "ಲಲಿತ ಅಕ್ಷರಮಾಲ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "ashtottara_AshtottaraActivity_37",
           "title": "ಲಲಿತಾ",
           "font": "brhknd",
@@ -11862,6 +11601,15 @@
           "title": "ಲಲಿತಾ ದ್ವಾದಶನಾಮ",
           "font": "brhknd",
           "source": "ParvatiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "bhajana_BMActivity_305",
+          "title": "ಲಲಿತಾ ನವವರ್ಣ ಮಾಲಿಕಾ ಸ್ತೋತ್ರಂ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -11943,6 +11691,15 @@
           "title": "ಲಲಿತಾ ಸ್ತುತಿ",
           "font": "brhknd",
           "source": "ParvatiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "bhajana_BMActivity_306",
+          "title": "ಲಲಿತಾ ಸ್ತೋತ್ರಮಾಲಾ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -12519,6 +12276,15 @@
           "title": "ಶಾರದೇ ಕರುಣಾನಿಧೇ",
           "font": "brhknd",
           "source": "SaraswatiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "ashtottara_AshtottaraActivity_277",
+          "title": "ಶಿವಕಾಮ ಸುಂದರಿ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -13208,6 +12974,15 @@
           "deityId": "devi"
         },
         {
+          "id": "bhajana_BMActivity_229",
+          "title": "ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮಿ ಅಷ್ಟಕಂ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "devi_LakshmiActivity_53",
           "title": "ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮೀ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
@@ -13442,10 +13217,28 @@
           "deityId": "devi"
         },
         {
+          "id": "shiva_ShivaActivity_56",
+          "title": "ಶ್ರೀ ಲಲಿತಾಂಬಾಪರಮೇಶ್ವರ ಸ್ತವಃ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "devi_ParvatiActivity_16",
           "title": "ಶ್ರೀ ಲಲಿತಾಪಂಚರತ್ನಂ",
           "font": "brhknd",
           "source": "ParvatiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "bhajana_BMActivity_307",
+          "title": "ಶ್ರೀ ಲಲಿತಾಷ್ಟಕ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -13491,6 +13284,15 @@
           "title": "ಶ್ರೀ ವಾಸವಿ ಕನ್ಯಕಾಪರಮೇಶ್ವರಿ",
           "font": "brhknd",
           "source": "AshtottaraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "devi_ParvatiActivity_291",
+          "title": "ಶ್ರೀ ವಾಸವಿ ಸುಪ್ರಭಾತಂ",
+          "font": "brhknd",
+          "source": "ParvatiActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -13910,6 +13712,15 @@
           "deityId": "devi"
         },
         {
+          "id": "bhajana_BMActivity_113",
+          "title": "ಶ್ರೀದೇವಿ ದಂಡಕವು",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "devi_LakshmiActivity_79",
           "title": "ಶ್ರೀದೇವಿ ಶತಾಷ್ಟಕಂ",
           "font": "brhknd",
@@ -14027,6 +13838,15 @@
           "deityId": "devi"
         },
         {
+          "id": "sahasranama_SahasraActivity_31",
+          "title": "ಶ್ರೀಮಹಾರಾಜ್ಞೀ ಶ್ರೀರಾಜರಾಜೇಶ್ವರೀ",
+          "font": "brhknd",
+          "source": "SahasraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "devi_LakshmiActivity_23",
           "title": "ಶ್ರೀಮಹಾಲಕ್ಷ್ಮೀ ಸುಪ್ರಭಾತಮ್",
           "font": "brhknd",
@@ -14085,6 +13905,15 @@
           "title": "ಶ್ರೀಯಮುನಾಸ್ತವಃ",
           "font": "brhknd",
           "source": "NamasteActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
+          "id": "sahasranama_SahasraActivity_30",
+          "title": "ಶ್ರೀಯೋಗನಾಯಿಕಾ / ರಾಜರಾಜೇಶ್ವರೀ",
+          "font": "brhknd",
+          "source": "SahasraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "devi"
@@ -14522,6 +14351,15 @@
           "deityId": "devi"
         },
         {
+          "id": "ashtottara_AshtottaraActivity_319",
+          "title": "ಸರ್ವಮಂಗಳಾ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "devi"
+        },
+        {
           "id": "ashtottara_AshtottaraActivity_311",
           "title": "ಸಲ್ಲಾಪುರಮ್ಮ ದೇವಿ",
           "font": "brhknd",
@@ -14533,15 +14371,6 @@
         {
           "id": "namasthe_NamasteActivity_217",
           "title": "ಸಾವಿತ್ರೀ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "NamasteActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "devi"
-        },
-        {
-          "id": "namasthe_NamasteActivity_215",
-          "title": "ಸಾವಿತ್ರೀಕೃತ ಯಮಸ್ತೋತ್ರಂ",
           "font": "brhknd",
           "source": "NamasteActivity",
           "unicode": true,
@@ -16718,15 +16547,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_1000",
-          "title": "ಇಂಥಾವಗ್‍ಹ್ಯಾಂಗೆ ಮನಸೋತೆ ಬಲು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_BMActivity_556",
           "title": "ಇಂದಿರೆ ನಿನ್ನ ಪಾದ",
           "font": "brhknd",
@@ -16997,15 +16817,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_252",
-          "title": "ಗಿರಿಜಾ ಕಲ್ಯಾಣ ಹಾಡು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_BMActivity_929",
           "title": "ಗೌರಿ ಆರತಿ ಹಾಡು, ಪೂಜೆ ಮಾಡೋಣ",
           "font": "brhknd",
@@ -17145,15 +16956,6 @@
           "title": "ಜಯ ಅನ್ನಪೂರ್ಣೆ ಜಯಹೇ ಅಪರ್ಣೆ",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "devi_LakshmiActivity_33",
-          "title": "ಜಯ ಕೋಲ್ಹಾಪುರ ಸ್ತೋತ್ರಂ",
-          "font": "brhknd",
-          "source": "LakshmiActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "devi"
@@ -17352,15 +17154,6 @@
           "title": "ತುಲಸೀ ಕೀರ್ತನೆ",
           "font": "brhknd",
           "source": "NamasteActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_433",
-          "title": "ತುಳಸಿ ಸಂಕೀರ್ತನೆ - 1",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "devi"
@@ -17600,15 +17393,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_80",
-          "title": "ನಿತ್ಯಾನಂದಕರಿ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_BMActivity_923",
           "title": "ನಿನಗಿಂತ ಕುಂದೇನೊ",
           "font": "brhknd",
@@ -17638,15 +17422,6 @@
         {
           "id": "bhajana_BMActivity_1015",
           "title": "ನೋಡು ನೋಡು ಕಣ್ಣಾರ ನಿಂತಿಹಳು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_1026",
-          "title": "ಪದುಮನಾಭನ ಹೃದಯ ವಿಹಾರಿಣಿ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -17872,15 +17647,6 @@
         {
           "id": "bhajana_BMActivity_170",
           "title": "ಬ್ರಹ್ಮಶಕ್ತಿ ಶ್ರೀ ಶಾರದೆಯೇ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_414",
-          "title": "ಭಜ ಗಾಯತ್ರೀಂ/ ಶ್ರೀ ಗಾಯತ್ರೀ ಪಂಚರತ್ನಂ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -18212,24 +17978,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_438",
-          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_724",
-          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_MBActivity_83",
           "title": "ರಮಾ ಸಮುದ್ರನ ಕುಮಾರಿ",
           "font": "brhknd",
@@ -18302,24 +18050,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_410",
-          "title": "ಲಲಿತ ಅಕ್ಷರಮಾಲ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_305",
-          "title": "ಲಲಿತಾ ನವವರ್ಣ ಮಾಲಿಕಾ ಸ್ತೋತ್ರಂ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_BMActivity_310",
           "title": "ಲಲಿತಾ ಪೂಜೆ ಹಾಡು ಮತ್ತು ಆರತಿ",
           "font": "brhknd",
@@ -18340,15 +18070,6 @@
         {
           "id": "bhajana_BMActivity_309",
           "title": "ಲಲಿತಾ ಸ್ತುತಿ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_306",
-          "title": "ಲಲಿತಾ ಸ್ತೋತ್ರಮಾಲಾ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -18520,15 +18241,6 @@
         {
           "id": "bhajana_BMActivity_796",
           "title": "ಶೀಗಿ ಗೌರಿ ಹುಣ್ಣಿಮೆ ಹಾಡುಗಳು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_958",
-          "title": "ಶೀಶ ಗಂಗ ಅರ್ಧಂಗ ಪಾರ್ವತೀ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -18716,15 +18428,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_229",
-          "title": "ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮಿ ಅಷ್ಟಕಂ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_MBActivity_79",
           "title": "ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮೀ ದೇವಿ - ಬಾರೆ ನಮ್ಮನಿತನಕ",
           "font": "brhknd",
@@ -18770,28 +18473,10 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_307",
-          "title": "ಶ್ರೀ ಲಲಿತಾಷ್ಟಕ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_BMActivity_116",
           "title": "ಶ್ರೀ ವರಲಕ್ಷ್ಮೀ",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "devi_ParvatiActivity_291",
-          "title": "ಶ್ರೀ ವಾಸವಿ ಸುಪ್ರಭಾತಂ",
-          "font": "brhknd",
-          "source": "ParvatiActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "devi"
@@ -18837,15 +18522,6 @@
           "title": "ಶ್ರೀದುರ್ಗಾದೇವೀ ಸ್ತೋತ್ರ ಸುಳಾದಿ",
           "font": "brhknd",
           "source": "ParvatiActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
-          "id": "bhajana_BMActivity_113",
-          "title": "ಶ್ರೀದೇವಿ ದಂಡಕವು",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "devi"
@@ -18923,15 +18599,6 @@
           "deityId": "devi"
         },
         {
-          "id": "bhajana_BMActivity_700",
-          "title": "ಸ್ತುತಿಮಣಿ ಮಾಲಿಕೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "devi"
-        },
-        {
           "id": "bhajana_BMActivity_469",
           "title": "ಸ್ವರ್ಣ ಗೌರೀದೇವಿಗೆ ಮಡಿಲು ತುಂಬುವ ಹಾಡು",
           "font": "brhknd",
@@ -18994,10 +18661,10 @@
       "icon": "🔵",
       "imageAsset": "assets/images/vishnu.png",
       "color": "#FF1565C0",
-      "count": 807,
-      "shlokaCount": 327,
+      "count": 798,
+      "shlokaCount": 330,
       "mantraCount": 122,
-      "bhajanaCount": 358,
+      "bhajanaCount": 346,
       "stotras": [
         {
           "id": "vishnu_VishnuActivity_66",
@@ -19452,6 +19119,15 @@
         {
           "id": "vishnu_VishnuActivity_151",
           "title": "ತವ್ಯ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "VishnuActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "vishnu"
+        },
+        {
+          "id": "vishnu_VishnuActivity_27",
+          "title": "ತಾಪ ಪಾಪ ನಿವಾರಣ ಸ್ತೋತ್ರ",
           "font": "brhknd",
           "source": "VishnuActivity",
           "unicode": true,
@@ -20341,6 +20017,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "devi_LakshmiActivity_98",
+          "title": "ರುಕ್ಮಿಣೀ ಪಾಂಡುರಂಗ ಯುಗಲಾಷ್ಟಕಮ್",
+          "font": "brhknd",
+          "source": "LakshmiActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "vishnu"
+        },
+        {
           "id": "other_PSActivity_26",
           "title": "ರೇಖಾಪದ್ಧತಿಃ",
           "font": "brhknd",
@@ -20881,6 +20566,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "bhajana_MBActivity_55",
+          "title": "ಶ್ರೀ ಗರುಡದೇವರು",
+          "font": "brhknd",
+          "source": "MBActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "vishnu"
+        },
+        {
           "id": "vishnu_VishnuActivity_23",
           "title": "ಶ್ರೀ ದಧಿವಾಮನ ಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
@@ -21101,24 +20795,6 @@
           "title": "ಶ್ರೀ ವೇಂಕಟೇಶ್ವರ ವಜ್ರಕವಚಂ",
           "font": "brhknd",
           "source": "VenkateshaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "ashtottara_AshtottaraActivity_101",
-          "title": "ಶ್ರೀ ವೇದ ವ್ಯಾಸ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "ashtottara_AshtottaraActivity_236",
-          "title": "ಶ್ರೀ ವೇದ ವ್ಯಾಸ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "vishnu"
@@ -21520,6 +21196,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "vishnu_VenkateshaActivity_27",
+          "title": "ಶ್ರೀವೇಂಕಟೇಶ ಪಾರಿಜಾತ 5",
+          "font": "brhknd",
+          "source": "VenkateshaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "vishnu"
+        },
+        {
           "id": "vishnu_VenkateshaActivity_28",
           "title": "ಶ್ರೀವೇಂಕಟೇಶ ಪಾರಿಜಾತ 6",
           "font": "brhknd",
@@ -21893,6 +21578,15 @@
           "title": "ಹಯಗ್ರೀವ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
           "source": "VishnuActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "vishnu"
+        },
+        {
+          "id": "bhajana_MBActivity_35",
+          "title": "ಹರಿಕಥಾಮೃತಸಾರ - ಮಂಗಳಾಚರಣ ಸಂಧಿ",
+          "font": "brhknd",
+          "source": "MBActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "vishnu"
@@ -23059,6 +22753,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "bhajana_BMActivity_4",
+          "title": "ಅಂಬಿಗ ನಾ ನಿನ್ನ ನಂಬಿದೆ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "vishnu"
+        },
+        {
           "id": "bhajana_BMActivity_195",
           "title": "ಅಚ್ಯುತಂ ಕೇಶವಂ",
           "font": "brhknd",
@@ -23122,15 +22825,6 @@
           "deityId": "vishnu"
         },
         {
-          "id": "bhajana_BMActivity_586",
-          "title": "ಅಮ್ಮ ಗುಮ್ಮ ಬಂದಿಹ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
           "id": "bhajana_MBActivity_151",
           "title": "ಅರಿತವರಿಗತಿ ಸುಲಭ",
           "font": "brhknd",
@@ -23142,15 +22836,6 @@
         {
           "id": "bhajana_BMActivity_225",
           "title": "ಅಲ್ಲಿದೆ ನಮ್ಮ ಮನೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_3",
-          "title": "ಅಳುವುದೇತಕೋ ರಂಗಾ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -23302,6 +22987,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "bhajana_BMActivity_1000",
+          "title": "ಇಂಥಾವಗ್‍ಹ್ಯಾಂಗೆ ಮನಸೋತೆ ಬಲು",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "vishnu"
+        },
+        {
           "id": "bhajana_BMActivity_595",
           "title": "ಇಂದು ನಿನ್ನ ಮೊರೆಯ ಹೊಕ್ಕೆ",
           "font": "brhknd",
@@ -23342,15 +23036,6 @@
           "title": "ಇದನಾದರು ಕೊಡದಿದ್ದರೆ",
           "font": "brhknd",
           "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_596",
-          "title": "ಇದು ಏನಂಗ ಮೋಹನಾಂಗ",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -23594,15 +23279,6 @@
           "title": "ಏನು ಒಲ್ಲೆ ಹರಿಯೇ",
           "font": "brhknd",
           "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_600",
-          "title": "ಏನು ಮಾಡಲೋ ರಂಗ",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -24112,24 +23788,6 @@
           "deityId": "vishnu"
         },
         {
-          "id": "vishnu_VishnuActivity_27",
-          "title": "ತಾಪ ಪಾಪ ನಿವಾರಣ ಸ್ತೋತ್ರ",
-          "font": "brhknd",
-          "source": "VishnuActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_555",
-          "title": "ತಾಳು ತಾಳೆಲೋ ರಂಗಯ್ಯ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
           "id": "bhajana_BMActivity_152",
           "title": "ತಿರುಪತಿ ಯಾತ್ರಾ ವರ್ಣನೆ",
           "font": "brhknd",
@@ -24283,6 +23941,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "bhajana_BMActivity_602",
+          "title": "ದಾಸ ದಾಸರ ಸಂಗವ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "vishnu"
+        },
+        {
           "id": "bhajana_BMActivity_1034",
           "title": "ದಾಸದಾಸರ ಮನೆಯ ದಾಸಾನುದಾಸ ನಾನು",
           "font": "brhknd",
@@ -24332,15 +23999,6 @@
           "title": "ದಾಸೋಹಂ ತವ ದಾಸೋಹಂ",
           "font": "brhknd",
           "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_362",
-          "title": "ದಿನಕರನುದಿಸಿದನು ಧರೆಯೊಳಗೆ",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -24733,6 +24391,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "bhajana_BMActivity_1026",
+          "title": "ಪದುಮನಾಭನ ಹೃದಯ ವಿಹಾರಿಣಿ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "vishnu"
+        },
+        {
           "id": "sridhara_SridharaActivity_41",
           "title": "ಪರಶುರಾಮ ಆರತಿ",
           "font": "brhknd",
@@ -24825,15 +24492,6 @@
         {
           "id": "bhajana_BMActivity_13",
           "title": "ಬಂದದ್ದೆಲ್ಲಾ ಬರಲಿ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_456",
-          "title": "ಬಂದನು ಬಲಿರಾಜನು",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -24935,15 +24593,6 @@
           "title": "ಬಾರಯ್ಯ ಶ್ರೀನಿವಾಸ",
           "font": "brhknd",
           "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_477",
-          "title": "ಬಾರಿಸು ಮುರಲಿಯ ಕೇಶವಾ",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -25336,24 +24985,6 @@
           "deityId": "vishnu"
         },
         {
-          "id": "bhajana_BMActivity_134",
-          "title": "ಯಾರೇ ರಂಗನ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_MBActivity_154",
-          "title": "ರಂಗ ಕೊಳಲನೂದಲಾಗಿ",
-          "font": "brhknd",
-          "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
           "id": "bhajana_BMActivity_393",
           "title": "ರಂಗ ಬಾರೊ ನರಸಿಂಗ ಬಾರೊ",
           "font": "brhknd",
@@ -25374,15 +25005,6 @@
         {
           "id": "bhajana_BMActivity_685",
           "title": "ರಂಗನಾಥನೆ ನೀಲಘನಂಗ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_833",
-          "title": "ರಂಗಯ್ಯ ಮನೆಗೆ ಬಂದರೆ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -25457,15 +25079,6 @@
           "title": "ಲಾಲಿ ಪಾವನ ಚರಣ ಲಾಲಿ",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_MBActivity_185",
-          "title": "ಲಾಲಿ ಶ್ರೀ ಹಯವದನ",
-          "font": "brhknd",
-          "source": "MBActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -25660,15 +25273,6 @@
           "deityId": "vishnu"
         },
         {
-          "id": "bhajana_BMActivity_927",
-          "title": "ವ್ಯಾಸ ಬದರಿನಿವಾಸ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
           "id": "vrata_SNVActivity_33",
           "title": "ವ್ರತದ ಹಾಡು",
           "font": "brhknd",
@@ -25777,15 +25381,6 @@
           "deityId": "vishnu"
         },
         {
-          "id": "bhajana_MBActivity_55",
-          "title": "ಶ್ರೀ ಗರುಡದೇವರು",
-          "font": "brhknd",
-          "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
           "id": "bhajana_BMActivity_1021",
           "title": "ಶ್ರೀ ವೇಂಕಟಾಚಲ ನಿವಾಸ",
           "font": "brhknd",
@@ -25853,15 +25448,6 @@
           "title": "ಶ್ರೀಮನ್ನಾರಾಯಣ",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "vishnu_VenkateshaActivity_27",
-          "title": "ಶ್ರೀವೇಂಕಟೇಶ ಪಾರಿಜಾತ 5",
-          "font": "brhknd",
-          "source": "VenkateshaActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -26029,6 +25615,15 @@
           "deityId": "vishnu"
         },
         {
+          "id": "bhajana_BMActivity_700",
+          "title": "ಸ್ತುತಿಮಣಿ ಮಾಲಿಕೆ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "vishnu"
+        },
+        {
           "id": "bhajana_MBActivity_142",
           "title": "ಸ್ತುತಿಸಬಲ್ಲೆನೆ ನಾ",
           "font": "brhknd",
@@ -26141,15 +25736,6 @@
           "title": "ಹರಿಕಥಾ ಶ್ರವಣ ಮಾಡೋ",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_MBActivity_35",
-          "title": "ಹರಿಕಥಾಮೃತಸಾರ - ಮಂಗಳಾಚರಣ ಸಂಧಿ",
-          "font": "brhknd",
-          "source": "MBActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
@@ -26271,10 +25857,10 @@
       "icon": "🦚",
       "imageAsset": "assets/images/krishna.png",
       "color": "#FF283593",
-      "count": 429,
+      "count": 438,
       "shlokaCount": 152,
       "mantraCount": 31,
-      "bhajanaCount": 246,
+      "bhajanaCount": 255,
       "stotras": [
         {
           "id": "krishna_BGActivity_9",
@@ -27996,6 +27582,15 @@
           "deityId": "krishna"
         },
         {
+          "id": "bhajana_BMActivity_3",
+          "title": "ಅಳುವುದೇತಕೋ ರಂಗಾ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
           "id": "bhajana_MBActivity_117",
           "title": "ಆಡ ಪೊಗೊಣ ಬಾರೊ ರಂಗ",
           "font": "brhknd",
@@ -28304,6 +27899,15 @@
         {
           "id": "bhajana_BMActivity_976",
           "title": "ಏನು ಬೇಡಲಿ ನಿನ್ನ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
+          "id": "bhajana_BMActivity_600",
+          "title": "ಏನು ಮಾಡಲೋ ರಂಗ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -28986,6 +28590,15 @@
           "deityId": "krishna"
         },
         {
+          "id": "bhajana_BMActivity_555",
+          "title": "ತಾಳು ತಾಳೆಲೋ ರಂಗಯ್ಯ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
           "id": "bhajana_BMActivity_802",
           "title": "ತುಲಸಿ ಮಧ್ಯದಿ ಇರುವ",
           "font": "brhknd",
@@ -28999,6 +28612,15 @@
           "title": "ತುಳಸಿ ಮಧ್ಯದಿ ಇರುವ",
           "font": "brhknd",
           "source": "MBActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
+          "id": "bhajana_BMActivity_433",
+          "title": "ತುಳಸಿ ಸಂಕೀರ್ತನೆ - 1",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "krishna"
@@ -29463,6 +29085,15 @@
           "deityId": "krishna"
         },
         {
+          "id": "bhajana_BMActivity_477",
+          "title": "ಬಾರಿಸು ಮುರಲಿಯ ಕೇಶವಾ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
           "id": "bhajana_BMActivity_706",
           "title": "ಬಾರೆ ಸಖಿ ಚಂದ್ರಮುಖಿ",
           "font": "brhknd",
@@ -29823,8 +29454,35 @@
           "deityId": "krishna"
         },
         {
+          "id": "bhajana_BMActivity_134",
+          "title": "ಯಾರೇ ರಂಗನ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
+          "id": "bhajana_MBActivity_154",
+          "title": "ರಂಗ ಕೊಳಲನೂದಲಾಗಿ",
+          "font": "brhknd",
+          "source": "MBActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
           "id": "bhajana_BMActivity_1052",
           "title": "ರಂಗನ ನೋಡಿರೆ ರಾಜಕುವರ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
+          "id": "bhajana_BMActivity_833",
+          "title": "ರಂಗಯ್ಯ ಮನೆಗೆ ಬಂದರೆ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -29845,6 +29503,15 @@
           "title": "ರಾಧೆ ಗೋವಿಂದ",
           "font": "brhknd",
           "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "krishna"
+        },
+        {
+          "id": "bhajana_MBActivity_185",
+          "title": "ಲಾಲಿ ಶ್ರೀ ಹಯವದನ",
+          "font": "brhknd",
+          "source": "MBActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "krishna"
@@ -30146,10 +29813,10 @@
       "icon": "🏹",
       "imageAsset": "assets/images/rama.png",
       "color": "#FF2E7D32",
-      "count": 169,
-      "shlokaCount": 83,
+      "count": 173,
+      "shlokaCount": 86,
       "mantraCount": 5,
-      "bhajanaCount": 81,
+      "bhajanaCount": 82,
       "stotras": [
         {
           "id": "namasthe_NamasteActivity_237",
@@ -30674,6 +30341,15 @@
           "deityId": "rama"
         },
         {
+          "id": "sridhara_SridharaActivity_3",
+          "title": "ಶ್ರೀರಾಮ ಪಂಚಕಮ್",
+          "font": "brhknd",
+          "source": "SridharaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "rama"
+        },
+        {
           "id": "rama_RamaActivity_7",
           "title": "ಶ್ರೀರಾಮ ಮಂಗಲಂ",
           "font": "brhknd",
@@ -30773,6 +30449,15 @@
           "deityId": "rama"
         },
         {
+          "id": "sridhara_SridharaActivity_4",
+          "title": "ಶ್ರೀರಾಮಭದ್ರ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "SridharaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "rama"
+        },
+        {
           "id": "rama_RamaActivity_8",
           "title": "ಶ್ರೀರಾಮಮಂಗಲಶಾಸನಂ",
           "font": "brhknd",
@@ -30795,6 +30480,15 @@
           "title": "ಶ್ರೀರಾಮಸ್ತುತೀ (ಬ್ರಹ್ಮದೇವಕೃತಂ)",
           "font": "brhknd",
           "source": "RamaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "rama"
+        },
+        {
+          "id": "sridhara_SridharaActivity_2",
+          "title": "ಶ್ರೀರಾಮೋ ವಿಜಯತೇ ರಾಮ",
+          "font": "brhknd",
+          "source": "SridharaActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "rama"
@@ -30973,6 +30667,15 @@
         {
           "id": "bhajana_BMActivity_8",
           "title": "ಆತ್ಮಾರಾಮ ಆನಂದ ರಮಣ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "rama"
+        },
+        {
+          "id": "bhajana_BMActivity_0",
+          "title": "ಆರತಿ ಎತ್ತಿರೆ ನಾರಿಯರೆಲ್ಲರು",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -33288,10 +32991,10 @@
       "icon": "🦁",
       "imageAsset": "assets/images/narasimha.png",
       "color": "#FFEF6C00",
-      "count": 103,
-      "shlokaCount": 70,
-      "mantraCount": 8,
-      "bhajanaCount": 25,
+      "count": 102,
+      "shlokaCount": 69,
+      "mantraCount": 7,
+      "bhajanaCount": 26,
       "stotras": [
         {
           "id": "narasimha_NarasimhaActivity_38",
@@ -33469,15 +33172,6 @@
           "title": "ನವನಾರಸಿಂಹ ಮಂಗಲಶಾಸನಂ",
           "font": "brhknd",
           "source": "NarasimhaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "narasimha"
-        },
-        {
-          "id": "ashtottara_AshtottaraActivity_256",
-          "title": "ನಾಗದೇವ",
-          "font": "brhknd",
-          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "narasimha"
@@ -33960,15 +33654,6 @@
           "deityId": "narasimha"
         },
         {
-          "id": "mantra_MantraActivity_181",
-          "title": "ಬ್ರಾಹ್ಮಣ ಪೂಜಾ ವಿಧಾನಮ್",
-          "font": "brhknd",
-          "source": "MantraActivity",
-          "unicode": true,
-          "type": "mantra",
-          "deityId": "narasimha"
-        },
-        {
           "id": "mantra_MantraActivity_121",
           "title": "ಮನ್ಯುಸೂಕ್ತ ಪುನಶ್ಚರಣ",
           "font": "brhknd",
@@ -33993,6 +33678,15 @@
           "source": "NarasimhaActivity",
           "unicode": true,
           "type": "mantra",
+          "deityId": "narasimha"
+        },
+        {
+          "id": "bhajana_BMActivity_596",
+          "title": "ಇದು ಏನಂಗ ಮೋಹನಾಂಗ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
           "deityId": "narasimha"
         },
         {
@@ -34235,15 +33929,6 @@
       "bhajanaCount": 6,
       "stotras": [
         {
-          "id": "namasthe_NamasteActivity_93",
-          "title": "ಅಷ್ಟಾದಶ ಪುರಾಣಾನಿ ಸ್ತೋತ್ರಂ",
-          "font": "brhknd",
-          "source": "NamasteActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "subrahmanya"
-        },
-        {
           "id": "kartikeya_KartikeyaActivity_10",
           "title": "ಕಾರ್ತಿಕೇಯ ಸ್ತೋತ್ರಕದಂಬಂ",
           "font": "brhknd",
@@ -34284,6 +33969,15 @@
           "title": "ದೇವಸೇನಾ",
           "font": "brhknd",
           "source": "SahasraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "subrahmanya"
+        },
+        {
+          "id": "ashtottara_AshtottaraActivity_256",
+          "title": "ನಾಗದೇವ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "subrahmanya"
@@ -39100,10 +38794,10 @@
       "icon": "📿",
       "imageAsset": "",
       "color": "#FF8D6E63",
-      "count": 716,
-      "shlokaCount": 551,
+      "count": 741,
+      "shlokaCount": 568,
       "mantraCount": 36,
-      "bhajanaCount": 129,
+      "bhajanaCount": 137,
       "stotras": [
         {
           "id": "rama_RSVActivity_43",
@@ -39826,6 +39520,15 @@
           "deityId": "guru"
         },
         {
+          "id": "ashtottara_AshtottaraActivity_244",
+          "title": "ಗುರು ಲಿಂಗವಧೂತ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "raghavendra_RaghavendraActivity_48",
           "title": "ಗುರುಗುಣಸ್ತವನಮ್",
           "font": "brhknd",
@@ -39893,6 +39596,15 @@
           "title": "ಗುರುವರ್ಯ ದಶಶ್ಲೋಕೀ",
           "font": "brhknd",
           "source": "GuruActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_161",
+          "title": "ಗುರುಸಾರ್ವಭೌಮ ಶ್ರೀಚಿದಂಬರ ಷಡಕ್ಷರ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "ShivaActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -40073,6 +39785,69 @@
           "title": "ಚಿಂತಾಮಣಿ ಪೀಠ ಗುರು ಪರಂಪರಾ ಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
           "source": "GuruActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_162",
+          "title": "ಚಿದಂಬರ ನವರತ್ನಮಾಲಾ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_160",
+          "title": "ಚಿದಂಬರ ಪಂಚರತ್ನಮಾಲಾ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_163",
+          "title": "ಚಿದಂಬರ ಭಕ್ತಾನಂದ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_46",
+          "title": "ಚಿದಂಬರ ಮಂಗಲಾಷ್ಟಕಂ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_44",
+          "title": "ಚಿದಂಬರ ಷಡಕ್ಷರ ಸ್ತೋತ್ರಂ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_165",
+          "title": "ಚಿದಂಬರ ಸಹಸ್ರನಾಮ ಸ್ತವಃ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "shiva_ShivaActivity_45",
+          "title": "ಚಿದಂಬರ ಸುಪ್ರಭಾತ ಸ್ತೋತ್ರಂ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -40640,6 +40415,15 @@
           "title": "ನಾಮಧಾರಕಕೃತ ಶ್ರೀಗುರುಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
           "source": "GuruDSActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "saibaba_SSActivity_67",
+          "title": "ನಾರದೀಯ ಕೀರ್ತನೆ..",
+          "font": "brhknd",
+          "source": "SSActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -41248,6 +41032,15 @@
           "deityId": "guru"
         },
         {
+          "id": "saibaba_SSActivity_79",
+          "title": "ಮದ್ರಾಸಿ ಭಜನ ಮೇಳ ..",
+          "font": "brhknd",
+          "source": "SSActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_126",
           "title": "ಮಧ್ವ ಗುರುಪರಂಪರಾ ಸ್ತೋತ್ರಮ್",
           "font": "brhknd",
@@ -41792,6 +41585,15 @@
           "title": "ವಂದನೆ - ಗೋಧಿ ಹಿಟ್ಟಿನ ಕಥೆ ..",
           "font": "brhknd",
           "source": "SSActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "bhajana_BMActivity_184",
+          "title": "ವಂದೇ ಶ್ರೀ ಚಂದ್ರಶೇಖರಭಾರತೀ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -42499,6 +42301,15 @@
           "deityId": "guru"
         },
         {
+          "id": "shiva_ShivaActivity_50",
+          "title": "ಶ್ರೀ ಚಿದಂಬರ ಮಂಗಲಸ್ತವನ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_147",
           "title": "ಶ್ರೀ ಚೈತನ್ಯ ಶಿಕ್ಷಾಷ್ಟಕ",
           "font": "brhknd",
@@ -42859,6 +42670,24 @@
           "deityId": "guru"
         },
         {
+          "id": "ashtottara_AshtottaraActivity_101",
+          "title": "ಶ್ರೀ ವೇದ ವ್ಯಾಸ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "ashtottara_AshtottaraActivity_236",
+          "title": "ಶ್ರೀ ವೇದ ವ್ಯಾಸ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_60",
           "title": "ಶ್ರೀ ಶಂಕರಭಗವತ್ಪಾದಾಚಾರ್ಯ ಗೀತಂ",
           "font": "brhknd",
@@ -43165,6 +42994,15 @@
           "deityId": "guru"
         },
         {
+          "id": "shiva_ShivaActivity_166",
+          "title": "ಶ್ರೀಚಿದಂಬರ ಪಂಚಾಕ್ಷರೀ ತ್ರಿಶತೀ ಸ್ತೋತ್ರನಾಮಾವಲಿಃ",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_106",
           "title": "ಶ್ರೀದಕ್ಷಿಣಾಮೂರ್ತಿ ಧ್ಯಾನಂ",
           "font": "brhknd",
@@ -43273,6 +43111,15 @@
           "deityId": "guru"
         },
         {
+          "id": "shiva_ShivaActivity_164",
+          "title": "ಶ್ರೀಮಚ್ಚಿದಂಬರ ಕವಚಮ್",
+          "font": "brhknd",
+          "source": "ShivaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_61",
           "title": "ಶ್ರೀಮದಭಿನವ ವಾಗೀಶ ಅಷ್ಟೋತ್ತರ ಶತನಾಮಾವಳೀ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
@@ -43345,15 +43192,6 @@
           "deityId": "guru"
         },
         {
-          "id": "sridhara_SridharaActivity_3",
-          "title": "ಶ್ರೀರಾಮ ಪಂಚಕಮ್",
-          "font": "brhknd",
-          "source": "SridharaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "guru"
-        },
-        {
           "id": "rama_RSVActivity_48",
           "title": "ಶ್ರೀರಾಮಕೃಷ್ಣ ಷಟ್ಕಂ",
           "font": "brhknd",
@@ -43372,28 +43210,10 @@
           "deityId": "guru"
         },
         {
-          "id": "sridhara_SridharaActivity_4",
-          "title": "ಶ್ರೀರಾಮಭದ್ರ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "SridharaActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "guru"
-        },
-        {
           "id": "guru_GuruActivity_45",
           "title": "ಶ್ರೀರಾಮಾನುಜ ಅಷ್ಟೋತ್ತರ ಶತನಾಮ ಸ್ತೋತ್ರಂ",
           "font": "brhknd",
           "source": "GuruActivity",
-          "unicode": true,
-          "type": "shloka",
-          "deityId": "guru"
-        },
-        {
-          "id": "sridhara_SridharaActivity_2",
-          "title": "ಶ್ರೀರಾಮೋ ವಿಜಯತೇ ರಾಮ",
-          "font": "brhknd",
-          "source": "SridharaActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -43583,6 +43403,15 @@
           "title": "ಸದ್ಗುರು ಸಾಯಿಯವರ ಮಹಾತ್ಮೆ,..",
           "font": "brhknd",
           "source": "SSActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "ashtottara_AshtottaraActivity_219",
+          "title": "ಸನ್ನತಿ ಶ್ರೀ ಗುರು ಸೋಮೇಶ್ವರ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -43876,6 +43705,15 @@
           "deityId": "guru"
         },
         {
+          "id": "ashtottara_AshtottaraActivity_69",
+          "title": "ಸಿದ್ಧಲಿಂಗೇಶ್ವರ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
           "id": "rama_RSVActivity_41",
           "title": "ಸಿರಿ ರಾಮಕೃಷ್ಣ ಚರತಲದಿ",
           "font": "brhknd",
@@ -43934,6 +43772,15 @@
           "title": "ಸ್ಥಾವರಲಿಂಗದ ಮಹಾತ್ಮೆಯ ವರ್ಣನೆ",
           "font": "brhknd",
           "source": "RamanaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "guru"
+        },
+        {
+          "id": "ashtottara_AshtottaraActivity_274",
+          "title": "ಸ್ವತಂತ್ರ ಸಿದ್ಧಲಿಂಗೇಶ್ವರ",
+          "font": "brhknd",
+          "source": "AshtottaraActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "guru"
@@ -44425,6 +44272,15 @@
           "deityId": "guru"
         },
         {
+          "id": "bhajana_BMActivity_996",
+          "title": "ಆರತಿ ಮಾಡಿರೆ ಬಸವಣ್ಣನಿಗೆ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
           "id": "bhajana_BMActivity_674",
           "title": "ಆರ್ಯನ್ನ ಯೋಗಧುರ್ಯನ್ನ",
           "font": "brhknd",
@@ -44474,6 +44330,15 @@
           "title": "ಎದ್ದು ಬರುತಾರೆ ನೋಡೆ",
           "font": "brhknd",
           "source": "MBActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
+          "id": "bhajana_BMActivity_297",
+          "title": "ಎಲ್ಲಾ ರೂಪವು ತಾನಂತೆ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "guru"
@@ -44641,6 +44506,15 @@
           "deityId": "guru"
         },
         {
+          "id": "bhajana_BMActivity_388",
+          "title": "ಚಿದಂಬರ ಸ್ತವನ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_88",
           "title": "ಜಗದ್ಗುರೋ ಶ್ರೀ ಶಂಕರ",
           "font": "brhknd",
@@ -44699,6 +44573,15 @@
           "title": "ಜೈ ಜೈ ಶಂಕರಾಚಾರ್ಯ",
           "font": "brhknd",
           "source": "GuruActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
+          "id": "bhajana_BMActivity_124",
+          "title": "ತಂಗಿ ಹೋಗೊನ್ನಡಿ ಮುರಗೋಡಕ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "guru"
@@ -44776,6 +44659,15 @@
           "deityId": "guru"
         },
         {
+          "id": "bhajana_BMActivity_362",
+          "title": "ದಿನಕರನುದಿಸಿದನು ಧರೆಯೊಳಗೆ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
           "id": "raghavendra_RaghavendraActivity_53",
           "title": "ದೇವಕಿ ನಂದನ ಯಾದವ ಕೃಷ್ಣನ",
           "font": "brhknd",
@@ -44825,15 +44717,6 @@
           "title": "ನಾ ಧನ್ಯನಾದೆನಿಂದು",
           "font": "brhknd",
           "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "guru"
-        },
-        {
-          "id": "saibaba_SSActivity_67",
-          "title": "ನಾರದೀಯ ಕೀರ್ತನೆ..",
-          "font": "brhknd",
-          "source": "SSActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "guru"
@@ -44983,6 +44866,24 @@
           "deityId": "guru"
         },
         {
+          "id": "bhajana_BMActivity_405",
+          "title": "ಭಗವಾನ್ ಸಿದ್ಧಲಿಂಗೇಶ್ವರ ಮಂಗಳಾರತಿ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
+          "id": "bhajana_BMActivity_176",
+          "title": "ಭಗವಾನ್ ಸಿದ್ಧಲಿಂಗೇಶ್ವರನ ಮಂಗಳಾರತಿ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
           "id": "bhajana_BMActivity_950",
           "title": "ಭಜರೆ ಗುರು ಧ್ಯಾನಮ್",
           "font": "brhknd",
@@ -45064,19 +44965,19 @@
           "deityId": "guru"
         },
         {
-          "id": "saibaba_SSActivity_79",
-          "title": "ಮದ್ರಾಸಿ ಭಜನ ಮೇಳ ..",
+          "id": "guru_GuruActivity_110",
+          "title": "ಮಧ್ವ ಗುರುವಂದನ",
           "font": "brhknd",
-          "source": "SSActivity",
+          "source": "GuruActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "guru"
         },
         {
-          "id": "guru_GuruActivity_110",
-          "title": "ಮಧ್ವ ಗುರುವಂದನ",
+          "id": "bhajana_BMActivity_504",
+          "title": "ಮಹಾಮಂಗಲ",
           "font": "brhknd",
-          "source": "GuruActivity",
+          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "guru"
@@ -45226,15 +45127,6 @@
           "deityId": "guru"
         },
         {
-          "id": "bhajana_BMActivity_184",
-          "title": "ವಂದೇ ಶ್ರೀ ಚಂದ್ರಶೇಖರಭಾರತೀ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "guru"
-        },
-        {
           "id": "bhajana_BMActivity_186",
           "title": "ವರಗುರು ಭಾರತೀತೀರ್ಥರ",
           "font": "brhknd",
@@ -45307,6 +45199,15 @@
           "deityId": "guru"
         },
         {
+          "id": "bhajana_BMActivity_927",
+          "title": "ವ್ಯಾಸ ಬದರಿನಿವಾಸ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
           "id": "guru_GuruActivity_30",
           "title": "ಶಂಕರಾಚಾರ್ಯ ಆರತಿ",
           "font": "brhknd",
@@ -45320,6 +45221,15 @@
           "title": "ಶಂಕರಾಚಾರ್ಯ ಆರತಿ",
           "font": "brhknd",
           "source": "GuruActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
+          "id": "bhajana_BMActivity_105",
+          "title": "ಶಂಕರಾರ್ಯನೆ ಲೋಕಶಂಕರ",
+          "font": "brhknd",
+          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "guru"
@@ -45505,6 +45415,15 @@
           "deityId": "guru"
         },
         {
+          "id": "bhajana_BMActivity_122",
+          "title": "ಸುಮ್ಮನೇ ಬ್ರಹ್ಮವಾಗುವನೇ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "guru"
+        },
+        {
           "id": "bhajana_BMActivity_119",
           "title": "ಸ್ಮರಿಸಿ ಬದುಕಿರೋ (ವಿಜಯ ಕವಚ)",
           "font": "brhknd",
@@ -45558,10 +45477,10 @@
       "icon": "🪔",
       "imageAsset": "",
       "color": "#FF546E7A",
-      "count": 398,
-      "shlokaCount": 173,
-      "mantraCount": 95,
-      "bhajanaCount": 130,
+      "count": 407,
+      "shlokaCount": 178,
+      "mantraCount": 100,
+      "bhajanaCount": 129,
       "stotras": [
         {
           "id": "ashtottara_AshtottaraActivity_123",
@@ -45766,6 +45685,15 @@
           "title": "ಅರವತ್ತು",
           "font": "brhknd",
           "source": "SankhyaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "other"
+        },
+        {
+          "id": "namasthe_NamasteActivity_93",
+          "title": "ಅಷ್ಟಾದಶ ಪುರಾಣಾನಿ ಸ್ತೋತ್ರಂ",
+          "font": "brhknd",
+          "source": "NamasteActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "other"
@@ -46086,6 +46014,15 @@
           "deityId": "other"
         },
         {
+          "id": "bhajana_BMActivity_450",
+          "title": "ದೇವತಾ ತಾರತಮ್ಯ ಸ್ತೋತ್ರಮ್",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "other"
+        },
+        {
           "id": "namasthe_NamasteActivity_269",
           "title": "ದೇವತಾ ವಿಸರ್ಜನೆ/ ಉದ್ವಾಸನೆ",
           "font": "brhknd",
@@ -46099,6 +46036,15 @@
           "title": "ಧನ್ಯಾಷ್ಟಕಂ",
           "font": "brhknd",
           "source": "NamasteActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "other"
+        },
+        {
+          "id": "rama_RSSActivity_0",
+          "title": "ನಮಸ್ತೇ ಸದಾ ವತ್ಸಲೇ",
+          "font": "brhknd",
+          "source": "RSSActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "other"
@@ -46563,6 +46509,15 @@
           "deityId": "other"
         },
         {
+          "id": "namasthe_NamasteActivity_151",
+          "title": "ವಧೂ ವರ ಮಂಗಲಾಷ್ಟಕಮ್",
+          "font": "brhknd",
+          "source": "NamasteActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "other"
+        },
+        {
           "id": "ashtottara_AshtottaraActivity_151",
           "title": "ವರುಣ ದೇವ",
           "font": "brhknd",
@@ -46864,6 +46819,15 @@
           "title": "ಸಾಮವೇದ 3",
           "font": "brhknd",
           "source": "SamaActivity",
+          "unicode": true,
+          "type": "shloka",
+          "deityId": "other"
+        },
+        {
+          "id": "namasthe_NamasteActivity_215",
+          "title": "ಸಾವಿತ್ರೀಕೃತ ಯಮಸ್ತೋತ್ರಂ",
+          "font": "brhknd",
+          "source": "NamasteActivity",
           "unicode": true,
           "type": "shloka",
           "deityId": "other"
@@ -47391,10 +47355,28 @@
           "deityId": "other"
         },
         {
+          "id": "mantra_MantraActivity_129",
+          "title": "ಕಲ್ಯಾಣೋತ್ಸವ ಪ್ರವರಾಃ",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true,
+          "type": "mantra",
+          "deityId": "other"
+        },
+        {
           "id": "mantra_MantraActivity_110",
           "title": "ಕ್ರಿಮಿ ಜಂಭಕ ಸೂಕ್ತಂ",
           "font": "brhknd",
           "source": "MantraActivity",
+          "unicode": true,
+          "type": "mantra",
+          "deityId": "other"
+        },
+        {
+          "id": "namasthe_NamasteActivity_258",
+          "title": "ಕ್ಷೇತ್ರ ಸಂಕಲ್ಪಾಃ",
+          "font": "brhknd",
+          "source": "NamasteActivity",
           "unicode": true,
           "type": "mantra",
           "deityId": "other"
@@ -47679,6 +47661,15 @@
           "deityId": "other"
         },
         {
+          "id": "mantra_MantraActivity_181",
+          "title": "ಬ್ರಾಹ್ಮಣ ಪೂಜಾ ವಿಧಾನಮ್",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true,
+          "type": "mantra",
+          "deityId": "other"
+        },
+        {
           "id": "mantra_MantraActivity_54",
           "title": "ಭೃಗುವಲ್ಲೀ",
           "font": "brhknd",
@@ -47778,6 +47769,15 @@
           "deityId": "other"
         },
         {
+          "id": "pooja_PoojaActivity_20",
+          "title": "ಯಜ್ಞೋಪವೀತಧಾರಣ ಮಂತ್ರ",
+          "font": "brhknd",
+          "source": "PoojaActivity",
+          "unicode": true,
+          "type": "mantra",
+          "deityId": "other"
+        },
+        {
           "id": "namasthe_NamasteActivity_276",
           "title": "ಯಮ ತ್ರಯೋದಶೀ ದೀಪದಾನ ಮಂತ್ರ",
           "font": "brhknd",
@@ -47789,6 +47789,15 @@
         {
           "id": "mantra_MantraActivity_81",
           "title": "ರಕ್ಷೋಘ್ನ ಮಂತ್ರ/ಸೂಕ್ತಂ",
+          "font": "brhknd",
+          "source": "MantraActivity",
+          "unicode": true,
+          "type": "mantra",
+          "deityId": "other"
+        },
+        {
+          "id": "mantra_MantraActivity_82",
+          "title": "ರಾಕ್ಷೋಘ್ನಮ್",
           "font": "brhknd",
           "source": "MantraActivity",
           "unicode": true,
@@ -48435,15 +48444,6 @@
           "deityId": "other"
         },
         {
-          "id": "bhajana_BMActivity_450",
-          "title": "ದೇವತಾ ತಾರತಮ್ಯ ಸ್ತೋತ್ರಮ್",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "other"
-        },
-        {
           "id": "rama_RSSActivity_16",
           "title": "ದೇಶ ನನ್ನದು",
           "font": "brhknd",
@@ -48498,15 +48498,6 @@
           "deityId": "other"
         },
         {
-          "id": "rama_RSSActivity_0",
-          "title": "ನಮಸ್ತೇ ಸದಾ ವತ್ಸಲೇ",
-          "font": "brhknd",
-          "source": "RSSActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "other"
-        },
-        {
           "id": "namasthe_NamasteActivity_191",
           "title": "ನಹಿ ರೇ ಶಂಕಾ ಕಾಚಿತ್",
           "font": "brhknd",
@@ -48545,6 +48536,15 @@
         {
           "id": "bhajana_BMActivity_732",
           "title": "ಫಲವನೆರೆದರು/ ಸಂಕ್ರಾಂತಿ ಹಾಡು",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "other"
+        },
+        {
+          "id": "bhajana_BMActivity_456",
+          "title": "ಬಂದನು ಬಲಿರಾಜನು",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
