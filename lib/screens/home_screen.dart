@@ -5,12 +5,14 @@ import '../services/stotra_service.dart';
 import '../services/bookmark_service.dart';
 import '../services/scripture_service.dart';
 import '../models/stotra.dart';
+import '../models/svara_mantra.dart';
 import 'category_screen.dart';
 import 'bookmarks_screen.dart';
 import 'settings_screen.dart';
 import 'search_screen.dart';
 import 'veda_browser_screen.dart';
 import 'scriptures_list_screen.dart';
+import 'svara_category_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -312,13 +314,13 @@ class _HomeBody extends StatelessWidget {
               children: [
                 const Expanded(
                   child: Text(
-                    'ಮಂತ್ರಗಳು ಮತ್ತು ಪೂಜೆ — Mantras',
+                    'ವೈದಿಕ ಮಂತ್ರಗಳು & ಸೂಕ್ತಗಳು — Mantras',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
                 TextButton.icon(
                   onPressed: () => onSwitchTab(3),
-                  icon: const Icon(Icons.self_improvement_rounded, size: 16),
+                  icon: const Icon(Icons.auto_awesome_rounded, size: 16),
                   label: const Text('ಎಲ್ಲಾ ನೋಡಿ'),
                 ),
               ],
@@ -696,7 +698,7 @@ class _StotrasBody extends StatelessWidget {
   }
 }
 
-// ===================== TAB 4: MANTRAS (Deity Grid -> Tab 1) =====================
+// ===================== TAB 4: MANTRAS (Vedic Svara Categories & Deity Grid) =====================
 class _MantrasBody extends StatelessWidget {
   const _MantrasBody();
 
@@ -707,39 +709,342 @@ class _MantrasBody extends StatelessWidget {
       return const Center(child: CircularProgressIndicator());
     }
 
+    final svaraCatalog = stotraService.svaraCatalog;
     final categories = stotraService.categoriesWithMantras;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('ದೇವತಾ ಮಂತ್ರಗಳು ಮತ್ತು ಪೂಜೆ — Mantras',
-                style: TextStyle(fontSize: 18)),
-            Text('ಒಟ್ಟು ${stotraService.totalMantras} ಮಂತ್ರಗಳು ಮತ್ತು ವ್ರತಗಳು',
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('ವೈದಿಕ ಮಂತ್ರಗಳು — Mantras',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text(
+                'ಒಟ್ಟು ${stotraService.totalSvaraMantras} ಸಸ್ವರ ವೈದಿಕ ಮಂತ್ರಗಳು',
                 style: const TextStyle(
-                    fontSize: 12, fontWeight: FontWeight.normal)),
+                    fontSize: 12, fontWeight: FontWeight.normal),
+              ),
+            ],
+          ),
+          bottom: const TabBar(
+            indicatorWeight: 3,
+            tabs: [
+              Tab(
+                icon: Icon(Icons.auto_awesome_rounded, size: 18),
+                text: 'ವೈದಿಕ ವರ್ಗಗಳು',
+              ),
+              Tab(
+                icon: Icon(Icons.grid_view_rounded, size: 18),
+                text: 'ದೇವತಾನುಸಾರ',
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            // 1. Vedic Svara Categories Tab
+            _buildVedicSvaraCategoriesTab(context, stotraService, svaraCatalog, isDark),
+
+            // 2. Deity Grid Tab
+            _buildDeityGridTab(context, categories),
           ],
         ),
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(12),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 12,
-          crossAxisSpacing: 12,
-          childAspectRatio: 1.38,
+    );
+  }
+
+  Widget _buildVedicSvaraCategoriesTab(
+    BuildContext context,
+    StotraService stotraService,
+    SvaraCatalog? svaraCatalog,
+    bool isDark,
+  ) {
+    final categories = svaraCatalog?.categories ?? [];
+
+    return ListView(
+      padding: const EdgeInsets.all(12),
+      children: [
+        // Hero Card: The Four Vedas (Chaturveda Samhitas)
+        Container(
+          margin: const EdgeInsets.only(bottom: 14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              colors: isDark
+                  ? [const Color(0xFF2E1B4E), const Color(0xFF1E1035)]
+                  : [const Color(0xFFFFF7ED), const Color(0xFFFEF3C7)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            border: Border.all(
+              color: const Color(0xFFF59E0B).withOpacity(0.4),
+              width: 1.2,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFFF59E0B).withOpacity(0.12),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const VedaBrowserScreen(),
+                ),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 52,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF59E0B).withOpacity(0.18),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'ॐ',
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFD97706),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'ಚತುರ್ವೇದ ಸಂಹಿತೆಗಳು',
+                              style: GoogleFonts.notoSansKannada(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: isDark ? Colors.white : const Color(0xFF78350F),
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFD97706),
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: const Text(
+                                'ವೇದಗಳು',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'ಋಗ್ವೇದ, ಯಜುರ್ವೇದ, ಸಾಮವೇದ, ಅಥರ್ವವೇದ (ಸಂಪೂರ್ಣ ಸಸ್ವರ ಸಂಹಿತೆಗಳು)',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: isDark ? Colors.white70 : const Color(0xFF92400E),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 16,
+                    color: Color(0xFFD97706),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final cat = categories[index];
-          return _DeityCard(
-            category: cat,
-            initialTabIndex: 1,
-            subtitleOverride: '${cat.mantras.length} ಮಂತ್ರಗಳು',
-          );
-        },
+
+        // Section Title
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+          child: Row(
+            children: [
+              const Icon(Icons.stars_rounded, size: 18, color: Color(0xFFD97706)),
+              const SizedBox(width: 6),
+              Text(
+                'ಸಸ್ವರ ವೈದಿಕ ಮಂತ್ರ ವಿಭಾಗಗಳು',
+                style: GoogleFonts.notoSansKannada(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 6),
+
+        // The 6 Vedic Svara Categories
+        ...categories.map((cat) => _buildSvaraCategoryCard(context, cat, isDark)),
+      ],
+    );
+  }
+
+  Widget _buildSvaraCategoryCard(
+    BuildContext context,
+    SvaraCategory cat,
+    bool isDark,
+  ) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF140D26) : Colors.white,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withOpacity(0.06)
+              : Colors.grey.withOpacity(0.12),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(isDark ? 0.2 : 0.03),
+            blurRadius: 6,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => SvaraCategoryScreen(category: cat),
+              ),
+            );
+          },
+          child: IntrinsicHeight(
+            child: Row(
+              children: [
+                // Left accent strip
+                Container(
+                  width: 5,
+                  color: cat.color,
+                ),
+                const SizedBox(width: 12),
+                // Category Icon
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: cat.color.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    cat.iconData,
+                    color: cat.color,
+                    size: 24,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                // Titles & Subtitles
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                cat.title,
+                                style: GoogleFonts.notoSansKannada(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: cat.color.withOpacity(0.12),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                '${cat.count} ಮಂತ್ರಗಳು',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                  color: cat.color,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          cat.subtitle,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: isDark ? Colors.white60 : Colors.black54,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Icon(
+                  Icons.chevron_right_rounded,
+                  size: 20,
+                  color: Colors.grey,
+                ),
+                const SizedBox(width: 10),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDeityGridTab(BuildContext context, List<StotraCategory> categories) {
+    return GridView.builder(
+      padding: const EdgeInsets.all(12),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 12,
+        crossAxisSpacing: 12,
+        childAspectRatio: 1.38,
+      ),
+      itemCount: categories.length,
+      itemBuilder: (context, index) {
+        final cat = categories[index];
+        return _DeityCard(
+          category: cat,
+          initialTabIndex: 1,
+          subtitleOverride: '${cat.mantras.length} ಮಂತ್ರಗಳು',
+        );
+      },
     );
   }
 }

@@ -2,16 +2,19 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/stotra.dart';
+import '../models/svara_mantra.dart';
 
 class StotraService extends ChangeNotifier {
   List<StotraCategory> _mainCategories = [];
   List<StotraCategory> _extrasCategories = [];
+  SvaraCatalog? _svaraCatalog;
   bool _isLoaded = false;
 
   List<StotraCategory> get mainCategories => _mainCategories;
   List<StotraCategory> get extrasCategories => _extrasCategories;
   List<StotraCategory> get allCategories =>
       [..._mainCategories, ..._extrasCategories];
+  SvaraCatalog? get svaraCatalog => _svaraCatalog;
   bool get isLoaded => _isLoaded;
 
   int get totalStotras =>
@@ -25,6 +28,12 @@ class StotraService extends ChangeNotifier {
 
   int get totalBhajanas =>
       _mainCategories.fold(0, (sum, cat) => sum + cat.bhajanas.length);
+
+  int get totalSvaraMantras =>
+      _svaraCatalog?.totalItems ?? allSvaraMantras.length;
+
+  List<Stotra> get allSvaraMantras =>
+      allCategories.expand((c) => c.stotras).where((s) => s.hasSvara).toList();
 
   List<StotraCategory> get categoriesWithShlokas =>
       _mainCategories.where((c) => c.shlokas.isNotEmpty).toList();
@@ -54,9 +63,18 @@ class StotraService extends ChangeNotifier {
               .toList() ??
           [];
 
+      try {
+        final svaraStr =
+            await rootBundle.loadString('assets/data/svara_mantras.json');
+        final svaraData = json.decode(svaraStr) as Map<String, dynamic>;
+        _svaraCatalog = SvaraCatalog.fromJson(svaraData);
+      } catch (se) {
+        debugPrint('⚠️ Warning loading svara mantras: $se');
+      }
+
       _isLoaded = true;
       debugPrint(
-          '📚 Loaded $totalStotras stotras in ${allCategories.length} categories from local JSON');
+          '📚 Loaded $totalStotras stotras in ${allCategories.length} categories ($totalSvaraMantras svara mantras) from local JSON');
       notifyListeners();
     } catch (e) {
       debugPrint('❌ Error loading stotra data: $e');

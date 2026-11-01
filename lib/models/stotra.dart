@@ -5,6 +5,7 @@ class StotraCategory {
   final String titleEn;
   final String icon;
   final int count;
+  final int svaraCount;
   final List<Stotra> stotras;
 
   const StotraCategory({
@@ -13,6 +14,7 @@ class StotraCategory {
     required this.titleEn,
     required this.icon,
     required this.count,
+    this.svaraCount = 0,
     required this.stotras,
   });
 
@@ -24,6 +26,9 @@ class StotraCategory {
 
   List<Stotra> get bhajanas =>
       stotras.where((s) => s.type == 'bhajana').toList();
+
+  List<Stotra> get svaraMantras =>
+      stotras.where((s) => s.hasSvara).toList();
 
   bool get hasSubTypes =>
       stotras.any((s) => s.type == 'mantra' || s.type == 'bhajana');
@@ -43,6 +48,7 @@ class StotraCategory {
       titleEn: json['titleEn'] ?? json['englishTitle'] ?? '',
       icon: json['icon'] ?? '',
       count: json['count'] ?? stotras.length,
+      svaraCount: json['svaraCount'] ?? 0,
       stotras: stotras,
     );
   }
@@ -57,6 +63,7 @@ class Stotra {
   final String categoryId;
   final String categoryTitle;
   final String type; // 'shloka', 'mantra', or 'bhajana'
+  final bool hasSvara;
 
   const Stotra({
     required this.id,
@@ -67,6 +74,7 @@ class Stotra {
     required this.categoryId,
     required this.categoryTitle,
     this.type = 'shloka',
+    this.hasSvara = false,
   });
 
   factory Stotra.fromJson(
@@ -83,6 +91,7 @@ class Stotra {
       categoryId: categoryId,
       categoryTitle: categoryTitle,
       type: json['type'] ?? 'shloka',
+      hasSvara: json['has_svara'] == true || json['hasSvara'] == true,
     );
   }
 }
