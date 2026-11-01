@@ -1938,10 +1938,10 @@
       "icon": "🔱",
       "imageAsset": "assets/images/shiva.png",
       "color": "#FF37474F",
-      "count": 556,
+      "count": 554,
       "shlokaCount": 351,
       "mantraCount": 127,
-      "bhajanaCount": 78,
+      "bhajanaCount": 76,
       "stotras": [
         {
           "id": "shiva_ShivaActivity_167",
@@ -6687,24 +6687,6 @@
           "deityId": "shiva"
         },
         {
-          "id": "bhajana_BMActivity_438",
-          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
-          "id": "bhajana_BMActivity_724",
-          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "shiva"
-        },
-        {
           "id": "bhajana_BMActivity_857",
           "title": "ರುದ್ರಾ ವೀರಭದ್ರ",
           "font": "brhknd",
@@ -6956,10 +6938,10 @@
       "icon": "🌺",
       "imageAsset": "assets/images/devi.png",
       "color": "#FFAD1457",
-      "count": 1299,
+      "count": 1303,
       "shlokaCount": 865,
       "mantraCount": 184,
-      "bhajanaCount": 250,
+      "bhajanaCount": 254,
       "stotras": [
         {
           "id": "devi_ParvatiActivity_76",
@@ -16547,6 +16529,15 @@
           "deityId": "devi"
         },
         {
+          "id": "bhajana_BMActivity_1000",
+          "title": "ಇಂಥಾವಗ್‍ಹ್ಯಾಂಗೆ ಮನಸೋತೆ ಬಲು",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "devi"
+        },
+        {
           "id": "bhajana_BMActivity_556",
           "title": "ಇಂದಿರೆ ನಿನ್ನ ಪಾದ",
           "font": "brhknd",
@@ -17429,6 +17420,15 @@
           "deityId": "devi"
         },
         {
+          "id": "bhajana_BMActivity_1026",
+          "title": "ಪದುಮನಾಭನ ಹೃದಯ ವಿಹಾರಿಣಿ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "devi"
+        },
+        {
           "id": "bhajana_BMActivity_807",
           "title": "ಪಾರ್ವತಿ ದಕ್ಷ ಕುಮಾರಿ",
           "font": "brhknd",
@@ -17971,6 +17971,24 @@
         {
           "id": "bhajana_BMActivity_1051",
           "title": "ರಂಗರಾಜ ರಮಣಿ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "devi"
+        },
+        {
+          "id": "bhajana_BMActivity_438",
+          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
+          "font": "brhknd",
+          "source": "BMActivity",
+          "unicode": true,
+          "type": "bhajana",
+          "deityId": "devi"
+        },
+        {
+          "id": "bhajana_BMActivity_724",
+          "title": "ರಜತಾದ್ರಿ ನಿಲಯನ",
           "font": "brhknd",
           "source": "BMActivity",
           "unicode": true,
@@ -18661,10 +18679,10 @@
       "icon": "🔵",
       "imageAsset": "assets/images/vishnu.png",
       "color": "#FF1565C0",
-      "count": 798,
+      "count": 796,
       "shlokaCount": 330,
       "mantraCount": 122,
-      "bhajanaCount": 346,
+      "bhajanaCount": 344,
       "stotras": [
         {
           "id": "vishnu_VishnuActivity_66",
@@ -22987,15 +23005,6 @@
           "deityId": "vishnu"
         },
         {
-          "id": "bhajana_BMActivity_1000",
-          "title": "ಇಂಥಾವಗ್‍ಹ್ಯಾಂಗೆ ಮನಸೋತೆ ಬಲು",
-          "font": "brhknd",
-          "source": "BMActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
           "id": "bhajana_BMActivity_595",
           "title": "ಇಂದು ನಿನ್ನ ಮೊರೆಯ ಹೊಕ್ಕೆ",
           "font": "brhknd",
@@ -24386,15 +24395,6 @@
           "title": "ಪಂಢರಾಪುರವೆಂಬ ದೊಡ್ಡ ನಗರ",
           "font": "brhknd",
           "source": "MBActivity",
-          "unicode": true,
-          "type": "bhajana",
-          "deityId": "vishnu"
-        },
-        {
-          "id": "bhajana_BMActivity_1026",
-          "title": "ಪದುಮನಾಭನ ಹೃದಯ ವಿಹಾರಿಣಿ",
-          "font": "brhknd",
-          "source": "BMActivity",
           "unicode": true,
           "type": "bhajana",
           "deityId": "vishnu"
