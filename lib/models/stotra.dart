@@ -16,18 +16,31 @@ class StotraCategory {
     required this.stotras,
   });
 
+  List<Stotra> get shlokas =>
+      stotras.where((s) => s.type == 'shloka').toList();
+
+  List<Stotra> get mantras =>
+      stotras.where((s) => s.type == 'mantra').toList();
+
+  List<Stotra> get bhajanas =>
+      stotras.where((s) => s.type == 'bhajana').toList();
+
+  bool get hasSubTypes =>
+      stotras.any((s) => s.type == 'mantra' || s.type == 'bhajana');
+
   factory StotraCategory.fromJson(Map<String, dynamic> json) {
     final stotras = (json['stotras'] as List<dynamic>?)
-        ?.map((s) => Stotra.fromJson(
-              Map<String, dynamic>.from(s),
-              categoryId: json['id'] ?? '',
-              categoryTitle: json['title'] ?? '',
-            ))
-        .toList() ?? [];
+            ?.map((s) => Stotra.fromJson(
+                  Map<String, dynamic>.from(s),
+                  categoryId: json['id'] ?? '',
+                  categoryTitle: json['title'] ?? '',
+                ))
+            .toList() ??
+        [];
     return StotraCategory(
       id: json['id'] ?? '',
       title: json['title'] ?? '',
-      titleEn: json['titleEn'] ?? '',
+      titleEn: json['titleEn'] ?? json['englishTitle'] ?? '',
       icon: json['icon'] ?? '',
       count: json['count'] ?? stotras.length,
       stotras: stotras,
@@ -43,6 +56,7 @@ class Stotra {
   final bool isUnicode;
   final String categoryId;
   final String categoryTitle;
+  final String type; // 'shloka', 'mantra', or 'bhajana'
 
   const Stotra({
     required this.id,
@@ -52,6 +66,7 @@ class Stotra {
     required this.isUnicode,
     required this.categoryId,
     required this.categoryTitle,
+    this.type = 'shloka',
   });
 
   factory Stotra.fromJson(
@@ -67,6 +82,7 @@ class Stotra {
       isUnicode: json['unicode'] == true,
       categoryId: categoryId,
       categoryTitle: categoryTitle,
+      type: json['type'] ?? 'shloka',
     );
   }
 }

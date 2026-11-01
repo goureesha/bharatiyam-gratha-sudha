@@ -29,10 +29,19 @@ class _SearchScreenState extends State<SearchScreen> {
     });
   }
 
+  String _typeLabel(String type) {
+    switch (type) {
+      case 'mantra':
+        return 'ಮಂತ್ರ / ಪೂಜೆ';
+      case 'bhajana':
+        return 'ಭಜನೆ';
+      default:
+        return 'ಶ್ಲೋಕ / ಸ್ತೋತ್ರ';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         title: TextField(
@@ -40,7 +49,7 @@ class _SearchScreenState extends State<SearchScreen> {
           autofocus: true,
           style: const TextStyle(color: Colors.white, fontSize: 18),
           decoration: const InputDecoration(
-            hintText: 'ಸ್ತೋತ್ರ ಹುಡುಕಿ...',
+            hintText: 'ಶ್ಲೋಕ, ಮಂತ್ರ ಅಥವಾ ಭಜನೆ ಹುಡುಕಿ...',
             hintStyle: TextStyle(color: Colors.white60),
             border: InputBorder.none,
           ),
@@ -69,7 +78,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           .primary
                           .withOpacity(0.3)),
                   const SizedBox(height: 16),
-                  Text('ಸ್ತೋತ್ರದ ಹೆಸರು ಟೈಪ್ ಮಾಡಿ',
+                  Text('ಶ್ಲೋಕ, ಮಂತ್ರ ಅಥವಾ ಭಜನೆಯ ಹೆಸರು ಟೈಪ್ ಮಾಡಿ',
                       style: Theme.of(context).textTheme.bodyLarge),
                 ],
               ),
@@ -104,10 +113,13 @@ class _SearchScreenState extends State<SearchScreen> {
                                 overflow: TextOverflow.ellipsis,
                                 height: 1.3,
                               ),
-                        subtitle: Text(stotra.categoryTitle,
-                            style: TextStyle(
-                                fontSize: 12,
-                                color: Theme.of(context).colorScheme.primary)),
+                        subtitle: Text(
+                          '${stotra.categoryTitle} · ${_typeLabel(stotra.type)}',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(

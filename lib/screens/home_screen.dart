@@ -6,7 +6,6 @@ import '../services/bookmark_service.dart';
 import '../services/scripture_service.dart';
 import '../models/stotra.dart';
 import 'category_screen.dart';
-import 'extras_screen.dart';
 import 'bookmarks_screen.dart';
 import 'settings_screen.dart';
 import 'search_screen.dart';
@@ -22,13 +21,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
+  void _switchTab(int index) {
+    setState(() => _currentIndex = index);
+  }
+
   @override
   Widget build(BuildContext context) {
     final screens = [
-      const _HomeBody(),
+      _HomeBody(onSwitchTab: _switchTab),
       const _LibraryBody(),
-      const _MantrasBody(),
       const _StotrasBody(),
+      const _MantrasBody(),
+      const _BhajanasBody(),
       const BookmarksScreen(),
     ];
     return Scaffold(
@@ -38,14 +42,23 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
+        onTap: _switchTab,
         type: BottomNavigationBarType.fixed,
+        selectedFontSize: 11,
+        unselectedFontSize: 10,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'ಮುಖಪುಟ'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book_rounded), label: 'ಗ್ರಂಥಾಲಯ'),
-          BottomNavigationBarItem(icon: Icon(Icons.self_improvement_rounded), label: 'ಮಂತ್ರಗಳು'),
-          BottomNavigationBarItem(icon: Icon(Icons.music_note_rounded), label: 'ಸ್ತೋತ್ರಗಳು'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_rounded), label: 'ಉಳಿಸಿದವು'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_rounded), label: 'ಮುಖಪುಟ'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.menu_book_rounded), label: 'ಗ್ರಂಥಾಲಯ'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.auto_stories_rounded), label: 'ಶ್ಲೋಕಗಳು'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.self_improvement_rounded), label: 'ಮಂತ್ರಗಳು'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.music_note_rounded), label: 'ಭಜನೆಗಳು'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_rounded), label: 'ಉಳಿಸಿದವು'),
         ],
       ),
     );
@@ -54,7 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 // ===================== TAB 1: HOME =====================
 class _HomeBody extends StatelessWidget {
-  const _HomeBody();
+  final ValueChanged<int> onSwitchTab;
+  const _HomeBody({required this.onSwitchTab});
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +82,7 @@ class _HomeBody extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('🕉️', style: const TextStyle(fontSize: 60)),
+              const Text('🕉️', style: TextStyle(fontSize: 60)),
               const SizedBox(height: 20),
               const CircularProgressIndicator(),
               const SizedBox(height: 16),
@@ -79,6 +93,9 @@ class _HomeBody extends StatelessWidget {
         ),
       );
     }
+
+    final bhajanaCategories = stotraService.categoriesWithBhajanas;
+    final mantraCategories = stotraService.categoriesWithMantras;
 
     return CustomScrollView(
       slivers: [
@@ -96,14 +113,21 @@ class _HomeBody extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: isDark
-                      ? [Theme.of(context).colorScheme.surface, Theme.of(context).colorScheme.primary.withOpacity(0.2)]
-                      : [Theme.of(context).colorScheme.primary, Theme.of(context).colorScheme.secondary],
+                      ? [
+                          Theme.of(context).colorScheme.surface,
+                          Theme.of(context).colorScheme.primary.withOpacity(0.2)
+                        ]
+                      : [
+                          Theme.of(context).colorScheme.primary,
+                          Theme.of(context).colorScheme.secondary
+                        ],
                 ),
               ),
               child: const Center(
                 child: Opacity(
                   opacity: 0.12,
-                  child: Text('ॐ', style: TextStyle(fontSize: 100, color: Colors.white)),
+                  child: Text('ॐ',
+                      style: TextStyle(fontSize: 100, color: Colors.white)),
                 ),
               ),
             ),
@@ -122,11 +146,11 @@ class _HomeBody extends StatelessWidget {
           ],
         ),
 
-        // Stats bar
+        // Stats bar (Shlokas, Mantras, Bhajanas, Bookmarks)
         SliverToBoxAdapter(
           child: Container(
             margin: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
               color: isDark ? const Color(0xFF120C24) : Colors.white,
               borderRadius: BorderRadius.circular(16),
@@ -146,17 +170,17 @@ class _HomeBody extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                _StatItem('${stotraService.totalShlokas}', 'ಶ್ಲೋಕಗಳು'),
+                _StatItem('${stotraService.totalMantras}', 'ಮಂತ್ರಗಳು'),
+                _StatItem('${stotraService.totalBhajanas}', 'ಭಜನೆಗಳು'),
                 _StatItem(
-                    '${stotraService.mainCategories.length + stotraService.extrasCategories.length + scriptureService.books.length}',
-                    'ವಿಭಾಗಗಳು'),
-                _StatItem('${stotraService.totalStotras}', 'ಸ್ತೋತ್ರಗಳು'),
-                _StatItem('${context.watch<BookmarkService>().count}', 'ಉಳಿಸಿದ'),
+                    '${context.watch<BookmarkService>().count}', 'ಉಳಿಸಿದ'),
               ],
             ),
           ),
         ),
 
-        // Section: Scriptures Header
+        // Section 1: Scriptures Header (UNTOUCHED)
         const SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
@@ -165,7 +189,7 @@ class _HomeBody extends StatelessWidget {
           ),
         ),
 
-        // Scriptures Grid (3 columns)
+        // Scriptures Grid (3 columns — UNTOUCHED)
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           sliver: SliverGrid.count(
@@ -177,49 +201,161 @@ class _HomeBody extends StatelessWidget {
               _ScriptureGridCard(
                 title: 'ವೇದಗಳು',
                 icon: '🕉️',
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const VedaBrowserScreen())),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const VedaBrowserScreen())),
               ),
               _ScriptureGridCard(
                 title: 'ಗೀತೆಗಳು',
                 icon: '📖',
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'gita', categoryTitle: 'ಗೀತೆಗಳು'))),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const ScripturesListScreen(
+                            categoryId: 'gita', categoryTitle: 'ಗೀತೆಗಳು'))),
               ),
               _ScriptureGridCard(
                 title: 'ಉಪನಿಷತ್ತುಗಳು',
                 icon: '🕉️',
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'upanishad', categoryTitle: 'ಉಪನಿಷತ್ತುಗಳು'))),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const ScripturesListScreen(
+                            categoryId: 'upanishad',
+                            categoryTitle: 'ಉಪನಿಷತ್ತುಗಳು'))),
               ),
               _ScriptureGridCard(
                 title: 'ಪುರಾಣಗಳು',
                 icon: '🛕',
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'purana', categoryTitle: 'ಪುರಾಣಗಳು'))),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const ScripturesListScreen(
+                            categoryId: 'purana', categoryTitle: 'ಪುರಾಣಗಳು'))),
               ),
               _ScriptureGridCard(
                 title: 'ಸ್ಮೃತಿಗಳು',
                 icon: '📜',
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'smriti', categoryTitle: 'ಸ್ಮೃತಿಗಳು ಮತ್ತು ನೀತಿಗಳು'))),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const ScripturesListScreen(
+                            categoryId: 'smriti',
+                            categoryTitle: 'ಸ್ಮೃತಿಗಳು ಮತ್ತು ನೀತಿಗಳು'))),
               ),
               _ScriptureGridCard(
                 title: 'ಗ್ರಂಥಗಳು',
                 icon: '📚',
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ScripturesListScreen(categoryId: 'grantha', categoryTitle: 'ಗ್ರಂಥಗಳು — Granthas'))),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const ScripturesListScreen(
+                            categoryId: 'grantha',
+                            categoryTitle: 'ಗ್ರಂಥಗಳು — Granthas'))),
               ),
             ],
           ),
         ),
 
-        // Section: Deities Header
+        // Section 2: NEW BHAJANA SECTION ON HOME PAGE
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Expanded(
+                  child: Text(
+                    'ಭಜನೆಗಳು — Bhajanas (ದೇವತಾನುಸಾರ)',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                TextButton.icon(
+                  onPressed: () => onSwitchTab(4),
+                  icon: const Icon(Icons.music_note_rounded, size: 16),
+                  label: const Text('ಎಲ್ಲಾ ನೋಡಿ'),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 118,
+            child: ListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              scrollDirection: Axis.horizontal,
+              itemCount: bhajanaCategories.length,
+              separatorBuilder: (_, __) => const SizedBox(width: 10),
+              itemBuilder: (context, index) {
+                final cat = bhajanaCategories[index];
+                return _QuickDeityTypeCard(
+                  category: cat,
+                  count: cat.bhajanas.length,
+                  unitLabel: 'ಭಜನೆಗಳು',
+                  tabIndex: 2,
+                  accentColor: const Color(0xFFD84315),
+                );
+              },
+            ),
+          ),
+        ),
+
+        // Section 3: MANTRAS SECTION ON HOME PAGE
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Expanded(
+                  child: Text(
+                    'ಮಂತ್ರಗಳು ಮತ್ತು ಪೂಜೆ — Mantras',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                TextButton.icon(
+                  onPressed: () => onSwitchTab(3),
+                  icon: const Icon(Icons.self_improvement_rounded, size: 16),
+                  label: const Text('ಎಲ್ಲಾ ನೋಡಿ'),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 118,
+            child: ListView.separated(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              scrollDirection: Axis.horizontal,
+              itemCount: mantraCategories.length,
+              separatorBuilder: (_, __) => const SizedBox(width: 10),
+              itemBuilder: (context, index) {
+                final cat = mantraCategories[index];
+                return _QuickDeityTypeCard(
+                  category: cat,
+                  count: cat.mantras.length,
+                  unitLabel: 'ಮಂತ್ರಗಳು',
+                  tabIndex: 1,
+                  accentColor: const Color(0xFF6A1B9A),
+                );
+              },
+            ),
+          ),
+        ),
+
+        // Section 4: Deities Header (Shlokas, Mantras & Bhajanas)
         const SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.fromLTRB(16, 24, 16, 8),
-            child: Text('ಸ್ತೋತ್ರಗಳು — Deity Stotras',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            child: Text(
+              'ದೇವತಾ ವಿಭಾಗಗಳು — ಶ್ಲೋಕ · ಮಂತ್ರ · ಭಜನೆ',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
 
@@ -231,12 +367,15 @@ class _HomeBody extends StatelessWidget {
               crossAxisCount: 2,
               mainAxisSpacing: 12,
               crossAxisSpacing: 12,
-              childAspectRatio: 1.5,
+              childAspectRatio: 1.42,
             ),
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 final cat = stotraService.mainCategories[index];
-                return _DeityCard(category: cat);
+                return _DeityCard(
+                  category: cat,
+                  initialTabIndex: 0,
+                );
               },
               childCount: stotraService.mainCategories.length,
             ),
@@ -245,6 +384,92 @@ class _HomeBody extends StatelessWidget {
 
         const SliverToBoxAdapter(child: SizedBox(height: 30)),
       ],
+    );
+  }
+}
+
+class _QuickDeityTypeCard extends StatelessWidget {
+  final StotraCategory category;
+  final int count;
+  final String unitLabel;
+  final int tabIndex;
+  final Color accentColor;
+
+  const _QuickDeityTypeCard({
+    required this.category,
+    required this.count,
+    required this.unitLabel,
+    required this.tabIndex,
+    required this.accentColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Material(
+      borderRadius: BorderRadius.circular(16),
+      color: isDark ? const Color(0xFF1A1130) : Colors.white,
+      elevation: 2,
+      shadowColor: Colors.black.withOpacity(isDark ? 0.35 : 0.06),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => CategoryScreen(
+              category: category,
+              initialTabIndex: tabIndex,
+            ),
+          ),
+        ),
+        child: Container(
+          width: 126,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: isDark
+                  ? Colors.white.withOpacity(0.08)
+                  : accentColor.withOpacity(0.18),
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: accentColor.withOpacity(0.12),
+                ),
+                child:
+                    Text(category.icon, style: const TextStyle(fontSize: 20)),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                category.title,
+                style: GoogleFonts.notoSansKannada(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  height: 1.2,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(height: 3),
+              Text(
+                '$count $unitLabel',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? const Color(0xFFF5B041) : accentColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -291,7 +516,8 @@ class _ScriptureGridCard extends StatelessWidget {
                 style: GoogleFonts.notoSansKannada(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.amber.shade300 : const Color(0xFF8B1A2B),
+                  color:
+                      isDark ? Colors.amber.shade300 : const Color(0xFF8B1A2B),
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 2,
@@ -305,7 +531,7 @@ class _ScriptureGridCard extends StatelessWidget {
   }
 }
 
-// ===================== TAB 2: LIBRARY (Vedas, Upanishads, Puranas, Smritis, Gitas) =====================
+// ===================== TAB 2: LIBRARY (Vedas, Upanishads, Puranas, Smritis, Gitas — UNTOUCHED) =====================
 class _LibraryBody extends StatelessWidget {
   const _LibraryBody();
 
@@ -316,10 +542,25 @@ class _LibraryBody extends StatelessWidget {
     final categories = [
       {'id': 'veda', 'title': 'ವೇದಗಳು', 'titleEn': 'Vedas', 'icon': '🕉️'},
       {'id': 'gita', 'title': 'ಗೀತೆಗಳು', 'titleEn': 'Gitas', 'icon': '📖'},
-      {'id': 'upanishad', 'title': 'ಉಪನಿಷತ್ತುಗಳು', 'titleEn': 'Upanishads', 'icon': '🕉️'},
+      {
+        'id': 'upanishad',
+        'title': 'ಉಪನಿಷತ್ತುಗಳು',
+        'titleEn': 'Upanishads',
+        'icon': '🕉️'
+      },
       {'id': 'purana', 'title': 'ಪುರಾಣಗಳು', 'titleEn': 'Puranas', 'icon': '🛕'},
-      {'id': 'smriti', 'title': 'ಸ್ಮೃತಿಗಳು ಮತ್ತು ನೀತಿಗಳು', 'titleEn': 'Smritis & Nitis', 'icon': '📜'},
-      {'id': 'grantha', 'title': 'ಗ್ರಂಥಗಳು', 'titleEn': 'Granthas', 'icon': '📚'},
+      {
+        'id': 'smriti',
+        'title': 'ಸ್ಮೃತಿಗಳು ಮತ್ತು ನೀತಿಗಳು',
+        'titleEn': 'Smritis & Nitis',
+        'icon': '📜'
+      },
+      {
+        'id': 'grantha',
+        'title': 'ಗ್ರಂಥಗಳು',
+        'titleEn': 'Granthas',
+        'icon': '📚'
+      },
     ];
 
     return Scaffold(
@@ -348,11 +589,13 @@ class _LibraryBody extends StatelessWidget {
               ],
             ),
             child: ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               leading: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.08),
+                  color:
+                      Theme.of(context).colorScheme.primary.withOpacity(0.08),
                   shape: BoxShape.circle,
                 ),
                 child: Text(
@@ -382,7 +625,8 @@ class _LibraryBody extends StatelessWidget {
                 if (cat['id'] == 'veda') {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const VedaBrowserScreen()),
+                    MaterialPageRoute(
+                        builder: (_) => const VedaBrowserScreen()),
                   );
                 } else {
                   Navigator.push(
@@ -404,28 +648,47 @@ class _LibraryBody extends StatelessWidget {
   }
 }
 
-// ===================== TAB 3: MANTRAS (Extra categories) =====================
-class _MantrasBody extends StatelessWidget {
-  const _MantrasBody();
+// ===================== TAB 3: SHLOKAS (Deity Grid -> Tab 0) =====================
+class _StotrasBody extends StatelessWidget {
+  const _StotrasBody();
 
   @override
   Widget build(BuildContext context) {
     final stotraService = context.watch<StotraService>();
-    if (!stotraService.isLoaded) return const Center(child: CircularProgressIndicator());
+    if (!stotraService.isLoaded) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    final categories = stotraService.categoriesWithShlokas;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('ಮಂತ್ರಗಳು — Mantras')),
-      body: ListView.builder(
-        itemCount: stotraService.extrasCategories.length,
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('ದೇವತಾ ಶ್ಲೋಕಗಳು — Shlokas & Stotras',
+                style: TextStyle(fontSize: 18)),
+            Text('ಒಟ್ಟು ${stotraService.totalShlokas} ಶ್ಲೋಕಗಳು',
+                style: const TextStyle(
+                    fontSize: 12, fontWeight: FontWeight.normal)),
+          ],
+        ),
+      ),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(12),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
+          childAspectRatio: 1.38,
+        ),
+        itemCount: categories.length,
         itemBuilder: (context, index) {
-          final cat = stotraService.extrasCategories[index];
-          return ListTile(
-            leading: Text(cat.icon, style: const TextStyle(fontSize: 28)),
-            title: Text(cat.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-            subtitle: Text('${cat.titleEn} · ${cat.stotras.length} ಸ್ತೋತ್ರಗಳು'),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (_) => CategoryScreen(category: cat))),
+          final cat = categories[index];
+          return _DeityCard(
+            category: cat,
+            initialTabIndex: 0,
+            subtitleOverride: '${cat.shlokas.length} ಶ್ಲೋಕಗಳು',
           );
         },
       ),
@@ -433,31 +696,96 @@ class _MantrasBody extends StatelessWidget {
   }
 }
 
-// ===================== TAB 4: STOTRAS (Deity Grid) =====================
-class _StotrasBody extends StatelessWidget {
-  const _StotrasBody();
+// ===================== TAB 4: MANTRAS (Deity Grid -> Tab 1) =====================
+class _MantrasBody extends StatelessWidget {
+  const _MantrasBody();
 
   @override
   Widget build(BuildContext context) {
     final stotraService = context.watch<StotraService>();
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    if (!stotraService.isLoaded) {
+      return const Center(child: CircularProgressIndicator());
+    }
 
-    if (!stotraService.isLoaded) return const Center(child: CircularProgressIndicator());
+    final categories = stotraService.categoriesWithMantras;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('ಸ್ತೋತ್ರಗಳು — Deity Stotras')),
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('ದೇವತಾ ಮಂತ್ರಗಳು ಮತ್ತು ಪೂಜೆ — Mantras',
+                style: TextStyle(fontSize: 18)),
+            Text('ಒಟ್ಟು ${stotraService.totalMantras} ಮಂತ್ರಗಳು ಮತ್ತು ವ್ರತಗಳು',
+                style: const TextStyle(
+                    fontSize: 12, fontWeight: FontWeight.normal)),
+          ],
+        ),
+      ),
       body: GridView.builder(
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
-          childAspectRatio: 1.35,
+          childAspectRatio: 1.38,
         ),
-        itemCount: stotraService.mainCategories.length,
+        itemCount: categories.length,
         itemBuilder: (context, index) {
-          final cat = stotraService.mainCategories[index];
-          return _DeityCard(category: cat);
+          final cat = categories[index];
+          return _DeityCard(
+            category: cat,
+            initialTabIndex: 1,
+            subtitleOverride: '${cat.mantras.length} ಮಂತ್ರಗಳು',
+          );
+        },
+      ),
+    );
+  }
+}
+
+// ===================== TAB 5: BHAJANAS (Deity Grid -> Tab 2) =====================
+class _BhajanasBody extends StatelessWidget {
+  const _BhajanasBody();
+
+  @override
+  Widget build(BuildContext context) {
+    final stotraService = context.watch<StotraService>();
+    if (!stotraService.isLoaded) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    final categories = stotraService.categoriesWithBhajanas;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('ದೇವತಾ ಭಜನೆಗಳು — Bhajanas & Kirtanas',
+                style: TextStyle(fontSize: 18)),
+            Text('ಒಟ್ಟು ${stotraService.totalBhajanas} ಭಜನೆಗಳು ಮತ್ತು ದೇವರನಾಮಗಳು',
+                style: const TextStyle(
+                    fontSize: 12, fontWeight: FontWeight.normal)),
+          ],
+        ),
+      ),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(12),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
+          childAspectRatio: 1.38,
+        ),
+        itemCount: categories.length,
+        itemBuilder: (context, index) {
+          final cat = categories[index];
+          return _DeityCard(
+            category: cat,
+            initialTabIndex: 2,
+            subtitleOverride: '${cat.bhajanas.length} ಭಜನೆಗಳು',
+          );
         },
       ),
     );
@@ -467,13 +795,19 @@ class _StotrasBody extends StatelessWidget {
 // ===================== WIDGETS =====================
 class _DeityCard extends StatelessWidget {
   final StotraCategory category;
-  const _DeityCard({required this.category});
+  final int initialTabIndex;
+  final String? subtitleOverride;
+
+  const _DeityCard({
+    required this.category,
+    this.initialTabIndex = 0,
+    this.subtitleOverride,
+  });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
-    // Map category id to asset filename
+
     String imagePath;
     switch (category.id) {
       case 'shiva':
@@ -507,6 +841,9 @@ class _DeityCard extends StatelessWidget {
         imagePath = '';
     }
 
+    final subtitleText = subtitleOverride ??
+        'ಶ್ಲೋಕ ${category.shlokas.length} · ಮಂತ್ರ ${category.mantras.length} · ಭಜನೆ ${category.bhajanas.length}';
+
     return Material(
       borderRadius: BorderRadius.circular(16),
       color: isDark ? const Color(0xFF120C24) : Colors.white,
@@ -517,7 +854,11 @@ class _DeityCard extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (_) => CategoryScreen(category: category)),
+            builder: (_) => CategoryScreen(
+              category: category,
+              initialTabIndex: initialTabIndex,
+            ),
+          ),
         ),
         child: Container(
           decoration: BoxDecoration(
@@ -551,13 +892,19 @@ class _DeityCard extends StatelessWidget {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: isDark
-                              ? [const Color(0xFF1E1035), const Color(0xFF120C24)]
-                              : [const Color(0xFFFFF8EE), Colors.white],
+                              ? [
+                                  const Color(0xFF281545),
+                                  const Color(0xFF120C24)
+                                ]
+                              : [
+                                  const Color(0xFF5D1926),
+                                  const Color(0xFF8B2635)
+                                ],
                         ),
                       ),
                     ),
                   ),
-                
+
                 // Dark overlay at the bottom for text readability
                 Positioned.fill(
                   child: Container(
@@ -567,15 +914,15 @@ class _DeityCard extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.black.withOpacity(0.0),
-                          Colors.black.withOpacity(0.2),
-                          Colors.black.withOpacity(0.7),
+                          Colors.black.withOpacity(0.25),
+                          Colors.black.withOpacity(0.78),
                         ],
-                        stops: const [0.0, 0.4, 1.0],
+                        stops: const [0.0, 0.38, 1.0],
                       ),
                     ),
                   ),
                 ),
-                
+
                 // Content
                 Padding(
                   padding: const EdgeInsets.all(12),
@@ -602,107 +949,36 @@ class _DeityCard extends StatelessWidget {
                       Text(
                         category.title,
                         style: GoogleFonts.notoSansKannada(
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          shadows: [
-                            const Shadow(
+                          shadows: const [
+                            Shadow(
                               blurRadius: 4,
                               color: Colors.black,
                               offset: Offset(0, 1.5),
                             ),
                           ],
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        '${category.stotras.length} ಕೃತಿಗಳು',
+                        subtitleText,
                         style: const TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 10.5,
+                          fontWeight: FontWeight.w600,
                           color: Color(0xFFF5B041),
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _ExtraCard extends StatelessWidget {
-  final StotraCategory category;
-  const _ExtraCard({required this.category});
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primary = Theme.of(context).colorScheme.primary;
-
-    return Material(
-      borderRadius: BorderRadius.circular(14),
-      color: isDark ? const Color(0xFF120C24) : Colors.white,
-      elevation: 2,
-      shadowColor: Colors.black.withOpacity(isDark ? 0.35 : 0.05),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (_) => CategoryScreen(category: category)),
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: isDark
-                  ? Colors.white.withOpacity(0.06)
-                  : Colors.grey.withOpacity(0.12),
-            ),
-          ),
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Emoji badge with glowing container
-              Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: primary.withOpacity(0.08),
-                  border: Border.all(
-                    color: primary.withOpacity(0.15),
-                  ),
-                ),
-                child: Text(category.icon, style: const TextStyle(fontSize: 20)),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                category.title,
-                style: GoogleFonts.notoSansKannada(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                  height: 1.2,
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 2),
-              Text(
-                '${category.stotras.length}',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.bold,
-                  color: primary,
-                ),
-              ),
-            ],
           ),
         ),
       ),
@@ -721,10 +997,10 @@ class _StatItem extends StatelessWidget {
       children: [
         Text(value,
             style: TextStyle(
-                fontSize: 20,
+                fontSize: 19,
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.primary)),
-        Text(label, style: const TextStyle(fontSize: 12)),
+        Text(label, style: const TextStyle(fontSize: 11.5)),
       ],
     );
   }

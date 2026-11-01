@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/stotra.dart';
 
 class StotraService extends ChangeNotifier {
@@ -11,30 +10,53 @@ class StotraService extends ChangeNotifier {
 
   List<StotraCategory> get mainCategories => _mainCategories;
   List<StotraCategory> get extrasCategories => _extrasCategories;
-  List<StotraCategory> get allCategories => [..._mainCategories, ..._extrasCategories];
+  List<StotraCategory> get allCategories =>
+      [..._mainCategories, ..._extrasCategories];
   bool get isLoaded => _isLoaded;
 
   int get totalStotras =>
       allCategories.fold(0, (sum, cat) => sum + cat.stotras.length);
+
+  int get totalShlokas =>
+      _mainCategories.fold(0, (sum, cat) => sum + cat.shlokas.length);
+
+  int get totalMantras =>
+      _mainCategories.fold(0, (sum, cat) => sum + cat.mantras.length);
+
+  int get totalBhajanas =>
+      _mainCategories.fold(0, (sum, cat) => sum + cat.bhajanas.length);
+
+  List<StotraCategory> get categoriesWithShlokas =>
+      _mainCategories.where((c) => c.shlokas.isNotEmpty).toList();
+
+  List<StotraCategory> get categoriesWithMantras =>
+      _mainCategories.where((c) => c.mantras.isNotEmpty).toList();
+
+  List<StotraCategory> get categoriesWithBhajanas =>
+      _mainCategories.where((c) => c.bhajanas.isNotEmpty).toList();
 
   Future<void> init() async {
     if (_isLoaded) return;
 
     // Load directly from Local Asset
     try {
-      final jsonStr = await rootBundle.loadString('assets/data/stotra_index.json');
+      final jsonStr =
+          await rootBundle.loadString('assets/data/stotra_index.json');
       final data = json.decode(jsonStr) as Map<String, dynamic>;
 
       _mainCategories = (data['mainCategories'] as List<dynamic>?)
-          ?.map((c) => StotraCategory.fromJson(Map<String, dynamic>.from(c)))
-          .toList() ?? [];
+              ?.map((c) => StotraCategory.fromJson(Map<String, dynamic>.from(c)))
+              .toList() ??
+          [];
 
       _extrasCategories = (data['extrasCategories'] as List<dynamic>?)
-          ?.map((c) => StotraCategory.fromJson(Map<String, dynamic>.from(c)))
-          .toList() ?? [];
+              ?.map((c) => StotraCategory.fromJson(Map<String, dynamic>.from(c)))
+              .toList() ??
+          [];
 
       _isLoaded = true;
-      debugPrint('📚 Loaded ${totalStotras} stotras in ${allCategories.length} categories from local JSON');
+      debugPrint(
+          '📚 Loaded $totalStotras stotras in ${allCategories.length} categories from local JSON');
       notifyListeners();
     } catch (e) {
       debugPrint('❌ Error loading stotra data: $e');
