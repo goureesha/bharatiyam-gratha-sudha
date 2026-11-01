@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/stotra_service.dart';
-import '../models/stotra.dart';
 import 'category_screen.dart';
 
 class ExtrasScreen extends StatelessWidget {
