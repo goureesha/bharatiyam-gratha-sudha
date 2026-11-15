@@ -81,8 +81,42 @@ class _ReaderScreenState extends State<ReaderScreen> {
     return formatted;
   }
 
-  List<Widget> _buildContentBlocks(String content, double fontSize, bool isDark) {
-    final blocks = content.split(RegExp(r'\n\s*\n'));
+  bool _hasMeanings(String content) {
+    return content.contains('ಶಬ್ದಾರ್ಥ') ||
+        content.contains('ಭಾವಾರ್ಥ') ||
+        content.contains('ವ್ಯಾಖ್ಯಾನ') ||
+        content.contains('ವಿಶೇಷ ವಿವರಣೆ') ||
+        content.contains('ವಿವರಣೆ:') ||
+        content.contains('ಅರ್ಥ:') ||
+        content.contains('ಪ್ರತಿಪದಾರ್ಥ:') ||
+        content.contains('\n•');
+  }
+
+  String _normalizeBlocks(String content) {
+    var normalized = content.replaceAll('\r\n', '\n');
+    // Convert horizontal rule separators (---...) into standard block boundaries
+    normalized = normalized.replaceAll(
+      RegExp(r'\n?[ \t]*-{3,}[ \t]*\n?'),
+      '\n\n',
+    );
+    // Keep Shabdartha, Bhavartha, and Vyakhyana attached to their preceding Shloka/Sutra
+    normalized = normalized.replaceAllMapped(
+      RegExp(
+        r'\n\s*\n(?=[ \t]*(?:ಶಬ್ದಾರ್ಥ|ಭಾವಾರ್ಥ|ಅರ್ಥ\s*\(ಭಾವಾರ್ಥ\)|ಅರ್ಥ:|ಪ್ರತಿಪದಾರ್ಥ:|ತಾತ್ಪರ್ಯ:|ವಿಶೇಷ ವಿವರಣೆ|ವ್ಯಾಖ್ಯಾನ|ವಿವರಣೆ:|ನೌಕಾ ವ್ಯಾಖ್ಯಾನ|ಮಹೀಧರರ|•))',
+      ),
+      (_) => '\n',
+    );
+    return normalized;
+  }
+
+  List<Widget> _buildContentBlocks(
+    String content,
+    double fontSize,
+    bool isDark,
+    bool shlokaOnly,
+  ) {
+    final normalizedContent = _normalizeBlocks(content);
+    final blocks = normalizedContent.split(RegExp(r'\n\s*\n'));
     final List<Widget> widgets = [];
 
     final primaryAccent = isDark ? const Color(0xFFE5A93C) : const Color(0xFFB85D14);
@@ -94,10 +128,16 @@ class _ReaderScreenState extends State<ReaderScreen> {
       if (block.isEmpty) continue;
 
       final hasShabdartha = block.contains('ಶಬ್ದಾರ್ಥ:') || block.contains('•');
-      final hasBhavartha = block.contains('ಭಾವಾರ್ಥ:');
+      final hasBhavartha = block.contains('ಭಾವಾರ್ಥ:') ||
+          block.contains('ಅರ್ಥ (ಭಾವಾರ್ಥ):') ||
+          block.contains('ಅರ್ಥ:') ||
+          block.contains('ತಾತ್ಪರ್ಯ:');
+      final hasVyakhyana = block.contains('ವ್ಯಾಖ್ಯಾನ') ||
+          block.contains('ವಿಶೇಷ ವಿವರಣೆ') ||
+          block.contains('ವಿವರಣೆ:');
 
-      if (hasShabdartha || hasBhavartha) {
-        // Structured Puranic Shloka Block
+      if (hasShabdartha || hasBhavartha || hasVyakhyana) {
+        // Structured Puranic / Sutra Shloka Block
         final lines = block.split('\n').map((l) => l.trim()).where((l) => l.isNotEmpty).toList();
         final List<String> shlokaLines = [];
         final List<String> shabdarthaLines = [];
@@ -122,11 +162,17 @@ class _ReaderScreenState extends State<ReaderScreen> {
                 shabdarthaLines.add(clean.startsWith('•') ? clean : '• $clean');
               }
             }
-          } else if (l.startsWith('ಭಾವಾರ್ಥ:')) {
+          } else if (l.startsWith('ಭಾವಾರ್ಥ:') ||
+                     l.startsWith('ಅರ್ಥ (ಭಾವಾರ್ಥ):') ||
+                     l.startsWith('ಅರ್ಥ:') ||
+                     l.startsWith('ತಾತ್ಪರ್ಯ:')) {
             state = 'BHAVARTHA';
-            final clean = l.replaceFirst('ಭಾವಾರ್ಥ:', '').trim();
+            final colonIdx = l.indexOf(':');
+            final clean = colonIdx != -1 ? l.substring(colonIdx + 1).trim() : '';
             if (clean.isNotEmpty) bhavarthaLines.add(clean);
           } else if (l.startsWith('ವ್ಯಾಖ್ಯಾನ') ||
+                     l.startsWith('ವಿಶೇಷ ವಿವರಣೆ') ||
+                     l.startsWith('ವಿವರಣೆ:') ||
                      l.startsWith('ನೌಕಾ ವ್ಯಾಖ್ಯಾನ:') ||
                      l.startsWith('ಮಹೀಧರರ')) {
             state = 'VYAKHYANA';
@@ -150,6 +196,10 @@ class _ReaderScreenState extends State<ReaderScreen> {
           }
         }
 
+        if (shlokaOnly && shlokaLines.isEmpty) {
+          continue;
+        }
+
         final List<Widget> blockChildren = [];
 
         // 1. Shloka Text (Centered)
@@ -169,8 +219,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
           );
         }
 
-        // 2. Shabdartha Box (Left Aligned)
-        if (shabdarthaLines.isNotEmpty) {
+        // 2. Shabdartha Box (Left Aligned) - Hidden in Shloka Only Mode
+        if (!shlokaOnly && shabdarthaLines.isNotEmpty) {
           blockChildren.add(const SizedBox(height: 12));
           blockChildren.add(
             Container(
@@ -249,8 +299,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
           );
         }
 
-        // 3. Bhavartha Section (Left Aligned)
-        if (bhavarthaLines.isNotEmpty) {
+        // 3. Bhavartha Section (Left Aligned) - Hidden in Shloka Only Mode
+        if (!shlokaOnly && bhavarthaLines.isNotEmpty) {
           blockChildren.add(const SizedBox(height: 10));
           final bhavProse = bhavarthaLines.join(' ').trim();
           blockChildren.add(
@@ -281,8 +331,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
           );
         }
 
-        // 4. Vyakhya / Nauka Section (Left Aligned in elegant bordered container)
-        if (vyakhyanaLines.isNotEmpty) {
+        // 4. Vyakhya / Nauka Section (Left Aligned) - Hidden in Shloka Only Mode
+        if (!shlokaOnly && vyakhyanaLines.isNotEmpty) {
           blockChildren.add(const SizedBox(height: 12));
           blockChildren.add(
             Container(
@@ -334,19 +384,35 @@ class _ReaderScreenState extends State<ReaderScreen> {
       } else {
         // Regular Text / Non-scripture Block
         final blockLower = block.toLowerCase();
-        bool alignLeft = false;
-        final leftAlignKeywords = ['ಅರ್ಥ:', 'ಭಾವಾರ್ಥ:', 'ಶಬ್ದಾರ್ಥ:', 'ಪ್ರತಿಪದಾರ್ಥ:', 'ವಿವರಣೆ:', 'ಟಿಪ್ಪಣಿ:'];
+        bool isMeaningNote = false;
+        final leftAlignKeywords = [
+          'ಅರ್ಥ:',
+          'ಭಾವಾರ್ಥ:',
+          'ಶಬ್ದಾರ್ಥ:',
+          'ಪ್ರತಿಪದಾರ್ಥ:',
+          'ವಿವರಣೆ:',
+          'ವಿಶೇಷ ವಿವರಣೆ',
+          'ವ್ಯಾಖ್ಯಾನ',
+          'ತಾತ್ಪರ್ಯ:',
+          'ಟಿಪ್ಪಣಿ:',
+        ];
         for (final kw in leftAlignKeywords) {
           if (blockLower.startsWith(kw)) {
-            alignLeft = true;
+            isMeaningNote = true;
             break;
           }
         }
+        bool alignLeft = isMeaningNote;
         if (!alignLeft) {
           final firstChar = block.isNotEmpty ? block[0] : '';
           if (firstChar == '-' || firstChar == '*' || firstChar == '•' || RegExp(r'^\d+\.').hasMatch(block)) {
             alignLeft = true;
+            if (firstChar == '•') isMeaningNote = true;
           }
+        }
+
+        if (shlokaOnly && isMeaningNote) {
+          continue;
         }
 
         widgets.add(
@@ -373,6 +439,62 @@ class _ReaderScreenState extends State<ReaderScreen> {
     return widgets;
   }
 
+  Widget _buildViewModeControls(BookmarkService bookmarks, bool isDark) {
+    return Container(
+      color: isDark ? const Color(0xFF1E1635) : Colors.amber.shade50,
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'ವೀಕ್ಷಣೆ: ',
+            style: GoogleFonts.notoSansKannada(
+              fontWeight: FontWeight.bold,
+              fontSize: 13,
+            ),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: SegmentedButton<bool>(
+              segments: <ButtonSegment<bool>>[
+                ButtonSegment<bool>(
+                  value: false,
+                  icon: const Icon(Icons.menu_book_rounded, size: 16),
+                  label: Text(
+                    'ಶಬ್ದಾರ್ಥ & ಭಾವಾರ್ಥ',
+                    style: GoogleFonts.notoSansKannada(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                ButtonSegment<bool>(
+                  value: true,
+                  icon: const Icon(Icons.auto_stories_outlined, size: 16),
+                  label: Text(
+                    'ಕೇವಲ ಶ್ಲೋಕ',
+                    style: GoogleFonts.notoSansKannada(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+              selected: <bool>{bookmarks.isShlokaOnlyMode},
+              onSelectionChanged: (Set<bool> newSelection) {
+                bookmarks.isShlokaOnlyMode = newSelection.first;
+              },
+              style: const ButtonStyle(
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                visualDensity: VisualDensity.compact,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   void shloka_lines_add(String l, List<String> list) {
     list.add(l);
   }
@@ -382,6 +504,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
     final bookmarks = context.watch<BookmarkService>();
     final isBookmarked = bookmarks.isBookmarked(widget.stotra.id);
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final rawContent = _loadedContent ?? '';
+    final hasMeanings = !_isLoading && _error == null && _hasMeanings(rawContent);
 
     return Scaffold(
       appBar: AppBar(
@@ -396,6 +520,23 @@ class _ReaderScreenState extends State<ReaderScreen> {
           overflow: TextOverflow.ellipsis,
         ),
         actions: [
+          if (hasMeanings)
+            IconButton(
+              icon: Icon(
+                bookmarks.isShlokaOnlyMode
+                    ? Icons.auto_stories_rounded
+                    : Icons.menu_book_rounded,
+                color: bookmarks.isShlokaOnlyMode
+                    ? const Color(0xFFFFD54F)
+                    : Colors.white,
+              ),
+              tooltip: bookmarks.isShlokaOnlyMode
+                  ? 'ಶಬ್ದಾರ್ಥ & ಭಾವಾರ್ಥ ತೋರಿಸಿ'
+                  : 'ಕೇವಲ ಶ್ಲೋಕ ಮಾತ್ರ ತೋರಿಸಿ',
+              onPressed: () {
+                bookmarks.isShlokaOnlyMode = !bookmarks.isShlokaOnlyMode;
+              },
+            ),
           IconButton(
             icon: Icon(
               isBookmarked ? Icons.favorite_rounded : Icons.favorite_border_rounded,
@@ -407,101 +548,109 @@ class _ReaderScreenState extends State<ReaderScreen> {
       ),
       body: Container(
         color: isDark ? const Color(0xFF0A0516) : const Color(0xFFFFF8EE),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Content card
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF120C24) : const Color(0xFFFDFBF7),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: isDark
-                        ? Colors.white.withOpacity(0.06)
-                        : Theme.of(context).colorScheme.primary.withOpacity(0.15),
-                    width: 1.5,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(isDark ? 0.35 : 0.04),
-                      blurRadius: 16,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: _isLoading
-                    ? const Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 40),
-                          child: CircularProgressIndicator(),
+        child: Column(
+          children: [
+            if (hasMeanings) _buildViewModeControls(bookmarks, isDark),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Content card
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF120C24) : const Color(0xFFFDFBF7),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: isDark
+                              ? Colors.white.withOpacity(0.06)
+                              : Theme.of(context).colorScheme.primary.withOpacity(0.15),
+                          width: 1.5,
                         ),
-                      )
-                    : _error != null
-                        ? Center(
-                            child: Column(
-                              children: [
-                                Text(
-                                  _error!,
-                                  style: TextStyle(
-                                    color: isDark ? Colors.white70 : Colors.black87,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(isDark ? 0.35 : 0.04),
+                            blurRadius: 16,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: _isLoading
+                          ? const Center(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(vertical: 40),
+                                child: CircularProgressIndicator(),
+                              ),
+                            )
+                          : _error != null
+                              ? Center(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        _error!,
+                                        style: TextStyle(
+                                          color: isDark ? Colors.white70 : Colors.black87,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 12),
+                                      ElevatedButton.icon(
+                                        onPressed: _loadContent,
+                                        icon: const Icon(Icons.refresh),
+                                        label: const Text('ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ'),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              : SelectionArea(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: _buildContentBlocks(
+                                      _formatContent(rawContent),
+                                      bookmarks.fontSize,
+                                      isDark,
+                                      bookmarks.isShlokaOnlyMode,
+                                    ),
                                   ),
                                 ),
-                                const SizedBox(height: 12),
-                                ElevatedButton.icon(
-                                  onPressed: _loadContent,
-                                  icon: const Icon(Icons.refresh),
-                                  label: const Text('ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ'),
-                                ),
-                              ],
-                            ),
-                          )
-                        : SelectionArea(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: _buildContentBlocks(
-                                _formatContent(_loadedContent ?? ''),
-                                bookmarks.fontSize,
-                                isDark,
+                    ),
+
+                    const SizedBox(height: 24),
+
+                    // Source info
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withOpacity(0.04)
+                            : Colors.black.withOpacity(0.03),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.info_outline, size: 16,
+                              color: Colors.grey.shade500),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'ಮೂಲ: ${widget.stotra.categoryTitle}',
+                              style: GoogleFonts.notoSansKannada(
+                                fontSize: 12,
+                                color: Colors.grey.shade500,
                               ),
                             ),
                           ),
-              ),
-
-              const SizedBox(height: 24),
-
-              // Source info
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withOpacity(0.04)
-                      : Colors.black.withOpacity(0.03),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.info_outline, size: 16,
-                        color: Colors.grey.shade500),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        'ಮೂಲ: ${widget.stotra.categoryTitle}',
-                        style: GoogleFonts.notoSansKannada(
-                          fontSize: 12,
-                          color: Colors.grey.shade500,
-                        ),
+                        ],
                       ),
                     ),
+
+                    const SizedBox(height: 40),
                   ],
                 ),
               ),
-
-              const SizedBox(height: 40),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: Column(

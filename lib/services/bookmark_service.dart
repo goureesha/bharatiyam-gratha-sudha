@@ -8,6 +8,7 @@ class BookmarkService extends ChangeNotifier {
   static const _kFontSize = 'font_size';
   static const _kThemeColorIndex = 'theme_color_index';
   static const _kSwahakaraMode = 'swahakara_mode';
+  static const _kShlokaOnlyMode = 'shloka_only_mode';
 
   SharedPreferences? _prefs;
   Set<String> _bookmarkedIds = {};
@@ -15,12 +16,14 @@ class BookmarkService extends ChangeNotifier {
   double _fontSize = 20.0;
   int _themeColorIndex = 0;
   bool _isSwahakaraMode = false;
+  bool _isShlokaOnlyMode = false;
 
   Set<String> get bookmarkedIds => _bookmarkedIds;
   bool get isDarkMode => _isDarkMode;
   double get fontSize => _fontSize;
   int get themeColorIndex => _themeColorIndex;
   bool get isSwahakaraMode => _isSwahakaraMode;
+  bool get isShlokaOnlyMode => _isShlokaOnlyMode;
   int get count => _bookmarkedIds.length;
 
   Future<void> init() async {
@@ -33,6 +36,7 @@ class BookmarkService extends ChangeNotifier {
     _fontSize = _prefs?.getDouble(_kFontSize) ?? 20.0;
     _themeColorIndex = _prefs?.getInt(_kThemeColorIndex) ?? 0;
     _isSwahakaraMode = _prefs?.getBool(_kSwahakaraMode) ?? false;
+    _isShlokaOnlyMode = _prefs?.getBool(_kShlokaOnlyMode) ?? false;
     notifyListeners();
   }
 
@@ -69,6 +73,12 @@ class BookmarkService extends ChangeNotifier {
   set isSwahakaraMode(bool value) {
     _isSwahakaraMode = value;
     _prefs?.setBool(_kSwahakaraMode, value);
+    notifyListeners();
+  }
+
+  set isShlokaOnlyMode(bool value) {
+    _isShlokaOnlyMode = value;
+    _prefs?.setBool(_kShlokaOnlyMode, value);
     notifyListeners();
   }
 
