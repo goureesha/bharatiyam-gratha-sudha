@@ -14613,5 +14613,18 @@
         "assetPath": "assets/data/chapters/grantha_sharada_tilaka_p25.txt"
       }
     ]
+  },
+  {
+    "id": "grantha_prapanchasara_tantram",
+    "title": "ಪ್ರಪಞ್ಚಸಾರ ತನ್ತ್ರಮ್",
+    "titleEn": "Prapanchasara Tantram",
+    "category": "grantha",
+    "icon": "🔱",
+    "chapters": [
+      {
+        "id": "grantha_prapanchasara_p1",
+        "title": "ಪ್ರಥಮಃ ಪಟಲಃ — ಸೃಷ್ಟಿಪ್ರಕರಣ, ಶಾರದಾ ಮಂಗಳಾಚರಣ, ತ್ರಿಮೂರ್ತಿಗಳ ಅವಿರ್ಭಾವ, ಕ್ಷೀರಸಾಗರ ದರ್ಶನ, ಜಗನ್ಮಾತೆಯ ದಿವ್ಯರೂಪ, ಪ್ರಕೃತಿ-ಪುರುಷ-ಮಾಯಾ-ಶಕ್ತಿ ರಹಸ್ಯ, ಹಾಗೂ ಕಾಲವಿಭಾಗ (ಲವ-ತ್ರುಟಿ-ಮಾತ್ರಾ-ಘಟಿಕಾ-ಮುಹೂರ್ತ-ಸಂವತ್ಸರ) ನಿರೂಪಣೆ"
+      }
+    ]
   }
 ]
