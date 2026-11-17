@@ -14971,5 +14971,18 @@
         "file": "assets/data/chapters/grantha_shanti_mayukha_p15.txt"
       }
     ]
+  },
+  {
+    "id": "grantha_bhagavanta_bhaskara_vol1",
+    "title": "ಭಗವಂತ ಭಾಸ್ಕರಃ (ಪ್ರಥಮ ಖಂಡಃ — ಸಂಸ್ಕಾರಮಯೂಖಃ)",
+    "titleEn": "Bhagavanta Bhaskara Vol 1 (Samskara Mayukha)",
+    "category": "grantha",
+    "icon": "☀️",
+    "chapters": [
+      {
+        "id": "grantha_bhagavanta_bhaskara_vol1_p1",
+        "title": "ಪ್ರಥಮ ಭಾಗಃ — ಮಂಗಳಾಚರಣ, ನಿಬಂಧೋಪಯೋಗೀ ವಿಚಾರ, ಧರ್ಮಪ್ರಮಾಣ, ಸ್ಮೃತಿಪ್ರವರ್ತಕ ಹಾಗೂ ದೇಶನಿರ್ಣಯ ಪ್ರಕರಣ (೨೦ ಶ್ಲೋಕಗಳು ಸಂಪೂರ್ಣ)"
+      }
+    ]
   }
 ]
