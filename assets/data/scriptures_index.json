@@ -14693,5 +14693,18 @@
         "file": "assets/data/chapters/grantha_shanti_mayukha_p15.txt"
       }
     ]
+  },
+  {
+    "id": "grantha_meru_tantram_vol1",
+    "title": "ಮೇರುತಂತ್ರಮ್ (ಭಾಗ ೧)",
+    "titleEn": "Meru Tantram Vol 1",
+    "category": "grantha",
+    "icon": "📜",
+    "chapters": [
+      {
+        "id": "grantha_meru_tantram_vol1_prakasha_1",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 1 — ವ್ಯವಸ್ಥಾಪ್ರಕಾಶಃ"
+      }
+    ]
   }
 ]
