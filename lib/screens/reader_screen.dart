@@ -127,6 +127,74 @@ class _ReaderScreenState extends State<ReaderScreen> {
       final block = blocks[i].trim();
       if (block.isEmpty) continue;
 
+      // Embedded Image Block support: [ಚಿತ್ರ: assets/images/... | caption]
+      final imageMatch = RegExp(r'^\[(?:ಚಿತ್ರ|IMAGE):\s*([^\|\]]+)(?:\|\s*([^\]]+))?\]$').firstMatch(block);
+      if (imageMatch != null) {
+        if (!shlokaOnly) {
+          final imagePath = imageMatch.group(1)!.trim();
+          final caption = imageMatch.group(2)?.trim();
+          widgets.add(
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: primaryAccent.withOpacity(0.35),
+                          width: 1.5,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.12),
+                            blurRadius: 8,
+                            offset: const Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      clipBehavior: Clip.antiAlias,
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.contain,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              'ಚಿತ್ರ ಲೋಡ್ ಆಗಲಿಲ್ಲ: $imagePath',
+                              style: GoogleFonts.notoSansKannada(
+                                fontSize: fontSize * 0.8,
+                                color: Colors.redAccent,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    if (caption != null && caption.isNotEmpty) ...[
+                      const SizedBox(height: 8),
+                      Text(
+                        caption,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.notoSansKannada(
+                          fontSize: fontSize * 0.85,
+                          fontStyle: FontStyle.italic,
+                          color: primaryAccent,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
+          );
+        }
+        continue;
+      }
+
       final hasShabdartha = block.contains('ಶಬ್ದಾರ್ಥ:') || block.contains('•');
       final hasBhavartha = block.contains('ಭಾವಾರ್ಥ:') ||
           block.contains('ಅರ್ಥ (ಭಾವಾರ್ಥ):') ||
