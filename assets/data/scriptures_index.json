@@ -14734,5 +14734,19 @@
         "title": "ಅಥ ಪ್ರಕಾಶಃ 8 — ಮುದ್ರಾಲಕ್ಷಣಪ್ರಕಾಶಃ"
       }
     ]
+  },
+  {
+    "id": "grantha_prapanchasara_sarasangraha_vol1",
+    "title": "ಪ್ರಪಂಚಸಾರ ಸಾರಸಂಗ್ರಹಃ (ಭಾಗ ೧)",
+    "titleEn": "Prapanchasara Sarasangraha Part 1",
+    "category": "grantha",
+    "icon": "📜",
+    "chapters": [
+      {
+        "id": "grantha_prapanchasara_sarasangraha_p7",
+        "title": "ಸಪ್ತಮಃ ಪಟಲಃ — ದೀಕ್ಷಾ-ಮಾತೃಕಾವಿಧಾನಮ್ (ದೀಕ್ಷಾ ಮಂಡಪ, ಕುಂಡ-ಸಂಸ್ಕಾರ, ಮಾತೃಕಾನ್ಯಾಸ, ದಶವಿಧ ಲಿಪಿನ್ಯಾಸ, ಪ್ರಾಣಾಗ್ನಿಹೋತ್ರ ಪಂಚಕುಂಡ ಹೋಮ ಹಾಗೂ ಅಂತರ್ಮಾತೃಕಾ ಷಟ್ಚಕ್ರ ವಿಧಾನಃ — ಪುಟಗಳು ೩೨-೧೬೧ ಸಂಪೂರ್ಣ)",
+        "file": "assets/data/chapters/grantha_prapanchasara_sarasangraha_p7.txt"
+      }
+    ]
   }
 ]
