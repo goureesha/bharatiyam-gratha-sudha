@@ -11,9 +11,10 @@ These rules apply to ALL Sanskrit/Kannada transcription work in this project.
 
 ## Shabdartha (ಶಬ್ದಾರ್ಥ) — MANDATORY FOR EVERY WORD
 - List EVERY word/compound from the shloka — no exceptions
-- Format: `• ಸಂಸ್ಕೃತ ಶಬ್ದ — ಕನ್ನಡ ಅರ್ಥ (ವಿಭಕ್ತಿ/ವ್ಯಾಕರಣ, ಸಮಾಸ ಪ್ರಕಾರ)`
+- Format: `• ಸಂಸ್ಕೃತ ಶಬ್ದ — ಕನ್ನಡ ಅರ್ಥ` (or `• ಸಂಸ್ಕೃತ ಶಬ್ದ = ಕನ್ನಡ ಅರ್ಥ`)
+- STRICTLY PROHIBITED: Do NOT put vyakarana, vibhakti, vachana, dhatu, pratyaya, or samasa in brackets (e.g., do NOT write `(ಪ್ರಥಮಾ ವಿಭಕ್ತಿ, ಏಕವಚನ)`, `(ಸಪ್ತಮೀ ವಿಭಕ್ತಿ)`, `(ವಿಧಿಲಿಂಗ್)`, etc.)
+- Only provide the clean Sanskrit word and its direct, accurate Kannada meaning
 - Write the shabda word as PLAIN TEXT — no bold, no asterisks
-- For samasa (compounds): break into component words, explain each
 - Minimum: one bullet per word. 12 words = ≥12 bullets
 - NEVER write "ಇತ್ಯಾದಿ", "ಮುಂತಾದ", or "etc." to skip words
 - NEVER use "..." or "…" (ellipsis)
@@ -42,12 +43,13 @@ These rules apply to ALL Sanskrit/Kannada transcription work in this project.
 - The only formatting: bullet `•`, separator `----------------------------------------`, section headers
 
 ## ABSOLUTE PROHIBITIONS
+- ❌ NEVER include grammatical annotations (vyakarana/vibhakti/vachana/samasa) in brackets in Shabdartha
 - ❌ NEVER skip any word in shabdartha
 - ❌ NEVER use ellipsis (... or …)
 - ❌ NEVER summarize when you should transcribe
 - ❌ NEVER write "as mentioned above" to skip content
-- ❌ NEVER reduce bhavartha below 70 words
-- ❌ NEVER use Devanagari script
+- ❌ NEVER reduce bhavartha below 100 words
+- ❌ NEVER use Devanagari script (except dandas ।॥)
 - ❌ NEVER use English words in output
 - ❌ NEVER skip the vyakhyana section
 - ❌ NEVER use bold/italic markdown (`**`, `*`)
