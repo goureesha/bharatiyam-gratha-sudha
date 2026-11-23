@@ -14736,6 +14736,39 @@
     ]
   },
   {
+    "id": "grantha_meru_tantram_vol2",
+    "title": "ಮೇರುತಂತ್ರಮ್ (ಭಾಗ ೨)",
+    "titleEn": "Meru Tantram Vol 2",
+    "category": "grantha",
+    "icon": "📜",
+    "chapters": [
+      {
+        "id": "grantha_meru_tantram_vol2_prakasha_9",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 9 — ಪಾರ್ಥಿವಪೂಜಾವಿಧಿವರ್ಣನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol2_prakasha_10",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 10 — ಪುರಶ್ಚರ್ಯಾಕೌಲಿಕಾಚಾರಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol2_prakasha_11",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 11 — ಕಲಿಸಂಸ್ಥಿತಸವಿಧಿಮನ್ತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol2_prakasha_12",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 12 — ಕಲಿಪ್ರತ್ಯಯವೇದಮನ್ತ್ರಪ್ರಕಾಶಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol2_prakasha_13",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 13 — ನವಗ್ರಹಕಥನಪ್ರಕಾಶಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol2_prakasha_14",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 14 — ಪ್ರತ್ಯಙ್ಗಿರಾಮನ್ತ್ರಕಥನಪ್ರಕಾಶಃ"
+      }
+    ]
+  },
+  {
     "id": "grantha_prapanchasara_sarasangraha_vol1",
     "title": "ಪ್ರಪಂಚಸಾರ ಸಾರಸಂಗ್ರಹಃ (ಭಾಗ ೧)",
     "titleEn": "Prapanchasara Sarasangraha Part 1",
