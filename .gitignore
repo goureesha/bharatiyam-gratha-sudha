@@ -12,6 +12,7 @@ migrate_working_dir/
 scratch/*
 !scratch/meru_v1_transcriptions/
 !scratch/meru_tantram_v2_transcriptions/
+!scratch/meru_tantram_v3_transcriptions/
 !scratch/prapanchasara_sarasangraha_v1_transcriptions/
 
 # IntelliJ related
