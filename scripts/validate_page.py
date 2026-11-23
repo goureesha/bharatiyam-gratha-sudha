@@ -102,7 +102,7 @@ def validate_page(filepath):
     # CHECK 4: Duplicate Bhavartha
     # ----------------------------------------------------------
     bhavartha_count = len(re.findall(r'ಭಾವಾರ್ಥ:', content))
-    shloka_count = len(re.findall(r'ಶ್ಲೋಕ\s*\d+(?:-\d+)?:', content)) or len(re.findall(r'ಶ್ಲೋಕ:', content))
+    shloka_count = len(re.findall(r'ಶ್ಲೋಕ\s*[\d\u0ce6-\u0cef]+(?:[-–][\d\u0ce6-\u0cef]+)?:', content)) or len(re.findall(r'ಶ್ಲೋಕ:', content))
     if bhavartha_count > shloka_count and shloka_count > 0:
         errors.append(f'DUPLICATE_BHAVARTHA: {bhavartha_count} Bhavarthas for {shloka_count} shlokas')
     
@@ -122,7 +122,7 @@ def validate_page(filepath):
             if in_shabdartha and (line.startswith('ಭಾವಾರ್ಥ:') or
                                   line.startswith('ವಿಶೇಷ ವಿವರಣೆ') or
                                   line == SEPARATOR or
-                                  re.match(r'ಶ್ಲೋಕ\s*\d+(?:-\d+)?:', line)):
+                                  re.match(r'ಶ್ಲೋಕ\s*[\d\u0ce6-\u0cef]+(?:[-–][\d\u0ce6-\u0cef]+)?:', line)):
                 in_shabdartha = False
                 continue
             if in_shabdartha and line.startswith('•'):
@@ -227,7 +227,7 @@ def validate_page(filepath):
     if is_shloka_page:
         positions = {}
         for i, line in enumerate(lines):
-            if re.match(r'ಶ್ಲೋಕ\s*\d+(?:-\d+)?:', line) and 'shloka' not in positions:
+            if re.match(r'ಶ್ಲೋಕ\s*[\d\u0ce6-\u0cef]+(?:[-–][\d\u0ce6-\u0cef]+)?:', line) and 'shloka' not in positions:
                 positions['shloka'] = i
             elif 'ಶ್ಲೋಕ:' in line and 'shloka' not in positions:
                 positions['shloka'] = i
