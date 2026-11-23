@@ -14769,6 +14769,47 @@
     ]
   },
   {
+    "id": "grantha_meru_tantram_vol3",
+    "title": "ಮೇರುತಂತ್ರಮ್ (ಭಾಗ ೩)",
+    "titleEn": "Meru Tantram Vol 3",
+    "category": "grantha",
+    "icon": "📜",
+    "chapters": [
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_15",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 15 — ವೈದಿಕಯಂತ್ರಕಥನಪ್ರಕಾಶಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_16",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 16 — ದಕ್ಷಿಣಾಮ್ನಾಯಗಣಪತಿಮಂತ್ರಪ್ರಕಾಶಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_17",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 17 — ಊರ್ಧ್ವಾಮ್ನಾಯಗಣಪತಿಮಂತ್ರಪ್ರಕಾಶಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_18",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 18 — ಪೂರ್ವಾಮ್ನಾಯಗಣಪತಿಮಂತ್ರಪ್ರಕಾಶಃ"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_19",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 19 — ಪಶ್ಚಿಮಾಮ್ನಾಯಗಣಪತಿಮಂತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_20",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 20 — ಉತ್ತರಾಮ್ನಾಯಗಣಪತಿಮಂತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_21",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 21 — ಸೂರ್ಯಮಂತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol3_prakasha_22",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 22 — ನವಗ್ರಹಮಂತ್ರಕಥನಮ್"
+      }
+    ]
+  },
+  {
     "id": "grantha_prapanchasara_sarasangraha_vol1",
     "title": "ಪ್ರಪಂಚಸಾರ ಸಾರಸಂಗ್ರಹಃ (ಭಾಗ ೧)",
     "titleEn": "Prapanchasara Sarasangraha Part 1",
