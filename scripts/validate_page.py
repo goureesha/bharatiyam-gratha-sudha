@@ -107,19 +107,28 @@ def validate_page(filepath):
         errors.append(f'DUPLICATE_BHAVARTHA: {bhavartha_count} Bhavarthas for {shloka_count} shlokas')
     
     # ----------------------------------------------------------
-    # CHECK 5: Shabdartha grammar check (MUST HAVE grammar brackets)
+    # CHECK 5: Shabdartha word-by-word, separator, grammar & completeness
     # ----------------------------------------------------------
-    # Grammar brackets are now REQUIRED in Shabdartha, not banned.
-    # We check that at least some bullets have grammar annotations.
+    # Every Shabdartha bullet MUST be:
+    #   • ಸಂಸ್ಕೃತ-ಶಬ್ದ — ಕನ್ನಡ ಅರ್ಥ (ವ್ಯಾಕರಣ ವಿವರ)
+    # - Max 2 space-separated words on LHS (blocks clause compression!)
+    # - Uses em-dash (—), NOT '='
+    # - Every bullet has its own grammar annotation in (...)
+    # - Bullet count per shloka block must cover the Sanskrit words in that block
+    GRAMMAR_RE = re.compile(r'\(.*(?:ವಿಭಕ್ತಿ|ಸಮಾಸ|ಲಕಾರ|ವಚನ|ಪುರುಷ|ಅವ್ಯಯ|ಕೃದಂತ|ತದ್ಧಿತ|ವಿಶೇಷಣ|ಲಿಂಗ|ಸಂಖ್ಯಾ|ಸರ್ವನಾಮ|ಧಾತು|ಪ್ರತ್ಯಯ|ಬೀಜ|ಮಂತ್ರ).*\)')
     if is_shloka_page and has_shabdartha:
         in_shabdartha = False
         shabdartha_bullets = 0
         bullets_with_grammar = 0
+        compressed_lines = []
+        wrong_sep_lines = []
+        missing_gram_lines = []
         for i, line in enumerate(lines):
             if 'ಶಬ್ದಾರ್ಥ:' in line:
                 in_shabdartha = True
                 continue
             if in_shabdartha and (line.startswith('ಭಾವಾರ್ಥ:') or
+                                  line.startswith('ಅನುವಾದ:') or
                                   line.startswith('ವಿಶೇಷ ವಿವರಣೆ') or
                                   line == SEPARATOR or
                                   re.match(r'ಶ್ಲೋಕ\s*[\d\u0ce6-\u0cef]+(?:[-–][\d\u0ce6-\u0cef]+)?:', line)):
@@ -127,12 +136,48 @@ def validate_page(filepath):
                 continue
             if in_shabdartha and line.startswith('•'):
                 shabdartha_bullets += 1
-                # Check for grammar annotation in parentheses
-                if re.search(r'\(.*(?:ವಿಭಕ್ತಿ|ಸಮಾಸ|ಲಕಾರ|ವಚನ|ಪುರುಷ|ಅವ್ಯಯ|ಕೃದಂತ|ತದ್ಧಿತ|ವಿಶೇಷಣ|ಲಿಂಗ).*\)', line):
+                body = line[1:].strip()
+                # Check separator (must use —, not =)
+                if '—' not in body and '=' in body:
+                    wrong_sep_lines.append(i + 1)
+                # Extract LHS before — / – / =
+                lhs = re.split(r'[—–=]', body, maxsplit=1)[0].strip()
+                lhs_words = [w for w in lhs.split() if w]
+                if len(lhs_words) > 2:
+                    compressed_lines.append((i + 1, len(lhs_words), lhs[:45]))
+                # Check grammar annotation on this bullet
+                if GRAMMAR_RE.search(line):
                     bullets_with_grammar += 1
+                else:
+                    missing_gram_lines.append(i + 1)
         
         if shabdartha_bullets > 0 and bullets_with_grammar == 0:
             errors.append(f'MISSING_GRAMMAR: {shabdartha_bullets} Shabdartha bullets but NONE have vyakarana/grammar annotations (REQUIRED)')
+        elif missing_gram_lines:
+            errors.append(f'MISSING_BULLET_GRAMMAR: {len(missing_gram_lines)} Shabdartha bullet(s) missing grammar brackets (e.g., lines {missing_gram_lines[:5]})')
+        if wrong_sep_lines:
+            errors.append(f'WRONG_SHABDARTHA_SEPARATOR: {len(wrong_sep_lines)} bullet(s) use "=" instead of "—" (e.g., lines {wrong_sep_lines[:5]})')
+        if compressed_lines:
+            sample = '; '.join([f'L{ln}({cnt}w: "{txt}")' for ln, cnt, txt in compressed_lines[:3]])
+            errors.append(f'COMPRESSED_SHABDARTHA: {len(compressed_lines)} bullet(s) have >2 words on LHS (must be word-by-word): {sample}')
+
+        # Per-block completeness check: bullet count must be >= 85% of shloka Sanskrit words
+        blocks = re.split(r'-{20,}', content)
+        for b_idx, blk in enumerate(blocks, 1):
+            if 'ಶ್ಲೋಕ' not in blk or 'ಶಬ್ದಾರ್ಥ:' not in blk:
+                continue
+            m_sh = re.search(r'ಶ್ಲೋಕ[^\n]*:\n(.*?)\n\s*ಭಾವಾರ್ಥ:', blk, re.S)
+            m_sb = re.search(r'ಶಬ್ದಾರ್ಥ:\n(.*?)(?:\n\s*(?:ಅನುವಾದ:|ವಿಶೇಷ ವಿವರಣೆ|$))', blk, re.S)
+            if not m_sh or not m_sb:
+                continue
+            # Exclude colophon lines ("ಇತಿ ಶ್ರೀಮಹಾಮಾಯಾ...") from shloka word count
+            sh_lines = [l for l in m_sh.group(1).splitlines() if not l.strip().startswith('ಇತಿ ಶ್ರೀ')]
+            sh_clean = re.sub(r'[।॥೦-೯0-9\(\)]', ' ', ' '.join(sh_lines))
+            sh_words = [w for w in sh_clean.split() if len(w) > 0]
+            blk_bullets = [l for l in m_sb.group(1).splitlines() if l.strip().startswith('•')]
+            min_required = max(1, int(len(sh_words) * 0.85))
+            if len(blk_bullets) < min_required:
+                errors.append(f'INCOMPLETE_SHABDARTHA: Block #{b_idx} has only {len(blk_bullets)} bullets for {len(sh_words)} shloka words (minimum {min_required})')
     
     # ----------------------------------------------------------
     # CHECK 6: Boilerplate filler in Bhavartha
