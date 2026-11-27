@@ -14810,6 +14810,56 @@
     ]
   },
   {
+    "id": "grantha_meru_tantram_vol4",
+    "title": "ಮೇರುತಂತ್ರಮ್ (ಭಾಗ ೪)",
+    "titleEn": "Meru Tantram Vol 4",
+    "category": "grantha",
+    "icon": "📜",
+    "chapters": [
+      {
+        "id": "grantha_meru_tantram_vol4_prakasha_23",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 23 — ಬ್ರಾಹ್ಮ್ಯಾದ್ಯಷ್ಟಮಾತೃಕಾಮನ್ತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol4_prakasha_24",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 24 — ದಶದಿಗೀಶಮನ್ತ್ರನಿರೂಪಣಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol4_prakasha_25",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 25 — ದೀಪವಿಧಿಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol4_prakasha_26",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 26 — ದಶಾವತಾರಮನ್ತ್ರವಿಧಿಕಥನಮ್"
+      }
+    ]
+  },
+  {
+    "id": "grantha_meru_tantram_vol5",
+    "title": "ಮೇರುತಂತ್ರಮ್ (ಭಾಗ ೫)",
+    "titleEn": "Meru Tantram Vol 5",
+    "category": "grantha",
+    "icon": "📜",
+    "chapters": [
+      {
+        "id": "grantha_meru_tantram_vol5_prakasha_27",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 27 — ಚತುರ್ವಿಂಶತಿಮೂರ್ತಿಮನುಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol5_prakasha_28",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 28 — ವಿಷ್ಣುಪ್ರಿಯಮನ್ತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol5_prakasha_29",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 29 — ಆಯುಧಮನ್ತ್ರಕಥನಮ್"
+      },
+      {
+        "id": "grantha_meru_tantram_vol5_prakasha_30",
+        "title": "ಅಥ ಪ್ರಕಾಶಃ 30 — ವಿಷ್ಣುಶಕ್ತಿಮನ್ತ್ರಕಥನಮ್"
+      }
+    ]
+  },
+  {
     "id": "grantha_prapanchasara_sarasangraha_vol1",
     "title": "ಪ್ರಪಂಚಸಾರ ಸಾರಸಂಗ್ರಹಃ (ಭಾಗ ೧)",
     "titleEn": "Prapanchasara Sarasangraha Part 1",
